@@ -8,30 +8,16 @@
 
 	<package name="com.internousdevwork.craftdenki.action" extends="struts-default">
 
-	<action name="" class="" method="">
-		<result></result>
-	</action>
 
-<!-- _________管理者画面___________ -->
-		<!-- ProductManageAction -->
-			<action name="ProductManageAction"
-					class="com.internousdev.ecsite.action.ProductManageAction"
-					method="execute">
+<!-- 商品所一覧画面 （土門）-->
+		<!-- ProductListAction -->
+		<action name="ProductListAction" class="com.internousdev.craftdenki.action.ProductListAction" method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
 
-				<result name="success">productManage.jsp</result> <!-- 管理者判定成功 -->
-				<result name="error">error.jsp</result> <!-- 管理者判定失敗 -->
 
-			</action>
 
-		<!-- SupplyComfirmAction -->
-			<action name="SupplyComfirmAction"
-					class="com.internousdev.ecsite.action.SupplyComfirmAction"
-					method="execute">
 
-				<result name="success">supplyConfirm.jsp</result> <!-- 管理者判定成功 -->
-				<result name="error">error.jsp</result> <!-- 管理者判定失敗 -->
-
-			</action>
 
 	</package>
 
