@@ -91,6 +91,33 @@
 				</table>
 				<s:submit value="仕入"/>
 			</s:form>
+			<h3>新商品登録</h3>
+			<s:form action="ProductRegistCompleteAction">
+				<tr>
+					<td>
+						<label>新商品ID:</label>
+					</td>
+					<td>
+						<input type="text" name="newProductId" value="" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>ログインPASS:</label>
+					</td>
+					<td>
+						<input type="text" name="loginPassword" value=""/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>ユーザー名:</label>
+					</td>
+					<td>
+						<input type="text" name="userName" value=""/>
+					</td>
+				</tr>
+			</s:form>
 		</div>
 	</div>
 </body>
