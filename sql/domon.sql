@@ -23,3 +23,7 @@ regist_date datetime,
 update_date datetime,
 item_stock int
 );
+
+
+INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("aaa","aaa",100,100);
+INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("bbb","bbb",200,200);

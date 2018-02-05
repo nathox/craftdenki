@@ -42,7 +42,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					dao.cartInfo("仮ログインId", dto.getLoginId());
 					return result;
 				} else {
-					result = SUCCESS;
+					result = "mypage";
 					return result;
 				}
 			}
