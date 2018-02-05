@@ -25,7 +25,15 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		session.put("loginUserInfo", dto);
 
-		if (!(((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals(loginId)) {
+		if((((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals("craft")){
+			if((((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals("denki")){
+//				session.put("master_Id","craft");
+//				session.put("master_Pass","denki");
+				session.put("master_flg","1");
+				result = "master";
+				return result;
+			}
+		}else if (!(((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals(loginId)) {
 			if (!(((LoginDTO) session.get("loginUserInfo")).getLoginPass()).equals(loginPassword)) {
 				session.put("loginId", dto.getLoginId());
 				session.put("loginPass", dto.getLoginPass());
