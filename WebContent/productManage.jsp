@@ -98,25 +98,66 @@
 						<label>新商品ID:</label>
 					</td>
 					<td>
-						<input type="text" name="newProductId" value="" />
+						<input type="text" name="newProductId" value="" /><br>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>ログインPASS:</label>
+						<label>商品名:</label>
 					</td>
 					<td>
-						<input type="text" name="loginPassword" value=""/>
+						<input type="text" name="newProductName" value=""/><br>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>ユーザー名:</label>
+						<label>商品名かな:</label>
 					</td>
 					<td>
-						<input type="text" name="userName" value=""/>
+						<input type="text" name="newProductNameKana" value=""/><br>
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<label>商品詳細:</label>
+					</td>
+					<td>
+						<input type="text" name="newProductDescription" value=""/><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>カテゴリID:</label>
+					</td>
+					<td>
+						<input type="text" name="newCategoryId" value=""/><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>販売価格:</label>
+					</td>
+					<td>
+						<input type="text" name="newBuyPrice" value=""/><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>発売年月:</label>
+					</td>
+					<td>
+						<input type="text" name="newReleaseDate" value=""/><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>発売会社:</label>
+					</td>
+					<td>
+						<input type="text" name="newReleaseCompany" value=""/><br>
+					</td>
+				</tr>
+				<s:submit value="登録"/>
 			</s:form>
 		</div>
 	</div>
