@@ -12,7 +12,7 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if((Integer)session.get("master_flg") == 1){      //管理者判定
 			result = SUCCESS;
 		}
 		return result;

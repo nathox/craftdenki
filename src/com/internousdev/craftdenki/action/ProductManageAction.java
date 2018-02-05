@@ -19,7 +19,8 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 	public String execute() throws SQLException{
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if((Integer)session.get("master_flg") == 1){      //管理者判定
+			//商品一覧を取得
 			productList = productListDAO.getProductInfo();
 			result = SUCCESS;
 		}
