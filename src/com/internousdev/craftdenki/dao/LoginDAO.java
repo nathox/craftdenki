@@ -18,24 +18,43 @@ public class LoginDAO {
 
 		String sql = "select*From user_info_transaction where user_id = ? and password = ?";
 
-		try{
+		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 
 			ps.setString(1, loginId);
-			ps.setString(2,loginPassword);
+			ps.setString(2, loginPassword);
 
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()){
+			if (rs.next()) {
 				dto.setLoginId(rs.getString("user_id"));
 				dto.setLoginPass(rs.getString("password"));
 			}
 
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return null;
+		return dto;
+	}
+
+	public void cartInfo(String ProvisionalLoginId, String loginId) {
+
+		String sql = "update cart_transaction set login_id= ? where login_id = ?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+
+			ps.setString(1, loginId);
+			ps.setString(2, ProvisionalLoginId);
+
+			int rs = ps.executeUpdate();
+			System.out.println(rs + "件更新しました");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

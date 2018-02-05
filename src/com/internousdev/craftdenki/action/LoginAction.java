@@ -16,16 +16,29 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String result;
 	private String loginId;
 	private String loginPassword;
+	private String status;
 
 	public String execute() {
 		result = ERROR;
 
-		dto = dao.loginUserInfo(loginId,loginPassword);
+		dto = dao.loginUserInfo(loginId, loginPassword);
 
 		session.put("loginUserInfo", dto);
 
-
-
+		if (!(((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals(loginId)) {
+			if (!(((LoginDTO) session.get("loginUserInfo")).getLoginPass()).equals(loginPassword)) {
+				session.put("loginId", dto.getLoginId());
+				session.put("loginPass", dto.getLoginPass());
+				if (status == "cart") {
+					result = "cart";
+					dao.cartInfo("仮ログインId", dto.getLoginId());
+					return result;
+				} else {
+					result = SUCCESS;
+					return result;
+				}
+			}
+		}
 
 		return result;
 	}
@@ -35,19 +48,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	public String getLoginId(){
+	public String getLoginId() {
 		return loginId;
 	}
 
-	public void setLoginId(String loginId){
+	public void setLoginId(String loginId) {
 		this.loginId = loginId;
 	}
 
-	public String getLoginPass(){
+	public String getLoginPass() {
 		return loginPassword;
 	}
 
-	public void setLoginPass(String loginPassword){
+	public void setLoginPass(String loginPassword) {
 		this.loginPassword = loginPassword;
 	}
 
