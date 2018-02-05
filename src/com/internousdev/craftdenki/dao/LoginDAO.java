@@ -27,9 +27,8 @@ public class LoginDAO {
 			ResultSet rs = ps.executeQuery();
 
 			if(rs.next()){
-
-
-
+				dto.setLoginId(rs.getString("user_id"));
+				dto.setLoginPass(rs.getString("password"));
 			}
 
 		}catch(SQLException e){
