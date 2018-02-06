@@ -22,9 +22,12 @@
 名:<s:property value="firstName" /><br>
 姓(かな):<s:property value="familyNameKana" /><br>
 名(かな):<s:property value="firstNameKana" /><br>
-性別:<s:property value="sex" /><br>
+性別:<s:if test="sex==0">男</s:if>
+	 <s:if test="sex==1">女</s:if><br>
 メールアドレス:<s:property value="mail" /><br>
-秘密の質問:<s:property value="secretQuestion" /><br>
+秘密の質問:<s:if test="secretQuestion==1">好きな動物は？</s:if>
+		   <s:if test="secretQuestion==2">母親の旧姓は？</s:if>
+		   <s:if test="secretQuestion==3">出身都道府県は？</s:if><br>
 答え:<s:property value="secretAnswer" /><br>
 郵便番号:<s:property value="yuubin"/><br>
 住所:<s:property value="address" /><br>

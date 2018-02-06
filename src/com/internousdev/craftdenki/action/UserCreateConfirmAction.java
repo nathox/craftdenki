@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dao.UserCreateConfirmDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware{
@@ -24,12 +25,28 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public Map<String,Object> session;
 
-
 	private String result;
+
+	private String errorMessage;
+
+	private UserCreateConfirmDAO userCreateConfirmDAO=new UserCreateConfirmDAO();
 
 	public String execute() {
 
 		result=SUCCESS;
+
+
+//ユーザーIDの重複を確認
+
+		if(userCreateConfirmDAO.getLoginUserId(loginUserId)){
+
+			setErrorMessage("そのIDはすでに使われています");
+			result=ERROR;
+		}
+
+//ユーザー情報 未入力、文字種、桁数 判別
+
+
 
 
 
@@ -133,6 +150,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setSession(Map<String,Object> session) {
 		this.session=session;
 	}
+	public String getErrorMessage(){
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage){
+		this.errorMessage=errorMessage;
+	}
 
 }
-

@@ -13,27 +13,35 @@ public class UserCreateCompleteDAO {
 	private Connection connection=dbConnector.getConnection();
 	private DateUtil dateUtil=new DateUtil();
 
-	private String sql="INSERT INTO user_info (user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date)"
+	private String sql1="INSERT INTO user_info (user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date)"
 			+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
-	public void createUser(String userid,String pass,String familyname,String firstname,String familynamekana,String firstnamekana,int sex,String email,String secretquestion,String secretanswer) throws SQLException{
+	private String sql2="INSERT INTO destination_info(user_id,user_address,tel_number) VALUES(?,?,?)";
+
+	public void createUser(String userid,String pass,String familyname,String firstname,String familynamekana,String firstnamekana,int sex,String email,String secretquestion,String secretanswer,String address,String tel) throws SQLException{
 
 		try {
-			PreparedStatement preparedStatement=connection.prepareStatement(sql);
-			preparedStatement.setString(1,userid);
-			preparedStatement.setString(2, pass);
-			preparedStatement.setString(3,familyname);
-			preparedStatement.setString(4, firstname);
-			preparedStatement.setString(5, familynamekana);
-			preparedStatement.setString(6, firstnamekana);
-			preparedStatement.setInt(7, sex);
-			preparedStatement.setString(8, email);
-			preparedStatement.setString(9, secretquestion);
-			preparedStatement.setString(10,secretanswer);
-			preparedStatement.setString(11,dateUtil.getDate());
+			PreparedStatement preparedStatement1=connection.prepareStatement(sql1);
+			preparedStatement1.setString(1,userid);
+			preparedStatement1.setString(2, pass);
+			preparedStatement1.setString(3,familyname);
+			preparedStatement1.setString(4, firstname);
+			preparedStatement1.setString(5, familynamekana);
+			preparedStatement1.setString(6, firstnamekana);
+			preparedStatement1.setInt(7, sex);
+			preparedStatement1.setString(8, email);
+			preparedStatement1.setString(9, secretquestion);
+			preparedStatement1.setString(10,secretanswer);
+			preparedStatement1.setString(11,dateUtil.getDate());
 
+			preparedStatement1.execute();
 
-			preparedStatement.execute();
+			PreparedStatement preparedStatement2=connection.prepareStatement(sql2);
+			preparedStatement2.setString(1,userid);
+			preparedStatement2.setString(2, address);
+			preparedStatement2.setString(3, tel);
+
+			preparedStatement2.execute();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

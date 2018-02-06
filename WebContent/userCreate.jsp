@@ -11,7 +11,10 @@
 </head>
 <body>
 <s:form action="UserCreateConfirmAction">
-ログインID:<input type="text" name="loginUserId" value="" /><br>
+ログインID:<input type="text" name="loginUserId" value="" />
+			<s:if test="errorMessage!=hoge">
+		   	<s:property value="errorMessage" escape="false"/>
+		   	</s:if><br>
 ログインPASS:<input type="password" name="loginPassword" value="" /><br>
 姓:<input type="text" id="familyName" name="familyName" value=""/><br>
 名:<input type="text" id="firstName" name="firstName" value=""/><br>
@@ -22,9 +25,9 @@
 メールアドレス:<input type="email" name="mail" placeholder="info@example.com"/><br>
 秘密の質問:<select name="secretQuestion" required>
 			<option value="">選択してください</option>
-			<option value="1">好きな数字は？</option>
-			<option value="2">好きな色は？</option>
-			<option value="3">好きな食べ物は？</option>
+			<option value="1">好きな動物は？</option>
+			<option value="2">母親の旧姓は？</option>
+			<option value="3">出身都道府県は？</option>
 		</select>
 答え:<input type="text" name="secretAnswer" value=""><br>
 郵便番号(7桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"><br>
