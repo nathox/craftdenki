@@ -12,7 +12,13 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
-		if((Integer)session.get("master_flg") == 1){      //管理者判定
+		if(true){      //管理者判定
+
+			//product_infoテーブルのitem_stockをupdate
+
+
+
+
 			result = SUCCESS;
 		}
 		return result;

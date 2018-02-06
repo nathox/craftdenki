@@ -81,12 +81,13 @@
 						<th>仕入入力欄</th>
 					</tr>
 					<s:iterator value="productList">
-						<td><s:property value="product_id"/></td>
-						<td><s:property value="product_name"/></td>
-						<td><s:property value="price"/></td>
-						<td><s:property value="item_stock"/></td>
-<!-- 不明 -->
-						<td><s:textfield name="supplycount"/></td>
+						<tr>
+							<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
+							<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
+							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
+							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
+							<td><s:textfield name="supplycount" value="0"/></td>
+						</tr>
 					</s:iterator>
 				</table>
 				<s:submit value="仕入"/>
@@ -98,7 +99,9 @@
 						<label>新商品ID:</label>
 					</td>
 					<td>
-						<input type="text" name="newProductId" value="" /><br>
+						<input type="text" name="newProductId" value="" />
+						半角数字8桁
+						<br>
 					</td>
 				</tr>
 				<tr>
@@ -130,7 +133,12 @@
 						<label>カテゴリID:</label>
 					</td>
 					<td>
-						<input type="text" name="newCategoryId" value=""/><br>
+						<select name="newCategoryId" required>
+							<option value="">選択してください</option>
+							<option value="1">本</option>
+							<option value="2">家電・パソコン</option>
+							<option value="3">おもちゃ・ゲーム</option>
+						</select><br>
 					</td>
 				</tr>
 				<tr>
@@ -155,6 +163,16 @@
 					</td>
 					<td>
 						<input type="text" name="newReleaseCompany" value=""/><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>画像ファイル名:</label>
+					</td>
+					<td>
+						<input type="text" name="newProductImage" value=""/>
+						ファイル名.拡張子 例)title.jpg
+						<br>
 					</td>
 				</tr>
 				<s:submit value="登録"/>

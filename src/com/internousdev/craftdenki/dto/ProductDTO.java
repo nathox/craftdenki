@@ -22,6 +22,9 @@ public class ProductDTO {
 	private Date regist_date;
 	private Date update_date;
 	private int item_stock;
+	//仕入数フィールド(商品情報Tにupdate用)
+	private int supply_count;
+
 
 
 	public int getId(){
@@ -127,6 +130,13 @@ public class ProductDTO {
 	}
 	public void setItem_stock(int item_stock){
 		this.item_stock = item_stock;
+	}
+
+	public int getSupply_count() {
+		return supply_count;
+	}
+	public void setSupply_count(int supply_count) {
+		this.supply_count = supply_count;
 	}
 
 }
