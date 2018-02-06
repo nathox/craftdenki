@@ -17,7 +17,7 @@ public class CheckUserIdDAO {
 
 	public UserInfoChangeDTO select(String userId) {
 
-		String sql = "SELECT * FROM user_info where user_id = ?";
+		String sql = "SELECT question FROM user_info where user_id = ?";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, userId);

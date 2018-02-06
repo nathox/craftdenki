@@ -7,20 +7,22 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
-import com.internousdev.craftdenki.util.DBConnector;
+import com.internousdev.craftdenki.util.DBConnector;;
 
 
 
-public class ChangePasswordDAO {
+public class ChangePasswordConfirmDAO {
 
-	private UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection conn = dbConnector.getConnection();
+
+	private boolean result =false;
+
 	public Map<String, Object> session;
-	private DBConnector db = new DBConnector();
-	private Connection conn = db.getConnection();
-	private boolean  result=false;
-
 
 	public UserInfoChangeDTO checkAnswer(String answer) throws SQLException{
+		UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
 		try{
 			String sql ="select * from user_info where answer=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -40,7 +42,34 @@ public class ChangePasswordDAO {
 		return userInfoChangeDTO;
 	}
 
-	//boolean型のupdate文
+
+	public boolean getUserInfo(String answer){
+
+		String sql="SELECT * FROM user_info ";
+
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+
+
+				String ans =rs.getString("answer");
+
+				if( ans.equals(answer)){
+						result = true;
+						return result;
+					}else{
+						result = false;
+					}
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
 
 
 	public Map<String, Object> getSession(){

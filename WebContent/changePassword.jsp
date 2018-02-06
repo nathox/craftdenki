@@ -39,7 +39,7 @@
 						<label>ログインPASS (パスワード):</label>
 					</td>
 					<td>
-						<input type="text" name="loginPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
+						<input type="password" name="loginPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
 					</td>
 				</tr>
 				<tr>
@@ -47,7 +47,7 @@
 						<label>確認用：</label>
 					</td>
 					<td>
-						<input type="text" name="checkPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
+						<input type="password" name="checkPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
 					</td>
 				</tr>
 
