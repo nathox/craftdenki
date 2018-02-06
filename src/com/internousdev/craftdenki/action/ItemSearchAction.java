@@ -20,7 +20,7 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 	public Map<String,Object>session;
 
 	//検索結果格納 jspに表示
-	private ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
+	public ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
 	private ItemSearchDAO itemSearchDAO = new ItemSearchDAO();
 
@@ -29,7 +29,11 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 	public String execute() throws SQLException{
 
+
+
+
 		productList = itemSearchDAO.getItemInfo(searchWord,category);
+
 
 
 		if(productList.size() > 0){
