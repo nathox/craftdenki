@@ -3,6 +3,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -14,7 +16,7 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 
 	private String category; //jspで選択したカテゴリ1~4(String型)
-	private String searchWord; //jspで記入した検索ワード　半角英数字ひらがな漢字 1~16文字
+	private String searchWord; //jspで記入した検索ワード　半角英数字ひらがな漢字 16文字以下
 	private String searchMessage;  //～件hitしました or 検索結果がありません
 
 	public Map<String,Object>session;
@@ -34,16 +36,35 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 		productList = itemSearchDAO.getItemInfo(searchWord,category);
 
+		Pattern p = Pattern.compile("^[0-9a-zA-Z_\\p{InHiragana}\\p{InKatakana}\\p{InCjkUnifiedIdeographs}]*$"); //半角英数字、ひらがなカタカナ漢字の判定
+		Matcher m = p.matcher(searchWord);
+
+		boolean isFind = m.find(); //searchWordが半角英数字、ひらがなカタカナ漢字の場合trueを返す
+		System.out.println(isFind);
 
 
-		if(productList.size() > 0){
-			int searchItemCount = productList.size();
-			String count = Integer.toString(searchItemCount);
-			setSearchMessage(count + "件の商品が見つかりました。");
+		if(isFind){
+
+
+			if(productList.size() > 0){
+				int searchItemCount = productList.size();
+				String count = Integer.toString(searchItemCount);
+				setSearchMessage(count + "件の商品が見つかりました。");
+
+			}else{
+				setSearchMessage("検索結果がありません。");
+			}
 
 		}else{
-			setSearchMessage("検索結果がありません");
+
+			setSearchMessage("入力された文字が不正です。");
 		}
+
+
+
+
+
+
 
 		Iterator<ProductDTO> iterator = productList.iterator();
 		if(!(iterator.hasNext())){

@@ -61,7 +61,7 @@
 			<option value="3">家電・パソコン</option>
 			<option value="4">おもちゃ・げーむ</option>
 		</select>
-		<s:textfield name="searchWord"/>
+		<s:textfield name="searchWord" maxlength="16"/>
 		<s:submit value="検索"/>
 	</s:form>
 
