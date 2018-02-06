@@ -5,7 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css"/>
 <title>商品一覧画面</title>
+
+<style type="text/css">
+#productList{
+border: 1px solid #b1b1b1;
+border-collapse:collapse;
+}
+
+
+</style>
+
 </head>
 <body>
 
@@ -13,17 +24,31 @@
 
 <div class="ProductList">
 	<h1>新着商品一覧</h1>
+
+
+	<!-- 検索時のメッセージ(sano -->
+	<s:if test="searchMessage != ''">
+			<h3><s:property value="searchMessage" escape="false"/></h3>
+	</s:if>
+
+
+
 	<s:iterator value="productList">
 		<div id="productList">
-			<p>商品名:<s:property value="product_name" /></p>
-			<p>商品詳細:<s:property value="product_description" /></p>
-			<p>カテゴリー:<s:property value="category_id" /></p>
-			<p>価格:<s:property value="price" /></p>
+		<a href="<s:url action="ProductDetailsAction"></s:url>">
+			商品名:<s:property value="product_name" />
+			商品詳細:<s:property value="product_description" />
+			カテゴリー:<s:property value="category_id" />
+			価格:<s:property value="price" />
+			掲載日:<s:property value="release_date" />
+
+			<img class="image" src="<s:property value='image_file_path'/>" >
+			<input type="hidden" value="<s:property value='product_id'/>" name="product_id"/>;
+
+		</a>
 		</div>
 	</s:iterator>
-
 </div>
-
 
 
 </body>
