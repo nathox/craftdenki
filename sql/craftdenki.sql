@@ -23,7 +23,7 @@ logined tinyint,
 regist_date datetime,
 update_date datetime,
 question varchar(100),
-ansewer varchar(32)
+answer varchar(32)
 );
 
 drop table if exists product_info;
