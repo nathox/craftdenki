@@ -15,7 +15,7 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 	private String category; //jspで選択したカテゴリ1~4(String型)
 	private String searchWord; //jspで記入した検索ワード　半角英数字ひらがな漢字 1~16文字
-	private String message;  //～件hitしました or 検索結果がありません
+	private String searchMessage;  //～件hitしました or 検索結果がありません
 
 	public Map<String,Object>session;
 
@@ -39,10 +39,10 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 		if(productList.size() > 0){
 			int searchItemCount = productList.size();
 			String count = Integer.toString(searchItemCount);
-			setMessage(count + "件の商品が見つかりました。");
+			setSearchMessage(count + "件の商品が見つかりました。");
 
 		}else{
-			setMessage("検索結果がありません");
+			setSearchMessage("検索結果がありません");
 		}
 
 		Iterator<ProductDTO> iterator = productList.iterator();
@@ -84,15 +84,15 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 
 
-	public String getMessage() {
-		return message;
+	public String getSearchMessage() {
+		return searchMessage;
 	}
 
 
 
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSearchMessage(String searchMessage) {
+		this.searchMessage = searchMessage;
 	}
 
 

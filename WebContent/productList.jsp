@@ -24,6 +24,15 @@ border-collapse:collapse;
 
 <div class="ProductList">
 	<h1>新着商品一覧</h1>
+
+
+	<!-- 検索時のメッセージ(sano -->
+	<s:if test="searchMessage != ''">
+			<h3><s:property value="searchMessage" escape="false"/></h3>
+	</s:if>
+
+
+
 	<s:iterator value="productList">
 		<div id="productList">
 		<a href="<s:url action="ProductDetailsAction"></s:url>">
