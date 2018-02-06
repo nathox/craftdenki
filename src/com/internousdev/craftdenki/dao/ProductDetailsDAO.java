@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.internousdev.craftdenki.dto.ProductDTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
+
 public class ProductDetailsDAO {
 
 	private DBConnector dbConnector = new DBConnector();
