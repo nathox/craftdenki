@@ -9,12 +9,21 @@
 	<package name="com.internousdevwork.craftdenki.action" extends="struts-default">
 
 
-		<!-- 商品一覧画面 （土門） -->
+		<!-- 商品一覧画面 （土門）START -->
 		<!-- ProductListAction -->
 		<action name="ProductListAction"
 			class="com.internousdev.craftdenki.action.ProductListAction" method="execute">
 			<result name="success">productList.jsp</result>
 		</action>
+
+		<!-- 商品詳細画面 -->
+		<!-- ProductDetailsAction -->
+		<action name="ProductDetailsAction" class="com.internousdev.craftdenki.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+		</action>
+		<!-- 土門   END -->
+
+
 
 		<!-- ___________________管理者機能(岡本) _________START_________ -->
 

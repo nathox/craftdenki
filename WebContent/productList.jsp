@@ -40,10 +40,10 @@ border-collapse:collapse;
 			商品詳細:<s:property value="product_description" />
 			カテゴリー:<s:property value="category_id" />
 			価格:<s:property value="price" />
-			掲載日:<s:property value="release_date" />
+			発売日:<s:property value="release_date" />
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
-			<input type="hidden" value="<s:property value='product_id'/>" name="product_id"/>;
+			<input type="hidden" value="<s:property value='product_id'/>" name="product_id"/>
 
 		</a>
 		</div>
