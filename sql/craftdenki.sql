@@ -115,5 +115,5 @@ insert_date datetime,
 update_date datetime
 );
 
-INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("aaa","aaa",100,100);
-INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("bbb","bbb",200,200);
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("aaa","aaa",100,1,1,"aaa","2017/10/10");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("bbb","bbb",200,2,2,"bbb","2017/11/11");
