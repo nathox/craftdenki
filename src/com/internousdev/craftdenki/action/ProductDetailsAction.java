@@ -16,6 +16,7 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 	public Map<String, Object> session;
 
 	private int product_id;
+
 	public ArrayList<ProductDTO> detailsList;
 
 	private ProductDetailsDAO productDetailsDAO = new ProductDetailsDAO();
