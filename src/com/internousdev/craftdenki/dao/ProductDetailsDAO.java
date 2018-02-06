@@ -44,6 +44,8 @@ public class ProductDetailsDAO {
 				productDTO.setRegist_date(resultSet.getDate("regist_date"));
 				productDTO.setUpdate_date(resultSet.getDate("update_date"));
 				productDTO.setItem_stock(resultSet.getInt("item_stock"));
+
+				detailsList.add(productDTO);
 			}
 
 		}catch(Exception e){
