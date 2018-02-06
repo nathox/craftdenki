@@ -16,7 +16,7 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 
 	private String category; //jspで選択したカテゴリ1~4(String型)
-	private String searchWord; //jspで記入した検索ワード　半角英数字ひらがな漢字
+	private String searchWord; //jspで記入した検索ワード　半角英数字ひらがな漢字 16文字以下
 	private String searchMessage;  //～件hitしました or 検索結果がありません
 
 	public Map<String,Object>session;
