@@ -1,6 +1,7 @@
 package com.internousdev.craftdenki.action;
 
 import java.util.ArrayList;
+//import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -25,10 +26,18 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware{
 
 		list_user_info = userInfoChangeDAO.getUserInfo();
 
-		/*↑ここまでで、DAOに格納されたユーザー情報をActionクラスのList型 list_user_infoに格納*/
 
+		//Iterator<UserInfoChangeDTO> iterator = list_user_info.iterator();
 
+		////////////イテレータ関係の文脈はまだ完成していない
+		/* if(!(iterator.hasNext())){
 
+			list_user_info = null;
+		}*/
+
+		/* (2018/02/06 PM13:19 JSPのＳタグ内でイテレータが使えるから、このメソッドでは
+		 * return SUCCESS;を返すだけでいいのでは？)
+		 */
 
 		//////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,7 +47,7 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware{
 	}
 
 	@Override
-	public void setSession(Map<String, Object> arg0) {
+	public void setSession(Map<String, Object> session) {
 		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
 	}

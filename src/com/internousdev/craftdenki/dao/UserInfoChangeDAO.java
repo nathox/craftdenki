@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dto.LoginDTO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
@@ -34,8 +35,8 @@ public class UserInfoChangeDAO implements SessionAware {
 		String sql = "* FROM user_info WHERE user_id=?";
 		String sql2 = "* FROM destination_info WHERE user_id=?";
 
-		String loginId=((       )session.get("       ")).getLoginId();
-		//↑高橋さんからもらうセッションの鍵名を書く(それまではエラー吐く)
+		String loginId=((LoginDTO)session.get("loginUserInfo")).getLoginId();
+		//↑高橋さんからもらうセッションの鍵名を書く
 
 		try{
 			PreparedStatement p1 = connection.prepareStatement(sql);
@@ -77,7 +78,7 @@ public class UserInfoChangeDAO implements SessionAware {
 	}
 
 	@Override
-	public void setSession(Map<String, Object> arg0) {
+	public void setSession(Map<String, Object> session) {
 		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
 	}
