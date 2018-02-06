@@ -5,8 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.internousdev.craftdenki.util.DBConnector;
-
-import freemarker.template.utility.DateUtil;
+import com.internousdev.craftdenki.util.DateUtil;
 
 public class UserCreateCompleteDAO {
 
