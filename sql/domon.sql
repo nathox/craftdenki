@@ -26,4 +26,4 @@ item_stock int
 
 
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_data) VALUES("aaa","aaa",100,100,5,"aaa","2017/10/10");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_data) VALUES("bbb","bbb",200,200,9,"aaa","2017/11/11");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_data) VALUES("bbb","bbb",200,200,9,"bbb","2017/11/11");
