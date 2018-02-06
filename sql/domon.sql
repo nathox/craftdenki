@@ -1,8 +1,8 @@
-drop database if exists domon;
+drop database if exists craftdenki;
 
-create database if not exists domon;
+create database if not exists craftdenki;
 
-use domon;
+use craftdenki;
 
 drop table if exists product_info;
 
@@ -25,5 +25,5 @@ item_stock int
 );
 
 
-INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("aaa","aaa",100,100);
-INSERT INTO product_info(product_name,product_description,price,category_id) VALUES("bbb","bbb",200,200);
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_data) VALUES("aaa","aaa",100,100,5,"aaa","2017/10/10");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_data) VALUES("bbb","bbb",200,200,9,"aaa","2017/11/11");
