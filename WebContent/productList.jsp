@@ -34,19 +34,18 @@ border-collapse:collapse;
 
 
 	<s:iterator value="productList">
-		<div id="productList">
 		<a href="<s:url action="ProductDetailsAction"></s:url>">
-			商品名:<s:property value="product_name" />
-			商品詳細:<s:property value="product_description" />
-			カテゴリー:<s:property value="category_id" />
-			価格:<s:property value="price" />
-			発売日:<s:property value="release_date" />
+		<div id="productList">
+			<div>商品名:<s:property value="product_name" /></div>
+			<div>商品詳細:<s:property value="product_description" /></div>
+			<div>価格:<s:property value="price" /></div>
+			<div>発売日:<s:property value="release_date" /></div>
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
 			<input type="hidden" value="<s:property value='product_id'/>" name="product_id"/>
-
-		</a>
 		</div>
+		</a>
+
 	</s:iterator>
 </div>
 
