@@ -117,12 +117,7 @@
 		<result name="success">cart.jsp</result>
 	</action>
 
-	<!-- ProductListAction -->
-	<action name="ProductListAction"
-	class="com.internousdev.craftdenki.action.ProductListAction"
-	method="execute">
-		<result name="success">productList.jsp</result>
-	</action>
+
 
 	<!-- GoHelpAction -->
 	<action name="GoHelpAction"
