@@ -16,7 +16,7 @@ public class LoginDAO {
 
 	public LoginDTO loginUserInfo(String loginId, String loginPassword) {
 
-		String sql = "select*From user_info_transaction where user_id = ? and password = ?";
+		String sql = "select*From user_info where user_id = ? and password = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
