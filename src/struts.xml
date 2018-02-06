@@ -133,6 +133,16 @@
 		</action>
 
 
+
+
+		<!-- ItemSearchAction -->
+		<action name="ItemSearchAction"
+				class="com.internousdev.craftdenki.action.ItemSearchAction"
+				method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
+
+
 		<!-- Home画面から遷移(SANO) _________END_________ -->
 
 
