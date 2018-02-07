@@ -45,43 +45,47 @@ public class CheckProductInfoAction extends ActionSupport implements SessionAwar
 				result = "error1";
 			}
 
+			if (!i.newProductNameChk(newProductName).equals("OK")) {
+				errorMessageList.add(i.newProductNameChk(newProductName));
+				result = "error1";
+			}
+
 			if (!i.newProductNameKanaChk(newProductNameKana).equals("OK")) {
 				errorMessageList.add(i.newProductNameKanaChk(newProductNameKana));
 				result = "error1";
 			}
 
 			if (!i.newProductDescriptionChk(newProductDescription).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newProductDescription));
+				errorMessageList.add(i.newProductDescriptionChk(newProductDescription));
 				result = "error1";
 			}
 
 			if (!i.newCategoryIdChk(newCategoryId).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newCategoryId));
+				errorMessageList.add(i.newCategoryIdChk(newCategoryId));
 				result = "error1";
 			}
 
 			if (!i.newBuyPriceChk(newBuyPrice).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newBuyPrice));
+				errorMessageList.add(i.newBuyPriceChk(newBuyPrice));
 				result = "error1";
 			}
 
 			if (!i.newReleaseDateChk(newReleaseDate).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newReleaseDate));
+				errorMessageList.add(i.newReleaseDateChk(newReleaseDate));
 				result = "error1";
 			}
 
 			if (!i.newReleaseCompanyChk(newReleaseCompany).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newReleaseCompany));
+				errorMessageList.add(i.newReleaseCompanyChk(newReleaseCompany));
 				result = "error1";
 			}
 
 			if (!i.newProductImageChk(newProductImage).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(newProductImage));
+				errorMessageList.add(i.newProductImageChk(newProductImage));
 				result = "error1";
 			}
 
 		}
-
 		return result;
 	}
 
@@ -205,6 +209,7 @@ public class CheckProductInfoAction extends ActionSupport implements SessionAwar
 	public void setErrorMessageList(ArrayList<String> errorMessageList) {
 		this.errorMessageList = errorMessageList;
 	}
+
 
 
 	public Map<String, Object> getSession() {

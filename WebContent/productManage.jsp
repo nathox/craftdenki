@@ -104,7 +104,7 @@
 				<span>新商品ID</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="newProductId" value="" placeholder="半角数字8桁 例)12345678"/>
+					<input type="textfield" name="newProductId" value="<s:property value="newProductId"/>" placeholder="半角数字8桁 例)12345678"/>
 				</div>
 
 				<br>
@@ -112,7 +112,7 @@
 				<span>商品名</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="newProductName" value="" placeholder="例)除脂肪メソッド"/>
+					<input type="textfield" name="newProductName" value="<s:property value="newProductName"/>" placeholder="例)除脂肪メソッド"/>
 				</div>
 
 				<br>
@@ -120,14 +120,14 @@
 				<span>商品名かな</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="newProductNameKana" value="" placeholder="ひらがな 例)じょしぼうめそっど"/>
+					<input type="textfield" name="newProductNameKana" value="<s:property value="newProductNameKana"/>" placeholder="ひらがな 例)じょしぼうめそっど"/>
 				</div>
 
 				<br>
 
 				<span>商品詳細</span>
 				<div>
-					<input type="textfield" name="newProductDescription" value="" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
+					<input type="textarea" name="newProductDescription" value="<s:property value="newProductDescription"/>" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
 				</div>
 
 				<br>
@@ -135,7 +135,7 @@
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<select name="newCategoryId">
+					<select name="newCategoryId" value="<s:property value="newCategoryId"/>">
 						<option value="">選択してください</option>
 						<option value="1">本</option>
 						<option value="2">家電・パソコン</option>
@@ -148,7 +148,7 @@
 				<span>販売価格</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="newBuyPrice" value="" placeholder="半角数字 例)1300"/>
+					<input type="textfield" name="newBuyPrice" value="<s:property value="newBuyPrice"/>" placeholder="半角数字 例)1300"/>
 
 				</div>
 
@@ -156,7 +156,7 @@
 
 				<span>発売年月</span>
 				<div>
-					<input type="textfield" name="newReleaseDate" value="" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
+					<input type="textfield" name="newReleaseDate" value="<s:property value="newReleaseDate"/>" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
 
 				</div>
 
@@ -164,7 +164,7 @@
 
 				<span>発売会社</span>
 				<div>
-					<input type="textfield" name="newReleaseCompany" value="" placeholder="例)ベースボール・マガジン社"/>
+					<input type="textfield" name="newReleaseCompany" value="<s:property value="newReleaseCompany"/>" placeholder="例)ベースボール・マガジン社"/>
 
 				</div>
 
@@ -172,7 +172,7 @@
 
 				<span>画像ファイル名</span>
 				<div>
-					<input type="textfield" name="newProductImage" value="" placeholder="ファイル名.拡張し例)bazooka"/>
+					<input type="textfield" name="newProductImage" value="<s:property value="newProductImage"/>" placeholder="ファイル名.拡張子例)bazooka"/>
 
 				</div>
 

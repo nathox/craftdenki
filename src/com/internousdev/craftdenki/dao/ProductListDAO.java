@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.internousdev.craftdenki.dto.ProductDTO;
 import com.internousdev.craftdenki.util.DBConnector;
+import com.internousdev.craftdenki.util.DateUtil;
 
 public class ProductListDAO {
 
@@ -80,4 +81,52 @@ public class ProductListDAO {
 		return result;
 	}
 
+	//新商品を登録
+
+
+
+	public void productRegist(String product_id,
+							  String product_name,
+							  String product_name_kana,
+							  String product_description,
+							  Integer category_id,
+							  Integer price,
+							  String image_file_path,
+							  String release_date,
+							  String release_company) throws SQLException{
+
+		DateUtil dateUtil = new DateUtil();
+
+		String sql="INSERT INTO product_info ("
+								+ "product_id,"
+								+ "product_name,"
+								+ "product_name_kana,"
+								+ "product_description,"
+								+ "category_id,"
+								+ "price,"
+								+ "image_file_path,"
+								+ "release_date,"
+								+ "release_company,"
+								+ "regist_date) "
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?)";
+		try {
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			preparedStatement.setString(1,product_id);
+			preparedStatement.setString(2, product_name);
+			preparedStatement.setString(3,product_name_kana);
+			preparedStatement.setString(4, product_description);
+			preparedStatement.setInt(5, category_id);
+			preparedStatement.setInt(6, price);
+			preparedStatement.setString(7, image_file_path);
+			preparedStatement.setString(8, release_date);
+			preparedStatement.setString(9, release_company);
+			preparedStatement.setString(10,dateUtil.getDate());
+
+			preparedStatement.execute();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			connection.close();
+		}
+	}
 }
