@@ -12,6 +12,8 @@ public class PurchaseHistoryDTO {
 		//商品画像
 	private String image_File_Name;
 
+	private String image_File_Path;
+
 		//値段
 	private int price;
 
@@ -31,27 +33,34 @@ public class PurchaseHistoryDTO {
 
 
 		//商品名
-	public String getproductName(){
+	public String getproduct_Name(){
 		return product_Name;
 	}
-	public void setproductName(String productName){
-		this.product_Name=productName;
+	public void setproduct_Name(String product_Name){
+		this.product_Name=product_Name;
 	}
 
 		//ふりがな
-	public String getproductNameKana(){
+	public String getproduct_Name_Kana(){
 		return product_Name_Kana;
 	}
-	public void setproductNameKana(String productNameKana){
-		this.product_Name_Kana=productNameKana;
+	public void setproduct_Name_Kana(String product_Name_Kana){
+		this.product_Name_Kana=product_Name_Kana;
 	}
 
 		//商品画像
-	public String getimageFileName(){
+	public String getimage_File_Name(){
 		return image_File_Name;
 	}
-	public void setimageFileName(String image_File_Name){
+	public void setimage_File_Name(String image_File_Name){
 		this.image_File_Name=image_File_Name;
+	}
+
+	public String getimage_File_Path(){
+		return image_File_Path;
+	}
+	public void setimage_File_Path(String image_File_Path){
+		this.image_File_Path=image_File_Path;
 	}
 
 		//値段
@@ -71,19 +80,19 @@ public class PurchaseHistoryDTO {
 	}
 
 		//発売会社名
-	public String getReleaseCompany(){
+	public String getrelease_Company(){
 		return release_Company;
 	}
-	public void setReleaseCompany(String releaseCompany){
-		this.release_Company=releaseCompany;
+	public void setrelease_Company(String release_Company){
+		this.release_Company=release_Company;
 	}
 
 		//発売年月日
-	public String getReleaseDate(){
+	public String getrelease_Date(){
 		return release_Date;
 	}
-	public void setReleaseDate(String releaseDate){
-		this.release_Date=releaseDate;
+	public void setrelease_Date(String release_Date){
+		this.release_Date=release_Date;
 	}
 
 	public int getId(){

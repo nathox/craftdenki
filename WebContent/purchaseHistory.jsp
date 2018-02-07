@@ -25,14 +25,15 @@
 
 	<s:iterator value="purchaseHistoryList">
 		<div id="purchaseHistoryList">
-		<a href="<s:url action="ProductDetailsAction"></s:url>">
-			商品名:<s:property value="product_name" />
-			商品詳細:<s:property value="product_description" />
-			カテゴリー:<s:property value="category_id" />
-			価格:<s:property value="price" />
-			発売日:<s:property value="release_date" />
+		<a href="<s:url action="PurchaseHistoryAction"></s:url>">
+			商品名:<s:property value="product_Name" />
+			ふりがな:<s:property value="product_Name_Nana" />
+			値段:<s:property value="price" />
+			個数:<s:property value="count" />
+			発売会社名:<s:property value="release_Company" />
+			発売年月日:<s:property value="release_Date" />
 
-			<img class="image" src="<s:property value='image_file_path'/>" >
+			<img class="image" src="<s:property value='image_File_Path'/>" >
 			<input type="hidden" value="<s:property value='product_id'/>" name="product_id"/>
 
 		</a>
