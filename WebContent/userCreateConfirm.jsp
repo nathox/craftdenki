@@ -16,7 +16,7 @@
 <body>
 <h3>登録する内容は以下でよろしいですか。</h3>
 <s:form action="UserCreateCompleteAction">
-ログインID:<s:property value="loginUserId" escape="false" /><br>
+ログインID:<s:property value="loginUserId" /><br>
 ログインPASS:<s:property value="loginPassword"/><br>
 姓:<s:property value="familyName" /><br>
 名:<s:property value="firstName" /><br>

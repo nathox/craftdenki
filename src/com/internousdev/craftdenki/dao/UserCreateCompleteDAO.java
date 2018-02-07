@@ -18,7 +18,7 @@ public class UserCreateCompleteDAO {
 
 	private String sql2="INSERT INTO destination_info(user_id,user_address,tel_number) VALUES(?,?,?)";
 
-	public void createUser(String userid,String pass,String familyname,String firstname,String familynamekana,String firstnamekana,int sex,String email,String secretquestion,String secretanswer,String address,String tel) throws SQLException{
+	public void createUser(String userid,String pass,String familyname,String firstname,String familynamekana,String firstnamekana,int sex,String email,int secretquestion,String secretanswer,String address,String tel) throws SQLException{
 
 		try {
 			PreparedStatement preparedStatement1=connection.prepareStatement(sql1);
@@ -30,7 +30,7 @@ public class UserCreateCompleteDAO {
 			preparedStatement1.setString(6, firstnamekana);
 			preparedStatement1.setInt(7, sex);
 			preparedStatement1.setString(8, email);
-			preparedStatement1.setString(9, secretquestion);
+			preparedStatement1.setInt(9, secretquestion);
 			preparedStatement1.setString(10,secretanswer);
 			preparedStatement1.setString(11,dateUtil.getDate());
 

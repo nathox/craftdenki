@@ -43,7 +43,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 				session.get("firstNameKana").toString(),
 				Integer.parseInt((session.get("sex")).toString()),
 				session.get("mail").toString(),
-				session.get("secretQuestion").toString(),
+				Integer.parseInt((session.get("secretQuestion")).toString()),
 				session.get("secretAnswer").toString(),
 				session.get("address").toString(),
 				session.get("tel").toString()
