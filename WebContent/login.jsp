@@ -8,12 +8,46 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<s:form action="LoginAction">
-		<s:textfield name="loginId" />
-		<s:password name="loginPassword"/>
-		<s:submit value="ログイン" />
+		<table>
+
+			<tr>
+				<td><s:if test="session.unknown != ''">
+
+						<s:property value="session.unknown" />
+
+					</s:if></td>
+			</tr>
+
+
+			<tr>
+				<td><s:if test="session.IDerrormsg != ''">
+						<s:property value="session.IDerror" />
+					</s:if></td>
+			</tr>
+			<tr>
+				<td><s:textfield name="loginId" style="ime-mode:disabled;" /></td>
+			</tr>
+
+
+			<tr>
+				<td><s:if test="session.Passerrormsg != ''">
+						<s:property value="session.Passerror" />
+					</s:if></td>
+			</tr>
+			<tr>
+				<td><s:password name="loginPassword" style="ime-mode:disabled;" /></td>
+			</tr>
+
+
+			<tr>
+				<td><s:submit value="ログイン" /></td>
+			</tr>
+
+		</table>
+
 	</s:form>
 
 </body>
+
 </html>

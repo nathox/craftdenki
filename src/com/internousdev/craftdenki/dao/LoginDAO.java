@@ -1,5 +1,6 @@
 package com.internousdev.craftdenki.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ public class LoginDAO {
 
 	public LoginDTO loginUserInfo(String loginId, String loginPassword) {
 
-		String sql = "select*From user_info where user_id = ? and password = ?";
+		String sql = "select*from user_info where user_id = ? and password = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -29,6 +30,9 @@ public class LoginDAO {
 			if (rs.next()) {
 				dto.setLoginId(rs.getString("user_id"));
 				dto.setLoginPass(rs.getString("password"));
+			}else{
+				dto.setLoginId("noID");
+				dto.setLoginPass("noPASS");
 			}
 
 		} catch (SQLException e) {
