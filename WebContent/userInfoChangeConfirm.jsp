@@ -28,22 +28,26 @@
 
 	<p>ユーザーID:					<s:property value="　　　　　　　"/></p>
 	<p>パスワード：					<s:property value="session.t_password"/></p>
-	<p>姓：								<s:property value=""/></p>
-	<p>名：								<s:property value=""/></p>
-	<p>姓かな：						<s:property value=""/></p>
-	<p>名かな：						<s:property value=""/></p>
-	<p>性別：							<s:property value=""/></p>
-	<p>メールアドレス：			<s:property value=""/></p>
-	<p>秘密の質問：					<s:property value=""/></p>
-	<p>答え:								<s:property value=""/></p>
-	<p>住所：							<s:property value=""/></p>
-	<p>住所２：						<s:property value=""/></p>
-	<p>住所３：						<s:property value=""/></p>
-	<p>電話番号：						<s:property value=""/></p>
-	<p>電話番号２						<s:property value=""/></p>
-	<p>電話番号３						<s:property value=""/></p>
+	<p>姓：								<s:property value="session.t_familyName"/></p>
+	<p>名：								<s:property value="session.t_firstName"/></p>
+	<p>姓かな：						<s:property value="session.t_familyNameKana"/></p>
+	<p>名かな：						<s:property value="session.t_firstNameKana"/></p>
+	<p>性別：							<s:property value="session.t_sex"/></p>
+	<p>メールアドレス：			<s:property value="session.t_email"/></p>
+	<p>秘密の質問：					<s:property value="session.t_question"/></p>
+	<p>答え:								<s:property value="session.t_answer"/></p>
+	<p>住所：							<s:property value="session.t_userAddress"/></p>
+	<p>住所２：						<s:property value="session.t_userAddress2"/></p>
+	<p>住所３：						<s:property value="session.t_userAddress3"/></p>
+	<p>電話番号：						<s:property value="session.t_telNumber"/></p>
+	<p>電話番号２						<s:property value="session.t_telNumber2"/></p>
+	<p>電話番号３						<s:property value="session.t_telNumber3"/></p>
+
+	<p><s:submit value="変更する"/></p>
 
 	</s:form>
+
+	<p><input type="button" value="マイページ画面に戻る" onclick="submitAction('GoMyPageAction')" /></p>
 
 </body>
 </html>

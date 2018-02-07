@@ -39,10 +39,10 @@
 			<p>郵便番号(７桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress','userAddress');"></p>
 			<p>住所：					<s:textfield name="userAddress" size="60" value="userAddress"/></p>
 
-<%--！！！！！！ここに住所２のための郵便番号テキストボックスがいる！！！！！！ --%>
+			<p>郵便番号(７桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress2','userAddress2');"></p>
 			<p>住所２：				<s:textfield name="userAddress2" size="60" value="userAddress2"/></p>
 
-<%--！！！！！！ここに住所３のための郵便番号テキストボックスがいる！！！！！！ --%>
+			<p>郵便番号(７桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress3','userAddress3');"></p>
 			<p>住所３：				<s:textfield name="userAddress3" size="60" value="userAddress3"/></p>
 
 			<p>電話番号：				<s:textfield name="telNumber" value="telNumber"/></p>
