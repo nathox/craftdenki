@@ -38,16 +38,14 @@ border-collapse:collapse;
 		<s:param name="product_id" value="%{product_id}"/>
 		</s:url>">
 		<div id="productList">
+			<div>商品名かな:<s:property value="product_name_kana" /></div>
 			<div>商品名:<s:property value="product_name" /></div>
-			<div>商品詳細:<s:property value="product_description" /></div>
 			<div>価格:<s:property value="price" /></div>
-			<div>発売日:<s:property value="release_date" /></div>
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
 			<s:hidden name="product_id" value="%{product_id}"/>
 		</div>
 		</a>
-
 	</s:iterator>
 </div>
 

@@ -18,7 +18,7 @@ public class ProductListDAO {
 	public ArrayList<ProductDTO> getProductInfo() throws SQLException{
 		ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
-		String sql = "SELECT * FROM product_info ORDER BY regist_date DESC";
+		String sql = "SELECT * FROM product_info ORDER BY Product_id ASC";
 
 	try{
 		PreparedStatement statement = connection.prepareStatement(sql);
