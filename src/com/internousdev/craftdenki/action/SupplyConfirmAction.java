@@ -59,6 +59,8 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 				}
 			}
 
+			session.put("supplyList", supplyList);
+
 
 			result = SUCCESS;
 		}
