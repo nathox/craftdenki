@@ -36,19 +36,6 @@ border-collapse:collapse;
 	<s:iterator value="productList">
 		<a href="<s:url action="ProductDetailsAction">
 		<s:param name="product_id" value="%{product_id}"/>
-		<s:param name="product_name" value="%{product_name}"/>
-		<s:param name="product_name_kana" value="%{product_name_kana}"/>
-		<s:param name="product_description" value="%{product_description}"/>
-		<s:param name="category_id" value="%{category_id}"/>
-		<s:param name="price" value="%{price}"/>
-		<s:param name="image_file_path" value="%image_file_path}"/>
-		<s:param name="image_file_name" value="%{image_file_name}"/>
-		<s:param name="release_date" value="%{release_date}"/>
-		<s:param name="release_company" value="%{release_company}"/>
-		<s:param name="status" value="%{status}"/>
-		<s:param name="regist_date" value="%{regist_date}"/>
-		<s:param name="update_date" value="%{update_date}"/>
-		<s:param name="item_stock" value="%{item_stock}"/>
 		</s:url>">
 		<div id="productList">
 			<div>商品名:<s:property value="product_name" /></div>

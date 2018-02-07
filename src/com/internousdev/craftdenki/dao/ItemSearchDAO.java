@@ -49,7 +49,7 @@ public class ItemSearchDAO {
 						dto.setPrice(resultSet.getInt("price"));
 						dto.setImage_file_path(resultSet.getString("image_file_path"));
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
-						dto.setRelease_data(resultSet.getDate("release_date"));
+						dto.setRelease_date(resultSet.getDate("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
 						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
@@ -89,7 +89,7 @@ public class ItemSearchDAO {
 						dto.setPrice(resultSet.getInt("price"));
 						dto.setImage_file_path(resultSet.getString("image_file_path"));
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
-						dto.setRelease_data(resultSet.getDate("release_date"));
+						dto.setRelease_date(resultSet.getDate("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
 						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
@@ -129,7 +129,7 @@ public class ItemSearchDAO {
 						dto.setPrice(resultSet.getInt("price"));
 						dto.setImage_file_path(resultSet.getString("image_file_path"));
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
-						dto.setRelease_data(resultSet.getDate("release_date"));
+						dto.setRelease_date(resultSet.getDate("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
 						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
@@ -170,7 +170,7 @@ public class ItemSearchDAO {
 					dto.setPrice(resultSet.getInt("price"));
 					dto.setImage_file_path(resultSet.getString("image_file_path"));
 					dto.setImage_file_name(resultSet.getString("image_file_name"));
-					dto.setRelease_data(resultSet.getDate("release_date"));
+					dto.setRelease_date(resultSet.getDate("release_date"));
 					dto.setRelease_company(resultSet.getString("release_company"));
 					dto.setStatus(resultSet.getInt("status"));
 					dto.setRegist_date(resultSet.getDate("regist_date"));
