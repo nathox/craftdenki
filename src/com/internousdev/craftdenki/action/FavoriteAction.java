@@ -19,9 +19,14 @@ public class FavoriteAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;
 	private String result;
 
+	private String test = "test";
+
 	public String execute() throws SQLException {
 		if (deleteFlg == null) {
-			favoriteList = FavoriteDAO.getMyPageUserInfo(session.get("id").toString());
+			favoriteList = FavoriteDAO.getMyPageUserInfo(test);
+
+
+			System.out.println(favoriteList);
 
 		} else if (deleteFlg.equals("1")) {
 

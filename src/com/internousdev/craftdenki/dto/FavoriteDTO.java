@@ -2,42 +2,58 @@ package com.internousdev.craftdenki.dto;
 
 public class FavoriteDTO {
 
-	private String id;
-	private String userid;
-	private String productid;
-	private String registdate;
+	private String productName;
+	private String productNameKana;
+	private String imageFilePath;
+	private String imageFileName;
+	private String price;
+	private String releaseCompany;
+	private String releaseDate;
 
-	public String getId(){
-		return id;
+
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductNameKana() {
+		return productNameKana;
+	}
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
+	}
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+	}
+	public String getImageFileName() {
+		return imageFileName;
+	}
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
+	}
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 
-	public void setId(String id){
-		this.id = id;
-	}
-
-	public String getUserId(){
-		return userid;
-	}
-
-	public void setUserId(String userid) {
-		this.userid = userid;
-	}
-
-	public String getProductId(){
-		return productid;
-	}
-
-	public void setProductId(String productid){
-		this.productid = productid;
-	}
-
-	public String getRegistDate(){
-		return registdate;
-	}
-
-	public void setRegistDate(String registdate){
-		this.registdate = registdate;
-	}
 
 }
 
@@ -46,122 +62,3 @@ public class FavoriteDTO {
 
 
 
-
-
-
-
-
-
-
-
-
-//2.
-//
-//package com.internousdev.favorite.dto;
-//
-//public class FavoriteDTO {
-//
-//	private int id;
-//	private String user_id;
-//	private String product_id;
-//	private String regist_date;
-//
-//
-//	public int getId(){
-//		return id;
-//	}
-//
-//	public void setId(int id){
-//		this.id = id;
-//	}
-//
-//
-//	public String getUser_id(){
-//		return user_id;
-//	}
-//
-//	public void setUser_id(String user_id){
-//		this.user_id = user_id;
-//	}
-//
-//
-//	public String getProduct_id(){
-//		return product_id;
-//	}
-//
-//	public void setProduct_id(String product_id){
-//		this.product_id = product_id;
-//	}
-//
-//	public String getRegist_date(String regist_date){
-//		return regist_date;
-//	}
-//
-//	public void setRegist_date(String regist_date){
-//		this.regist_date = regist_date;
-//	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//1.
-
-
-//package com.internousdev.favorite.dto;
-//
-//public class FavoriteDTO {
-//
-//	private int id;
-//	private String product_id;
-//	private String product_name;
-//	private String product_name_kana;
-//	private String category_id;
-//
-//	public int getId(){
-//		return id;
-//	}
-//
-//	public void setId(int id){
-//		this.id = id;
-//	}
-//
-//
-//	public String getProduct_id(){
-//		return product_id;
-//	}
-//
-//	public void setProduct_id(String product_id){
-//		this.product_id = product_id;
-//	}
-//
-//
-//	public String getProduct_name(){
-//		return product_name;
-//	}
-//
-//	public void setProduct_name(String product_name){
-//		this.product_name = product_name;
-//	}
-//
-//	public String getProduct_name_kana(String product_name_kana){
-//		return product_name_kana;
-//	}
-//
-//	public void setCategory_id(String category_id){
-//		this.category_id = category_id;
-//	}
-//}
