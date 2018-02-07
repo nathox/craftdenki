@@ -22,7 +22,7 @@ status tinyint,
 logined tinyint,
 regist_date varchar(16),
 update_date datetime,
-question varchar(100),
+question int,
 answer varchar(32)
 );
 
