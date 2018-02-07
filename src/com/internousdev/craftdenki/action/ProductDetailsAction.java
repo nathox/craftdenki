@@ -17,6 +17,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private int product_id;
 
+	private int product_count;
+
 
 	public ArrayList<ProductDTO> detailsList;
 
@@ -53,6 +55,13 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	public Map<String, Object> getSession() {
 		return session;
+	}
+
+	public int getProduct_count(){
+		return product_count;
+	}
+	public void setProduct_count(int product_count){
+		this.product_count = product_count;
 	}
 
 	public int getProduct_id(){
