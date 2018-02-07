@@ -15,6 +15,138 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+<table border="1" cellspacing="0">
+        <thead id="hoge-head">
+            <tr>
+                <td></td>
+                <td>商品名</td>
+                <td>ふりがな</td>
+                <td>画像</td>
+                <td>画像名</td>
+                <td>値段</td>
+                <td>会社</td>
+                <td>販売月</td>
+            </tr>
+        </thead>
+        <tbody id="hoge-body">
+
+        <s:iterator value=favoriteList>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </s:iterator>
+
+
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>5</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>7</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<table border="1" cellspacing="0">
 <tr>
 <td>商品名</td><td>ふりがな</td><td>画像</td><td>画像名</td><td>値段</td><td>会社</td><td>発売月</td>
@@ -105,7 +237,7 @@
 
 
 			<INPUT TYPE="button" VALUE="商品一覧へ戻る"
-				onClick="http://localhost:8080/craftdenki/ProductListAction.action'"> <INPUT
+				onClick="http://localhost:8080/craftdenki/ProductListAction.action"> <INPUT
 				TYPE="button" VALUE="マイページ"
 				onClick="location.href='https://www.yahoo.co.jp/'"> <INPUT
 				TYPE="button" VALUE="削除" onClick="location.href=''">
