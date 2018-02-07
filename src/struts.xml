@@ -185,6 +185,12 @@
 		<!-- ___________________ユーザー情報変更機能(雑賀) _________END_________ -->
 
 
+	<!-- ___________________お気に入り(金田) _________END_________ -->
+	<!-- FavoriteAction -->
+
+		<action name="FavoriteAction" class="com.internousdev.craftdenki.action.FavoriteAction" method="execute">
+			<result name="success">favorite.jsp</result>
+		</action>
 
 
 
