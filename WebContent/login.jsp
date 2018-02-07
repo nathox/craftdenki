@@ -47,6 +47,7 @@
 		</table>
 
 	</s:form>
+	<a href='<s:url value="UserCreateAction"/>'>新規登録はこちら</a>
 
 	<a href='<s:url value="PassAction"/>'>パスワードを忘れてしまった方はこちら</a>
 
