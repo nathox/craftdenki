@@ -120,3 +120,28 @@ INSERT INTO product_info(product_name,product_description,price,category_id,prod
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黄いろい掃除機","黄色の掃除機です。",200,3,3,"きいろいそうじき","2017/11/12");
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黒い本","黒色の本です。",200,2,4,"くろいほん","2017/11/13");
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤い掃除機","赤色の掃除機です。",200,3,5,"あかいそうじき","2017/11/14");
+
+
+
+INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
+("test","123","塩な","大輝","えんな","だいき",0,"test@test",1,1,"2018/01/20","2018/01/20","すきなたべもの","あいす"),
+("test1","1234","高橋","yuuri","たかはし","ゆうり",0,"tes1t@test",1,1,"2018/01/20","2018/01/20","すきなかれー","かれー");
+
+
+
+INSERT INTO product_info VALUES(28,28, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1", "2016/01/01", "fuji", 1, "2018/01/09", "2018/01/09",100);
+INSERT INTO product_info VALUES(29,29, "こころ", "こころ", "夏目漱石の代表的な本です。", 4, 500, "./img/kokoro.jpg", "kokoro", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
+INSERT INTO product_info VALUES(30,30, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",50);
+INSERT INTO product_info VALUES(31, 31, "舞姫", "まいひめ", "舞姫：森鴎外著", 3, 1000, "./img/maihime.jpg", "maihime", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",70);
+INSERT INTO product_info VALUES(32, 32, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",10);
+
+
+
+INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price)VALUES
+("test",28,2,10000,"2018/01/20","2018/01/20",10000);
+
+
+
+
+
+

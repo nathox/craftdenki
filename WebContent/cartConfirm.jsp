@@ -21,13 +21,11 @@
 	</div>
 	<div id="main">
 		<div id="top">
-		<p>Cart</p>
+		<p>CartConfirm</p>
 		</div>
 
 	<div>
-		<s:form action="CartAction">
-			<s:submit value="カートを表示"/>
-		</s:form>
+		<p>カート情報表示成功</p>
 	</div>
 
 	</div>

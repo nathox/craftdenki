@@ -156,6 +156,28 @@
 
 
 
+		<!-- ___________________ユーザー情報変更機能(雑賀) _________START_________ -->
+
+		<!-- UserInfoChangeAction -->
+		<action name="UserInfoChangeAction" class="com.internousdev.craftdenki.action.UserInfoChangeAction" method="execute">
+			<result name="success">userInfoChange.jsp</result>
+		</action>
+
+		<!-- UserInfoChangeConfirmAction -->
+		<action name="UserInfoChangeConfirmAction" class="com.internousdev.craftdenki.action.UserInfoChangeConfirmAction" method="execute">
+			<result name="success">userInfoChangeConfirm.jsp</result>
+		</action>
+
+		<!-- UserInfoChangeCompleteAction -->
+		<action name="UserInfoChangeCompleteAction" class="com.internousdev.craftdenki.action.UserInfoChangeCompleteAction" method="execute">
+			<result name="success">userInfoChangeComplete.jsp</result>
+		</action>
+
+		<!-- ___________________ユーザー情報変更機能(雑賀) _________END_________ -->
+
+
+
+
 
 	</package>
 
