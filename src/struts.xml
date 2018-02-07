@@ -18,10 +18,12 @@
 
 		<!-- 商品詳細画面 -->
 		<!-- ProductDetailsAction -->
-		<action name="ProductDetailsAction" class="com.internousdev.craftdenki.action.ProductDetailsAction" method="execute">
+		<action name="ProductDetailsAction"
+			class="com.internousdev.craftdenki.action.ProductDetailsAction"
+			method="execute">
 			<result name="success">productDetails.jsp</result>
 		</action>
-		<!-- 土門   END -->
+		<!-- 土門 END -->
 
 
 
@@ -101,12 +103,19 @@
 
 		<!-- ___________________管理者機能(高橋) _________START_________ -->
 
-		<action name="LoginAction" class="com.internousdev.craftdenki.action.LoginAction" method="execute">
+		<action name="LoginAction" class="com.internousdev.craftdenki.action.LoginAction"
+			method="execute">
 			<result name="error">login.jsp</result>
 			<result name="master">managerHome.jsp</result>
 			<result name="cart">cart.jsp</result>
 			<result name="myPage">myPage.jsp</result>
 		</action>
+
+		<action name="PassAction" class="com.internousdev.craftdenki.action.PassAction"
+			method="execute">
+			<result name="success">changePassword.jsp</result>
+		</action>
+
 		<!-- ___________________管理者機能(高橋) _________END_________ -->
 
 
@@ -145,19 +154,17 @@
 
 
 		<!-- StartAction(仮ID発行のため) -->
-		<action name="StartAction"
-				class="com.internousdev.craftdenki.action.StartAction"
-				method="execute">
-		<result name="success">home.jsp</result>
+		<action name="StartAction" class="com.internousdev.craftdenki.action.StartAction"
+			method="execute">
+			<result name="success">home.jsp</result>
 		</action>
 
 
 
 		<!-- ItemSearchAction -->
 		<action name="ItemSearchAction"
-				class="com.internousdev.craftdenki.action.ItemSearchAction"
-				method="execute">
-		<result name="success">productList.jsp</result>
+			class="com.internousdev.craftdenki.action.ItemSearchAction" method="execute">
+			<result name="success">productList.jsp</result>
 		</action>
 
 
@@ -166,37 +173,44 @@
 
 		<!-- 購入履歴画面（岡田） -->
 		<action name="PurchaseHistoryAction"
-				 class="com.internousdev.craftdenki.action.PurchaseHistoryAction"
-				 method="execute">
+			class="com.internousdev.craftdenki.action.PurchaseHistoryAction"
+			method="execute">
 			<result name="success">purchaseHistory.jsp</result>
-				 </action>
+		</action>
 
 
 
 		<!-- ___________________ユーザー情報変更機能(雑賀) _________START_________ -->
 
 		<!-- UserInfoChangeAction -->
-		<action name="UserInfoChangeAction" class="com.internousdev.craftdenki.action.UserInfoChangeAction" method="execute">
+		<action name="UserInfoChangeAction"
+			class="com.internousdev.craftdenki.action.UserInfoChangeAction"
+			method="execute">
 			<result name="success">userInfoChange.jsp</result>
 		</action>
 
 		<!-- UserInfoChangeConfirmAction -->
-		<action name="UserInfoChangeConfirmAction" class="com.internousdev.craftdenki.action.UserInfoChangeConfirmAction" method="execute">
+		<action name="UserInfoChangeConfirmAction"
+			class="com.internousdev.craftdenki.action.UserInfoChangeConfirmAction"
+			method="execute">
 			<result name="success">userInfoChangeConfirm.jsp</result>
 		</action>
 
 		<!-- UserInfoChangeCompleteAction -->
-		<action name="UserInfoChangeCompleteAction" class="com.internousdev.craftdenki.action.UserInfoChangeCompleteAction" method="execute">
+		<action name="UserInfoChangeCompleteAction"
+			class="com.internousdev.craftdenki.action.UserInfoChangeCompleteAction"
+			method="execute">
 			<result name="success">userInfoChangeComplete.jsp</result>
 		</action>
 
 		<!-- ___________________ユーザー情報変更機能(雑賀) _________END_________ -->
 
 
-	<!-- ___________________お気に入り(金田) _________END_________ -->
-	<!-- FavoriteAction -->
+		<!-- ___________________お気に入り(金田) _________END_________ -->
+		<!-- FavoriteAction -->
 
-		<action name="FavoriteAction" class="com.internousdev.craftdenki.action.FavoriteAction" method="execute">
+		<action name="FavoriteAction"
+			class="com.internousdev.craftdenki.action.FavoriteAction" method="execute">
 			<result name="success">favorite.jsp</result>
 		</action>
 
@@ -205,7 +219,16 @@
 
 
 
-			<!-- ___________________パスワード再設定(影山) _________END_________ -->
+		<!-- ___________________パスワード再設定(影山) _________END_________ -->
+
+
+
+		<!-- ___________________カート機能(塩治) _________START_________ -->
+		<!-- CartAction -->
+		<action name="CartAction" class="com.internousdev.craftdenki.action.CartAction" method="execute">
+			<result name="success">cartConfirm.jsp</result>
+		</action>
+		<!-- ___________________カート機能(塩治) _________END_________ -->
 
 	</package>
 
