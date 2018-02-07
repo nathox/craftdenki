@@ -100,7 +100,7 @@
 					</s:div>
 				</s:iterator>
 			</div>
-			<s:form action="ProductRegistCompleteAction">
+			<s:form action="CheckProductInfoAction">
 				<span>新商品ID</span>
 				<span>必須</span>
 				<div>
@@ -135,7 +135,7 @@
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<select name="newCategoryId" required>
+					<select name="newCategoryId">
 						<option value="">選択してください</option>
 						<option value="1">本</option>
 						<option value="2">家電・パソコン</option>

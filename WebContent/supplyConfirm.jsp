@@ -93,9 +93,9 @@
 					<p>以上でよろしいですか？</p>
 					<s:submit value="はい"/>
 				</s:form>
-				<s:form action="ProductManageAction">
-					<s:submit value="いいえ" />
-				</s:form>
+					<s:form action="ProductManageAction">
+						<s:submit value="いいえ" />
+					</s:form>
 			</s:else>
 		</div>
 	</div>

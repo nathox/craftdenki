@@ -48,12 +48,12 @@ public class InputChecker {
 	}
 
 	//商品詳細
-	public String newProductDiscriptionChk(String newProductDiscription) {
+	public String newProductDescriptionChk(String newProductDescription) {
 		String result = "OK";
 
-		if (newProductDiscription.length() > 255) {
+		if (newProductDescription.length() > 255) {
 			result = "商品詳細は255文字以下で入力してください。";
-		} else if (!newProductDiscription.matches("[a-zA-Zぁ-ゞ一-龠々ァ-ヶ]")) {
+		} else if (!newProductDescription.matches("[a-zA-Zぁ-ゞ一-龠々ァ-ヶ]")) {
 				result = "商品詳細は半角英語、漢字、ひらがな、カタカナで入力してください。";
 		}
 
@@ -61,10 +61,10 @@ public class InputChecker {
 	}
 
 	//カテゴリID
-	public String newProductCategoryIdChk(String newProductCategoryId) {
+	public String newCategoryIdChk(String newCategoryId) {
 		String result = "OK";
 
-		if (newProductCategoryId.equals("")) {
+		if (newCategoryId.equals("")) {
 			result = "カテゴリIDを選択してください。";
 		}
 
