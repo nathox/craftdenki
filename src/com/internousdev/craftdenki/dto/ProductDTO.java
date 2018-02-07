@@ -16,7 +16,7 @@ public class ProductDTO {
 	private int price;
 	private String image_file_path;
 	private String image_file_name;
-	private Date release_data;
+	private Date release_date;
 	private String release_company;
 	private int status;
 	private Date regist_date;
@@ -87,11 +87,11 @@ public class ProductDTO {
 		this.image_file_name = image_file_name;
 	}
 
-	public Date getRelease_data(){
-		return release_data;
+	public Date getRelease_date(){
+		return release_date;
 	}
-	public void setRelease_data(Date release_data){
-		this.release_data = release_data;
+	public void setRelease_date(Date release_date){
+		this.release_date = release_date;
 	}
 
 	public String getRelease_company(){
