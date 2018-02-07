@@ -43,8 +43,6 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		this.session = session;
 	}
 
-
-
 	public ArrayList<ProductDTO> getDetailsList() {
 		return detailsList;
 	}
