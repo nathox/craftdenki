@@ -38,6 +38,8 @@ public class UserInfoChangeDAO implements SessionAware {
 		String loginId=((LoginDTO)session.get("loginUserInfo")).getLoginId();
 		//↑高橋さんからもらうセッションの鍵名を書く
 
+		System.out.println(loginId);
+
 		try{
 			PreparedStatement p1 = connection.prepareStatement(sql);
 			p1.setString(1,loginId);
