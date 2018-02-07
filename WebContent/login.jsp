@@ -48,6 +48,7 @@
 
 	</s:form>
 
-</body>
+	<a href='<s:url value="PassAction"/>'>パスワードを忘れてしまった方はこちら</a>
 
+</body>
 </html>
