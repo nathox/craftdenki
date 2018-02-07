@@ -31,8 +31,8 @@ drop table if exists product_info;
 create table product_info(
 id int not null primary key auto_increment,
 product_id int unique,
-product_name varchar(100) unique,
-product_name_kana varchar(100) unique,
+product_name varchar(100),
+product_name_kana varchar(100),
 product_description varchar(255),
 category_id int,
 price int,
@@ -43,14 +43,14 @@ release_company varchar(50),
 status tinyint,
 regist_date datetime,
 update_date datetime,
-item_stock int
+item_stock int DEFAULT 0
 );
 
 drop table if exists cart_info;
 
 create table cart_info(
 id int not null primary key auto_increment,
-user_id varchar(16) unique,
+user_id varchar(16),
 product_id int,
 product_count int,
 price int,
@@ -63,7 +63,7 @@ drop table if exists favorite_info;
 
 create table favorite_info(
 id int not null primary key auto_increment,
-user_id varchar(16) unique,
+user_id varchar(16),
 product_id int,
 regist_date datetime
 );
@@ -72,16 +72,16 @@ drop table if exists review_info;
 
 create table review_info(
 id int not null primary key auto_increment,
-user_id varchar(16) unique,
+user_id varchar(16),
 product_id int,
 buy_item_date datetime,
 review_id varchar(255),
 evaluation_count int
 );
 
-drop table if exists purchese_info;
+drop table if exists purchase_history_info;
 
-create table purchese_info(
+create table purchase_history_info(
 id int not null primary key auto_increment,
 user_id varchar(16) unique,
 product_id int,
@@ -104,9 +104,9 @@ tel_number2 varchar(13),
 tel_number3 varchar(13)
 );
 
-drop table if exists m_caegory;
+drop table if exists m_category;
 
-create table m_caegory(
+create table m_category(
 id int not null primary key auto_increment,
 category_id int unique,
 category_name varchar(20) unique,
@@ -124,22 +124,52 @@ INSERT INTO product_info(product_name,product_description,price,category_id,prod
 
 
 INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
-("test","123","塩な","大輝","えんな","だいき",0,"test@test",1,1,"2018/01/20","2018/01/20","すきなたべもの","あいす"),
+("test","123","塩治","大輝","えんな","だいき",0,"test@test",1,1,"2018/01/20","2018/01/20","すきなたべもの","あいす"),
 ("test1","1234","高橋","yuuri","たかはし","ゆうり",0,"tes1t@test",1,1,"2018/01/20","2018/01/20","すきなかれー","かれー");
 
 
 
-INSERT INTO product_info VALUES(28,28, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1", "2016/01/01", "fuji", 1, "2018/01/09", "2018/01/09",100);
-INSERT INTO product_info VALUES(29,29, "こころ", "こころ", "夏目漱石の代表的な本です。", 4, 500, "./img/kokoro.jpg", "kokoro", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
-INSERT INTO product_info VALUES(30,30, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",50);
-INSERT INTO product_info VALUES(31, 31, "舞姫", "まいひめ", "舞姫：森鴎外著", 3, 1000, "./img/maihime.jpg", "maihime", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",70);
-INSERT INTO product_info VALUES(32, 32, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",10);
+INSERT INTO product_info VALUES(28,10000028, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1", "2016/01/01", "fuji", 1, "2018/01/09", "2018/01/09",100);
+INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 4, 500, "./img/kokoro.jpg", "kokoro", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
+INSERT INTO product_info VALUES(30,10000030, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",50);
+INSERT INTO product_info VALUES(31,10000031, "舞姫", "まいひめ", "舞姫：森鴎外著", 3, 1000, "./img/maihime.jpg", "maihime", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",70);
+INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",10);
 
 
 
 INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price)VALUES
 ("test",28,2,10000,"2018/01/20","2018/01/20",10000);
 
+
+INSERT INTO purchase_history_info VALUES(1,"test",28,1,5000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(2,"test1",29,2,1000,"2016/01/01","2016/01/01");
+
+
+
+
+INSERT INTO destination_info(user_id,user_address,user_address2,tel_number,tel_number2)
+VALUES("test","東京都八王子市","東京都町田市","090-0000-0000","046-000-0000"),
+("test1","千葉県佐倉市","山梨県甲府中央","080-0000-0000","080-1111-1111");
+
+
+
+
+
+
+INSERT INTO m_category VALUES(1,2,"本","本です","2016/01/01","2016/01/01");
+INSERT INTO m_category VALUES(2,3,"家電・パソコン","家電・パソコンです","2016/01/01","2016/01/01");
+INSERT INTO m_category VALUES(3,4,"おもちゃ・げーむ","おもちゃ・げーむです","2016/01/01","2016/01/01");
+
+
+
+
+INSERT INTO favorite_info VALUES(1,"test",28,"2016/01/01");
+INSERT INTO favorite_info VALUES(2,"test1",29,"2016/01/01");
+
+
+INSERT INTO review_info VALUES(1,"test",28,"2016/01/01","いいキーボードです",3);
+INSERT INTO review_info VALUES(2,"test",29,"2016/01/01","いい本です",1);
+INSERT INTO review_info VALUES(3,"test1",28,"2016/01/01","いいキーボードだった",5);
 
 
 
