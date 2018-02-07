@@ -8,32 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<s:form action="LoginAction">
+	<s:form action="ParchaseHistoryAction">
 		<table>
 			<tr>
-				<td><s:property = "session.ItemName"/></td>
-			</tr>
-			<tr>
-				<td><sproperty= "session."> <s:property
-						value="session.IDerror" /> </s:if></td>
-			</tr>
-			<tr>
-				<td><s:textfield name="loginId" style="ime-mode:disabled;" /></td>
+				<td><s:property value="session.historyItemName" name="historyItemName"/></td>
 			</tr>
 
-
 			<tr>
-				<td><s:if test="session.Passerrormsg != ''">
-						<s:property value="session.Passerror" />
-					</s:if></td>
-			</tr>
-			<tr>
-				<td><s:password name="loginPassword" style="ime-mode:disabled;" /></td>
+				<td><s:textarea name="review"></s:textarea></td>
 			</tr>
 
-
 			<tr>
-				<td><s:submit value="ログイン" /></td>
+				<td><s:submit value="レビュー" /></td>
 			</tr>
 
 		</table>
