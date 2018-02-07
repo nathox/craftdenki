@@ -103,7 +103,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
 
-							result = "mypage";
+							result = "myPage";
 							return result;
 						}
 

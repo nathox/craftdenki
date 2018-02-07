@@ -105,7 +105,7 @@
 			<result name="error">login.jsp</result>
 			<result name="master">managerHome.jsp</result>
 			<result name="cart">cart.jsp</result>
-			<result name="mypage">mypage.jsp</result>
+			<result name="myPage">myPage.jsp</result>
 		</action>
 		<!-- ___________________管理者機能(高橋) _________END_________ -->
 
