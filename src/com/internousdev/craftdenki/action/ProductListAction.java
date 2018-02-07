@@ -44,5 +44,23 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session){
 		this.session = session;
 	}
+	public Map<String, Object> getSession(){
+		return session;
+	}
+
+
+	public ProductListDAO getProductListDAO(){
+		return productListDAO;
+	}
+	public void setProductListDAO(ProductListDAO productListDAO){
+		this.productListDAO = productListDAO;
+	}
+
+	public ArrayList<ProductDTO> getProductList(){
+		return productList;
+	}
+	public void setProductList(ArrayList<ProductDTO> productList){
+		this.productList = productList;
+	}
 
 }
