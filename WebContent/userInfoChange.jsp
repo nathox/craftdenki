@@ -25,7 +25,7 @@
 	<h3>ユーザー情報変更ページ</h3>
 	<s:form action="UserInfoChangeConfirmAction">
 		<s:iterator value="list_user_info">
-			<p>ユーザーID：			<s:property value="useId"/></p>
+			<p>ユーザーID：			<s:property value="userId"/></p>
 			<p>パスワード：			<s:password name="password" value="password"/></p>
 			<p>姓：						<s:textfield name="familyName" value="familyName"/></p>
 			<p>名：						<s:textfield name="firstName" value="firstName"/></p>

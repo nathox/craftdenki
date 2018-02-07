@@ -11,6 +11,7 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 	/*
 	 * 	↓「ユーザー情報変更画面から送られた入力情報を格納するフィールド」
 	 */
+	private String userId;
 	private String password;
 	private String familyName;
 	private String firstName;
@@ -68,7 +69,8 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 		session.put("t_telNumber3", "telNumber3");
 		//
 
-
+		//UserInfoChangeCompleteDAOで行指定するためのセッション
+		session.put("t_userId", "userId");
 
 		return result;
 	}
@@ -80,6 +82,14 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 	public void setSession(Map<String, Object> session) {
 		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {

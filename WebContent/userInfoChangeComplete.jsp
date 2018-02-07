@@ -21,7 +21,7 @@
 </head>
 <body>
 
-
+	<h3>ユーザー情報を変更しました。マイページ画面に戻ります。</h3>
 
 	<p><input type="button" value="完了" onclick="submitAction('GoMyPageAction')" /></p>
 

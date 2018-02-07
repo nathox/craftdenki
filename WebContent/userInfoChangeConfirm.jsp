@@ -26,7 +26,7 @@
 
 	<s:form action="UserInfoChangeCompleteAction">
 
-	<p>ユーザーID:					<s:property value="　　　　　　　"/></p>
+	<p>ユーザーID:					<s:property value="session.t_userId"/></p>
 	<p>パスワード：					<s:property value="session.t_password"/></p>
 	<p>姓：								<s:property value="session.t_familyName"/></p>
 	<p>名：								<s:property value="session.t_firstName"/></p>
