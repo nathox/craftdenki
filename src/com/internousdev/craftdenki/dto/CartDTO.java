@@ -2,24 +2,21 @@ package com.internousdev.craftdenki.dto;
 
 public class CartDTO {
 
-
-	private int productId;
 	private String productName;
 	private String productNameKana;
-	private String imageFile;
+	private String imageFilePath;
 	private int price;
 	private int productCount;
-	private String releaseCompany;
-	//発売年月日が未記入
-	private int total_count;
+	private String ReleaseCompany;
+	private String ReleaseDate;
+	private int totalPrice;
 
 
-
-	public int getProductId() {
-		return productId;
+	public int getTotalPrice() {
+		return totalPrice;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 	public String getProductName() {
 		return productName;
@@ -33,11 +30,11 @@ public class CartDTO {
 	public void setProductNameKana(String productNameKana) {
 		this.productNameKana = productNameKana;
 	}
-	public String getImageFile() {
-		return imageFile;
+	public String getImageFilePath() {
+		return imageFilePath;
 	}
-	public void setImageFile(String imageFile) {
-		this.imageFile = imageFile;
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
 	}
 	public int getPrice() {
 		return price;
@@ -52,18 +49,18 @@ public class CartDTO {
 		this.productCount = productCount;
 	}
 	public String getReleaseCompany() {
-		return releaseCompany;
+		return ReleaseCompany;
 	}
 	public void setReleaseCompany(String releaseCompany) {
-		this.releaseCompany = releaseCompany;
+		ReleaseCompany = releaseCompany;
 	}
-	public int getTotal_count() {
-		return total_count;
+	public String getReleaseDate() {
+		return ReleaseDate;
 	}
-	public void setTotal_count(int total_count) {
-		this.total_count = total_count;
+	public void setReleaseDate(String releaseDate) {
+		ReleaseDate = releaseDate;
 	}
-
 
 
 }
+
