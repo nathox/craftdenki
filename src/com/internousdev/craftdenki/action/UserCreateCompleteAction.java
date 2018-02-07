@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware{
@@ -43,7 +44,9 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 				Integer.parseInt((session.get("sex")).toString()),
 				session.get("mail").toString(),
 				session.get("secretQuestion").toString(),
-				session.get("secretAnswer").toString()
+				session.get("secretAnswer").toString(),
+				session.get("address").toString(),
+				session.get("tel").toString()
 				);
 
 		result=SUCCESS;

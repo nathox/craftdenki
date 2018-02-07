@@ -18,7 +18,7 @@ public class ProductListDAO {
 	public ArrayList<ProductDTO> getProductInfo() throws SQLException{
 		ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
-		String sql = "SELECT * FROM product_info ORDER BY regist_date DESC";
+		String sql = "SELECT * FROM product_info ORDER BY Product_id ASC";
 
 	try{
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -37,7 +37,7 @@ public class ProductListDAO {
 			dto.setPrice(resultSet.getInt("price"));
 			dto.setImage_file_path(resultSet.getString("image_file_path"));
 			dto.setImage_file_name(resultSet.getString("image_file_name"));
-			dto.setRelease_data(resultSet.getDate("release_date"));
+			dto.setRelease_date(resultSet.getDate("release_date"));
 			dto.setRelease_company(resultSet.getString("release_company"));
 			dto.setStatus(resultSet.getInt("status"));
 			dto.setRegist_date(resultSet.getDate("regist_date"));
@@ -52,6 +52,32 @@ public class ProductListDAO {
 		connection.close();
 	}
 		return productList;
+	}
+
+	//商品IDが既に存在しているかチェック
+	public boolean existsProductId(String productId) throws SQLException {
+		boolean result = false;
+
+		String sql = "SELECT * FROM product_info WHERE product_id = ?";
+
+		try {
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, productId);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				result = true;
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			connection.close();
+
+		}
+		return result;
 	}
 
 }

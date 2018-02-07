@@ -9,7 +9,7 @@
 <title>商品詳細画面</title>
 
 <style type="text/css">
-#productList{
+#detailseList{
 border: 1px solid #b1b1b1;
 border-collapse:collapse;
 }
@@ -26,14 +26,13 @@ border-collapse:collapse;
 	<h1>商品詳細</h1>
 	<s:iterator value="detailsList">
 		<div id="detailsList">
-			商品名かな:<s:property value="product_name_kana" />
-			商品名:<s:property value="product_name" />
-			商品詳細:<s:property value="product_description" />
-			カテゴリー:<s:property value="category_id" />
-			価格:<s:property value="price" />
-			発売日:<s:property value="release_date" />
-			販売会社:<s:property value="release_company" />
-			在庫:<s:property value="item_stock" />
+			<div>商品名かな:<s:property value="product_name_kana" /></div>
+			<div>商品名:<s:property value="product_name" /></div>
+			<div>商品詳細:<s:property value="product_description" /></div>
+			<div>価格:<s:property value="price" /></div>
+			<div>発売日:<s:property value="release_date" /></div>
+			<div>販売会社:<s:property value="release_company" /></div>
+			<div>在庫:<s:property value="item_stock" /></div>
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
 

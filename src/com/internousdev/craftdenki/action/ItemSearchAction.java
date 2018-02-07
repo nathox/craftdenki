@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ItemSearchDAO;
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.util.ZenkakuKatakanaToZenkakuHiragana;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemSearchAction extends ActionSupport implements SessionAware{
@@ -26,6 +27,8 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 	private ItemSearchDAO itemSearchDAO = new ItemSearchDAO();
 
+	private ZenkakuKatakanaToZenkakuHiragana zenkakuKatakanaToZenkakuHiragana = new ZenkakuKatakanaToZenkakuHiragana();
+
 
 
 
@@ -36,11 +39,21 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 		productList = itemSearchDAO.getItemInfo(searchWord,category);
 
-		Pattern p = Pattern.compile("^[0-9a-zA-Z_\\p{InHiragana}\\p{InKatakana}\\p{InCjkUnifiedIdeographs}]*$"); //半角英数字、ひらがなカタカナ漢字の判定
+
+
+		if(searchWord.matches("^[\\u30A0-\\u30FF]+$")){
+			searchWord = zenkakuKatakanaToZenkakuHiragana.zenkakuHiraganaToZenkakuKatakana(searchWord);
+			System.out.println(searchWord + "カタカナ→ひらがな");
+		}
+
+
+
+
+		Pattern p = Pattern.compile("^[0-9a-zA-Z_\\p{InHiragana}\\p{InCjkUnifiedIdeographs}]*$"); //半角英数字、ひらがな漢字の判定
 		Matcher m = p.matcher(searchWord);
 
-		boolean isFind = m.find(); //searchWordが半角英数字、ひらがなカタカナ漢字の場合trueを返す
-		System.out.println(isFind);
+		boolean isFind = m.find(); //searchWordが半角英数字、ひらがな漢字の場合trueを返す   カタカナ\\p{InKatakana}
+
 
 
 		if(isFind){

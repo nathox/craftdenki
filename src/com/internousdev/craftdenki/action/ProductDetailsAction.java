@@ -17,6 +17,7 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private int product_id;
 
+
 	public ArrayList<ProductDTO> detailsList;
 
 	private ProductDetailsDAO productDetailsDAO = new ProductDetailsDAO();
@@ -42,11 +43,26 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		this.session = session;
 	}
 
+	public ArrayList<ProductDTO> getDetailsList() {
+		return detailsList;
+	}
+
+	public void setDetailsList(ArrayList<ProductDTO> detailsList) {
+		this.detailsList = detailsList;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
 	public int getProduct_id(){
 		return product_id;
 	}
 	public void setProduct_id(int product_id){
 		this.product_id = product_id;
 	}
+
+
+
 
 }

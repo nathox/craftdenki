@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.internousdev.craftdenki.dto.ProductDTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
+
 public class ProductDetailsDAO {
 
 	private DBConnector dbConnector = new DBConnector();
@@ -18,7 +19,7 @@ public class ProductDetailsDAO {
 	public ArrayList<ProductDTO> getProductDetailsInfo(int product_id) throws SQLException{
 
 		ArrayList<ProductDTO> detailsList = new ArrayList<ProductDTO>();
-		String sql = "SELECT * FROM product_info where product_id";
+		String sql = "SELECT * FROM product_info where product_id=?";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -38,7 +39,7 @@ public class ProductDetailsDAO {
 				productDTO.setPrice(resultSet.getInt("price"));
 				productDTO.setImage_file_path(resultSet.getString("image_file_path"));
 				productDTO.setImage_file_name(resultSet.getString("image_file_name"));
-				productDTO.setRelease_data(resultSet.getDate("release_date"));
+				productDTO.setRelease_date(resultSet.getDate("release_date"));
 				productDTO.setRelease_company(resultSet.getString("release_company"));
 				productDTO.setStatus(resultSet.getInt("status"));
 				productDTO.setRegist_date(resultSet.getDate("regist_date"));
@@ -51,6 +52,7 @@ public class ProductDetailsDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		System.out.println("詳細情報の件数 : "+ detailsList.size());
 		return detailsList;
 	}
 

@@ -66,6 +66,37 @@
 			<p>仕入確認画面</p>
 		</div>
 		<div>
+			<s:if test="supplyList.size() == 0">
+				仕入情報がありません。
+			</s:if>
+			<s:else>
+				<s:form action="SupplyCompleteAction">
+					<table border="1">
+						<tr>
+							<th>ID</th>
+							<th>商品名</th>
+							<th>販売価格</th>
+							<th>在庫数</th>
+							<th>仕入数</th>
+						</tr>
+						<s:iterator value="supplyList">
+							<tr>
+								<td><s:property value="product_id"/></td>
+								<td><s:property value="product_name"/></td>
+								<td><s:property value="price"/></td>
+								<td><s:property value="item_stock"/></td>
+								<td><s:property value="supply_count"/></td>
+							</tr>
+						</s:iterator>
+					</table>
+
+					<p>以上でよろしいですか？</p>
+					<s:submit value="はい"/>
+				</s:form>
+					<s:form action="ProductManageAction">
+						<s:submit value="いいえ" />
+					</s:form>
+			</s:else>
 		</div>
 	</div>
 	<div id="footer">

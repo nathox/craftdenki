@@ -81,82 +81,102 @@
 						<th>仕入入力欄</th>
 					</tr>
 					<s:iterator value="productList">
-						<td><s:property value="product_id"/></td>
-						<td><s:property value="product_name"/></td>
-						<td><s:property value="price"/></td>
-						<td><s:property value="item_stock"/></td>
-<!-- 不明 -->
-						<td><s:textfield name="supplycount"/></td>
+						<tr>
+							<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
+							<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
+							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
+							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
+							<td><s:textfield name="supplycount" value="0"/></td>
+						</tr>
 					</s:iterator>
 				</table>
 				<s:submit value="仕入"/>
 			</s:form>
 			<h3>新商品登録</h3>
-			<s:form action="ProductRegistCompleteAction">
-				<tr>
-					<td>
-						<label>新商品ID:</label>
-					</td>
-					<td>
-						<input type="text" name="newProductId" value="" /><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>商品名:</label>
-					</td>
-					<td>
-						<input type="text" name="newProductName" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>商品名かな:</label>
-					</td>
-					<td>
-						<input type="text" name="newProductNameKana" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>商品詳細:</label>
-					</td>
-					<td>
-						<input type="text" name="newProductDescription" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>カテゴリID:</label>
-					</td>
-					<td>
-						<input type="text" name="newCategoryId" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>販売価格:</label>
-					</td>
-					<td>
-						<input type="text" name="newBuyPrice" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>発売年月:</label>
-					</td>
-					<td>
-						<input type="text" name="newReleaseDate" value=""/><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>発売会社:</label>
-					</td>
-					<td>
-						<input type="text" name="newReleaseCompany" value=""/><br>
-					</td>
-				</tr>
+			<div>
+				<s:iterator value="errorMessageList">
+					<s:div>
+						<s:property />
+					</s:div>
+				</s:iterator>
+			</div>
+			<s:form action="CheckProductInfoAction">
+				<span>新商品ID</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="newProductId" value="" placeholder="半角数字8桁 例)12345678"/>
+				</div>
+
+				<br>
+
+				<span>商品名</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="newProductName" value="" placeholder="例)除脂肪メソッド"/>
+				</div>
+
+				<br>
+
+				<span>商品名かな</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="newProductNameKana" value="" placeholder="ひらがな 例)じょしぼうめそっど"/>
+				</div>
+
+				<br>
+
+				<span>商品詳細</span>
+				<div>
+					<input type="textfield" name="newProductDescription" value="" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
+				</div>
+
+				<br>
+
+				<span>カテゴリID</span>
+				<span>必須</span>
+				<div>
+					<select name="newCategoryId">
+						<option value="">選択してください</option>
+						<option value="1">本</option>
+						<option value="2">家電・パソコン</option>
+						<option value="3">おもちゃ・ゲーム</option>
+					</select>
+				</div>
+
+				<br>
+
+				<span>販売価格</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="newBuyPrice" value="" placeholder="半角数字 例)1300"/>
+
+				</div>
+
+				<br>
+
+				<span>発売年月</span>
+				<div>
+					<input type="textfield" name="newReleaseDate" value="" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
+
+				</div>
+
+				<br>
+
+				<span>発売会社</span>
+				<div>
+					<input type="textfield" name="newReleaseCompany" value="" placeholder="例)ベースボール・マガジン社"/>
+
+				</div>
+
+				<br>
+
+				<span>画像ファイル名</span>
+				<div>
+					<input type="textfield" name="newProductImage" value="" placeholder="ファイル名.拡張し例)bazooka"/>
+
+				</div>
+
+				<br>
 				<s:submit value="登録"/>
 			</s:form>
 		</div>

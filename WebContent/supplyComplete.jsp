@@ -66,6 +66,8 @@
 			<p>仕入完了画面</p>
 		</div>
 		<div>
+			<h3>仕入が完了しました</h3>
+
 		</div>
 	</div>
 	<div id="footer">

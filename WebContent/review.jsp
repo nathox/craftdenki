@@ -10,20 +10,12 @@
 <body>
 	<s:form action="LoginAction">
 		<table>
-
 			<tr>
-				<td><s:if test="session.unknown != ''">
-
-						<s:property value="session.unknown" />
-
-					</s:if></td>
+				<td><s:property = "session.ItemName"/></td>
 			</tr>
-
-
 			<tr>
-				<td><s:if test="session.IDerrormsg != ''">
-						<s:property value="session.IDerror" />
-					</s:if></td>
+				<td><sproperty= "session."> <s:property
+						value="session.IDerror" /> </s:if></td>
 			</tr>
 			<tr>
 				<td><s:textfield name="loginId" style="ime-mode:disabled;" /></td>
