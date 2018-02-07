@@ -18,11 +18,16 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String result;
 	private String loginId;
 	private String loginPassword;
-	private String status;
 	private String IDerrormsg;
 	private String Passerrormsg;
 
 	public String execute() {
+		{
+			session.put("unknown", "");
+			session.put("IDerror", "");
+			session.put("Passerror", "");
+		}
+
 		result = ERROR;
 
 		// IDについて
@@ -32,22 +37,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (m1.find() == false) {
 			String IDerrormsg = "IDは半角英数字で入力してください";
 			this.IDerrormsg = IDerrormsg;
-			System.out.println("errormsg1:" + IDerrormsg);
 		}
 
 		int length1 = loginId.getBytes().length;
 		if (length1 < 1) { // 最小文字数よりも少なかった場合
-			String IDerrormsg = "IDは1文字以上8文字以内で入力してください";
+			String IDerrormsg = "IDは半角1文字以上8文字以内で入力してください";
 			this.IDerrormsg = IDerrormsg;
-			System.out.println("errormsg2:" + IDerrormsg);
 		} else if (length1 > 8) { // 最大文字数よりも多かった場合
-			String IDerrormsg = "IDは1文字以上8文字以内で入力してください";
+			String IDerrormsg = "IDは半角1文字以上8文字以内で入力してください";
 			this.IDerrormsg = IDerrormsg;
-			System.out.println("errormsg3:" + IDerrormsg);
 		} else if (length1 == 0) { // 文字数が0だった場合
 			String IDerrormsg = "IDを入力してください";
 			this.IDerrormsg = IDerrormsg;
-			System.out.println("errormsg4:" + IDerrormsg);
 		}
 
 		// Passについて
@@ -57,31 +58,23 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (m2.find() == false) {
 			String Passerrormsg = "パスワードは半角英数字で入力してください";
 			this.Passerrormsg = Passerrormsg;
-			System.out.println("errormsg1:" + IDerrormsg);
 		}
 
 		int length2 = loginPassword.getBytes().length;
 		if (length2 < 1) { // 最小文字数よりも少なかった場合
-			String Passerrormsg = "パスワードは1文字以上8文字以内で入力してください";
+			String Passerrormsg = "パスワードは半角1文字以上16文字以内で入力してください";
 			this.Passerrormsg = Passerrormsg;
-			System.out.println("errormsg2:" + Passerrormsg);
 		} else if (length2 > 16) { // 最大文字数よりも多かった場合
-			String Passerrormsg = "パスワードは1文字以上16	文字以内で入力してください";
+			String Passerrormsg = "パスワードは半角1文字以上16文字以内で入力してください";
 			this.Passerrormsg = Passerrormsg;
-			System.out.println("errormsg3:" + Passerrormsg);
 		} else if (length2 == 0) { // 文字数が0だった場合
 			String Passerrormsg = "パスワードを入力してください";
 			this.Passerrormsg = Passerrormsg;
-			System.out.println("errormsg4:" + Passerrormsg);
 		}
-
-		System.out.println(m1.find());
-		System.out.println(m2.find());
 
 		dto = dao.loginUserInfo(loginId, loginPassword);
 
 		session.put("loginUserInfo", dto);
-
 		if (IDerrormsg == null) {
 			if (Passerrormsg == null) {
 				if ((((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals("craft")) {
@@ -89,40 +82,44 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						// session.put("master_Id","craft");
 						// session.put("master_Pass","denki");
 						session.put("master_flg", "1");
-						session.put("IDerror","");
-						session.put("Passerror","");
+						session.put("IDerror", "");
+						session.put("Passerror", "");
 
 						result = "master";
 						return result;
 					}
-				} else if (!(((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals(loginId)) {
-					if (!(((LoginDTO) session.get("loginUserInfo")).getLoginPass()).equals(loginPassword)) {
+				} else if (((LoginDTO) session.get("loginUserInfo")).getLoginId().equals(loginId)) {
+					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId());
 						session.put("loginPass", dto.getLoginPass());
-						if (status == "cart") {
-							session.put("IDerror","");
-							session.put("Passerror","");
+						if (session.get("status") == "cart") {
+							session.put("IDerror", "");
+							session.put("Passerror", "");
 
 							result = "cart";
 							dao.cartInfo("仮ログインId", dto.getLoginId());
 							return result;
-						} else {
-							session.put("IDerror","");
-							session.put("Passerror","");
+						} else if (session.get("status") == null) {
+							session.put("IDerror", "");
+							session.put("Passerror", "");
 
 							result = "mypage";
 							return result;
 						}
+
+					}
+				} else if (((LoginDTO) session.get("loginUserInfo")).getLoginId().equals("noID")) {
+					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals("noPASS")) {
+						session.put("unknown", "入力されたIDもしくはパスワードが異なります");
+						result = ERROR;
+						return result;
+
 					}
 				}
-			} else {
-				String Passerrormsg = "入力されたパスワードが異なります";
-				this.Passerrormsg = Passerrormsg;
-				System.out.println("errormsg5:" + Passerrormsg);
 			}
 		}
-		session.put("IDerror",IDerrormsg);
-		session.put("Passerror",Passerrormsg);
+		session.put("IDerror", this.IDerrormsg);
+		session.put("Passerror", this.Passerrormsg);
 		return result;
 	}
 
