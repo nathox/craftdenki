@@ -77,7 +77,7 @@
 							<br>
 							<br>商品名　　　　　:　
 							<s:property value="newProductName" />
-							<s:hidden name="newProductName" value="%{familyNameKana}" />
+							<s:hidden name="newProductName" value="%{newProductName}" />
 
 							<br>
 							<br>
@@ -126,17 +126,14 @@
 							<br>
 							<br>
 							<br> 画像ファイル名　:　
-							<s:property value="newBuyPrice" />
-							<s:hidden name="newBuyPrice" value="%{newBuyPrice}" />
+							<s:property value="newProductImage" />
+							<s:hidden name="newProductImage" value="%{newProductImage}" />
 
 							<p>以上でよろしいですか？</p>
 							<s:submit value="はい"/>
 						</div>
 			</s:form>
-						<div>
-							<s:form action="ProductManageAction">
-								<s:submit value="いいえ" />
-							</s:form>
+							<input type="button" value="いいえ" onClick="history.back()">
 							<br>
 						</div>
 
