@@ -29,12 +29,20 @@ border-collapse:collapse;
 			<div>商品名かな:<s:property value="product_name_kana" /></div>
 			<div>商品名:<s:property value="product_name" /></div>
 			<div>商品詳細:<s:property value="product_description" /></div>
-			<div>価格:<s:property value="price" /></div>
+			<div>価格:￥<s:property value="price" />円</div>
 			<div>発売日:<s:property value="release_date" /></div>
 			<div>販売会社:<s:property value="release_company" /></div>
-			<div>在庫:<s:property value="item_stock" /></div>
+			<div>在庫:<s:property value="item_stock" />個</div>
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
+
+			<s:form action="CartAction">
+			<s:param name="product_id" value="%{product_id}"/>
+			<s:param name="price" value="%{price}"/>
+			    購入個数
+
+ 				<div class=botan><s:submit value=" カートに入れる " method="execute"/></div>
+			</s:form>
 
 		</div>
 	</s:iterator>

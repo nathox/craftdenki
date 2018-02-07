@@ -11,14 +11,12 @@ public class ReviewAction1 extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 	private String historyItemName;
 
-	public String execute(){
+	public String execute() {
 
+		session.put("hitsoryItemName", historyItemName);
 
-
-
-		return historyItemName;
+		return SUCCESS;
 	}
-
 
 	@Override
 	public void setSession(Map<String, Object> session) {

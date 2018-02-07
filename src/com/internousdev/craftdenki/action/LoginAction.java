@@ -92,6 +92,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId());
 						session.put("loginPass", dto.getLoginPass());
+						session.put("trueID",loginId);
 						if (session.get("status") == "cart") {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
