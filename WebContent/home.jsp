@@ -48,6 +48,10 @@
 		<s:submit value="ヘルプ画面へ"/>
 	</s:form>
 
+	<s:form action ="LogoutAction">
+		<s:submit value ="ログアウト(logout.jsp)"/>
+	</s:form>
+
 
 
 

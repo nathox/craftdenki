@@ -24,18 +24,14 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	public String execute()throws SQLException{
 
-
-		if(session.containsKey("ログインID")){
-			userId = session.get("仮ログインID").toString();
+		//ログイン/未ログインでカートにInsertするIDを変更
+		if(session.containsKey("trueID")){
+			userId = session.get("temp_user_id").toString();
 		}else{
-			userId = session.get("ログインID").toString();
+			userId = session.get("trueID").toString();
 		}
 
-
-		//session.get("ログインID")に変える。
-		session.put("user_id", "test");
-		String user_id = session.get("user_id").toString();
-
+		String user_id = session.get("trueID").toString();
 
 
 		//カート情報追加メソッド(未完了)
