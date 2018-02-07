@@ -164,6 +164,14 @@
 		<!-- ___________________Home画面から遷移(SANO) _________END_________ -->
 
 
+		<!-- 購入履歴画面（岡田） -->
+		<action name="PurchaseHistoryAction"
+				 class="com.internousdev.craftdenki.action.PurchaseHistoryAction"
+				 method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+				 </action>
+
+
 
 		<!-- ___________________ユーザー情報変更機能(雑賀) _________START_________ -->
 

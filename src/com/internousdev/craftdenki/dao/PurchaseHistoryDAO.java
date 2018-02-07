@@ -15,7 +15,7 @@ public class PurchaseHistoryDAO {
 	private Connection con= db.getConnection();
 
 	public ArrayList<PurchaseHistoryDTO> getPurchaseHistory(String userId)throws SQLException{
-		ArrayList<PurchaseHistoryDTO>purchaseHistoryDTOList = new ArrayList<PurchaseHistoryDTO>();
+		ArrayList<PurchaseHistoryDTO>purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 
 
 		String sql="SELECT * FROM purchase_history_info LEFT JOIN product_info "
@@ -38,7 +38,7 @@ public class PurchaseHistoryDAO {
 
 				dto.setproductName(rs.getString("product_name"));
 				dto.setproductNameKana(rs.getString("product_name_kana"));
-				dto.setproductImage(rs.getString("product_image"));
+				dto.setimageFileName(rs.getString("image_file_name"));
 				dto.setPrice(rs.getInt("price"));
 				dto.setCount(rs.getInt("count"));
 				dto.setReleaseCompany(rs.getString("release_company"));
@@ -46,7 +46,7 @@ public class PurchaseHistoryDAO {
 				dto.setId(rs.getInt("id"));
 
 
-				purchaseHistoryDTOList.add(dto);
+				purchaseHistoryList.add(dto);
 
 
 			}
@@ -58,7 +58,7 @@ public class PurchaseHistoryDAO {
 			con.close();
 
 		}
-		return purchaseHistoryDTOList;
+		return purchaseHistoryList;
 
 	}
 
