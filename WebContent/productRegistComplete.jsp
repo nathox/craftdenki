@@ -67,6 +67,7 @@
 		</div>
 		<div>
 			<h3>新商品登録が完了しました</h3>
+			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>
 		</div>
 	</div>
 	<div id="footer">
