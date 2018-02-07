@@ -39,9 +39,9 @@ public class ProductRegistCompleteAction extends ActionSupport implements Sessio
 							  newProductDescription,
 							  Integer.parseInt(newCategoryId),
 							  Integer.parseInt(newBuyPrice),
+							  newImagePass,
 							  newReleaseDate,
-							  newReleaseCompany,
-							  newImagePass);
+							  newReleaseCompany);
 		}
 		return result;
 	}

@@ -25,7 +25,7 @@ public class InputChecker {
 			result = "商品名を入力してください。";
 		} else if (newProductName.length() > 50) {
 			result = "商品名は50文字以下で入力してください。";
-		} else if (!newProductName.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー]+$")) {
+		} else if (!newProductName.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー・ ]+$")) {
 			result = "商品名は半角英語、漢字、ひらがな、カタカナで入力してください。";
 		}
 
@@ -40,7 +40,7 @@ public class InputChecker {
 			result = "商品名かなを入力してください。";
 		} else if (newProductNameKana.length() > 50) {
 			result = "商品名かなは50文字以下で入力してください。";
-		} else if (!newProductNameKana.matches("^[ぁ-ん!?！？]+$")) {
+		} else if (!newProductNameKana.matches("^[ぁ-ん!?！？ー ]+$")) {
 				result = "商品名かなはひらがなで入力してください。";
 		}
 
@@ -53,7 +53,7 @@ public class InputChecker {
 
 		if (newProductDescription.length() > 255) {
 			result = "商品詳細は255文字以下で入力してください。";
-		} else if (!newProductDescription.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー]+$")) {
+		} else if (!newProductDescription.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー・「」｢｣『』 ]+$")) {
 				result = "商品詳細は半角英語、漢字、ひらがな、カタカナで入力してください。";
 		}
 
