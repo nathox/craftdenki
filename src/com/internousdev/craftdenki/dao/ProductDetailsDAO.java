@@ -19,7 +19,7 @@ public class ProductDetailsDAO {
 	public ArrayList<ProductDTO> getProductDetailsInfo(int product_id) throws SQLException{
 
 		ArrayList<ProductDTO> detailsList = new ArrayList<ProductDTO>();
-		String sql = "SELECT * FROM product_info where product_id";
+		String sql = "SELECT * FROM product_info where product_id=?";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -52,6 +52,7 @@ public class ProductDetailsDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		System.out.println("詳細情報の件数 : "+ detailsList.size());
 		return detailsList;
 	}
 

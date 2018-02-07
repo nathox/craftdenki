@@ -43,14 +43,12 @@ border-collapse:collapse;
 		<s:param name="price" value="%{price}"/>
 		<s:param name="image_file_path" value="%image_file_path}"/>
 		<s:param name="image_file_name" value="%{image_file_name}"/>
-		<s:param name="release_data" value="%{release_data}"/>
+		<s:param name="release_date" value="%{release_date}"/>
 		<s:param name="release_company" value="%{release_company}"/>
 		<s:param name="status" value="%{status}"/>
 		<s:param name="regist_date" value="%{regist_date}"/>
 		<s:param name="update_date" value="%{update_date}"/>
 		<s:param name="item_stock" value="%{item_stock}"/>
-
-
 		</s:url>">
 		<div id="productList">
 			<div>商品名:<s:property value="product_name" /></div>
