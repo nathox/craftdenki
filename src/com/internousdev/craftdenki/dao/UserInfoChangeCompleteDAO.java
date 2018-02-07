@@ -3,16 +3,13 @@ package com.internousdev.craftdenki.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.util.DBConnector;
 import com.internousdev.craftdenki.util.DateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class UserInfoChangeCompleteDAO extends ActionSupport implements SessionAware{
+public class UserInfoChangeCompleteDAO extends ActionSupport {
 
 	private DBConnector dbConnector = new DBConnector();
 
@@ -20,7 +17,6 @@ public class UserInfoChangeCompleteDAO extends ActionSupport implements SessionA
 
 	private DateUtil dateUtil = new DateUtil();
 
-	public Map<String, Object> session;
 
 
 	private String sql = "UPDATE user_info SET password = ?, family_name = ?, first_name = ?, family_name_kana = ?, first_name_kana = ?, sex = ?, email = ?, question = ?, answer = ?, update_date = ? "
@@ -77,11 +73,6 @@ public class UserInfoChangeCompleteDAO extends ActionSupport implements SessionA
 	}
 
 
-	@Override
-	public void setSession(Map<String, Object> session) {
-		// TODO 自動生成されたメソッド・スタブ
-		this.session=session;
-	}
 
 
 }

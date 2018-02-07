@@ -33,7 +33,7 @@
 			<p>名かな：				<s:textfield name="firstNameKana" value="firstNameKana"/></p>
 			<p>性別：					<s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"></s:radio></p>
 			<p>メールアドレス：	<s:textfield name="email" value="email"/></p>
-			<p>秘密の質問：			<s:select list="#{1:'好きな数字は？',2:'好きな色は？'.3:'好きな食べ物は？'}" value="question"></s:select></p>
+			<p>秘密の質問：			<s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？'.3:'好きな動物は？'}" value="question"></s:select></p>
 			<p>答え：						<s:textfield name="answer" value="answer"/></p>
 
 			<p>郵便番号(７桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress','userAddress');"></p>

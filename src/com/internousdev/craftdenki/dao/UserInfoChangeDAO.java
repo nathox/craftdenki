@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.craftdenki.dto.LoginDTO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
@@ -30,15 +29,18 @@ public class UserInfoChangeDAO implements SessionAware {
 
 
 
-	public List<UserInfoChangeDTO> getUserInfo(){
+	public List<UserInfoChangeDTO> getUserInfo(String loginid){
 
-		String sql = "* FROM user_info WHERE user_id=?";
-		String sql2 = "* FROM destination_info WHERE user_id=?";
+		String sql = "SELECT * FROM user_info WHERE user_id=?";
+		String sql2 = "SELECT * FROM destination_info WHERE user_id=?";
 
-		String loginId=((LoginDTO)session.get("loginUserInfo")).getLoginId();
+		String loginId=loginid;
+
+
+		//String loginId=(((LoginDTO)session.get("loginUserInfo")).getLoginId()).toString();
 		//↑高橋さんからもらうセッションの鍵名を書く
-
-		System.out.println(loginId);
+		//System.out.println(((LoginDTO)session.get("loginUserInfo")).getLoginId()+"aaa");
+		//System.out.println(loginId+"bbb");
 
 		try{
 			PreparedStatement p1 = connection.prepareStatement(sql);
@@ -52,6 +54,7 @@ public class UserInfoChangeDAO implements SessionAware {
 
 			UserInfoChangeDTO  u1 = new UserInfoChangeDTO();
 
+			while(r1.next()){
 			u1.setUserId(r1.getString("user_id"));
 			u1.setPassword(r1.getString("password"));
 			u1.setFamilyName(r1.getString("family_name"));
@@ -62,13 +65,16 @@ public class UserInfoChangeDAO implements SessionAware {
 			u1.setEmail(r1.getString("email"));
 			u1.setQuestion(r1.getInt("question"));
 			u1.setAnswer(r1.getString("answer"));
+			}
 
+			while(r2.next()){
 			u1.setUserAddress(r2.getString("user_address"));
 			u1.setUserAddress2(r2.getString("user_address2"));
 			u1.setUserAddress3(r2.getString("user_address3"));
 			u1.setTelNumber(r2.getString("tel_number"));
 			u1.setTelNumber2(r2.getString("tel_number2"));
 			u1.setTelNumber3(r2.getString("tel_number3"));
+			}
 
 			list_user_info.add(u1);
 
@@ -83,6 +89,10 @@ public class UserInfoChangeDAO implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
+	}
+
+	public Map<String,Object> getSession(){
+		return session;
 	}
 
 }
