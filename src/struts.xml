@@ -115,7 +115,7 @@
 
 
 
-		<!-- Home画面から遷移(SANO) _________START_________ -->
+		<!-- ___________________Home画面から遷移(SANO) _________START_________ -->
 		<!-- GoLoginAction -->
 		<action name="GoLoginAction" class="com.internousdev.craftdenki.action.GoLoginAction"
 			method="execute">
@@ -144,16 +144,24 @@
 
 
 
+		<!-- StartAction(仮ID発行のため) -->
+		<action name="StartAction"
+				class="com.internousdev.craftdenki.action.StartAction"
+				method="execute">
+		<result name="success">home.jsp</result>
+		</action>
+
+
 
 		<!-- ItemSearchAction -->
 		<action name="ItemSearchAction"
 				class="com.internousdev.craftdenki.action.ItemSearchAction"
 				method="execute">
-			<result name="success">productList.jsp</result>
+		<result name="success">productList.jsp</result>
 		</action>
 
 
-		<!-- Home画面から遷移(SANO) _________END_________ -->
+		<!-- ___________________Home画面から遷移(SANO) _________END_________ -->
 
 
 
