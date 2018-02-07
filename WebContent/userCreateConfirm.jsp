@@ -34,6 +34,6 @@
 電話番号:<s:property value="tel" /><br>
 <s:submit value="完了" />
 </s:form>
-
+<input type="button" value="戻る" onClick="history.back()">
 </body>
 </html>
