@@ -29,16 +29,16 @@ public class SalesHistoryDAO {
 							+ "phi.id id,"
 							+ "phi.product_id product_id,"
 							+ "phi.price price,"
-							+ "phi.count count,"
+							+ "phi.product_count product_count,"
 							+ "phi.at_cost at_cost,"
 							+ "phi.regist_date purchase_date,"
 							+ "pi.product_name,"
 							+ "pi.product_name_kana,"
 							+ "pi.category_id,"
 							+ "mc.category_name,"
-							+ "phi.price * phi.count total_sales,"
-							+ "phi.at_cost * phi.count total_cost,"
-							+ "(phi.price - phi.at_cost) * phi.count profit "
+							+ "phi.price * phi.product_count total_sales,"
+							+ "phi.at_cost * phi.product_count total_cost,"
+							+ "(phi.price - phi.at_cost) * phi.product_count profit "
 						+ "FROM "
 							+ "purchase_history_info phi "
 						+ "LEFT JOIN "
@@ -55,7 +55,7 @@ public class SalesHistoryDAO {
 	/*
 	 * 全売上取得メソッド
 	 */
-	public List<SalesHistoryDTO> salesAllList() throws SQLException{
+	public List<SalesHistoryDTO> salesAllList(){
 
 		try {
 			PreparedStatement ps = con.prepareStatement(salesAllSQL);
@@ -69,7 +69,7 @@ public class SalesHistoryDAO {
 				dto.setId(rs.getInt("id"));
 				dto.setProductId(rs.getInt("product_id"));
 				dto.setPrice(rs.getInt("price"));
-				dto.setCount(rs.getInt("count"));
+				dto.setProductCount(rs.getInt("product_count"));
 				dto.setAtCost(rs.getInt("at_cost"));
 				dto.setPurchaseDate(rs.getDate("purchase_date"));
 				dto.setProductName(rs.getString("product_name"));
@@ -87,7 +87,11 @@ public class SalesHistoryDAO {
 			e.printStackTrace();
 
 		} finally {
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 
 		}
 		return salesHistoryList;

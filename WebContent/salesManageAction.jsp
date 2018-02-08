@@ -83,7 +83,7 @@
 						<th>原価計</th>
 						<th>利益</th>
 					</tr>
-					<s:iterator value="productList">
+					<s:iterator value="salesHistoryList">
 						<tr>
 							<td><s:property value="purchaseDate"/><s:hidden name="purchaseDate" value="%{purchaseDate}"/></td>
 							<td><s:property value="categoryName"/><s:hidden name="categoryName" value="%{categoryName}"/></td>
@@ -91,7 +91,7 @@
 							<td><s:property value="productName"/><s:hidden name="productName" value="%{productName}"/></td>
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
 							<td><s:property value="atCost"/><s:hidden name="atCost" value="%{atCost}"/></td>
-							<td><s:property value="count"/><s:hidden name="count" value="%{count}"/></td>
+							<td><s:property value="productCount"/><s:hidden name="productCount" value="%{productCount}"/></td>
 							<td><s:property value="totalSales"/><s:hidden name="totalSales" value="%{totalSales}"/></td>
 							<td><s:property value="totalCost"/><s:hidden name="totalCost" value="%{totalCost}"/></td>
 							<td><s:property value="profit"/><s:hidden name="profit" value="%{profit}"/></td>

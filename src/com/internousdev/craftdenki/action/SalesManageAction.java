@@ -1,6 +1,5 @@
 package com.internousdev.craftdenki.action;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 
 	private String errorMessage;
 
-	public String execute() throws SQLException{
+	public String execute(){
 		String result = ERROR;
 
 		if(true){      //管理者判定
@@ -26,7 +25,6 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 
 			//売上一覧を取得
 			salesHistoryList = salesHistoryDAO.salesAllList();
-			System.out.println(salesHistoryList.isEmpty());
 
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;

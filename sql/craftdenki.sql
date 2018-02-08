@@ -246,8 +246,8 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",1000005,1,1728,1000,"2016/01/01","2016/01/01");
-INSERT INTO purchase_history_info VALUES(2,"test1",1000002,2,8000,6500,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(1,"test",10000005,1,1728,1000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(2,"test1",10000002,2,8000,6500,"2016/01/01","2016/01/01");
 
 
 

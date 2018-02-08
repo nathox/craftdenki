@@ -10,7 +10,7 @@ public class SalesHistoryDTO {
 	private int id; //id
 	private int productId; //商品ID
 	private int price; //購入時販売価格
-	private int count; //購入数
+	private int productCount; //購入数
 	private int atCost; //購入時原価
 	private Date purchaseDate; //購入日
 
@@ -37,14 +37,9 @@ public class SalesHistoryDTO {
 	}
 
 
-
 	/*
 	 * getter,setter
 	 */
-
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getProductId() {
 		return productId;
 	}
@@ -57,11 +52,11 @@ public class SalesHistoryDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getCount() {
-		return count;
+	public int getProductCount() {
+		return productCount;
 	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setProductCount(int productCount) {
+		this.productCount = productCount;
 	}
 	public int getAtCost() {
 		return atCost;
@@ -117,5 +112,7 @@ public class SalesHistoryDTO {
 	public void setProfit(int profit) {
 		this.profit = profit;
 	}
-
+	public void setId(int id) {
+		this.id = id;
+	}
 }
