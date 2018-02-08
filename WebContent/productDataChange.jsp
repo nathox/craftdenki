@@ -66,6 +66,13 @@
 			<p>商品変更画面</p>
 		</div>
 		<div>
+			<s:iterator value="errorMessageList">
+				<s:div>
+					<s:property />
+				</s:div>
+			</s:iterator>
+		</div>
+		<div>
 			<s:form action="CheckProductChangeAction">
 				<span>商品ID</span>
 				<span>必須</span>

@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dao.CategoryDAO;
 import com.internousdev.craftdenki.dao.ProductListDAO;
 import com.internousdev.craftdenki.dto.CategoryDTO;
 import com.internousdev.craftdenki.util.InputChecker;
@@ -32,26 +33,22 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 	public String execute() throws SQLException{
 		String result=ERROR;
 
-		System.out.println(product_id);
-		System.out.println(product_name);
-		System.out.println(product_name_kana);
-		System.out.println(product_description);
-		System.out.println(category_id);
-		System.out.println(price);
-		System.out.println(image_file_name);
-		System.out.println(release_date);
-		System.out.println(release_company);
 
-		System.out.println(category_id);
 
 		if(true){      //管理者判定
 			result = SUCCESS;
+
+			//カテゴリテーブルよりカテゴリリストを取得
+			CategoryDAO categoryDAO = new CategoryDAO();
+			categoryList = categoryDAO.getCategoryInfo();
+
+
 
 			ProductListDAO dao = new ProductListDAO();
 
 			InputChecker i = new InputChecker();
 
-			if(dao.existsProductId(product_id) || session.get("product_id").toString().equals(product_id)){
+			if(!(session.get("product_id").toString().equals(product_id)) && dao.existsProductId(product_id)){
 				errorMessageList.add("入力された商品IDは既に存在します");
 				result = "error1";
 			}else if (!i.newProductIdChk(product_id).equals("OK")) {

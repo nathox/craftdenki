@@ -33,15 +33,16 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 	public String execute() throws SQLException{
 		String result = ERROR;
 
-		CategoryDAO categoryDAO = new CategoryDAO();
-		categoryList = categoryDAO.getCategoryInfo();
-
-
 
 
 
 		if(true){      //管理者判定
 			result = SUCCESS;
+			
+			//カテゴリテーブルよりカテゴリリストを取得
+			CategoryDAO categoryDAO = new CategoryDAO();
+			categoryList = categoryDAO.getCategoryInfo();
+			
 
 			session.put("product_id", product_id);
 
