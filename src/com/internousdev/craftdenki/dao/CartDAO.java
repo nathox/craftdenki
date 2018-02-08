@@ -47,6 +47,8 @@ public class CartDAO {
 
 		}catch(Exception e){
 			e.printStackTrace();
+		}finally{
+			connection.close();
 		}
 		return cartDTO;
 	}
@@ -66,6 +68,8 @@ public class CartDAO {
 
 		}catch(SQLException e){
 			e.printStackTrace();
+		}finally{
+			connection.close();
 		}
 			return result;
 	}

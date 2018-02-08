@@ -321,7 +321,6 @@
 		<!-- CartAction -->
 		<action name="CartAction" class="com.internousdev.craftdenki.action.CartAction" method="execute">
 			<result name="success">cartConfirm.jsp</result>
-			<result name="insert">cartInsert.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->
