@@ -237,7 +237,25 @@
 
 		<!-- ___________________パスワード再設定(影山) _________START_________ -->
 
+		<!-- ChangePasswordAction -->
+		<action name="ChangePasswordAction" class="com.internousdev.craftdenki.action.ChangePasswordAction" method="execute">
+			<result name="success">checkUserId.jsp</result>
+		</action>
 
+		<!-- CheckUserIdAction -->
+		<action name="CheckUserIdAction" class="com.internousdev.craftdenki.action.CheckUserIdAction" method="execute">
+			<result name="success">changePassword.jsp</result>
+		</action>
+
+		<!-- ChangePasswordConfirmAction -->
+		<action name="ChangePasswordconfirmAction" class="com.internousdev.craftdenki.action.ChangePasswordAction" method="execute">
+			<result name="success">changePasswordConfirm.jsp</result>
+		</action>
+
+		<!-- ChangePasswordCompleteAction -->
+		<action name="ChangePasswordCompleteAction" class="com.internousdev.craftdenki.action.ChangePasswordConfirmAction" method="execute">
+			<result name="success">changePasswordComplete.jsp</result>
+		</action>
 
 
 		<!-- ___________________パスワード再設定(影山) _________END_________ -->

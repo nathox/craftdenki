@@ -22,7 +22,7 @@
 							<label>ログインPASS：</label>
 						</td>
 						<td>
-							<s:property value="loginPassword" escape="false" />
+							<s:property value="password" escape="false" />
 						</td>
 					</tr>
 
