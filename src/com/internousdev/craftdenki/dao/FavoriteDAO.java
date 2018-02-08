@@ -50,34 +50,6 @@ public class FavoriteDAO {
 		return favoriteDTO;
 	}
 
-//	public FavoriteDTO select(String id, String user_id, String product_id, String regist_date) {
-//		// TODO 自動生成されたメソッド・スタブ
-//
-//	// SQL実行
-//		String sql = "";
-//
-//		PreparedStatement ps = connection.prepareStatement(sql);
-//	int result;
-//	try
-//	{
-//
-//		ps.setString(1, id);
-//		String user_id＝null;
-//		preparedStatement.setString(2, user_id);
-//		String product_id;
-//		preparedStatement.setString(3, product_id);
-//		String regist_date;
-//		preparedStatement.setString(4, regist_date);
-//		result = preparedStatement.executeUpdate();
-//	}catch(
-//	SQLException e)
-//	{
-//		e.printStackTrace();
-//	}finally
-//	{
-//		connection.close();
-//	}return result;
-//}return null;
-//}
+
 
 }

@@ -40,7 +40,7 @@
         </thead>
         <tbody id="hoge-body">
 
-        <s:iterator value=favoriteList>
+
             <tr>
                 <td><input type="checkbox"></td>
                 <td>1</td>
@@ -51,7 +51,7 @@
                 <td></td>
                 <td></td>
             </tr>
-        </s:iterator>
+
 
 
 
