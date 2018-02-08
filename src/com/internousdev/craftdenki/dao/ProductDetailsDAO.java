@@ -28,6 +28,7 @@ public class ProductDetailsDAO {
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
+			while(resultSet.next()){
 				productDTO.setId(resultSet.getInt("id"));
 				productDTO.setProduct_id(resultSet.getInt("product_id"));
 				productDTO.setProduct_name(resultSet.getString("product_name"));
@@ -43,6 +44,7 @@ public class ProductDetailsDAO {
 				productDTO.setRegist_date(resultSet.getDate("regist_date"));
 				productDTO.setUpdate_date(resultSet.getDate("update_date"));
 				productDTO.setItem_stock(resultSet.getInt("item_stock"));
+			}
 
 		}catch(Exception e){
 			e.printStackTrace();

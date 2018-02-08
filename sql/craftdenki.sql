@@ -131,7 +131,7 @@ INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,f
 
 
 INSERT INTO product_info VALUES(28,10000028, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1", "2016/01/01", "fuji", 1, "2018/01/09", "2018/01/09",100);
-INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 4, 500, "./img/kokoro.jpg", "kokoro", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
+INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 3, 500, "./img/kokoro.jpg", "kokoro", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
 INSERT INTO product_info VALUES(30,10000030, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa", "2016/01/01", "sagaone", 1, "2018/01/09", "2018/01/09",50);
 INSERT INTO product_info VALUES(31,10000031, "舞姫", "まいひめ", "舞姫：森鴎外著", 3, 1000, "./img/maihime.jpg", "maihime", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",70);
 INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine", "2018/01/20", "sagawa", 1, "2018/01/20", "2018/01/20",10);
@@ -157,9 +157,9 @@ VALUES("test","東京都八王子市","東京都町田市","090-0000-0000","046-
 
 
 
-INSERT INTO m_category VALUES(1,2,"本","本です","2016/01/01","2016/01/01");
-INSERT INTO m_category VALUES(2,3,"家電・パソコン","家電・パソコンです","2016/01/01","2016/01/01");
-INSERT INTO m_category VALUES(3,4,"おもちゃ・げーむ","おもちゃ・げーむです","2016/01/01","2016/01/01");
+INSERT INTO m_category VALUES(1,1,"本","本です","2016/01/01","2016/01/01");
+INSERT INTO m_category VALUES(2,2,"家電・パソコン","家電・パソコンです","2016/01/01","2016/01/01");
+INSERT INTO m_category VALUES(3,3,"おもちゃ・げーむ","おもちゃ・げーむです","2016/01/01","2016/01/01");
 
 
 

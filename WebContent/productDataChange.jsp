@@ -70,52 +70,56 @@
 				<span>商品ID</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="productId" value="<s:property value="productId"/>"/>
+					<s:textfield name="productId" value="%{product_id}" placeholder="半角数字8桁 例)12345678"/>
 				</div>
 
 				<span>商品名</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="productName" value="<s:property value="productName"/>"/>
+					<s:textfield name="productName" value="%{product_name}" placeholder="半角数字8桁 例)12345678"/>
 				</div>
 
 				<span>商品名かな</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="productNameKana" value="<s:property value="productNameKana"/>"/>
+					<s:textfield name="productNameKana" value="%{product_name_kana}" placeholder="ひらがな 例)じょしぼうめそっど"/>
 				</div>
 
 				<span>商品詳細</span>
 				<div>
-					<input type="textfield" name="productDescription" value="<s:property value="productDescription"/>"/>
+					<s:textfield name="productDescription" value="%{product_description}" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
 				</div>
 
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="categoryId" value="<s:property value="categoryId"/>"/>
+					<s:select name="categoryId" value="2" list="categoryList">
+						<option value='<s:property value="categoryId"/>'><s:property value="categoryName"/></option>
+					</s:select>
 				</div>
 
 				<span>販売価格</span>
 				<span>必須</span>
 				<div>
-					<input type="textfield" name="price" value="<s:property value="price"/>"/>
+					<s:textfield name="price" value="%{price}" placeholder="半角数字 例)1300"/>
 				</div>
 
 				<span>画像ファイル名</span>
 				<div>
-					<input type="textfield" name="imageFileName" value="<s:property value="imageFileName"/>"/>
+					<s:textfield name="imageFileName" value="%{image_file_name}" placeholder="ファイル名.拡張子例)bazooka"/>
 				</div>
 
 				<span>発売年月</span>
 				<div>
-					<input type="textfield" name="releaseDate" value="<s:property value=""releaseDate""/>"/>
+					<s:textfield name="releaseDate" value="%{release_date}" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
 				</div>
 
 				<span>発売会社</span>
 				<div>
-					<input type="textfield" name="releaseCompany" value="<s:property value="releaseCompany"/>"/>
+					<s:textfield name="releaseCompany" value="%{release_company}" placeholder="例)ベースボール・マガジン社"/>
 				</div>
+
+				<s:submit value="登録"/>
 			</s:form>
 		</div>
 	</div>
