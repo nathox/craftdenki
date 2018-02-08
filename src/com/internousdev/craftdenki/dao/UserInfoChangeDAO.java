@@ -3,6 +3,7 @@ package com.internousdev.craftdenki.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class UserInfoChangeDAO implements SessionAware {
 
 
 
-	public ArrayList<UserInfoChangeDTO> getUserInfo(String loginid){
+	public ArrayList<UserInfoChangeDTO> getUserInfo(String loginid) throws SQLException{
 
 		String sql = "SELECT * FROM user_info WHERE user_id=?";
 		String sql2 = "SELECT * FROM destination_info WHERE user_id=?";
@@ -80,7 +81,7 @@ public class UserInfoChangeDAO implements SessionAware {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
-			
+			connection.close();
 		}
 
 		return list_user_info;

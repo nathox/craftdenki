@@ -47,7 +47,7 @@
 
 	</s:form>
 
-	<p><input type="button" value="マイページ画面に戻る" onclick="submitAction('GoMyPageAction')" /></p>
+	<p><input type="button" value="ユーザー情報変更画面に戻る" onclick="history.back()" /></p>
 
 </body>
 </html>
