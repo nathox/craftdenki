@@ -20,14 +20,14 @@ public class SettlementDAO {
 
 
 	//ここの引数とりあえずuserIdっておいてるけど変数の確認お願いします
-	public SettlementDTO getDestinationInfo(){
+	public SettlementDTO getDestinationInfo(String userId){
 
-		String sql = "SELECT family_name,first_name,email,user_address,user_address2,user_address3,tel_number,tel_number2,tel_number3 FROM destination_info JOIN user_info ON destination_info.user_id = user_info.user_id WHERE user_info.user_id ='test' ";
+		String sql = "SELECT family_name,first_name,email,user_address,user_address2,user_address3,tel_number,tel_number2,tel_number3 FROM destination_info JOIN user_info ON destination_info.user_id = user_info.user_id WHERE user_info.user_id =? ";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-			//preparedStatement.setString(1, userId);
+			preparedStatement.setString(1, userId);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 

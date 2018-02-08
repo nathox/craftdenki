@@ -32,10 +32,12 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 	public String execute(){
 
 
-		System.out.println("aaa");
+
+		userId = session.get("trueID").toString();
 		System.out.println(userId);
-		System.out.println("bbb");
-		dto = settlementDAO.getDestinationInfo();
+
+
+		dto = settlementDAO.getDestinationInfo(userId);
 
 		familyName=dto.getFamilyName();
 		firstName=dto.getFirstName();
