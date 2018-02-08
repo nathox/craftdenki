@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -20,30 +21,54 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private int product_count;
 	private int price;
 	private String userId;
+	private String deleteFlg;
+	private String message;
+
+	public Collection<String> delete;
+
 
 
 	public String execute()throws SQLException{
 
 		//ログイン/未ログインでカートにInsertするIDを変更
 		if(session.containsKey("trueID")){
-			userId = session.get("temp_user_id").toString();
-		}else{
 			userId = session.get("trueID").toString();
+		}else{
+			userId = session.get("temp_user_id").toString();
 		}
 
-		String user_id = session.get("trueID").toString();
 
+		if(deleteFlg == null){
 
-		//カート情報追加メソッド(未完了)
-		cartDAO.insertCart(userId,product_id, product_count, price);
+			//カート情報取得メソッド(完了)
+			cartList = cartDAO.getCartInfo(userId);
+			session.put("cartList", cartList);
 
-		//カート情報取得メソッド(完了)
-		cartList = cartDAO.getCartInfo(user_id);
+		}else if(deleteFlg.equals("1")){
+			for(String deleteId:delete){
+				this.delete(Integer.parseInt(deleteId));
+			}
+		}
+
 		result = SUCCESS;
-
 		return result;
-
 	}
+
+
+	//カート内選択商品削除
+	public void delete(int deleteId)throws SQLException{
+		//String item_id = session.get("product_id").toString();
+
+		int res = cartDAO.deleteCart(userId,deleteId);
+
+		if(res > 0){
+			setMessage("カート情報を削除しました。");
+		}else if(res == 0){
+			setMessage("カート情報の削除に失敗しました。");
+		}
+	}
+
+
 
 	public void setCartList(ArrayList<CartDTO> cartList) {
 		this.cartList = cartList;
@@ -60,7 +85,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public int getProduct_id() {
 		return product_id;
 	}
-
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
@@ -68,7 +92,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public int getProduct_count() {
 		return product_count;
 	}
-
 	public void setProduct_count(int product_count) {
 		this.product_count = product_count;
 	}
@@ -76,9 +99,23 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public int getPrice() {
 		return price;
 	}
-
 	public void setPrice(int price) {
 		this.price = price;
+
 	}
+	public String getDeleteFlg() {
+		return deleteFlg;
+	}
+	public void setDeleteFlg(String deleteFlg) {
+		this.deleteFlg = deleteFlg;
+
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 
 }
