@@ -66,6 +66,57 @@
 			<p>商品変更画面</p>
 		</div>
 		<div>
+			<s:form action="ProductDataChangeConfirmAction">
+				<span>商品ID</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="productId" value="<s:property value="productId"/>"/>
+				</div>
+
+				<span>商品名</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="productName" value="<s:property value="productName"/>"/>
+				</div>
+
+				<span>商品名かな</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="productNameKana" value="<s:property value="productNameKana"/>"/>
+				</div>
+
+				<span>商品詳細</span>
+				<div>
+					<input type="textfield" name="productDescription" value="<s:property value="productDescription"/>"/>
+				</div>
+
+				<span>カテゴリID</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="categoryId" value="<s:property value="categoryId"/>"/>
+				</div>
+
+				<span>販売価格</span>
+				<span>必須</span>
+				<div>
+					<input type="textfield" name="price" value="<s:property value="price"/>"/>
+				</div>
+
+				<span>画像ファイル名</span>
+				<div>
+					<input type="textfield" name="imageFileName" value="<s:property value="imageFileName"/>"/>
+				</div>
+
+				<span>発売年月</span>
+				<div>
+					<input type="textfield" name="releaseDate" value="<s:property value=""releaseDate""/>"/>
+				</div>
+
+				<span>発売会社</span>
+				<div>
+					<input type="textfield" name="releaseCompany" value="<s:property value="releaseCompany"/>"/>
+				</div>
+			</s:form>
 		</div>
 	</div>
 	<div id="footer">
