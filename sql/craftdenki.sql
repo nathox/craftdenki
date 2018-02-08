@@ -64,7 +64,7 @@ drop table if exists favorite_info;
 create table favorite_info(
 id int not null primary key auto_increment,
 user_id varchar(16),
-product_id int,
+product_id int unique,
 regist_date datetime
 );
 
