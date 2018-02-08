@@ -115,13 +115,13 @@ insert_date datetime,
 update_date datetime
 );
 
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("青い本","青色の本です。",100,2,1,"あおいほん","2017/10");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤いおもちゃ","赤色のおもちゃです。",200,4,2,"あかいおもちゃ","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黄いろい掃除機","黄色の掃除機です。",200,3,3,"きいろいそうじき","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黒い本","黒色の本です。",200,2,4,"くろいほん","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤い掃除機","赤色の掃除機です。",200,3,5,"あかいそうじき","2017/11");
-INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(6,"aaa","あああ","aaa",2,100,"./images/aaa.jpg","aaa.jpg","2017/12","aaa",0,"2017/12/12","2017/12/12",500);
-INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(7,"bbb","びびび","bbb",3,200,"./images/bbb.gif","bbb.gif","2017/12","bbb",0,"2017/12/13","2017/12/13",500);
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("青い本","青色の本です。",100,2,10000000,"あおいほん","2017/10");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤いおもちゃ","赤色のおもちゃです。",200,4,20000000,"あかいおもちゃ","2017/11");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黄いろい掃除機","黄色の掃除機です。",200,3,30000000,"きいろいそうじき","2017/11");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黒い本","黒色の本です。",200,2,40000000,"くろいほん","2017/11");
+INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤い掃除機","赤色の掃除機です。",200,3,50000000,"あかいそうじき","2017/11");
+INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(60000000,"aaa","あああ","aaa",2,100,"./images/aaa.jpg","aaa.jpg","2017/12","aaa",0,"2017/12/12","2017/12/12",500);
+INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(70000000,"bbb","びびび","bbb",3,200,"./images/bbb.gif","bbb.gif","2017/12","bbb",0,"2017/12/13","2017/12/13",500);
 
 
 INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
