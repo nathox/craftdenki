@@ -1,9 +1,15 @@
 package com.internousdev.craftdenki.action;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dao.UserInfoChangeDAO;
+import com.internousdev.craftdenki.dto.LoginDTO;
+import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserInfoChangeConfirmAction extends ActionSupport implements SessionAware{
@@ -34,9 +40,13 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 	private String errorMessage;
 
+	private ArrayList<UserInfoChangeDTO> list_user_info = new ArrayList<UserInfoChangeDTO>();
+
+	private UserInfoChangeDAO userInfoChangeDAO = new UserInfoChangeDAO();
 
 
-	public String execute(){
+
+	public String execute() throws SQLException{
 
 
 		/*
@@ -63,29 +73,7 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 			session.put("t_userAddress", userAddress);
 			session.put("t_telNumber", telNumber);
 
-
-			/*
-			 * ↓一回コメントにしてnullを入れないようにしてる
-			 */
-
-			/*
-			if(userAddress2.equals("")){
-				userAddress2= null;
-			}
-
-			if(userAddress3.equals("")){
-				userAddress3= null;
-			}
-
-			if(telNumber2.equals("")){
-				telNumber2= null;
-			}
-
-			if(telNumber3.equals("")){
-				telNumber3= null;
-			}
-			*/
-
+			//
 			session.put("t_userAddress2", userAddress2);
 			session.put("t_userAddress3", userAddress3);
 			session.put("t_telNumber2", telNumber2);
@@ -97,6 +85,23 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 			setErrorMessage("必須項目の記入が抜けています！！");
 //↑これがuserInfoChange.jspに表示されるようにする
+
+			String loginid = (((LoginDTO)session.get("loginUserInfo")).getLoginId()).toString();
+			list_user_info = userInfoChangeDAO.getUserInfo(loginid);
+
+
+
+			Iterator<UserInfoChangeDTO> iterator = list_user_info.iterator();
+
+			if (!(iterator.hasNext())) {
+
+				list_user_info = null;
+			}
+
+
+
+
+
 
 			result=ERROR;
 		}
@@ -252,6 +257,20 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public UserInfoChangeDAO userInfoChangeDAO(){
+		return userInfoChangeDAO;
+	}
+	public void setUserInfoChangeDAO(UserInfoChangeDAO userInfoChangeDAO){
+		this.userInfoChangeDAO = userInfoChangeDAO;
+	}
+
+	public ArrayList<UserInfoChangeDTO> getList_user_info(){
+		return list_user_info;
+	}
+	public void setList_user_info(ArrayList<UserInfoChangeDTO> list_user_info){
+		this.list_user_info = list_user_info;
 	}
 
 }
