@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<script>
+	<script>
 
-</script>
+	</script>
 
 
 
@@ -19,121 +19,38 @@
 
 	★お気に入りリスト★
 	<p>
+		<s:form id="form" name="form" action="FavoriteAction">
+			<table border="0" cellspacing="0">
+				<thead id="hoge-head">
+					<tr>
+						<td>チェック</td>
+						<td>商品名</td>
+						<td>画像</td>
+						<td>値段</td>
+						<td>会社</td>
+						<td>販売月</td>
 
-	<table border="1" cellspacing="0">
-		<thead id="hoge-head">
-			<tr>
-				<td>チェック</td>
-				<td>商品名</td>
-				<td>画像</td>
-				<td>値段</td>
-				<td>会社</td>
-				<td>販売月</td>
-				<td>ボタン</td>
-			</tr>
-		</thead>
-		<s:iterator value="favoriteList">
-			<tr>
-				<td><input type="checkbox"></td>
-				<td><span><s:property value="productName"  /></span></td>
-				<td><span><s:property value="imageFilePath" /></span></td>
-				<td><span><s:property value="price" /></span></td>
-				<td><span><s:property value="releaseCompany" /></span></td>
-				<td><span><s:property value="releaseDate" /></span></td>
-				<td><input type="button" name="delete_line" class="delete_line"
-					value="削除" id="hoge-head"></td>
-			</tr>
-		</s:iterator>
-	</table>
-
-
-
-<td><input type="button" name="delete_line" class="delete_line" value="一括削除" ></td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<img class="image" src="<s:property value='image_file_path'/>">
-		<s:hidden name="product_id" value="%{product_id}" />
-
-
-
-
-
-
-
-		<form name="frmMove">
-			<script language=javascript>
-			function obakasannemou() {
-				objChk = frmMove.chkMove //チェックボックスオブジェクトを参照
-				str = ""; //チェック内容を代入する変数
-				for (i = 0; i < objChk.length; i++) {
-					if (objChk[i].checked)
-						str += objChk[i].value
-				}
-				switch (str) {
-				case "1":
-					location.href = "https://www.yahoo.co.jp/";
-					break;
-				case "2":
-					location.href = "https://www.google.co.jp";
-					break;
-
-				case "3":
-					location.href = "https://www.biglobe.ne.jp/";
-					break;
-
-				case "4":
-					location.href = "https://www.goo.ne.jp/";
-					break;
-
-				case "5":
-					location.href = "https://www.google.co.jp/maps";
-					break;
-
-
-
-
-				}
-			}
-		</script>
-
-
-			<p>★お気に入りリスト★</p>
-
-			<p>
-				<br> <input type="checkbox" value="1" name="chkMove">1.商品名
-				<br> <input type="checkbox" value="2" name="chkMove">2.画像
-				<br> <input type="checkbox" value="3" name="chkMove">3.値段<br>
-				<input type="checkbox" value="4" name="chkMove">4.会社<br>
-				<input type="checkbox" value="5" name="chkMove">5.発売月
-			</p>
-
-			<p>
-				<br> <input type="button" value="商品ページへ"
-					onclick="obakasannemou()"> <INPUT TYPE="button"
-					VALUE="商品一覧へ戻る"
-					onClick="http://localhost:8080/craftdenki/ProductListAction.action">
-				<INPUT TYPE="button" VALUE="マイページ"
-					onClick="http://localhost:8080/craftdenki/GoMyPageAction.action">
-				<INPUT TYPE="button" VALUE="削除" onClick="location.href=''">
-
-				<INPUT TYPE="button" VALUE="HOME" onClick="location.href=''">
-
-
-
-			</p>
-		</form>
+					</tr>
+				</thead>
+				<s:iterator value="favoriteList">
+					<tr>
+						<td><s:checkbox name="checkList" value="checked"
+								fieldValue="%{product_id}" /></td>
+						<td><span><s:property value="productName" /></span></td>
+						<td><span><s:property value="imageFilePath" /></span></td>
+						<td><span><s:property value="price" /></span></td>
+						<td><span><s:property value="releaseCompany" /></span></td>
+						<td><span><s:property value="releaseDate" /></span></td>
+					</tr>
+					<tr>
+						<td><s:submit value="一括削除">
+								<input type="hidden" name="deleteFlg" value="1"/>
+							</s:submit></td>
+						<!-- 				<td><input type="button" name="delete_line" onClick="deltag('<s:property value="#st.index"/>')"
+					value="一括削除"/></td>  -->
+					</tr>
+				</s:iterator>
+			</table>
+		</s:form>
 </body>
 </html>
