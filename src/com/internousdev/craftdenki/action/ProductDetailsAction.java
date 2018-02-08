@@ -38,8 +38,6 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 
 
-
-
 	public String execute() throws SQLException{
 
 
