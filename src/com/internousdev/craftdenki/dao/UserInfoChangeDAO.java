@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -19,7 +18,7 @@ public class UserInfoChangeDAO implements SessionAware {
 
 	private Connection connection = dbConnector.getConnection();
 
-	private List<UserInfoChangeDTO> list_user_info = new ArrayList<>();
+	private ArrayList<UserInfoChangeDTO> list_user_info = new ArrayList<UserInfoChangeDTO>();
 
 	public Map<String, Object> session;
 
@@ -29,7 +28,7 @@ public class UserInfoChangeDAO implements SessionAware {
 
 
 
-	public List<UserInfoChangeDTO> getUserInfo(String loginid){
+	public ArrayList<UserInfoChangeDTO> getUserInfo(String loginid){
 
 		String sql = "SELECT * FROM user_info WHERE user_id=?";
 		String sql2 = "SELECT * FROM destination_info WHERE user_id=?";
@@ -80,6 +79,8 @@ public class UserInfoChangeDAO implements SessionAware {
 
 		}catch(Exception e){
 			e.printStackTrace();
+		}finally{
+			
 		}
 
 		return list_user_info;
