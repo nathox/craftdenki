@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ProductDetailsDAO;
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.dto.Review2DTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ProductDetailsAction extends ActionSupport implements SessionAware {
@@ -22,11 +23,16 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private String item_stock;
 
+	private int insertFlg;
+
 	//購入個数リスト
 	private List<Integer> stockList = new ArrayList<Integer>();
 
 	//商品詳細情報｢リスト
 	public List<ProductDTO> detailsList = new ArrayList<ProductDTO>();
+
+	//レビュー情報｢リスト
+	public List<Review2DTO> reviewList = new ArrayList<Review2DTO>();
 
 	private ProductDetailsDAO productDetailsDAO = new ProductDetailsDAO();
 
@@ -44,6 +50,16 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		try{
 
 			detailsList = productDetailsDAO.getProductDetailsInfoList(productIdList);
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+
+		//レビュー情報取得メソッド
+		try{
+
+			reviewList = productDetailsDAO.getReviewInfo(product_id);
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -95,6 +111,26 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	public void setItem_stock(String item_stock) {
 		this.item_stock = item_stock;
+	}
+
+
+
+	/**
+	 * insertFlgを取得します。
+	 * @return insertFlg
+	 */
+	public int getInsertFlg() {
+	    return insertFlg;
+	}
+
+
+
+	/**
+	 * insertFlgを設定します。
+	 * @param insertFlg insertFlg
+	 */
+	public void setInsertFlg(int insertFlg) {
+	    this.insertFlg = insertFlg;
 	}
 
 

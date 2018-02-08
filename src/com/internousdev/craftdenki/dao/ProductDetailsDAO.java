@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.dto.Review2DTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
 
@@ -103,6 +104,41 @@ public class ProductDetailsDAO {
 	}
 
 
+	//レビュー情報取得
+		public ArrayList<Review2DTO> getReviewInfo(String product_id) throws SQLException{
+
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+
+			ArrayList<Review2DTO> reviewList = new ArrayList<Review2DTO>();
+
+			String sql = "SELECT * FROM review_info where product_id=? ORDER BY Product_id ASC";
+
+		try{
+			PreparedStatement statement = connection.prepareStatement(sql);
+
+			ResultSet resultSet = statement.executeQuery();
+
+			while(resultSet.next()){
+				Review2DTO review2DTO = new Review2DTO();
+
+				review2DTO.setId(resultSet.getInt("id"));
+				review2DTO.setProduct_id(resultSet.getInt("product_id"));
+				review2DTO.setBuy_item_date(resultSet.getDate("buy_item_date"));
+				review2DTO.setEvaluation_count(resultSet.getInt("evaluation_count"));
+
+				reviewList.add(review2DTO);
+
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+			return reviewList;
+		}
+
 
 
 }
+
