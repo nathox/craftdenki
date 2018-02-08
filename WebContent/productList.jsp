@@ -36,6 +36,7 @@ border-collapse:collapse;
 	<s:iterator value="productList">
 		<a href="<s:url action="ProductDetailsAction">
 		<s:param name="product_id" value="%{product_id}"/>
+		<s:param name="item_stock" value="%{item_stock}"/>
 		</s:url>">
 		<div id="productList">
 			<div>商品名かな:<s:property value="product_name_kana" /></div>
