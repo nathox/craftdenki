@@ -35,15 +35,8 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public String execute() {
 
-		result=SUCCESS;
 
-		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < loginPassword.length()-3; i++){
-			sb.append("*");
-		}
-
-
-//ユーザーIDの重複を確認
+/** ユーザーIDの重複を確認 **/
 
 		if(userCreateConfirmDAO.getLoginUserId(loginUserId)){
 
@@ -51,24 +44,41 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			result=ERROR;
 		}
 
-		loginPassCon = loginPassword.substring(0, 3) + sb.toString();
+		else{
 
-		session.put("loginUserId", loginUserId);
-		session.put("loginPassword", loginPassword);
-		session.put("familyName",familyName);
-		session.put("firstName", firstName);
-		session.put("familyNameKana", familyNameKana);
-		session.put("firstNameKana", firstNameKana);
-		session.put("sex",sex);
-		session.put("mail", mail);
-		session.put("secretQuestion", secretQuestion);
-		session.put("secretAnswer", secretAnswer);
-		session.put("yuubin", yuubin);
-		session.put("address", address);
-		session.put("tel", tel);
+			result=SUCCESS;
+
+/** 重複していなければセッションに値を格納 **/
+
+			session.put("loginUserId", loginUserId);
+			session.put("loginPassword", loginPassword);
+			session.put("familyName",familyName);
+			session.put("firstName", firstName);
+			session.put("familyNameKana", familyNameKana);
+			session.put("firstNameKana", firstNameKana);
+			session.put("sex",sex);
+			session.put("mail", mail);
+			session.put("secretQuestion", secretQuestion);
+			session.put("secretAnswer", secretAnswer);
+			session.put("yuubin", yuubin);
+			session.put("address", address);
+			session.put("tel", tel);
+
+
+/** パスワード先頭3文字以外暗号化 **/
+			StringBuilder sb = new StringBuilder();
+			for(int i = 0; i < loginPassword.length()-3; i++){
+				sb.append("*");
+			}
+
+			loginPassCon = loginPassword.substring(0, 3) + sb.toString();
+
+		}
 
 		return result;
 	}
+
+
 
 	public String getLoginUserId() {
 		return loginUserId;
@@ -153,6 +163,10 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setSession(Map<String,Object> session) {
 		this.session=session;
 	}
+	public Map<String,Object> getSession(){
+		return session;
+	}
+
 	public String getErrorMessage(){
 		return errorMessage;
 	}
