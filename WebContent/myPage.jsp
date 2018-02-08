@@ -26,7 +26,7 @@
 
 	<h3>マイページ画面</h3>
 	<div>
-		<s:form action="BuyItemHistoryAction">
+		<s:form action="PurchaseHistoryAction">
 			<s:submit value="購入履歴"/>
 		</s:form>
 	</div>

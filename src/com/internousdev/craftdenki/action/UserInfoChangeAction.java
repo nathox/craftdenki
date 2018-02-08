@@ -3,7 +3,6 @@ package com.internousdev.craftdenki.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -19,7 +18,7 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 
 	private String result;
 
-	private List<UserInfoChangeDTO> list_user_info = new ArrayList<>();
+	private ArrayList<UserInfoChangeDTO> list_user_info = new ArrayList<UserInfoChangeDTO>();
 
 	private UserInfoChangeDAO userInfoChangeDAO = new UserInfoChangeDAO();
 

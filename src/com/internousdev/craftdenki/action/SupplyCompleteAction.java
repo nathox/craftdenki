@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -13,17 +14,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
-	public static <T> T automaticCast(Object src) {
-	    T castedObject = (T) src;
-	    return castedObject;
-	}
-
-	private ArrayList<ProductDTO> supplyList = (ArrayList<ProductDTO>) session.get("supplyList");
+	private List<ProductDTO> supplyList = new ArrayList<ProductDTO>();
 
 
 
+	@SuppressWarnings("unchecked")
 	public String execute() throws SQLException{
 		String result = ERROR;
+
+		supplyList = (ArrayList<ProductDTO>)session.get("supplyList");
 
 		if(true){      //管理者判定
 
@@ -39,17 +38,30 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
-	//getter,setter
-	public ArrayList<ProductDTO> getSupplyList() {
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
+
+	public List<ProductDTO> getSupplyList() {
 		return supplyList;
 	}
 
-	public void setSupplyList(ArrayList<ProductDTO> supplyList) {
+
+
+	public void setSupplyList(List<ProductDTO> supplyList) {
 		this.supplyList = supplyList;
 	}
 
-	@Override
-	public void setSession(Map<String,Object> session){
-		this.session = session;
-	}
+	//getter,setter
+
 }
