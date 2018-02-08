@@ -69,6 +69,23 @@ public class CartAction extends ActionSupport implements SessionAware{
 	}
 
 
+	//カート追加
+	public String insert()throws SQLException{
+		cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
+		
+		result = "insert";
+		return result;
+
+	}
+
+
+
+	//決済
+	public void settlement(){
+		//現在進行中
+	}
+
+
 
 	public void setCartList(ArrayList<CartDTO> cartList) {
 		this.cartList = cartList;
