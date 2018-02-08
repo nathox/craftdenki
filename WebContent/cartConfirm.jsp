@@ -13,11 +13,6 @@
 	<meta name="keywords"content=""/>
 
 
-							<input type="hidden" name="deleteFlg" value="1">
-						<s:submit value="削除" onclick="goCartAction();"/>
-						<s:submit value="決済" oncick="goSettlementAction();"/>
-
-
 	<script type="text/javascript">
     function goCartAction(){
         document.getElementById('form').action="CartAction";

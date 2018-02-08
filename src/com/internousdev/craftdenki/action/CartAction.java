@@ -22,6 +22,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private int price;
 	private String userId;
 	private String deleteFlg;
+	private String insertFlg;
 	private String message;
 
 	public Collection<String> delete;
@@ -45,16 +46,22 @@ public class CartAction extends ActionSupport implements SessionAware{
 			userId = session.get("temp_user_id").toString();
 		}
 
+		//商品の追加
+		if(insertFlg.equals("1")){
+			cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
+		}
+
 
 		if(deleteFlg == null){
 
-			//カート情報取得メソッド(完了)
+			//カート情報取得
 			cartList = cartDAO.getCartInfo(userId);
 			session.put("cartList", cartList);
 
 		}else if(deleteFlg.equals("1")){
+
+			//商品の削除
 			for(String deleteId:delete){
-//				this.delete(Integer.parseInt(deleteId));
 				int res = cartDAO.deleteCart(userId,deleteId);
 
 				if(res > 0){
@@ -70,19 +77,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 	}
 
 
-	//カート内選択商品削除
-//	public void delete(int deleteId)throws SQLException{
-//		//String item_id = session.get("product_id").toString();
-//
-//		int res = cartDAO.deleteCart(userId,deleteId);
-//
-//		if(res > 0){
-//			setMessage("カート情報を削除しました。");
-//		}else if(res == 0){
-//			setMessage("カート情報の削除に失敗しました。");
-//		}
-//	}
-
 
 	//カート追加
 	public String insert()throws SQLException{
@@ -95,10 +89,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 
 
-	//決済
-	public void settlement(){
-		//現在進行中
-	}
+//	//決済
+//	public void settlement(){
+//
+//	}
 
 
 
@@ -148,6 +142,15 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+	public String getInsertFlg() {
+		return insertFlg;
+	}
+	public void setInsertFlg(String insertFlg) {
+		this.insertFlg = insertFlg;
+	}
+
+
 
 
 }
