@@ -63,6 +63,12 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 			session.put("t_userAddress", userAddress);
 			session.put("t_telNumber", telNumber);
 
+
+			/*
+			 * ↓一回コメントにしてnullを入れないようにしてる
+			 */
+
+			/*
 			if(userAddress2.equals("")){
 				userAddress2= null;
 			}
@@ -78,6 +84,7 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 			if(telNumber3.equals("")){
 				telNumber3= null;
 			}
+			*/
 
 			session.put("t_userAddress2", userAddress2);
 			session.put("t_userAddress3", userAddress3);

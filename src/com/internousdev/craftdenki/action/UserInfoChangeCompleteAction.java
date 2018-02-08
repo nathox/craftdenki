@@ -20,6 +20,34 @@ public class UserInfoChangeCompleteAction extends ActionSupport implements Sessi
 
 	public String execute() throws SQLException{
 
+/*
+ * ここで必須じゃないデータの中身がNULLかどうか判別する
+ *
+ */
+
+		 String userAddress2=session.get("t_userAddress2").toString();
+		 String userAddress3=session.get("t_userAddress3").toString();
+		 String telNumber2=session.get("t_telNumber2").toString();
+		 String telNumber3=session.get("t_telNumber3").toString();
+
+
+		 if(userAddress2.equals("")){
+			 userAddress2=null;
+		 }
+
+		 if(userAddress3.equals("")){
+			 userAddress3=null;
+		 }
+
+		 if(telNumber2.equals("")){
+			 telNumber2=null;
+		 }
+
+		 if(telNumber3.equals("")){
+			 telNumber3=null;
+		 }
+
+
 		DAO.infoChange(
 				session.get("t_userId").toString(),
 				session.get("t_password").toString(),
@@ -32,11 +60,11 @@ public class UserInfoChangeCompleteAction extends ActionSupport implements Sessi
 				Integer.parseInt((session.get("t_question")).toString()),
 				session.get("t_answer").toString(),
 				session.get("t_userAddress").toString(),
-				session.get("t_userAddress2").toString(),
-				session.get("t_userAddress3").toString(),
+				userAddress2,
+				userAddress3,
 				session.get("t_telNumber").toString(),
-				session.get("t_telNumber2").toString(),
-				session.get("t_telNumber3").toString()
+				telNumber2,
+				telNumber3
 				);
 
 /*
