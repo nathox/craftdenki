@@ -71,5 +71,12 @@
 
 
 
+	<s:form action ="SettlementAction">
+		<s:submit value ="決済画面へ(仮置き)"/>
+	</s:form>
+
+
+
+
 </body>
 </html>
