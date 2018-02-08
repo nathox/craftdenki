@@ -30,11 +30,14 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private ProductDetailsDAO productDetailsDAO = new ProductDetailsDAO();
 
+
+
+
+
 	public String execute() throws SQLException{
 
 
 		String[] productIdList = product_id.split(", ", 0);
-//		String[] itemStockList = item_stock.split(", ",0);
 
 
 		//商品詳細情報取得メソッド
@@ -48,21 +51,19 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 
 		//1から在庫数までの選択表示用List
-
-
 		for(int i=1; i<= detailsList.get(0).getItem_stock() ; i++){
 			stockList.add(i);
 			System.out.println("----在庫数");
 			System.out.print(i + " ");
 			System.out.println("-----------");
 		}
-//			System.out.println(stockList);
-
 
 		String result = SUCCESS;
 		return result;
 
 	}
+
+
 
 	public Map<String, Object> getSession() {
 		return session;

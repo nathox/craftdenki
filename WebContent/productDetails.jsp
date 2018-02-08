@@ -14,7 +14,6 @@ border: 1px solid #b1b1b1;
 border-collapse:collapse;
 }
 
-
 </style>
 
 </head>
@@ -48,13 +47,19 @@ border-collapse:collapse;
 
 
 	<s:form action="CartAction">
-		<s:param name="product_id" value="%{product_id}"/>
-		<s:param name="price" value="%{price}"/>
-		 購入個数
-	  	<s:select name="product_count" list="stockList"/>
- 		<div class=button><s:submit value=" カートに入れる " method="insert"/></div>
+		<s:if test="item_stock != 0">
+			購入個数
+	  		<s:select name="product_count" list="stockList"/>
+	  		<s:param name="product_id" value="%{product_id}"/>
+			<s:param name="price" value="%{price}"/>
+	  		<div class=button><s:submit value=" カートに入れる " method="insert"/></div>
+	  	</s:if>
+ 		<s:else>
+	  		<p>在庫がありません。</p>
+	  	</s:else>
 	</s:form>
 
+	<br>
 
 	<s:form action="FavoriteAction">
 		<s:param name="product_id" value="%{product_id}"/>

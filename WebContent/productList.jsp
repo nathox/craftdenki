@@ -20,10 +20,8 @@ border-collapse:collapse;
 </head>
 <body>
 
-
-
 <div class="ProductList">
-	<h1>新着商品一覧</h1>
+	<h1>商品一覧</h1>
 
 
 	<!-- 検索時のメッセージ(sano -->
