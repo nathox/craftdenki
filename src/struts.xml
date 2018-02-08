@@ -248,12 +248,12 @@
 		</action>
 
 		<!-- ChangePasswordConfirmAction -->
-		<action name="ChangePasswordconfirmAction" class="com.internousdev.craftdenki.action.ChangePasswordAction" method="execute">
+		<action name="ChangePasswordConfirmAction" class="com.internousdev.craftdenki.action.ChangePasswordConfirmAction" method="execute">
 			<result name="success">changePasswordConfirm.jsp</result>
 		</action>
 
 		<!-- ChangePasswordCompleteAction -->
-		<action name="ChangePasswordCompleteAction" class="com.internousdev.craftdenki.action.ChangePasswordConfirmAction" method="execute">
+		<action name="ChangePasswordCompleteAction" class="com.internousdev.craftdenki.action.ChangePasswordCompleteAction" method="execute">
 			<result name="success">changePasswordComplete.jsp</result>
 		</action>
 
