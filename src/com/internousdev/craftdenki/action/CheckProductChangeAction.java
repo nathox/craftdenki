@@ -1,8 +1,15 @@
 package com.internousdev.craftdenki.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductDataChangeConfirmAction extends ActionSupport{
+public class CheckProductChangeAction extends ActionSupport implements SessionAware{
+	public Map<String,Object> session;
+
+	private String errorMessage;
 
 	private String productId;
 	private String productName;
@@ -28,13 +35,9 @@ public class ProductDataChangeConfirmAction extends ActionSupport{
 		System.out.println(releaseCompany);
 		System.out.println("----------------------------------------------");
 
-
-
-
-		result=SUCCESS;
-
-
-
+		if(true){      //管理者判定
+			result = SUCCESS;
+		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
 	}
 
@@ -110,6 +113,14 @@ public class ProductDataChangeConfirmAction extends ActionSupport{
 		this.releaseCompany = releaseCompany;
 	}
 
-
-
+	@Override
+	public void setSession(Map<String,Object> session){
+		this.session = session;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 }

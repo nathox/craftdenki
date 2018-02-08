@@ -11,7 +11,7 @@ import com.internousdev.craftdenki.util.ErrorMessageList;
 import com.internousdev.craftdenki.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class CheckProductInfoAction extends ActionSupport implements SessionAware, ErrorMessageList {
+public class CheckProductRegistAction extends ActionSupport implements SessionAware, ErrorMessageList {
 	private String newProductId; //新商品ID
 	private String newProductName; //商品名
 	private String newProductNameKana; //商品名かな

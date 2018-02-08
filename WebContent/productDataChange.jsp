@@ -66,7 +66,7 @@
 			<p>商品変更画面</p>
 		</div>
 		<div>
-			<s:form action="ProductDataChangeConfirmAction">
+			<s:form action="CheckProductChangeAction">
 				<span>商品ID</span>
 				<span>必須</span>
 				<div>
@@ -93,8 +93,7 @@
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<s:select name="categoryId" value="2" list="categoryList">
-						<option value='<s:property value="categoryId"/>'><s:property value="categoryName"/></option>
+					<s:select name="categoryId" list="categoryList" listValue="categoryName" listKey="categoryId" value="category_id">
 					</s:select>
 				</div>
 
