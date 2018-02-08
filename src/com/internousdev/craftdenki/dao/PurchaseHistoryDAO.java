@@ -15,6 +15,10 @@ public class PurchaseHistoryDAO {
 	private Connection con = db.getConnection();
 
 	public ArrayList<PurchaseHistoryDTO> getPurchaseHistory(String userId) throws SQLException {
+
+		System.out.println("aaa");
+		System.out.println(userId);
+		System.out.println("aaa");
 		ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 
 		String sql = "SELECT * FROM purchase_history_info LEFT JOIN product_info ON purchase_history_info.product_id = product_info.product_id WHERE user_id = ?";

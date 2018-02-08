@@ -2,7 +2,6 @@ package com.internousdev.craftdenki.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -18,6 +17,14 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	public PurchaseHistoryDAO purchaseHistoryDAO = new PurchaseHistoryDAO();
 
 	public ArrayList<PurchaseHistoryDTO> purchaceHistoryList = new ArrayList<PurchaseHistoryDTO>();
+
+	public ArrayList<PurchaseHistoryDTO> getPurchaceHistoryList() {
+		return purchaceHistoryList;
+	}
+
+	public void setPurchaceHistoryList(ArrayList<PurchaseHistoryDTO> purchaceHistoryList) {
+		this.purchaceHistoryList = purchaceHistoryList;
+	}
 
 	private String deleteFlg = null;
 	private String userId;
@@ -40,12 +47,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		if (this.deleteFlg == null || this.deleteFlg.isEmpty()) {
 			// ログインID(userID)を利用して、DAOから情報を検索する
 			purchaceHistoryList = purchaseHistoryDAO.getPurchaseHistory(userId);
-
-			Iterator<PurchaseHistoryDTO> iterator = purchaceHistoryList.iterator();
-			if (!(iterator.hasNext())) {
-				purchaceHistoryList = null;
-			}
-
+			System.out.println("sss");
 		}
 
 		return SUCCESS;

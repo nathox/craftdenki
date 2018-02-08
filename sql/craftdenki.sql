@@ -143,7 +143,7 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 
 
 INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01");
-INSERT INTO purchase_history_info VALUES(2,"test1",29,2,1000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01");
 
 
 
@@ -164,13 +164,13 @@ INSERT INTO m_category VALUES(3,3,"おもちゃ・げーむ","おもちゃ・げ
 
 
 
-INSERT INTO favorite_info VALUES(1,"test",28,"2016/01/01");
-INSERT INTO favorite_info VALUES(2,"test1",29,"2016/01/01");
+INSERT INTO favorite_info VALUES(1,"test",10000028,"2016/01/01");
+INSERT INTO favorite_info VALUES(2,"test1",10000029,"2016/01/01");
 
 
-INSERT INTO review_info VALUES(1,"test",28,"2016/01/01","いいキーボードです",3);
-INSERT INTO review_info VALUES(2,"test",29,"2016/01/01","いい本です",1);
-INSERT INTO review_info VALUES(3,"test1",28,"2016/01/01","いいキーボードだった",5);
+INSERT INTO review_info VALUES(1,"test",10000028,"2016/01/01","いいキーボードです",3);
+INSERT INTO review_info VALUES(2,"test",10000029,"2016/01/01","いい本です",1);
+INSERT INTO review_info VALUES(3,"test1",10000028,"2016/01/01","いいキーボードだった",5);
 
 
 
