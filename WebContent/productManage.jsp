@@ -59,6 +59,22 @@
 		line-height:0px;
 	}
 </style>
+
+
+							<td><s:submit value="仕入" onclick="goSupplyConfirmAction();"/></td>
+							<td></td>
+							<td><s:submit value="非表示" onclick="goProductHideConfirmAction();"/></td>
+
+<script type="text/javascript">
+    function goSupplyConfirmAction(){
+        document.getElementById('form').action="SupplyConfirmAction";
+    }
+
+    function goProductHideConfirmAction(){
+        document.getElementById('form').action="ProductHideConfirmAction";
+    }
+</script>
+
 </head>
 <body>
 	<div id="header">
@@ -71,7 +87,7 @@
 		</div>
 		<div>
 			<h3>商品一覧</h3>
-			<s:form>
+			<s:form id="form" name="form">
 				<table border="1">
 					<tr>
 						<th>ID</th>
@@ -101,9 +117,9 @@
 							<td></td>
 							<td></td>
 							<td></td>
-							<td><s:submit value="仕入"  action="SupplyConfirmAction"/></td>
+							<td><s:submit value="仕入" onclick="goSupplyConfirmAction();"/></td>
 							<td></td>
-							<td><s:submit value="非表示"  action="ProductHideConfirmAction"/></td>
+							<td><s:submit value="非表示" onclick="goProductHideConfirmAction();"/></td>
 						</tr>
 				</table>
 			</s:form>

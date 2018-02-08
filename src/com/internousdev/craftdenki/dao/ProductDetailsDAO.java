@@ -16,10 +16,10 @@ public class ProductDetailsDAO {
 
 
 	//商品詳細情報取得
-	public ArrayList<ProductDTO> getProductDetailsInfo(int product_id) throws SQLException{
+	public ProductDTO getProductDetailsInfo(int product_id) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		ArrayList<ProductDTO> detailsList = new ArrayList<ProductDTO>();
+		ProductDTO productDTO = new ProductDTO();
 		String sql = "SELECT * FROM product_info where product_id=?";
 
 		try{
@@ -27,9 +27,6 @@ public class ProductDetailsDAO {
 			preparedStatement.setInt(1, product_id);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
-
-			while(resultSet.next()){
-				ProductDTO productDTO = new ProductDTO();
 
 				productDTO.setId(resultSet.getInt("id"));
 				productDTO.setProduct_id(resultSet.getInt("product_id"));
@@ -47,14 +44,12 @@ public class ProductDetailsDAO {
 				productDTO.setUpdate_date(resultSet.getDate("update_date"));
 				productDTO.setItem_stock(resultSet.getInt("item_stock"));
 
-				detailsList.add(productDTO);
-			}
-
 		}catch(Exception e){
 			e.printStackTrace();
+		}finally{
+			connection.close();
 		}
-		System.out.println("詳細情報の件数 : "+ detailsList.size());
-		return detailsList;
+		return productDTO;
 	}
 
 
@@ -104,6 +99,8 @@ public class ProductDetailsDAO {
 		System.out.println("詳細情報の件数 : "+ detailsList.size());
 		return detailsList;
 	}
+
+
 
 
 }

@@ -92,6 +92,7 @@ public class ProductListDAO {
 							  Integer category_id,
 							  Integer price,
 							  String image_file_path,
+							  String image_file_name,
 							  String release_date,
 							  String release_company) throws SQLException{
 
@@ -105,10 +106,11 @@ public class ProductListDAO {
 								+ "category_id,"
 								+ "price,"
 								+ "image_file_path,"
+								+ "image_file_name"
 								+ "release_date,"
 								+ "release_company,"
 								+ "regist_date) "
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?)";
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
 		int res=0;
 
@@ -121,9 +123,10 @@ public class ProductListDAO {
 			preparedStatement.setInt(5, category_id);
 			preparedStatement.setInt(6, price);
 			preparedStatement.setString(7, image_file_path);
-			preparedStatement.setString(8, release_date);
-			preparedStatement.setString(9, release_company);
-			preparedStatement.setString(10,dateUtil.getDate());
+			preparedStatement.setString(8, image_file_name);
+			preparedStatement.setString(9, release_date);
+			preparedStatement.setString(10, release_company);
+			preparedStatement.setString(11,dateUtil.getDate());
 
 			res=preparedStatement.executeUpdate();
 		}catch(Exception e) {
