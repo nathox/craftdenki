@@ -9,6 +9,9 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="imagetoolbar" content="no" />
+
+	<meta http-equiv="refresh" content="5;URL=/craftdenki/myPage.jsp">
+
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
@@ -21,9 +24,9 @@
 </head>
 <body>
 
-	<h3>ユーザー情報を変更しました。マイページ画面に戻ります。</h3>
+	<h3>ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。</h3>
 
-	<p><input type="button" value="完了" onclick="submitAction('GoMyPageAction')" /></p>
+	自動で切り替わらない場合は<a href="myPage.jsp">こちら</a>
 
 
 
