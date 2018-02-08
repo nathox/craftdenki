@@ -25,6 +25,14 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private String message;
 
 	public Collection<String> delete;
+	public String productName;
+	public String productNameKana;
+	public String imageFilePath;
+	public String productCount;
+	public String releaseCompany;
+	public String releaseDate;
+	public String totalPrice;
+
 
 
 
@@ -46,7 +54,14 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 		}else if(deleteFlg.equals("1")){
 			for(String deleteId:delete){
-				this.delete(Integer.parseInt(deleteId));
+//				this.delete(Integer.parseInt(deleteId));
+				int res = cartDAO.deleteCart(userId,deleteId);
+
+				if(res > 0){
+					setMessage("カート情報を削除しました。");
+				}else if(res == 0){
+					setMessage("カート情報の削除に失敗しました。");
+				}
 			}
 		}
 
@@ -56,23 +71,23 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 
 	//カート内選択商品削除
-	public void delete(int deleteId)throws SQLException{
-		//String item_id = session.get("product_id").toString();
-
-		int res = cartDAO.deleteCart(userId,deleteId);
-
-		if(res > 0){
-			setMessage("カート情報を削除しました。");
-		}else if(res == 0){
-			setMessage("カート情報の削除に失敗しました。");
-		}
-	}
+//	public void delete(int deleteId)throws SQLException{
+//		//String item_id = session.get("product_id").toString();
+//
+//		int res = cartDAO.deleteCart(userId,deleteId);
+//
+//		if(res > 0){
+//			setMessage("カート情報を削除しました。");
+//		}else if(res == 0){
+//			setMessage("カート情報の削除に失敗しました。");
+//		}
+//	}
 
 
 	//カート追加
 	public String insert()throws SQLException{
 		cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
-		
+
 		result = "insert";
 		return result;
 

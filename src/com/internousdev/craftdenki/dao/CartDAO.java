@@ -52,8 +52,8 @@ public class CartDAO {
 	}
 
 	//カート情報削除メソッド
-	public int deleteCart(String user_id,int deleteId)throws SQLException{
-		String delete = "DELETE FROM cart_info WHERE product_id = ? AND user_id = ? AND id = ?";
+	public int deleteCart(String user_id,String deleteId)throws SQLException{
+		String delete = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
 
 		PreparedStatement ps;
 		int result = 0 ;
@@ -61,7 +61,7 @@ public class CartDAO {
 			ps = connection.prepareStatement(delete);
 			//ps.setString(1,product_id);
 			ps.setString(1,user_id);
-			ps.setInt(2,deleteId);
+			ps.setString(2,deleteId);
 			result = ps.executeUpdate();
 
 		}catch(SQLException e){
@@ -74,7 +74,7 @@ public class CartDAO {
 
 
 	//カートテーブルにInsertメソッド
-	public void insertCart(String userId,int product_id,int product_count,int price)throws SQLException{
+	public void insertCart(String userId,int product_id,int product_count,int price) throws SQLException{
 		String insert = "INSERT INTO cart_info (id,user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?,?)";
 		int totalPrice = product_count * price;
 

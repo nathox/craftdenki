@@ -11,6 +11,26 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords"content=""/>
+
+
+							<input type="hidden" name="deleteFlg" value="1">
+						<s:submit value="削除" onclick="goCartAction();"/>
+						<s:submit value="決済" oncick="goSettlementAction();"/>
+
+
+	<script type="text/javascript">
+    function goCartAction(){
+        document.getElementById('form').action="CartAction";
+    }
+
+    function goSettlementAction(){
+        document.getElementById('form').action="SettlementAction";
+    }
+</script>
+
+
+
+
 	<title>cart画面</title>
 
 </head>
@@ -30,7 +50,8 @@
 			<s:elseif test="message == null">
 
 
-				<s:form action ="CartAction">
+
+				<s:form id="form" name="form" action ="CartAction">
 					<h3>カート情報は以下になります。</h3>
 					<table>
 					<tr>
@@ -82,9 +103,10 @@
 					</tr>
 					</table>
 						<input type="hidden" name="deleteFlg" value="1">
-						<s:submit value="削除" method="delete"/>
-						<s:submit value="決済" method="settlement"/>
+						<s:submit value="削除" onclick="goCartAction();"/>
+						<s:submit value="決済" oncick="goSettlementAction();"/>
 					</s:form>
+
 			</s:elseif>
 			<s:if test="message != null">
 				<h3><s:property value="message"/></h3>
