@@ -70,7 +70,7 @@
 			<p>商品管理画面</p>
 		</div>
 		<div>
-			<h3>仕入</h3>
+			<h3>商品一覧</h3>
 			<s:form action="SupplyConfirmAction">
 				<table border="1">
 					<tr>
@@ -89,6 +89,13 @@
 							<td><s:textfield name="supplycount" value="0"/></td>
 						</tr>
 					</s:iterator>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
 				</table>
 				<s:submit value="仕入"/>
 			</s:form>

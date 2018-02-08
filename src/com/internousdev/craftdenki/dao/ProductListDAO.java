@@ -85,7 +85,7 @@ public class ProductListDAO {
 
 
 
-	public void productRegist(String product_id,
+	public int productRegist(String product_id,
 							  String product_name,
 							  String product_name_kana,
 							  String product_description,
@@ -109,6 +109,9 @@ public class ProductListDAO {
 								+ "release_company,"
 								+ "regist_date) "
 				+ "VALUES(?,?,?,?,?,?,?,?,?,?)";
+
+		int res=0;
+
 		try {
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setString(1,product_id);
@@ -123,10 +126,14 @@ public class ProductListDAO {
 			preparedStatement.setString(10,dateUtil.getDate());
 
 			preparedStatement.execute();
+
+			res=preparedStatement.executeUpdate();
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			connection.close();
 		}
+		return res;
 	}
 }

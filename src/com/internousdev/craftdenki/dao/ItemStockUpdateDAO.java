@@ -12,7 +12,7 @@ public class ItemStockUpdateDAO {
 	private Connection connection=dbConnector.getConnection();
 
 	private String sql = "UPDATE product_info "
-							+ "SET item_stock = item_stock - ? "
+							+ "SET item_stock = item_stock + ? "
 							+ "WHERE product_id = ?";
 
 
@@ -21,16 +21,20 @@ public class ItemStockUpdateDAO {
 	 * 購入は負の整数(購入数)と商品IDを
 	 * 引数としてください
 	 */
-	public void itemStockUpdate(int count ,int productId) throws SQLException{
+	public int itemStockUpdate(int count ,int productId) throws SQLException{
+		int res = 0;
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1,count);
 			preparedStatement.setInt(2, productId);
 			preparedStatement.execute();
+			res=preparedStatement.executeUpdate();
 		} catch(Exception e){
 		e.printStackTrace();
 		} finally{
 			connection.close();
 		}
+		return res;
 	}
 }
+
