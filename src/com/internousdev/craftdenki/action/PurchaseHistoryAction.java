@@ -26,7 +26,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	public String execute() throws SQLException {
 
-		if (!session.containsKey("mainLoginId")) {
+		if (!session.containsKey("trueID")) {
 			return ERROR;
 		}
 
@@ -61,6 +61,21 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.userId = userId;
 
 
+	}
+
+	public void delete() throws SQLException{
+
+
+	String userId = session.get("loginId").toString();
+
+	int res = PurchaseHistoryDAO.(product_id,)
+
+	if(res>0){
+		purchaseHistoryList=null;
+		setMessage("購入履歴を削除しました");
+	}else of(res == 0){
+		setMessage("削除に失敗しました");
+	}
 	}
 
 }

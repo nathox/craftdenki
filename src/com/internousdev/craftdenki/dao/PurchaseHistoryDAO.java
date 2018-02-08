@@ -36,13 +36,13 @@ public class PurchaseHistoryDAO {
 
 				PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
 
-				dto.setproductName(rs.getString("product_name"));
-				dto.setproductNameKana(rs.getString("product_name_kana"));
-				dto.setimageFileName(rs.getString("image_file_name"));
+				dto.setproduct_Name(rs.getString("product_name"));
+				dto.setproduct_Name_Kana(rs.getString("product_name_kana"));
+				dto.setimage_File_Name(rs.getString("image_file_name"));
 				dto.setPrice(rs.getInt("price"));
 				dto.setCount(rs.getInt("count"));
-				dto.setReleaseCompany(rs.getString("release_company"));
-				dto.setReleaseDate(rs.getString("release_date"));
+				dto.setrelease_Company(rs.getString("release_company"));
+				dto.setrelease_Date(rs.getString("release_date"));
 				dto.setId(rs.getInt("id"));
 
 
