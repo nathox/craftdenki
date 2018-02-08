@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.action;
 
 
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,16 +16,28 @@ public class CheckUserIdAction extends ActionSupport implements SessionAware{
 
 	private String userId;
 	public Map<String, Object> session;
-	private CheckUserIdDAO checkUserIdDAO = new CheckUserIdDAO();
-	private UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
+	private String questionMessage;
 
 
-	public String execute(){
+	public String execute() throws SQLException{
 		String result = ERROR;
+		CheckUserIdDAO checkUserIdDAO = new CheckUserIdDAO();
+		UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
 
 		userInfoChangeDTO=checkUserIdDAO.select(userId);
+
+		if (userInfoChangeDTO.getQuestion() == 1) {
+			questionMessage ="嫌いな食べ物は？";
+		} else if (userInfoChangeDTO.getQuestion() == 2) {
+			questionMessage ="母の旧姓は？";
+		} else {
+			questionMessage ="好きな動物は？";
+		}
+
+
 		if(userId.equals(userInfoChangeDTO.getUserId())){
 				result =SUCCESS;
+
 		}
 		session.put("userId", userId);
 		return result;
@@ -40,8 +53,18 @@ public class CheckUserIdAction extends ActionSupport implements SessionAware{
 		this.userId = userId;
 	}
 
-	@Override
+
+	public Map<String, Object> getSession(){
+		return session;
+	}
+
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+	public String getQuestionMessage(){
+		return questionMessage;
+	}
+	public void setQuestionMessage(String questionMessage){
+		this.questionMessage = questionMessage;
 	}
 }

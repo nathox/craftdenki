@@ -11,7 +11,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta charset="utf-8">
+
 <title>Password確認</title>
 </head>
 <body>

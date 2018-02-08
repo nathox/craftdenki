@@ -16,22 +16,22 @@
 <body>
 
 <div>
-			<s:if test="errorMassage != ''">
-				<h3><s:property value="errorMassage" escape="false" /></h3>
+			<s:if test="errorMessage != ''">
+				<h3><s:property value="errorMessage" escape="false" /></h3>
 			</s:if>
-			<s:form action="ChangePasswordAction">
+			<s:form action="ChangePasswordConfirmAction">
 				<tr>
 					<td>
 						<label>秘密の質問:</label>
 					</td>
 					<td>
-					<s:property value="question" escape="false"/>
+					<s:property value="questionMessage" />
 					</td>
 					<td>
 						<label>答え:</label>
 					</td>
 					<td>
-					<input type="text" name="answer" value="<s:property value="session.answer"/>" />
+					<input type="text" name="answer" value="" />
 					</td>
 				</tr>
 				<tr>
@@ -39,7 +39,7 @@
 						<label>ログインPASS (パスワード):</label>
 					</td>
 					<td>
-						<input type="password" name="loginPassword" value="<s:property value="session.password"/>" />
+						<input type="password" name="password" value="" />
 					</td>
 				</tr>
 				<tr>
@@ -47,7 +47,7 @@
 						<label>確認用：</label>
 					</td>
 					<td>
-						<input type="password" name="checkPassword" value="<s:property value="session.password"/>" />
+						<input type="password" name="checkPassword" value="" />
 					</td>
 				</tr>
 

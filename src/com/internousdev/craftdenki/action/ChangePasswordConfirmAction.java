@@ -1,6 +1,5 @@
 package com.internousdev.craftdenki.action;
 
-import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -23,9 +22,9 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 	public Map<String,Object> session;
 
-	private String errorMassage;
+	private String errorMessage;
 
-	public String execute() throws SQLException{
+	public String execute(){
 
 		String result = SUCCESS;
 
@@ -34,40 +33,43 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 		dto=dao.checkAnswer(answer);
 		if (answer.equals(dto.getAnswer())) {
-			session.put(answer, dto.getAnswer());
 
-		if(!(password.equals(checkPassword))){
-			if (!(password.equals(""))) {
-					ChangePasswordConfirmDAO changePasswordConfirmDAO = new ChangePasswordConfirmDAO();
-					boolean checkId = changePasswordConfirmDAO.getUserInfo(answer);
+			if(password.equals(checkPassword)){
+				if (!(password.equals(""))) {
 
-					if (checkId) {
-					if(password.matches("[\\w]")){
-						if (password.matches("{1,16}")) {
+						if(password.matches("[\\w]")){
+							if (password.matches("[\\w]{1,16}")) {
 
-							session.put("password", password);
-							result = SUCCESS;
+								session.put("answer", dto.getAnswer());
+								session.put("password", password);
 
-						}else {
-							setErrorMassage("パスワードは１文字以上１６文字以下で入力してください。");
-							result = ERROR;
-						}
+							}else {
+								setErrorMessage("パスワードは１文字以上１６文字以下で入力してください。");
+								result = ERROR;
+							}
+					}else {
+						setErrorMessage("パスワードは半角英数字で入力してください。");
+						result = ERROR;
+					}
+
 				}else {
-					setErrorMassage("パスワードは半角英数字で入力してください。");
+					setErrorMessage("パスワードを入力してください");
 					result = ERROR;
 				}
-			}else {
-				setErrorMassage("同じパスワードが存在します。");
-			}
+				}else {
+					setErrorMessage("入力されたパスワードが異なります。");
+				}
 
-			}else {
-				setErrorMassage("パスワードを入力してください");
-				result = ERROR;
-			}
-	}else {
-		setErrorMassage("入力されたパスワードが異なります。");
-	}
-	}
+		} else{
+		setErrorMessage("秘密の質問の答えが違います。");
+		session.put("password", password);
+
+		result = ERROR;
+		}
+
+
+
+
 		return result;
 	}
 
@@ -103,11 +105,12 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 		this.session = session;
 	}
 
+
 	public String getErrorMassage() {
-		return errorMassage;
+		return errorMessage;
 	}
 
-	public void setErrorMassage(String errorMassage) {
-		this.errorMassage = errorMassage;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 }

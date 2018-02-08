@@ -3,7 +3,6 @@ package com.internousdev.craftdenki.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Map;
 
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
@@ -17,11 +16,13 @@ public class ChangePasswordConfirmDAO {
 
 	private Connection conn = dbConnector.getConnection();
 
-	private boolean result =false;
+
 
 	public Map<String, Object> session;
 
-	public UserInfoChangeDTO checkAnswer(String answer) throws SQLException{
+	public UserInfoChangeDTO checkAnswer(String answer){
+
+
 		UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
 		try{
 			String sql ="select * from user_info where answer=?";
@@ -34,41 +35,13 @@ public class ChangePasswordConfirmDAO {
 				userInfoChangeDTO.setAnswer(rs.getString("answer"));
 			}
 
-		}catch(SQLException e){
+		}catch(Exception e){
 			e.printStackTrace();
-		}finally {
-			conn.close();
 		}
 		return userInfoChangeDTO;
 	}
 
 
-	public boolean getUserInfo(String answer){
-
-		String sql="SELECT * FROM user_info ";
-
-		try{
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-
-			while(rs.next()){
-
-
-				String ans =rs.getString("answer");
-
-				if( ans.equals(answer)){
-						result = true;
-						return result;
-					}else{
-						result = false;
-					}
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-
-		return result;
-	}
 
 
 

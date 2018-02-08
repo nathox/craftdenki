@@ -11,7 +11,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta charset="utf-8">
+
 <title>Password変更完了画面</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
 			<h3>パスワードを変更しました。</h3>
 
 			<div>
-				<a href='<s:url action="LogoutAction" />'>ログインへ</a>
+				<a href='<s:url action="LoginAction" />'>ログインへ</a>
 			</div>
 		</div>
 </body>

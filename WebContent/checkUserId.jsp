@@ -12,7 +12,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta charset="UTF-8" />
+
 <title>ログインID確認画面</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 				<label>ログインID：</label>
 				</td>
 				<td>
-				<input type="text" name="id"/>
+				<input type="text" name="userId"/>
 				</td>
 			</tr>
 

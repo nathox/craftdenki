@@ -7,7 +7,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ChangePasswordCompleteDAO;
-import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ChangePasswordCompleteAction extends ActionSupport implements SessionAware {
@@ -23,7 +22,8 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 
 		boolean checkUpdate =changePasswordCompleteDAO.updateInfo(
 				session.get("password").toString(),
-				((UserInfoChangeDTO) session.get("user_id")).getUserId().toString());
+//				((UserInfoChangeDTO) session.get("trueID")).getUserId().toString()
+				"test");
 
 
 		if(checkUpdate){
@@ -31,8 +31,6 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 		}
 
 		return result;
-
-
 
 	}
 
@@ -45,5 +43,9 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public Map<String, Object> getSssion() {
+		return this.session;
 	}
 }

@@ -15,7 +15,7 @@ public class ChangePasswordCompleteDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "UPDATE user_info SET password=? updated_date = ? WHERE user_id=? ";
+	private String sql = "UPDATE user_info SET password=? update_date = ? WHERE user_id=? ";
 
 	public boolean updateInfo(String password, String defaultId) throws SQLException{
 
