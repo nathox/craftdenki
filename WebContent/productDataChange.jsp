@@ -70,30 +70,30 @@
 				<span>商品ID</span>
 				<span>必須</span>
 				<div>
-					<s:textfield name="productId" value="%{product_id}" placeholder="半角数字8桁 例)12345678"/>
+					<s:textfield name="product_id" value="%{product_id}" placeholder="半角数字8桁 例)12345678"/>
 				</div>
 
 				<span>商品名</span>
 				<span>必須</span>
 				<div>
-					<s:textfield name="productName" value="%{product_name}" placeholder="半角数字8桁 例)12345678"/>
+					<s:textfield name="product_name" value="%{product_name}" placeholder="半角数字8桁 例)12345678"/>
 				</div>
 
 				<span>商品名かな</span>
 				<span>必須</span>
 				<div>
-					<s:textfield name="productNameKana" value="%{product_name_kana}" placeholder="ひらがな 例)じょしぼうめそっど"/>
+					<s:textfield name="product_name_kana" value="%{product_name_kana}" placeholder="ひらがな 例)じょしぼうめそっど"/>
 				</div>
 
 				<span>商品詳細</span>
 				<div>
-					<s:textfield name="productDescription" value="%{product_description}" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
+					<s:textfield name="product_description" value="%{product_description}" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
 				</div>
 
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<s:select name="categoryId" list="categoryList" listValue="categoryName" listKey="categoryId" value="category_id">
+					<s:select name="category_id" list="categoryList" listValue="categoryName" listKey="categoryId" value="category_id">
 					</s:select>
 				</div>
 
@@ -105,17 +105,17 @@
 
 				<span>画像ファイル名</span>
 				<div>
-					<s:textfield name="imageFileName" value="%{image_file_name}" placeholder="ファイル名.拡張子例)bazooka"/>
+					<s:textfield name="image_file_name" value="%{image_file_name}" placeholder="ファイル名.拡張子例)bazooka"/>
 				</div>
 
 				<span>発売年月</span>
 				<div>
-					<s:textfield name="releaseDate" value="%{release_date}" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
+					<s:textfield name="release_date" value="%{release_date}" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
 				</div>
 
 				<span>発売会社</span>
 				<div>
-					<s:textfield name="releaseCompany" value="%{release_company}" placeholder="例)ベースボール・マガジン社"/>
+					<s:textfield name="release_company" value="%{release_company}" placeholder="例)ベースボール・マガジン社"/>
 				</div>
 
 				<s:submit value="登録"/>

@@ -24,6 +24,7 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 
 	private ArrayList<String> errorMessageList = new ArrayList<>();
 	private Map<String, Object> session;
+	private String errorMessage;
 
 
 
@@ -85,7 +86,7 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 				result = "error1";
 			}
 
-		}
+		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
 	}
 
@@ -210,6 +211,16 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 		this.errorMessageList = errorMessageList;
 	}
 
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 
 	public Map<String, Object> getSession() {

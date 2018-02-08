@@ -43,7 +43,7 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 		if(true){      //管理者判定
 			result = SUCCESS;
 
-
+			session.put("product_id", product_id);
 
 			ProductDetailsDAO dao = new ProductDetailsDAO();
 			ProductDTO dto = dao.getProductDetailsInfo(Integer.parseInt(product_id));

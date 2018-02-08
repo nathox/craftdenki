@@ -131,7 +131,7 @@
 					</s:div>
 				</s:iterator>
 			</div>
-			<s:form action="CheckProductInfoAction">
+			<s:form action="CheckProductRegistAction">
 				<span>新商品ID</span>
 				<span>必須</span>
 				<div>
