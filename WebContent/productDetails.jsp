@@ -39,9 +39,10 @@ border-collapse:collapse;
 
 	<s:iterator value="reviewList">
 		<div id="reviewList">
-			<div>ユーザー:<s:property value="user_id" /></div>
+			<div>ユーザー名:<s:property value="user_id" /></div>
 			<div>レビュー:<s:property value="review_id" /></div>
 			<div>評価:<s:property value="evaluation_count" /></div>
+			<div>投稿日時:<s:property value="review_date" /></div>
 		</div>
 	</s:iterator>
 
@@ -52,7 +53,8 @@ border-collapse:collapse;
 	  		<s:select name="product_count" list="stockList"/>
 	  		<s:param name="product_id" value="%{product_id}"/>
 			<s:param name="price" value="%{price}"/>
-	  		<div class=button><s:submit value=" カートに入れる " method="insert"/></div>
+			<s:param name="insertFlg" value="1"/>
+	  		<div class=button><s:submit value=" カートに入れる " method="execute"/></div>
 	  	</s:if>
  		<s:else>
 	  		<p>在庫がありません。</p>
