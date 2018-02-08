@@ -63,7 +63,7 @@
 		</div>
 		<div>
 			<h1>エラーが発生しました。</h1>
-				<p>権限がないため表示ができません。</p>
+				<p><s:property value="errorMessage"/></p>
 		</div>
 	</div>
 	<div id="footer">

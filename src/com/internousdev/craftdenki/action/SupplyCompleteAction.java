@@ -15,10 +15,11 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
 	private List<ProductDTO> supplyList = new ArrayList<ProductDTO>();
+	private String errorMessage;
 
 
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "unused" })
 	public String execute() throws SQLException{
 		String result = ERROR;
 
@@ -26,20 +27,27 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 
 		if(true){      //管理者判定
 
+			result = SUCCESS;
+
 			//product_infoテーブルのitem_stockをupdate
 			for(int i = 0; i < supplyList.size(); i++){
 				ItemStockUpdateDAO dao = new ItemStockUpdateDAO();
-				dao.itemStockUpdate(supplyList.get(i).getSupply_count(),supplyList.get(i).getProduct_id());
+				boolean res = dao.itemStockUpdate(supplyList.get(i).getSupply_count(),supplyList.get(i).getProduct_id());
+
+				//update出来なかった商品があれば、errorM.jspへ遷移
+				if(!res){
+					result = ERROR;
+					errorMessage = "仕入処理が出来なかった商品があります。恐れ入りますが、在庫数の確認をお願いいたします。";
+				}
 			}
 
+		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 
-			result = SUCCESS;
-		}
 		return result;
 	}
 
 
-
+	//getter,setter
 	public Map<String, Object> getSession() {
 		return session;
 	}
@@ -62,6 +70,18 @@ public class SupplyCompleteAction extends ActionSupport implements SessionAware{
 		this.supplyList = supplyList;
 	}
 
-	//getter,setter
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+
 
 }
