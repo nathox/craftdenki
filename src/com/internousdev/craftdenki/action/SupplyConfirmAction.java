@@ -20,6 +20,7 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 	private String item_stock;
 	private String supplycount;
 
+	private String errorMessage;
 	/*supplyConfirm.jspにて表示用
 	 * 兼
 	 * SupplyCompleteActionにてUPDATE用
@@ -63,7 +64,7 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 			result = SUCCESS;
-		}
+		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
 	}
 
@@ -149,6 +150,20 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 	public ArrayList<ProductDTO> getSupplyList() {
 		return supplyList;
+	}
+
+
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 

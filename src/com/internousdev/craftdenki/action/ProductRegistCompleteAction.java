@@ -20,6 +20,8 @@ public class ProductRegistCompleteAction extends ActionSupport implements Sessio
 	private String newReleaseCompany; //発売会社
 	private String newProductImage; //画像ファイル名
 
+	private String errorMessage;
+
 	public Map<String,Object> session;
 
 	public String execute() throws SQLException{
@@ -33,7 +35,7 @@ public class ProductRegistCompleteAction extends ActionSupport implements Sessio
 			String newImagePass = "./images/" + newProductImage;
 
 			//product_infoテーブルに登録
-			dao.productRegist(newProductId,
+			int res= dao.productRegist(newProductId,
 							  newProductName,
 							  newProductNameKana,
 							  newProductDescription,
@@ -42,7 +44,11 @@ public class ProductRegistCompleteAction extends ActionSupport implements Sessio
 							  newImagePass,
 							  newReleaseDate,
 							  newReleaseCompany);
-		}
+			if(res == 0){
+				result = ERROR;
+				errorMessage = "登録に失敗しました。恐れ入りますが再度登録をお願いいたします。";
+			}
+		} else errorMessage = "不正なアクセスです。再度ログインをお願いいたします。";
 		return result;
 	}
 
@@ -104,6 +110,14 @@ public class ProductRegistCompleteAction extends ActionSupport implements Sessio
 	public Map<String, Object> getSession() {
 		return session;
 	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session = session;

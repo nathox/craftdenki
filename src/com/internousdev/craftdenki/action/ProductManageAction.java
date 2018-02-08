@@ -15,6 +15,7 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 	private ProductListDAO productListDAO = new ProductListDAO();
 	private ArrayList<ProductDTO> productList = new ArrayList<>();
 
+	private String errorMessage;
 
 	public String execute() throws SQLException{
 		String result = ERROR;
@@ -23,7 +24,7 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 			//商品一覧を取得
 			productList = productListDAO.getProductInfo();
 			result = SUCCESS;
-		}
+		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
 	}
 	@Override
@@ -32,5 +33,11 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 	}
 	public ArrayList<ProductDTO> getProductList(){
 		return this.productList;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 }
