@@ -19,22 +19,25 @@ public class ItemStockUpdateDAO {
 	/* 現在の在庫プラス引数(count)をUPDATEします
 	 * 仕入は正の整数(仕入数)と商品IDを
 	 * 購入は負の整数(購入数)と商品IDを
-	 * 引数としてください
+	 * 引数としてください。
+	 * update出来なければ、falseを返します。
 	 */
-	public int itemStockUpdate(int count ,int productId) throws SQLException{
-		int res = 0;
+	public boolean itemStockUpdate(int count ,int productId) throws SQLException{
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1,count);
 			preparedStatement.setInt(2, productId);
 			preparedStatement.execute();
-			res=preparedStatement.executeUpdate();
+			if(preparedStatement.executeUpdate() == 0){
+				return false;
+			};
 		} catch(Exception e){
 		e.printStackTrace();
 		} finally{
 			connection.close();
 		}
-		return res;
+
+		return true;
 	}
 }
 
