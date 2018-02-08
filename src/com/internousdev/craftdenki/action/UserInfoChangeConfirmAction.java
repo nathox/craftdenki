@@ -46,7 +46,7 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 		if(!(password.equals("")) && !(familyName.equals("")) && !(firstName.equals("")) &&
 				 !(familyNameKana.equals("")) && !(firstNameKana.equals("")) && !(email.equals("")) &&
-				 !(answer.equals("")) && userAddress.equals("") && telNumber.equals("")){
+				 !(answer.equals("")) && !(userAddress.equals("")) && !(telNumber.equals(""))){
 
 			//UserInfoChangeCompleteDAOで行指定するためのセッション
 			session.put("t_userId", userId);
@@ -92,12 +92,7 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 //↑これがuserInfoChange.jspに表示されるようにする
 
 			result=ERROR;
-//↑あとでstrutsをuserInfoChange.jspに遷移するよう更新する
 		}
-
-
-
-
 
 		return result;
 	}
