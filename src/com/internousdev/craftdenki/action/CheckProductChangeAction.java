@@ -20,20 +20,21 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 	private String errorMessage;
 	private List<CategoryDTO> categoryList = new ArrayList<CategoryDTO>();
 
-	private String product_id; //新商品ID
-	private String product_name; //商品名
-	private String product_name_kana; //商品名かな
-	private String product_description; //商品詳細
-	private String category_id; //カテゴリID
+	private String id; //PK
+	private String productId; //新商品ID
+	private String productName; //商品名
+	private String productNameKana; //商品名かな
+	private String productDescription; //商品詳細
+	private String categoryId; //カテゴリID
 	private String price; //販売価格
-	private String image_file_name; //画像ファイル名
-	private String release_date; //発売年月
-	private String release_company; //発売会社
+	private String imageFileName; //画像ファイル名
+	private String releaseDate; //発売年月
+	private String releaseCompany; //発売会社
 
 	public String execute() throws SQLException{
 		String result=ERROR;
 
-
+		System.out.println("id: "+id);
 
 		if(true){      //管理者判定
 			result = SUCCESS;
@@ -48,31 +49,31 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 
 			InputChecker i = new InputChecker();
 
-			if(!(session.get("product_id").toString().equals(product_id)) && dao.existsProductId(product_id)){
+			if(!(session.get("productId").toString().equals(productId)) && dao.existsProductId(productId)){
 				errorMessageList.add("入力された商品IDは既に存在します");
 				result = "error1";
-			}else if (!i.newProductIdChk(product_id).equals("OK")) {
-				errorMessageList.add(i.newProductIdChk(product_id));
+			}else if (!i.newProductIdChk(productId).equals("OK")) {
+				errorMessageList.add(i.newProductIdChk(productId));
 				result = "error1";
 			}
 
-			if (!i.newProductNameChk(product_name).equals("OK")) {
-				errorMessageList.add(i.newProductNameChk(product_name));
+			if (!i.newProductNameChk(productName).equals("OK")) {
+				errorMessageList.add(i.newProductNameChk(productName));
 				result = "error1";
 			}
 
-			if (!i.newProductNameKanaChk(product_name_kana).equals("OK")) {
-				errorMessageList.add(i.newProductNameKanaChk(product_name_kana));
+			if (!i.newProductNameKanaChk(productNameKana).equals("OK")) {
+				errorMessageList.add(i.newProductNameKanaChk(productNameKana));
 				result = "error1";
 			}
 
-			if (!i.newProductDescriptionChk(product_description).equals("OK")) {
-				errorMessageList.add(i.newProductDescriptionChk(product_description));
+			if (!i.newProductDescriptionChk(productDescription).equals("OK")) {
+				errorMessageList.add(i.newProductDescriptionChk(productDescription));
 				result = "error1";
 			}
 
-			if (!i.newCategoryIdChk(category_id).equals("OK")) {
-				errorMessageList.add(i.newCategoryIdChk(category_id));
+			if (!i.newCategoryIdChk(categoryId).equals("OK")) {
+				errorMessageList.add(i.newCategoryIdChk(categoryId));
 				result = "error1";
 			}
 
@@ -81,18 +82,18 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 				result = "error1";
 			}
 
-			if (!i.newReleaseDateChk(image_file_name).equals("OK")) {
-				errorMessageList.add(i.newReleaseDateChk(image_file_name));
+			if (!i.newReleaseDateChk(releaseDate).equals("OK")) {
+				errorMessageList.add(i.newReleaseDateChk(releaseDate));
 				result = "error1";
 			}
 
-			if (!i.newReleaseCompanyChk(release_date).equals("OK")) {
-				errorMessageList.add(i.newReleaseCompanyChk(release_date));
+			if (!i.newReleaseCompanyChk(releaseCompany).equals("OK")) {
+				errorMessageList.add(i.newReleaseCompanyChk(releaseCompany));
 				result = "error1";
 			}
 
-			if (!i.newProductImageChk(release_company).equals("OK")) {
-				errorMessageList.add(i.newProductImageChk(release_company));
+			if (!i.newProductImageChk(imageFileName).equals("OK")) {
+				errorMessageList.add(i.newProductImageChk(imageFileName));
 				result = "error1";
 			}
 
@@ -132,44 +133,52 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 		this.categoryList = categoryList;
 	}
 
-	public String getProduct_id() {
-		return product_id;
+	public String getId() {
+		return id;
 	}
 
-	public void setProduct_id(String product_id) {
-		this.product_id = product_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getProduct_name() {
-		return product_name;
+	public String getProductId() {
+		return productId;
 	}
 
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 
-	public String getProduct_name_kana() {
-		return product_name_kana;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProduct_name_kana(String product_name_kana) {
-		this.product_name_kana = product_name_kana;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getProduct_description() {
-		return product_description;
+	public String getProductNameKana() {
+		return productNameKana;
 	}
 
-	public void setProduct_description(String product_description) {
-		this.product_description = product_description;
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
 	}
 
-	public String getCategory_id() {
-		return category_id;
+	public String getProductDescription() {
+		return productDescription;
 	}
 
-	public void setCategory_id(String category_id) {
-		this.category_id = category_id;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getPrice() {
@@ -180,28 +189,29 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 		this.price = price;
 	}
 
-	public String getImage_file_name() {
-		return image_file_name;
+	public String getImageFileName() {
+		return imageFileName;
 	}
 
-	public void setImage_file_name(String image_file_name) {
-		this.image_file_name = image_file_name;
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
 	}
 
-	public String getRelease_date() {
-		return release_date;
+	public String getReleaseDate() {
+		return releaseDate;
 	}
 
-	public void setRelease_date(String release_date) {
-		this.release_date = release_date;
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 
-	public String getRelease_company() {
-		return release_company;
+	public String getReleaseCompany() {
+		return releaseCompany;
 	}
 
-	public void setRelease_company(String release_company) {
-		this.release_company = release_company;
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
 	}
+
 
 }

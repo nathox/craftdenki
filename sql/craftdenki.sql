@@ -26,8 +26,11 @@ question int,
 answer varchar(32)
 );
 
-drop table if exists product_info;
 
+
+
+-- -----------↓商品情報テーブル↓----------------------------
+drop table if exists product_info;
 create table product_info(
 id int not null primary key auto_increment,
 product_id int unique,
@@ -43,8 +46,10 @@ release_company varchar(50),
 status tinyint,
 regist_date datetime,
 update_date datetime,
-item_stock int DEFAULT 0
+item_stock int DEFAULT 0,
+current_cost int -- ----------------- NEW -------------------
 );
+
 
 drop table if exists cart_info;
 
@@ -87,6 +92,7 @@ user_id varchar(16) unique,
 product_id int,
 product_count int,
 price int,
+at_cost int, -- ----------------- NEW -------------------
 regist_date datetime,
 update_date datetime
 );
@@ -115,7 +121,106 @@ insert_date datetime,
 update_date datetime
 );
 
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("青い本","青色の本です。",100,2,10000000,"あおいほん","2017/10");
+-- ---------------↓INSERT文↓--------------------------------------
+
+INSERT INTO product_info(-- ------商品情報テーブルへ--------------
+			product_id, -- 商品ID
+			product_name,-- 商品名
+			product_name_kana, -- 商品名かな
+			product_description, -- 商品詳細
+			category_id, -- カテゴリID
+			price, -- 販売価格
+			image_file_path, -- 画像ファイルパス
+			image_file_name, -- 画像ファイル名
+			release_date, -- 発売日
+			release_company, -- 発売会社
+			regist_date, -- 登録日
+			item_stock, -- 在庫
+			current_cost -- 現在の平均原価
+) VALUES(
+			10000001, -- 商品ID
+			"青い本", -- 商品名
+			"あおいほん", -- 商品名かな
+			"青い本です。", -- 商品詳細
+			1, -- カテゴリID
+			1000, -- 販売価格
+			"./images/blueBook.jpg", -- 画像ファイルパス
+			"blueBook.jpg", -- 画像ファイル名
+			"2010/02", -- 発売日
+			"amezoooon", -- 発売会社
+			now(), -- 登録日
+			10, -- 在庫
+			700 -- 現在の平均原価
+		),
+
+		(
+			10000002, -- 商品ID
+			"モンスターハンター・:ワールド", -- 商品名
+			"もんすたーはんたーわーるど", -- 商品名かな
+			"PS4のゲームソフト。", -- 商品詳細
+			3, -- カテゴリID
+			8000, -- 販売価格
+			"./images/monhan.jpg", -- 画像ファイルパス
+			"monhan.jpg", -- 画像ファイル名
+			"2018/01", -- 発売日
+			"capcum", -- 発売会社
+			now(), -- 登録日
+			100, -- 在庫
+			6500 -- 現在の平均原価
+		),
+
+		(
+			10000003, -- 商品ID
+			"小さい冷蔵庫", -- 商品名
+			"ちいさいれいぞうこ", -- 商品名かな
+			"一人暮らし用の冷蔵庫", -- 商品詳細
+			2, -- カテゴリID
+			6000, -- 販売価格
+			"./images/reizouko.jpg", -- 画像ファイルパス
+			"reizouko.jpg", -- 画像ファイル名
+			"2000/02", -- 発売日
+			"お宝倉庫", -- 発売会社
+			now(), -- 登録日
+			4, -- 在庫
+			1500 -- 現在の平均原価
+		),
+
+		(
+			10000004, -- 商品ID
+			"いい炊飯器", -- 商品名
+			"いいすいはんき", -- 商品名かな
+			"踊り炊き機能付き。銅釜。", -- 商品詳細
+			2, -- カテゴリID
+			60000, -- 販売価格
+			"./images/odoridaki.jpg", -- 画像ファイルパス
+			"odoridaki.jpg", -- 画像ファイル名
+			"2017/08", -- 発売日
+			"sharq", -- 発売会社
+			now(), -- 登録日
+			15, -- 在庫
+			40000 -- 現在の平均原価
+		),
+
+		(
+			10000005, -- 商品ID
+			"筋肉をつくる食事栄養パーフェクト事典", -- 商品名
+			"きんにくをつくるしょくじえいようぱーふぇくとじてん", -- 商品名かな
+			"筋肉をつけたい人のための食事と栄養摂取のバイブル
+			 筋肉を増やすためにはトレーニングだけではなく、
+			 同じくらい食事も重要であることが明らかとなっています。
+			 本書では、「スポーツ科学」「栄養学」「ボディビル」の理論と
+			 研究データから導き出した、筋トレの効果を最大限に高めるための
+			 栄養摂取と食事法の最新メソッドを徹底解説。", -- 商品詳細
+			1, -- カテゴリID
+			1728, -- 販売価格
+			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"zukaikinnniku.jpg", -- 画像ファイル名
+			"2018/02", -- 発売日
+			"ナツメ社", -- 発売会社
+			now(), -- 登録日
+			1, -- 在庫
+			1000 -- 現在の平均原価
+		);
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤いおもちゃ","赤色のおもちゃです。",200,4,20000000,"あかいおもちゃ","2017/11");
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黄いろい掃除機","黄色の掃除機です。",200,3,30000000,"きいろいそうじき","2017/11");
 INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黒い本","黒色の本です。",200,2,40000000,"くろいほん","2017/11");
@@ -130,10 +235,10 @@ INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,f
 
 
 
-INSERT INTO product_info VALUES(28,10000028, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1.jpg", "2016/01", "fuji", 1, "2018/01/09", "2018/01/09",100);
-INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 3, 500, "./img/kokoro.jpg", "kokoro.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",10);
-INSERT INTO product_info VALUES(30,10000030, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",50);
-INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine.jpg", "2018/01", "sagawa", 1, "2018/01/20", "2018/01/20",10);
+INSERT INTO product_info VALUES(28,10000028, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1.jpg", "2016/01", "fuji", 1, "2018/01/09", "2018/01/09",100,50);
+INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 3, 500, "./img/kokoro.jpg", "kokoro.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",10,100);
+INSERT INTO product_info VALUES(30,10000030, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",50,90);
+INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine.jpg", "2018/01", "sagawa", 1, "2018/01/20", "2018/01/20",10,50);
 
 
 
@@ -141,8 +246,8 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01");
-INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(1,"test",1000005,1,1728,1000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(2,"test1",1000002,2,8000,6500,"2016/01/01","2016/01/01");
 
 
 

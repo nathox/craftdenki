@@ -72,7 +72,11 @@
 		<div>
 			<div>
 				<p id="text-link"><a href='<s:url action="ProductManageAction"/>'>商品管理機能</a></p>
-				<p id="content">商品の仕入、新規登録
+				<p id="content">商品の仕入、編集、削除、新規登録
+			</div>
+				<div>
+				<p id="text-link"><a href='<s:url action="SalesManageAction"/>'>売上管理機能</a></p>
+				<p id="content">売上の確認
 			</div>
 		</div>
 	</div>

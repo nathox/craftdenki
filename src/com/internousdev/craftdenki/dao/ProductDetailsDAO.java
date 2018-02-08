@@ -10,13 +10,16 @@ import java.util.List;
 import com.internousdev.craftdenki.dto.ProductDTO;
 import com.internousdev.craftdenki.dto.Review2DTO;
 import com.internousdev.craftdenki.util.DBConnector;
+import com.internousdev.craftdenki.util.DateUtil;
 
 
 public class ProductDetailsDAO {
 
 
 
-	//商品詳細情報取得
+
+
+	//商品詳細情報取得(単体)
 	public ProductDTO getProductDetailsInfo(int product_id) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
@@ -139,6 +142,63 @@ public class ProductDetailsDAO {
 		}
 
 
+
+	//商品情報UPDATE
+		public int changeProductData(
+				String id,
+				String productId,
+				String productName,
+				String productNameKana,
+				String productDescription,
+				String categoryId,
+				String price,
+				String newImagePass,
+				String imageFileName,
+				String releaseDate,
+				String releaseCompany) throws SQLException {
+
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+
+			int res = 0;
+
+			DateUtil dateUtil = new DateUtil();
+
+			String sql = "UPDATE  product_info SET"
+							+ "product_id = ? , "
+							+ "product_name = ? , "
+							+ "product_name_kana = ? , "
+							+ "category_id = ? , "
+							+ "price = ? , "
+							+ "image_file_path = ? , "
+							+ "image_file_name = ? , "
+							+ "release_date = ? , "
+							+ "release_company = ? , "
+							+ "update_date = ? "
+						+ "WHERE id = ?";
+
+			try {
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1,productId);
+				preparedStatement.setString(2,productName);
+				preparedStatement.setString(3,productNameKana);
+				preparedStatement.setString(4,productDescription);
+				preparedStatement.setString(5,categoryId);
+				preparedStatement.setString(6,price);
+				preparedStatement.setString(7,newImagePass);
+				preparedStatement.setString(8,imageFileName);
+				preparedStatement.setString(9,releaseDate);
+				preparedStatement.setString(10,releaseCompany);
+				preparedStatement.setString(11,dateUtil.getDate());
+
+				res=preparedStatement.executeUpdate();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				connection.close();
+			}
+			return res;
+		}
 
 }
 
