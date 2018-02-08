@@ -62,6 +62,26 @@ public class PurchaseHistoryDAO {
 
 	}
 
+	public int deleteHistory(String userId) throws SQLException{
+
+		String sql = "DELETE FROM purchase_history_info where id = ?";
+		PreparedStatement ps;
+		int result = 0;
+
+		try{
+				ps = con.prepareStatement(sql);
+				ps.setString(1, userId);
+
+				result = ps.executeUpdate();
+
+				con.close();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 
 
 }
