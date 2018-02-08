@@ -9,8 +9,16 @@
 </head>
 <body>
 
+<script>
+
+</script>
+
+
+
+
 
 	★お気に入りリスト★
+	<p>
 
 	<table border="1" cellspacing="0">
 		<thead id="hoge-head">
@@ -27,7 +35,7 @@
 		<s:iterator value="favoriteList">
 			<tr>
 				<td><input type="checkbox"></td>
-				<td><span><s:property value="productName" /></span></td>
+				<td><span><s:property value="productName"  /></span></td>
 				<td><span><s:property value="imageFilePath" /></span></td>
 				<td><span><s:property value="price" /></span></td>
 				<td><span><s:property value="releaseCompany" /></span></td>
@@ -40,16 +48,13 @@
 
 
 
+<td><input type="button" name="delete_line" class="delete_line" value="一括削除" ></td>
 
 
-	<table border="1" cellspacing="0">
-		<tr>
-			<td>商品名</td>
-			<td>画像</td>
-			<td>値段</td>
-			<td>会社</td>
-			<td>発売月</td>
-		</tr>
+
+
+
+
 
 
 
