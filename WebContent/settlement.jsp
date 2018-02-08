@@ -33,7 +33,7 @@
 		<table>
 			<s:if test="userAddress != null && telNumber != null">
 				<tr>
-					<td><input type="radio" name="destination" value="1">
+					<td><input type="radio" name="destination" value="1" checked>
 					<td>宛先1:</td>
 					<td><s:property value="familyName"/></td><td><s:property value="firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress"/></td><td><s:property value="telNumber"/></td>
 				</tr>
@@ -65,9 +65,7 @@
 
 
 	<div>
-		<s:form action="SettlementConfirmAction">
-			<s:submit value="決済確認画面へ"/>
-		</s:form>
+
 	</div>
 
 	</div>

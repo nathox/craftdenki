@@ -28,6 +28,14 @@
 		<s:form action="SettlementCompleteAction">
 			<s:submit value="決済確認画面へ"/>
 		</s:form>
+
+
+		if(destination == "1"){
+		user_address,tel_numberの表示
+
+
+		if(destination == "2"){
+		user_address2
 	</div>
 
 	</div>
