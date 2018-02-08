@@ -43,6 +43,6 @@
 		</s:form>
 	</div>
 
-
+	<a href="home.jsp">ホームへ戻る</a>
 </body>
 </html>
