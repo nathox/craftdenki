@@ -125,10 +125,7 @@ public class ProductListDAO {
 			preparedStatement.setString(9, release_company);
 			preparedStatement.setString(10,dateUtil.getDate());
 
-			preparedStatement.execute();
-
 			res=preparedStatement.executeUpdate();
-
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

@@ -71,7 +71,7 @@
 		</div>
 		<div>
 			<h3>商品一覧</h3>
-			<s:form action="SupplyConfirmAction">
+			<s:form>
 				<table border="1">
 					<tr>
 						<th>ID</th>
@@ -79,6 +79,8 @@
 						<th>販売価格</th>
 						<th>在庫数</th>
 						<th>仕入入力欄</th>
+						<th>商品情報変更</th>
+						<th>商品非表示</th>
 					</tr>
 					<s:iterator value="productList">
 						<tr>
@@ -87,6 +89,11 @@
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
 							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
 							<td><s:textfield name="supplycount" value="0"/></td>
+							<td><a href="<s:url action="ProductDataChangeAction">
+								<s:param name="product_id" value="%{product_id}"/>
+								</s:url>">変更画面へ</a>
+							</td>
+							<td><s:checkbox name="checkList" value="" fieldValue="%{product_id}" /> </td>
 						</tr>
 					</s:iterator>
 						<tr>
@@ -94,10 +101,11 @@
 							<td></td>
 							<td></td>
 							<td></td>
+							<td><s:submit value="仕入"  action="SupplyConfirmAction"/></td>
 							<td></td>
+							<td><s:submit value="非表示"  action="ProductHideConfirmAction"/></td>
 						</tr>
 				</table>
-				<s:submit value="仕入"/>
 			</s:form>
 			<h3>新商品登録</h3>
 			<div>
