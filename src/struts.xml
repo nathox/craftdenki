@@ -188,6 +188,39 @@
 		</action>
 
 
+        <!--       決済機能        -->
+
+
+			<!-- SettlementAction -->
+	<action name="SettlementAction"
+			class="com.internousdev.craftdenki.action.SettlementAction"
+			method="execute">
+	<result name="success">settlement.jsp</result>
+	</action>
+
+	<!-- SettlementConfirmAction -->
+	<action name="SettlementConfirmAction"
+			class="com.internousdev.craftdenki.action.SettlementConfirmAction"
+			method="execute">
+	<result name="success">settlementConfirm.jsp</result>
+	</action>
+
+	<!-- SettlementCompleteAction -->
+	<action name="SettlementCompleteAction"
+			class="com.internousdev.craftdenki.action.SettlementCompleteAction"
+			method="execute">
+	<result name="success">settlementComplete.jsp</result>
+	</action>
+
+
+        <!--       決済機能  (終)      -->
+
+
+
+
+
+
+
 		<!-- ___________________Home画面から遷移(SANO) _________END_________ -->
 
 
