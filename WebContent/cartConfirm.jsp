@@ -24,7 +24,13 @@
 		<p>CartConfirm</p>
 		</div>
 
-	<s:form action ="CartAction">
+			<s:if test="cartList == null">
+				<h3>ご購入情報はありません。</h3>
+			</s:if>
+			<s:elseif test="message == null">
+
+
+				<s:form action ="CartAction">
 					<h3>カート情報は以下になります。</h3>
 					<table>
 					<tr>
@@ -67,7 +73,7 @@
 									<td><s:property value="releaseDate"/></td>
 											<s:hidden name="releaseDate" value="%{releaseDate}"/>
 
-									<td><s:property value="totalPrice"/><span>円</span></td>
+									<td><s:property value="totalPrice"/><span>個</span></td>
 											<s:hidden name="totalPrice" value="%{totalPrice}"/>
 								</tr>
 							</s:iterator>
@@ -77,7 +83,12 @@
 					</table>
 						<input type="hidden" name="deleteFlg" value="1">
 						<s:submit value="削除" method="delete"/>
+						<s:submit value="決済" method="settlement"/>
 					</s:form>
+			</s:elseif>
+			<s:if test="message != null">
+				<h3><s:property value="message"/></h3>
+			</s:if>
 
 	</div>
 </body>

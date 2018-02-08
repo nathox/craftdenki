@@ -21,6 +21,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	private String deleteFlg = null;
 	private String userId;
+	private String Message;
 
 
 
@@ -63,19 +64,26 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	}
 
-	public void delete() throws SQLException{
+	public void delete(delete_id) throws SQLException{
 
 
 	String userId = session.get("loginId").toString();
 
-	int res = PurchaseHistoryDAO.(product_id,)
+	int res = PurchaseHistoryDAO.deleteHistory(product_id,user_id,delete_id)
 
 	if(res>0){
 		purchaseHistoryList=null;
 		setMessage("購入履歴を削除しました");
-	}else of(res == 0){
+	}else if(res == 0){
 		setMessage("削除に失敗しました");
 	}
+	}
+
+	private void setMessage(String string) {
+
+	}
+
+
 	}
 
 }

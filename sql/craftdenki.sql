@@ -139,10 +139,10 @@ INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっ
 
 
 INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price)VALUES
-("test",28,2,10000,"2018/01/20","2018/01/20",10000);
+("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",28,1,5000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01");
 INSERT INTO purchase_history_info VALUES(2,"test1",29,2,1000,"2016/01/01","2016/01/01");
 
 

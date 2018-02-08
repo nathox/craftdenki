@@ -27,10 +27,10 @@ public class ItemStockUpdateDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1,count);
 			preparedStatement.setInt(2, productId);
-			preparedStatement.execute();
-			if(preparedStatement.executeUpdate() == 0){
+			int res = preparedStatement.executeUpdate();
+			if(res == 0){
 				return false;
-			};
+			}
 		} catch(Exception e){
 		e.printStackTrace();
 		} finally{

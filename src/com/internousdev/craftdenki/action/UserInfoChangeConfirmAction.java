@@ -47,30 +47,30 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 		//必須データ
 		session.put("t_password", password);
-		session.put("t_familyName", "familyName");
-		session.put("t_firstName", "firstName");
-		session.put("t_familyNameKana", "familyNameKana");
-		session.put("t_firstNameKana", "firstNameKana");
-		session.put("t_sex", "sex");
-		session.put("t_email", "email");
-		session.put("t_question", "question");
-		session.put("t_answer", "answer");
-		session.put("t_userAddress", "userAddress");
+		session.put("t_familyName", familyName);
+		session.put("t_firstName", firstName);
+		session.put("t_familyNameKana", familyNameKana);
+		session.put("t_firstNameKana", firstNameKana);
+		session.put("t_sex", sex);
+		session.put("t_email", email);
+		session.put("t_question", question);
+		session.put("t_answer", answer);
+		session.put("t_userAddress", userAddress);
 
 		//必須じゃない
-		session.put("t_userAddress2", "userAddress2");
-		session.put("t_userAddress3", "userAddress3");
+		session.put("t_userAddress2", userAddress2);
+		session.put("t_userAddress3", userAddress3);
 
 		//必須データ
-		session.put("t_telNumber", "telNumber");
+		session.put("t_telNumber", telNumber);
 
 		//必須じゃない
-		session.put("t_telNumber2", "telNumber2");
-		session.put("t_telNumber3", "telNumber3");
+		session.put("t_telNumber2", telNumber2);
+		session.put("t_telNumber3", telNumber3);
 		//
 
 		//UserInfoChangeCompleteDAOで行指定するためのセッション
-		session.put("t_userId", "userId");
+		session.put("t_userId", userId);
 
 		return result;
 	}
@@ -82,6 +82,10 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 	public void setSession(Map<String, Object> session) {
 		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
+	}
+
+	public Map<String,Object> getSession(){
+		return session;
 	}
 
 	public String getUserId() {

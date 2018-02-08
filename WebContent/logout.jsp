@@ -24,6 +24,10 @@
 		<p>ログアウトしました。</p>
 		</div>
 
+		<div>
+			<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
+		</div>
+
 
 	</div>
 </body>

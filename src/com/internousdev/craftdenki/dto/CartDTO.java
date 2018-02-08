@@ -10,8 +10,15 @@ public class CartDTO {
 	private String ReleaseCompany;
 	private String ReleaseDate;
 	private int totalPrice;
+	private int id;
 
 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getTotalPrice() {
 		return totalPrice;
 	}

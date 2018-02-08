@@ -60,14 +60,21 @@
 
 	<s:form method="post" action="ItemSearchAction">
 		<select name="category">
-			<option value="1" selected="selected">すべてのカテゴリー</option>
-			<option value="2">本</option>
-			<option value="3">家電・パソコン</option>
-			<option value="4">おもちゃ・げーむ</option>
+			<option value="0" selected="selected">すべてのカテゴリー</option>
+			<option value="1">本</option>
+			<option value="2">家電・パソコン</option>
+			<option value="3">おもちゃ・げーむ</option>
 		</select>
 		<s:textfield name="searchWord" maxlength="16"/>
 		<s:submit value="検索"/>
 	</s:form>
+
+
+
+	<s:form action ="SettlementAction">
+		<s:submit value ="決済画面へ(仮置き)"/>
+	</s:form>
+
 
 
 

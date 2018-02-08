@@ -11,7 +11,7 @@
 	<s:form action="ParchaseHistoryAction">
 		<table>
 			<tr>
-				<td><s:property value="session.historyItemName" name="historyItemName"/></td>
+				<td><s:property value="session.historyItemName" /></td>
 			</tr>
 
 			<tr>
@@ -21,8 +21,15 @@
 			<tr>
 				<td><s:submit value="レビュー" /></td>
 			</tr>
-
 		</table>
+			☆：
+			<select name="evaluationCount" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
 
 	</s:form>
 

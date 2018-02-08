@@ -21,7 +21,6 @@ border-collapse:collapse;
 <body>
 
 
-
 <div class="DetailsList">
 	<h1>商品詳細</h1>
 	<s:iterator value="detailsList">
@@ -36,16 +35,32 @@ border-collapse:collapse;
 
 			<img class="image" src="<s:property value='image_file_path'/>" >
 
-			<s:form action="CartAction">
-			<s:param name="product_id" value="%{product_id}"/>
-			<s:param name="price" value="%{price}"/>
-			    購入個数
-
- 				<div class=botan><s:submit value=" カートに入れる " method="execute"/></div>
-			</s:form>
-
 		</div>
 	</s:iterator>
+
+	<s:iterator value="reviewList">
+		<div id="reviewList">
+			<div>ユーザー:<s:property value="user_id" /></div>
+			<div>レビュー:<s:property value="review_id" /></div>
+			<div>評価:<s:property value="evaluation_count" /></div>
+		</div>
+	</s:iterator>
+
+
+	<s:form action="CartAction">
+		<s:param name="product_id" value="%{product_id}"/>
+		<s:param name="price" value="%{price}"/>
+		 購入個数
+	  	<s:select name="product_count" list="stockList"/>
+ 		<div class=button><s:submit value=" カートに入れる " method="insert"/></div>
+	</s:form>
+
+
+	<s:form action="FavoriteAction">
+		<s:param name="product_id" value="%{product_id}"/>
+ 		<div class=button><s:submit value=" お気に入りリストに入れる " method="execute"/></div>
+	</s:form>
+
 </div>
 
 

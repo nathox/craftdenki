@@ -25,6 +25,7 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	public ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
 
+
 	public String execute() throws SQLException{
 
 		//商品情報取得メソッド

@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta charset="utf-8">
+
 <title>changePassword画面</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
 						<label>答え:</label>
 					</td>
 					<td>
-					<input type="text" name="answer" value="<s:property value="session.loginUser.answer"/>" />
+					<input type="text" name="answer" value="<s:property value="session.answer"/>" />
 					</td>
 				</tr>
 				<tr>
@@ -39,7 +39,7 @@
 						<label>ログインPASS (パスワード):</label>
 					</td>
 					<td>
-						<input type="password" name="loginPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
+						<input type="password" name="loginPassword" value="<s:property value="session.password"/>" />
 					</td>
 				</tr>
 				<tr>
@@ -47,7 +47,7 @@
 						<label>確認用：</label>
 					</td>
 					<td>
-						<input type="password" name="checkPassword" value="<s:property value="session.loginUser.loginPassword"/>" />
+						<input type="password" name="checkPassword" value="<s:property value="session.password"/>" />
 					</td>
 				</tr>
 

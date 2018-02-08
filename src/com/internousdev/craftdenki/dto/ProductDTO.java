@@ -25,6 +25,8 @@ public class ProductDTO {
 	//仕入数フィールド(商品情報Tにupdate用)
 	private int supply_count;
 
+	private String product_count;
+
 
 
 	public int getId(){
@@ -138,5 +140,13 @@ public class ProductDTO {
 	public void setSupply_count(int supply_count) {
 		this.supply_count = supply_count;
 	}
+	public String getProduct_count() {
+		return product_count;
+	}
+	public void setProduct_count(String product_count) {
+		this.product_count = product_count;
+	}
+
+
 
 }

@@ -32,6 +32,7 @@ public class CartDAO {
 
 			while(resultSet.next()){
 				CartDTO dto = new CartDTO();
+				dto.setId(resultSet.getInt("id"));
 				dto.setProductName(resultSet.getString("product_name"));
 				dto.setProductNameKana(resultSet.getString("product_name_kana"));
 				dto.setImageFilePath(resultSet.getString("image_file_path"));
@@ -52,6 +53,28 @@ public class CartDAO {
 		}
 		return cartDTO;
 	}
+
+	//カート情報削除メソッド
+	public int deleteCart(String user_id,int deleteId)throws SQLException{
+		String sql = "DELETE FROM cart_info WHERE product_id = ? AND user_id = ? AND id = ?";
+
+		PreparedStatement ps;
+		int result = 0 ;
+		try{
+			ps = connection.prepareStatement(sql);
+			//ps.setString(1,product_id);
+			ps.setString(1,user_id);
+			ps.setInt(2,deleteId);
+			result = ps.executeUpdate();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+			return result;
+	}
+
 
 
 

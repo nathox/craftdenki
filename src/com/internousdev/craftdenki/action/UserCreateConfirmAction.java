@@ -23,6 +23,8 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private String address;
 	private String tel;
 
+	private String loginPassCon;
+
 	public Map<String,Object> session;
 
 	private String result;
@@ -35,6 +37,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		result=SUCCESS;
 
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < loginPassword.length()-3; i++){
+			sb.append("*");
+		}
+
 
 //ユーザーIDの重複を確認
 
@@ -44,11 +51,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			result=ERROR;
 		}
 
-//ユーザー情報 未入力、文字種、桁数 判別
-
-
-
-
+		loginPassCon = loginPassword.substring(0, 3) + sb.toString();
 
 		session.put("loginUserId", loginUserId);
 		session.put("loginPassword", loginPassword);
@@ -155,6 +158,13 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 	public void setErrorMessage(String errorMessage){
 		this.errorMessage=errorMessage;
+	}
+	public String getLoginPassCon() {
+		return loginPassCon;
+	}
+
+	public void setLoginPassCon(String loginPassCon) {
+		this.loginPassCon = loginPassCon;
 	}
 
 }

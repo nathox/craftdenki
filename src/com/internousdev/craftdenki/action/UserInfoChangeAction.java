@@ -50,4 +50,23 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 		this.session = session;
 	}
 
+	public Map<String, Object> getSession(){
+		return session;
+	}
+
+	public UserInfoChangeDAO userInfoChangeDAO(){
+		return userInfoChangeDAO;
+	}
+	public void setUserInfoChangeDAO(UserInfoChangeDAO userInfoChangeDAO){
+		this.userInfoChangeDAO = userInfoChangeDAO;
+	}
+
+	public ArrayList<UserInfoChangeDTO> getList_user_info(){
+		return list_user_info;
+	}
+	public void setList_user_info(ArrayList<UserInfoChangeDTO> list_user_info){
+		this.list_user_info = list_user_info;
+	}
+
+
 }
