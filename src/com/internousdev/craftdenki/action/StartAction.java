@@ -23,6 +23,7 @@ public class StartAction extends ActionSupport implements SessionAware{
 		System.out.println(loginFlg);
 		session.put("temp_user_id", rnd);
 		session.put("loginFlg",loginFlg);
+		System.out.println("仮ユーザーID発行");
 
 		}
 

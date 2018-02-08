@@ -24,6 +24,46 @@
 		<p>決済画面</p>
 		</div>
 
+
+
+
+<h1>てすと</h1>
+
+	<s:form action="SettlementConfirmAction">
+		<table>
+			<s:if test="userAddress != null && telNumber != null">
+				<tr>
+					<td><input type="radio" name="destination" value="1">
+					<td>宛先1:</td>
+					<td><s:property value="familyName"/></td><td><s:property value="firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress"/></td><td><s:property value="telNumber"/></td>
+				</tr>
+			</s:if>
+
+
+
+
+	<s:if test="userAddress2 != null && telNumber2 != null">
+	<tr>
+		<td><input type="radio" name="destination" value="2">
+		<td>宛先2:</td>
+		<td><s:property value="familyName"/></td><td><s:property value="firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress2"/></td><td><s:property value="telNumber2"/></td>
+	</tr>
+	</s:if>
+
+	<s:if test="userAddress3 != null && telNumber3 != null">
+	<tr>
+		<td><input type="radio" name="destination" value="3">
+		<td>宛先3:</td>
+		<td><s:property value="familyName"/></td><td><s:property value="firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress3"/></td><td><s:property value="telNumber3"/></td>
+	</tr>
+	</s:if>
+</table>
+
+<br>
+<s:submit value="けってい" />
+</s:form>
+
+
 	<div>
 		<s:form action="SettlementConfirmAction">
 			<s:submit value="決済確認画面へ"/>

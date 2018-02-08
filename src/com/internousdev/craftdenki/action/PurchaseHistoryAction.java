@@ -16,15 +16,15 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	public PurchaseHistoryDAO purchaseHistoryDAO = new PurchaseHistoryDAO();
 
-	public ArrayList<PurchaseHistoryDTO> purchaceHistoryList = new ArrayList<PurchaseHistoryDTO>();
+	public ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 
-	public ArrayList<PurchaseHistoryDTO> getPurchaceHistoryList() {
-		return purchaceHistoryList;
-	}
-
-	public void setPurchaceHistoryList(ArrayList<PurchaseHistoryDTO> purchaceHistoryList) {
-		this.purchaceHistoryList = purchaceHistoryList;
-	}
+//	public ArrayList<PurchaseHistoryDTO> getPurchaceHistoryList() {
+//		return purchaceHistoryList;
+//	}
+//
+//	public void setPurchaceHistoryList(ArrayList<PurchaseHistoryDTO> purchaceHistoryList) {
+//		this.purchaceHistoryList = purchaceHistoryList;
+//	}
 
 	private String deleteFlg = null;
 	private String userId;
@@ -46,8 +46,9 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		// 購入履歴検索処理
 		if (this.deleteFlg == null || this.deleteFlg.isEmpty()) {
 			// ログインID(userID)を利用して、DAOから情報を検索する
-			purchaceHistoryList = purchaseHistoryDAO.getPurchaseHistory(userId);
+			purchaseHistoryList = purchaseHistoryDAO.getPurchaseHistory(userId);
 			System.out.println("sss");
+			System.out.println(purchaseHistoryList);
 		}
 
 		return SUCCESS;
