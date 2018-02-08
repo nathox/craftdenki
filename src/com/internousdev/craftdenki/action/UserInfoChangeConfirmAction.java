@@ -32,45 +32,72 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 	public Map<String, Object> session;
 
+	private String errorMessage;
+
 
 
 	public String execute(){
 
-		result=SUCCESS;
 
 		/*
 		 * 必須データがＮＵＬＬだった場合等のエラー処理がまだ書けてない
-		 *
-		 * ↓前の機能で同じ鍵名のセッションを使ってるかもしれないので、中島さんに要確認
-		 * 鍵名の　t_　はtempoの略
+		 * 必須じゃないデータのテキストボックスが空の場合はデーターベースにNULLを書き込む
 		 */
 
-		//必須データ
-		session.put("t_password", password);
-		session.put("t_familyName", familyName);
-		session.put("t_firstName", firstName);
-		session.put("t_familyNameKana", familyNameKana);
-		session.put("t_firstNameKana", firstNameKana);
-		session.put("t_sex", sex);
-		session.put("t_email", email);
-		session.put("t_question", question);
-		session.put("t_answer", answer);
-		session.put("t_userAddress", userAddress);
+		if(!(password.equals("")) && !(familyName.equals("")) && !(firstName.equals("")) &&
+				 !(familyNameKana.equals("")) && !(firstNameKana.equals("")) && !(email.equals("")) &&
+				 !(answer.equals("")) && userAddress.equals("") && telNumber.equals("")){
 
-		//必須じゃない
-		session.put("t_userAddress2", userAddress2);
-		session.put("t_userAddress3", userAddress3);
+			//UserInfoChangeCompleteDAOで行指定するためのセッション
+			session.put("t_userId", userId);
+			//必須データ
+			session.put("t_password", password);
+			session.put("t_familyName", familyName);
+			session.put("t_firstName", firstName);
+			session.put("t_familyNameKana", familyNameKana);
+			session.put("t_firstNameKana", firstNameKana);
+			session.put("t_sex", sex);
+			session.put("t_email", email);
+			session.put("t_question", question);
+			session.put("t_answer", answer);
+			session.put("t_userAddress", userAddress);
+			session.put("t_telNumber", telNumber);
 
-		//必須データ
-		session.put("t_telNumber", telNumber);
+			if(userAddress2.equals("")){
+				userAddress2= null;
+			}
 
-		//必須じゃない
-		session.put("t_telNumber2", telNumber2);
-		session.put("t_telNumber3", telNumber3);
-		//
+			if(userAddress3.equals("")){
+				userAddress3= null;
+			}
 
-		//UserInfoChangeCompleteDAOで行指定するためのセッション
-		session.put("t_userId", userId);
+			if(telNumber2.equals("")){
+				telNumber2= null;
+			}
+
+			if(telNumber3.equals("")){
+				telNumber3= null;
+			}
+
+			session.put("t_userAddress2", userAddress2);
+			session.put("t_userAddress3", userAddress3);
+			session.put("t_telNumber2", telNumber2);
+			session.put("t_telNumber3", telNumber3);
+			//
+			result=SUCCESS;
+
+		}else{
+
+			setErrorMessage("必須項目の記入が抜けています！！");
+//↑これがuserInfoChange.jspに表示されるようにする
+
+			result=ERROR;
+//↑あとでstrutsをuserInfoChange.jspに遷移するよう更新する
+		}
+
+
+
+
 
 		return result;
 	}
@@ -214,6 +241,15 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 
 	public void setTelNumber3(String telNumber3) {
 		this.telNumber3 = telNumber3;
+	}
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 }
