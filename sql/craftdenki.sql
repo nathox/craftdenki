@@ -47,7 +47,7 @@ status tinyint DEFAULT 0,
 regist_date datetime,
 update_date datetime,
 item_stock int DEFAULT 0,
-current_cost int -- ----------------- NEW -------------------
+current_cost double -- ----------------- NEW -------------------
 );
 
 
@@ -92,7 +92,7 @@ user_id varchar(16) unique,
 product_id int,
 product_count int,
 price int,
-at_cost int, -- ----------------- NEW -------------------
+at_cost double, -- ----------------- NEW -------------------
 regist_date datetime,
 update_date datetime,
 status int default 0

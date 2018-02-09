@@ -20,7 +20,16 @@ public class ItemStockUpdateDAO {
 	 */
 	//購入時
 	private String purchaseSQL = "UPDATE product_info "
-								+ "SET item_stock = item_stock + ? "
+								+ "SET item_stock = item_stock - ? "
+								+ "WHERE product_id = ?";
+
+
+
+
+	private String supplySQL = "UPDATE product_info "
+								+ "SET "
+								+ "item_stock = item_stock + ? ,"
+								+ "current_cost = (current_cost + ? ) * (item_stock + ?) ,"
 								+ "WHERE product_id = ?";
 
 
@@ -51,11 +60,6 @@ public class ItemStockUpdateDAO {
 
 
 
-	private String sql = "UPDATE product_info "
-			+ "SET item_stock = item_stock + ? "
-			+ "WHERE product_id = ?";
-
-
 	/**
 	 * 仕入用メソッド
 	 * 現在の在庫に引数(count)を足してUPDATEします。
@@ -66,9 +70,11 @@ public class ItemStockUpdateDAO {
 	 */
 	public boolean itemStockUpdate(int supplyCount, int supplyCost ,int productId) throws SQLException {
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			PreparedStatement preparedStatement = connection.prepareStatement(supplySQL);
 			preparedStatement.setInt(1, supplyCount);
-			preparedStatement.setInt(2, productId);
+			preparedStatement.setInt(2, supplyCost);
+			preparedStatement.setInt(3, supplyCount);
+			preparedStatement.setInt(4, productId);
 			int res = preparedStatement.executeUpdate();
 			if (res == 0) {
 				return false;
