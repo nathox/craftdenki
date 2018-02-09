@@ -248,15 +248,8 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-<<<<<<< HEAD
-INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01",0);
-INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01",0);
-=======
-INSERT INTO purchase_history_info VALUES(1,"test",10000005,1,1728,1000,"2016/01/01","2016/01/01");
-INSERT INTO purchase_history_info VALUES(2,"test1",10000002,2,8000,6500,"2016/01/01","2016/01/01");
->>>>>>> branch 'master' of https://github.com/internousdevwork/craftdenki.git
-
-
+INSERT INTO purchase_history_info VALUES(1,"test",10000005,1,1728,1000,"2016/01/01","2016/01/01",0);
+INSERT INTO purchase_history_info VALUES(2,"test1",10000002,2,8000,6500,"2016/01/01","2016/01/01",0);
 
 
 INSERT INTO destination_info(user_id,user_address,user_address2,tel_number,tel_number2)
