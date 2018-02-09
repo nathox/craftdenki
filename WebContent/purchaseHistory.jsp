@@ -31,8 +31,9 @@
 				</tr>
 				<tr>
 					<td><s:checkbox name="checkList" value="checked" fieldValue="%{productId}" /></td>
+
 					<td><span><s:property value="productId" /></span></td>
-					<td><span><s:property value="productName" /></span></td>
+					<td><a href=<s:url="action"/>><span><s:property value="productName" /></span></a></td>
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>
 					<td><span><s:property value="count" />個</span></td>

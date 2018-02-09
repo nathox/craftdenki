@@ -100,19 +100,20 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						session.put("trueID",loginId);
 						System.out.println((session.get("trueID")));
 						System.out.println((session.get("status")));
-						if (session.get("status") == "cart") {
+						if (session.get("status") == "settlement") {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
-							result = "cart";
+							result = "settlement";
+							session.put("status", "");
 							dao.cartInfo("仮ログインId", dto.getLoginId());
 							return result;
-
 						}else if(session.get("status") == ("mypage")){
 							session.put("IDerror", "");
 							session.put("Passerror", "");
-
+							session.put("status", "");
 							result = "myPage";
 							return result;
+
 						} else if (session.get("status") == ("")) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");

@@ -159,7 +159,7 @@
 			method="execute">
 			<result name="error">login.jsp</result>
 			<result name="master">managerHome.jsp</result>
-			<result name="cart">cart.jsp</result>
+			<result name="settlement">settlement.jsp</result>
 			<result name="myPage">myPage.jsp</result>
 		</action>
 
