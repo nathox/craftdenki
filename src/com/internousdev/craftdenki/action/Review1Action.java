@@ -6,7 +6,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ReviewAction1 extends ActionSupport implements SessionAware {
+public class Review1Action extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> session;
 	private String historyItemName;

@@ -21,6 +21,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String result;
 	private Collection<String> checkList;
 	private String product_id;
+	private String reviewFlg;
 
 	public String execute() throws SQLException {
 
@@ -32,11 +33,15 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 			return SUCCESS;
 		}
 
-
 		for (String deleteId:checkList) {
 			System.out.println("DELETEID : " + deleteId);
 			dao.deleteHistoryInfo(deleteId);
 				result = "delete";
+		}
+
+		if(reviewFlg == ("1")){
+			result = "review";
+			return result;
 		}
 
 		return result;
@@ -90,6 +95,14 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.product_id = product_id;
 	}
 
+	public String getReviewFlg() {
+		return reviewFlg;
+	}
+
+	public void setReviewFlg(String reviewFlg) {
+		this.reviewFlg = reviewFlg;
+	}
 
 
 }
+
