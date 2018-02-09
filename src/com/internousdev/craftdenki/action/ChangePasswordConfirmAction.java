@@ -1,5 +1,6 @@
 package com.internousdev.craftdenki.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -8,12 +9,19 @@ import com.internousdev.craftdenki.dao.ChangePasswordConfirmDAO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
+
+
 /**
  *
  * @author internous
  *
  */
 public class ChangePasswordConfirmAction extends ActionSupport implements SessionAware {
+
+	private ChangePasswordConfirmDAO dao=new ChangePasswordConfirmDAO();
+
+	private UserInfoChangeDTO dto=new UserInfoChangeDTO();
+
 	private String answer;
 
 	private String password;
@@ -24,53 +32,30 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 	private String errorMessage;
 
-	public String execute(){
+	private String result;
 
-		String result = SUCCESS;
+	public String execute() throws SQLException{
 
-		ChangePasswordConfirmDAO dao = new ChangePasswordConfirmDAO();
-		UserInfoChangeDTO dto = new UserInfoChangeDTO();
 
-		dto=dao.checkAnswer(answer);
-		if (answer.equals(dto.getAnswer())) {
 
-			if(password.equals(checkPassword)){
-				if (!(password.equals(""))) {
 
-						if(password.matches("[\\w]")){
-							if (password.matches("[\\w]{1,16}")) {
+		if(!(dao.checkAnswer2(answer))){
 
-								session.put("answer", dto.getAnswer());
-								session.put("password", password);
+		result=ERROR;
+		errorMessage="答えが違います";
 
-							}else {
-								setErrorMessage("パスワードは１文字以上１６文字以下で入力してください。");
-								result = ERROR;
-							}
-					}else {
-						setErrorMessage("パスワードは半角英数字で入力してください。");
-						result = ERROR;
-					}
+		}else{
 
-				}else {
-					setErrorMessage("パスワードを入力してください");
-					result = ERROR;
-				}
-				}else {
-					setErrorMessage("入力されたパスワードが異なります。");
-				}
 
-		} else{
-		setErrorMessage("秘密の質問の答えが違います。");
-		session.put("password", password);
+			session.put("password", password);
+			session.put("answer", answer);
 
-		result = ERROR;
+		result=SUCCESS;
 		}
 
 
-
-
 		return result;
+
 	}
 
 
@@ -105,8 +90,7 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 		this.session = session;
 	}
 
-
-	public String getErrorMassage() {
+	public String getErrorMessage() {
 		return errorMessage;
 	}
 
@@ -114,3 +98,4 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 		this.errorMessage = errorMessage;
 	}
 }
+

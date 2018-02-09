@@ -27,6 +27,7 @@
 <title>新規登録</title>
 </head>
 <body>
+
 	<br>
 	<br>
 	<s:form id="form_1" action="UserCreateConfirmAction">

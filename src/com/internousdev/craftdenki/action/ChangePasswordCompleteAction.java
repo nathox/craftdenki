@@ -7,38 +7,29 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ChangePasswordCompleteDAO;
-import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ChangePasswordCompleteAction extends ActionSupport implements SessionAware {
 
 
 	public Map<String,Object> session;
+	private String result;
 
 	private ChangePasswordCompleteDAO changePasswordCompleteDAO = new ChangePasswordCompleteDAO();
 
 	public String execute() throws SQLException {
+		
+		result=SUCCESS;
 
-		String result = ERROR;
-
-		boolean checkUpdate =changePasswordCompleteDAO.updateInfo(
+		 changePasswordCompleteDAO.updateInfo(
 				session.get("password").toString(),
-			((UserInfoChangeDTO) session.get("trueID")).getUserId().toString());
-
-
-		if(checkUpdate){
-			result = SUCCESS;
-		}
-
-		return result;
+				session.get("answer").toString(),
+				session.get("userId").toString()
+				);
+		 
+		 return result;
 
 	}
-
-
-
-
-
-
 
 	@Override
 	public void setSession(Map<String, Object> session) {

@@ -23,7 +23,7 @@
 				<label>ログインID：</label>
 				</td>
 				<td>
-				<input type="text" name="userId"/>
+				<input type="text" name="userId" value="test"/>
 				</td>
 			</tr>
 
