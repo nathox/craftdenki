@@ -52,7 +52,7 @@ border-collapse:collapse;
 			購入個数
 	  		<s:select name="product_count" list="stockList"/>
 	  		<s:param name="product_id" value="%{product_id}"/>
-			<s:param name="price" value="%{price}"/>
+			<s:param name="price" value="<s:property value='price' />"/>
 			<input type="hidden" name="insertFlg" value="1"/>
 	  		<div class=button><s:submit value=" カートに入れる " method="execute"/></div>
 	  	</s:if>
