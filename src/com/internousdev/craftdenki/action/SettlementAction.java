@@ -30,7 +30,6 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 	private Map<String,Object>session;
 
 
-	private String settlement;//login画面から帰ってくるためのフラグ
 
 	public String execute(){
 
@@ -75,7 +74,7 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 		}else{  //ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす
 
 
-			session.put("status","settlement");
+			session.put("status","settlement"); //login画面から帰ってくるためのフラグ
 
 			return "login";
 		}

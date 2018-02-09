@@ -55,7 +55,7 @@ drop table if exists cart_info;
 
 create table cart_info(
 id int not null primary key auto_increment,
-user_id varchar(16),
+user_id varchar(25),
 product_id int,
 product_count int,
 price int,
@@ -281,3 +281,10 @@ INSERT INTO review_info VALUES(3,"test1",10000028,"2016/01/01","いいキーボ�
 INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("domon",10000002,"2018/01/03","モンハン",5);
 INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("d",10000002,"2018/01/02","さいこう",5);
 INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("n",10000002,"2018/01/01","かよ！！！",5);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("do",10000001,"2018/01/03","くそ",1);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("d",10000003,"2018/01/02","ふつう",3);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("n",10000004,"2018/01/01","いい！！！",5);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("do",10000004,"2018/01/03","まあまあ",3);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("d",10000001,"2018/01/02","さいこう",5);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("n",10000001,"2018/01/01","ｆｋんがｄふいがいうｓｐｈｖｆんｖ",2);
+

@@ -41,7 +41,6 @@ public class CartDAO {
 				dto.setReleaseDate(resultSet.getString("release_date"));
 				dto.setTotalPrice(resultSet.getInt("total_price"));
 				cartDTO.add(dto);
-				System.out.println(dto.getId());
 			}
 
 
@@ -52,7 +51,7 @@ public class CartDAO {
 	}
 
 	//カート情報削除メソッド
-	public int deleteCart(String user_id,String deleteId)throws SQLException{
+	public int deleteCart(String user_id,int id)throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		String delete = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
@@ -63,7 +62,7 @@ public class CartDAO {
 			ps = connection.prepareStatement(delete);
 			//ps.setString(1,product_id);
 			ps.setString(1,user_id);
-			ps.setString(2,deleteId);
+			ps.setInt(2,id);
 			result = ps.executeUpdate();
 
 		}catch(SQLException e){
@@ -81,18 +80,6 @@ public class CartDAO {
 		Connection connection = dbConnector.getConnection();
 		String insert = "INSERT INTO cart_info (user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?)";
 		int totalPrice = product_count * price;
-
-		System.out.println("product_id");
-		System.out.println(product_id);
-
-		System.out.println("product_count");
-		System.out.println(product_count);
-
-		System.out.println("price");
-		System.out.println(price);
-
-		System.out.println("totalprice");
-		System.out.println(totalPrice);
 
 		try{
 			PreparedStatement ps = connection.prepareStatement(insert);

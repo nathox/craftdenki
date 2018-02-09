@@ -62,7 +62,7 @@
 								<th>個数</th>
 								<th>発売会社</th>
 								<th>発売日</th>
-								<th>合計個数</th>
+								<th>合計金額</th>
 							</tr>
 							<s:iterator value="cartList">
 								<tr>
@@ -89,7 +89,7 @@
 									<td><s:property value="releaseDate"/></td>
 											<s:hidden name="releaseDate" value="%{releaseDate}"/>
 
-									<td><s:property value="totalPrice"/><span>個</span></td>
+									<td><s:property value="totalPrice"/><span>円</span></td>
 											<s:hidden name="totalPrice" value="%{totalPrice}"/>
 								</tr>
 							</s:iterator>

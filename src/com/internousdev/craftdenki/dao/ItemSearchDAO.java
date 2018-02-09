@@ -51,7 +51,6 @@ public class ItemSearchDAO {
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
 						dto.setRelease_date(resultSet.getString("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
-						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
 						dto.setUpdate_date(resultSet.getDate("update_date"));
 						dto.setItem_stock(resultSet.getInt("item_stock"));
@@ -91,7 +90,6 @@ public class ItemSearchDAO {
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
 						dto.setRelease_date(resultSet.getString("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
-						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
 						dto.setUpdate_date(resultSet.getDate("update_date"));
 						dto.setItem_stock(resultSet.getInt("item_stock"));
@@ -131,7 +129,6 @@ public class ItemSearchDAO {
 						dto.setImage_file_name(resultSet.getString("image_file_name"));
 						dto.setRelease_date(resultSet.getString("release_date"));
 						dto.setRelease_company(resultSet.getString("release_company"));
-						dto.setStatus(resultSet.getInt("status"));
 						dto.setRegist_date(resultSet.getDate("regist_date"));
 						dto.setUpdate_date(resultSet.getDate("update_date"));
 						dto.setItem_stock(resultSet.getInt("item_stock"));
@@ -172,7 +169,6 @@ public class ItemSearchDAO {
 					dto.setImage_file_name(resultSet.getString("image_file_name"));
 					dto.setRelease_date(resultSet.getString("release_date"));
 					dto.setRelease_company(resultSet.getString("release_company"));
-					dto.setStatus(resultSet.getInt("status"));
 					dto.setRegist_date(resultSet.getDate("regist_date"));
 					dto.setUpdate_date(resultSet.getDate("update_date"));
 					dto.setItem_stock(resultSet.getInt("item_stock"));
