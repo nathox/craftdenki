@@ -20,6 +20,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private int product_id;
 	private int product_count;
 	private int price;
+	private int finalPrice;
 	private String userId;
 	private String deleteFlg;
 	private String insertFlg;
@@ -46,14 +47,15 @@ public class CartAction extends ActionSupport implements SessionAware{
 			userId = session.get("temp_user_id").toString();
 		}
 
-		//商品の追加
-		System.out.println("insertFlg,id,price");
-		System.out.println(insertFlg);
 
-		if(insertFlg.equals("1")){
-			cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
+		//商品の追加
+		if(insertFlg != null){
+			cartDAO.insertCart(userId,product_id,product_count,price);
 		}
 
+
+		System.out.println(insertFlg);
+		System.out.println(deleteFlg);
 
 		if(deleteFlg == null){
 
@@ -61,11 +63,17 @@ public class CartAction extends ActionSupport implements SessionAware{
 			cartList = cartDAO.getCartInfo(userId);
 			session.put("cartList", cartList);
 
+//			int size = cartList.size();
+//			for(int i=0; i<size; i++){
+//				finalPrice = finalPrice + cartList.getTotalPrice(i);
+//			}
+
+
 		}else if(deleteFlg.equals("1")){
 
 			//商品の削除
 			for(String deleteId:delete){
-				int res = cartDAO.deleteCart(userId,deleteId);
+				int res = cartDAO.deleteCart(userId,Integer.parseInt(deleteId));
 
 				if(res > 0){
 					setMessage("カート情報を削除しました。");
@@ -78,24 +86,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 		result = SUCCESS;
 		return result;
 	}
-
-
-
-	//カート追加
-	public String insert()throws SQLException{
-		cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
-
-		result = "insert";
-		return result;
-
-	}
-
-
-
-//	//決済
-//	public void settlement(){
-//
-//	}
 
 
 
@@ -152,6 +142,14 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public void setInsertFlg(String insertFlg) {
 		this.insertFlg = insertFlg;
 	}
+
+	public Collection<String> getDelete() {
+		return delete;
+	}
+	public void setDelete(Collection<String> delete) {
+		this.delete = delete;
+	}
+
 
 
 
