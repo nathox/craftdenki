@@ -6,6 +6,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<script>
+
+ function myCheck(){
+    var flag = false;
+
+
+    for(var i=0; i<document.form1.fruits.length-1;i++){
+
+
+        if(document.form1.fruits[i].checked){
+            flag = true;
+            alert(document.form1.fruits[i].value + "が選択されました。");
+        }
+    }
+
+
+    if(!flag){
+        alert("項目が選択されていません。");
+    }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
 	★お気に入りリスト★
@@ -32,15 +68,22 @@
 						<td><span><s:property value="releaseCompany" /></span></td>
 						<td><span><s:property value="releaseDate" /></span></td>
 					</tr>
-					<tr>
 
-						<td><s:submit value="一括削除" >
-						<input type="hidden" name="deleteFlg" value="1/">
-							</s:submit></td>
-					</tr>
 				</s:iterator>
+				<tr>
+
+						<td>
+						<s:submit value="一括削除" >
+						<input type="hidden" name="deleteFlg" value="1"/>
+						</s:submit>
+						</td>
+					</tr>
 
 			</table>
 		</s:form>
+
+		<div>
+		<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
+		</div>
 </body>
 </html>

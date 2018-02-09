@@ -58,12 +58,14 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 			System.out.println(favoriteList);
 
-		} else if (deleteFlg == "1") {
+		} else if (deleteFlg != null) {
 
-			for (String product_id : checkList) {
-				count += dao.deleteFavoriteInfo(product_id);
+			for (String deleteId : checkList) {
+				count += dao.deleteFavoriteInfo(Integer.parseInt(deleteId));
 				System.out.println("aaa");
 			}
+
+
 
 			System.out.println("削除された件数 ：" + count);
 
@@ -72,7 +74,7 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 			// this.delete(Integer.parseInt(deleteId));
 			// }
 
-
+			favoriteList = dao.getFavoriteInfo(userId);
 
 		}
 
@@ -113,45 +115,22 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 	}
 
-
-
-
-
-
 	public String getMessage() {
 		return message;
 	}
 
-
-
-
-
-
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-
-
-
-
 
 	public String getTest() {
 		return test;
 	}
 
 
-
-
-
-
 	public void setTest(String test) {
 		this.test = test;
 	}
-
-
-
-
 
 	public int getProduct_id() {
 		return product_id;
@@ -166,33 +145,17 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 	}
 
 
-
-
-
-
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
-
-
-
-
 
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}
 
-
-
-
-
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
-
 
 
 }
