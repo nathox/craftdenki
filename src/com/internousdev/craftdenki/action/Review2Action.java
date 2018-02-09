@@ -9,53 +9,20 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class Review2Action extends ActionSupport implements SessionAware {
 
-	private String review;
-	private String productId;
-	private String buyItemDate;
-	private String evaluationCount;
-	private String result;
 	private Review2DAO dao = new Review2DAO();
-	public Map<String,Object>session;
+	public Map<String, Object> session;
+	private String review;
+	private String evaluationCount;
 
-	public String execute(){
-		result = SUCCESS;
+	public String execute() {
 
-		dao.getReviewInfo(session.get("trueID").toString(),review,productId,buyItemDate,evaluationCount);
+		String productId = session.get("productId").toString();
+		String userId = session.get("trueID").toString();
+		String registDate = session.get("registDate").toString();
 
-		return result;
-	}
+		dao.getReviewInfo(userId,productId,registDate,review,evaluationCount);
 
-	public String getReview() {
-	    return review;
-	}
-
-	public void setReview(String review) {
-	    this.review = review;
-	}
-
-	public String getProductId() {
-	    return productId;
-	}
-
-	public void setProductId(String productId) {
-	    this.productId = productId;
-	}
-
-	public String getBuyItemDate() {
-	    return buyItemDate;
-	}
-
-	public void setBuyItemDate(String buyItemDate) {
-	    this.buyItemDate = buyItemDate;
-	}
-
-
-	public String getEvaluationCount() {
-	    return evaluationCount;
-	}
-
-	public void setEvaluationCount(String evaluationCount) {
-	    this.evaluationCount = evaluationCount;
+		return SUCCESS;
 	}
 
 	@Override
@@ -63,4 +30,19 @@ public class Review2Action extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
+	public String getReview() {
+		return review;
+	}
+
+	public void setReview(String review) {
+		this.review = review;
+	}
+
+	public String getEvaluationCount() {
+		return evaluationCount;
+	}
+
+	public void setEvaluationCount(String evaluationCount) {
+		this.evaluationCount = evaluationCount;
+	}
 }

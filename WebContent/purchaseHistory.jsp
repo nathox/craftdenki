@@ -50,11 +50,14 @@
 							fieldValue="%{productId}" /></td>
 
 					<td><span><s:property value="productId" /></span></td>
+					<s:hidden name="productId" value="%{productId}" />
 					<td><span><s:property value="productName" /></span></td>
 					<s:hidden name="productName" value="%{productName}" />
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>
 					<td><span><s:property value="count" />個</span></td>
+
+					<s:hidden name="registDate" value="%{registDate}" />
 					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>
 					<td></td>
 				</tr>

@@ -29,6 +29,15 @@ public class PurchaseHistoryDTO {
 
 	private int id;
 
+	private String registDate;
+
+
+
+
+
+
+
+
 	// 商品名
 	public String getProductName() {
 		return productName;
@@ -116,6 +125,12 @@ public class PurchaseHistoryDTO {
 		return 	productId;
 		}
 
+	public void setRegistDate(String registDate) {
+		this.registDate = registDate;
+	}
 
+	public String getRegistDate() {
+		return 	registDate;
+		}
 
 }
