@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td><s:checkbox name="checkList" value="checked"
-							fieldValue="%{product_id}" /></td>
+							fieldValue="%{productId}" /></td>
 					<td><span><s:property value="productName" /></span></td>
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>

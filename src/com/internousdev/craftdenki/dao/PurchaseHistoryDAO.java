@@ -38,7 +38,7 @@ public class PurchaseHistoryDAO {
 				dto.setCount(rs.getInt("product_count"));
 				dto.setreleaseCompany(rs.getString("release_company"));
 				dto.setreleaseDate(rs.getString("release_date"));
-				dto.setreleaseDate(rs.getString("product_id"));
+				dto.setProductId(rs.getString("product_id"));
 
 				purchaseHistoryList.add(dto);
 			}

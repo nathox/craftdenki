@@ -22,6 +22,8 @@ public class PurchaseHistoryDTO {
 	// 発売会社名
 	private String releaseCompany;
 
+	private String productId;
+
 	// 発売年月日
 	private String releaseDate;
 
@@ -105,5 +107,15 @@ public class PurchaseHistoryDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public String getProductId() {
+		return 	productId;
+		}
+
+
 
 }

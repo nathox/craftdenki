@@ -31,9 +31,8 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 			System.out.println("aaa");
 			return SUCCESS;
 		}
-		for (String product_id : checkList) {
-			count += dao.deleteHistoryInfo(product_id);
-			System.out.println("product_id");
+		for (String deleteId:checkList) {
+			dao.deleteHistoryInfo(deleteId);
 			result = "delete";
 		}
 
@@ -70,7 +69,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	}
 
-	public Collection<String> getCheckList() {
+	public Collection<String> getcheckList() {
 		return checkList;
 	}
 
@@ -82,7 +81,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.deleteFlg = deleteFlg;
 	}
 
-	public void setCheckList(Collection<String> checkList) {
+	public void setcheckList(Collection<String> checkList) {
 		this.checkList = checkList;
 	}
 
