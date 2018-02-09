@@ -23,16 +23,38 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 	private String test = "test";
 
-	public String execute() throws SQLException {
 
+
+	private int product_id;
+	private String userId;
+
+
+
+
+
+	public String execute() throws SQLException {
 		String result = ERROR;
+		FavoriteDAO favoriteDAO = new FavoriteDAO();
+
+		//ログイン/未ログインでカートにInsertするIDを変更
+				if(session.containsKey("trueID")){
+					userId = session.get("trueID").toString();
+				}else{
+					userId = session.get("temp_user_id").toString();
+				}
+
+
+				System.out.println(product_id);
+
 
 		FavoriteDAO dao = new FavoriteDAO();
 
 		int count = 0;
 
 		if (deleteFlg == null) {
-			favoriteList = dao.getMyPageUserInfo(test);
+			favoriteDAO.insertFavorite(userId,product_id);
+
+			favoriteList = dao.getFavoriteInfo(userId);
 
 			System.out.println(favoriteList);
 
@@ -43,18 +65,26 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 				System.out.println("aaa");
 			}
 
-			System.out.println("削除された件数　：" + count);
+			System.out.println("削除された件数 ：" + count);
 
 			// for(型 変数名 :コレクション)でコレクションの値をひとつずつ取り出し{}内を実行
 			// for(String deleteId:delete){
 			// this.delete(Integer.parseInt(deleteId));
 			// }
 
+
+
 		}
+
 
 		result = SUCCESS;
 		return result;
+
+
+
 	}
+
+
 
 
 	public Collection<String> getCheckList() {
@@ -82,5 +112,87 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 		this.session = session;
 
 	}
+
+
+
+
+
+
+	public String getMessage() {
+		return message;
+	}
+
+
+
+
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+
+
+
+
+	public String getTest() {
+		return test;
+	}
+
+
+
+
+
+
+	public void setTest(String test) {
+		this.test = test;
+	}
+
+
+
+
+
+	public int getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+
+
+
+
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+
+
+
+
+
+	public String getDeleteFlg() {
+		return deleteFlg;
+	}
+
+
+
+
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+
 
 }

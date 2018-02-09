@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import com.internousdev.craftdenki.dto.FavoriteDTO;
 import com.internousdev.craftdenki.util.DBConnector;
 
+
 public class FavoriteDAO {
 
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 
-	public ArrayList<FavoriteDTO> getMyPageUserInfo(String loginId) throws SQLException {
+	public ArrayList<FavoriteDTO> getFavoriteInfo(String loginId) throws SQLException {
 		ArrayList<FavoriteDTO> favoriteDTO = new ArrayList<FavoriteDTO>();
 		// SQL文わからない
 		String sql = "SELECT product_name, product_name_kana, image_file_path,image_file_name, price, release_company, release_date from favorite_info JOIN product_info ON favorite_info.product_id = product_info.product_id where user_id = ?";
@@ -79,6 +80,40 @@ public class FavoriteDAO {
 		}
 		return count;
 	}
+
+
+
+
+
+	//カートテーブルにInsertメソッド
+		public void insertFavorite(String user_id,int product_id) throws SQLException{
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+			String insert = "INSERT INTO favorite_info (user_id,product_id,regist_date) VALUES(?,?,NOW())";
+
+			try{
+				PreparedStatement ps = connection.prepareStatement(insert);
+				ps.setString(1,user_id);
+				ps.setInt(2,product_id);
+
+
+				ps.execute();
+
+			}catch(SQLException e){
+				e.printStackTrace();
+			}finally{
+				connection.close();
+			}
+		}
+
+
+
+
+
+
+
+
+
 
 
 

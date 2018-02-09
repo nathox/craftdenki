@@ -20,6 +20,15 @@ border-collapse:collapse;
 }
 
 </style>
+<script type="text/javascript">
+    function goCartAction(){
+        document.getElementById('form').action="CartAction";
+    }
+
+    function goFavoriteAction(){
+        document.getElementById('form').action="FavoriteAction";
+    }
+</script>
 
 </head>
 <body>
@@ -60,7 +69,7 @@ border-collapse:collapse;
 		<br>
 	</s:else>
 
-	<s:form action="CartAction">
+	<s:form action="CartAction" id="form" name="form">
 		<s:if test="item_stock != 0">
 
 			購入個数
@@ -70,19 +79,14 @@ border-collapse:collapse;
 			<s:hidden name="price" value="%{price}"/>
 
 			<input type="hidden" name="insertFlg" value="1"/>
-	  		<div class=button><s:submit value=" カートに入れる " method="execute"/></div>
+	  		<div class=button><s:submit value=" カートに入れる" onclick="goCartAction();"/></div>
 
 	  	</s:if>
  		<s:else>
 	  		<p>在庫がありません。</p>
 	  	</s:else>
-	</s:form>
-
 	<br>
-
-	<s:form action="FavoriteAction">
-		<s:hidden name="product_id" value="%{product_id}"/>
- 		<div class=button><s:submit value=" お気に入りリストに入れる " method="insert"/></div>
+ 		<div class=button><s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();"/></div>
 	</s:form>
 
 </div>

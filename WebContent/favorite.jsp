@@ -25,8 +25,7 @@
 
 				<s:iterator value="favoriteList">
 					<tr>
-						<td><s:checkbox name="checkList" value="checked"
-								fieldValue="%{product_id}" /></td>
+						<td><s:checkbox name="checkList" value="1" fieldValue="%{product_id}" /></td>
 						<td><span><s:property value="productName" /></span></td>
 						<td><span><s:property value="imageFilePath" /></span></td>
 						<td><span><s:property value="price" /></span></td>
@@ -34,8 +33,9 @@
 						<td><span><s:property value="releaseDate" /></span></td>
 					</tr>
 					<tr>
-						<td><s:submit value="一括削除">
-								<input type="hidden" name="deleteFlg" value="1" />
+
+						<td><s:submit value="一括削除" >
+						<input type="hidden" name="deleteFlg" value="1/">
 							</s:submit></td>
 					</tr>
 				</s:iterator>
