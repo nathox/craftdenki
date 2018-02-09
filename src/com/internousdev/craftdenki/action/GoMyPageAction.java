@@ -22,7 +22,6 @@ public class GoMyPageAction extends ActionSupport implements SessionAware {
 			session.put("status", "mypage");
 			result=ERROR;
 		}
-//あとでERROR用にstrutsいじる
 
 		return result;
 	}

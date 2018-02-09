@@ -8,7 +8,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.UserInfoChangeDAO;
-import com.internousdev.craftdenki.dto.LoginDTO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,7 +26,7 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 		/*
 		 * ↓セッションからログインしている「ユーザーID」を格納して、DAOのメソッドの引数にしてる
 		 */
-		String loginid = (((LoginDTO)session.get("loginUserInfo")).getLoginId()).toString();
+		String loginid = session.get("trueID").toString();
 		list_user_info = userInfoChangeDAO.getUserInfo(loginid);
 
 
