@@ -116,7 +116,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 					}
 				} else if (dto.getLoginId().equals("noID")) {
-					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals("noPASS")) {
+					if (dto.getLoginPass().equals("noPASS")) {
 						session.put("unknown", "入力されたIDもしくはパスワードが異なります");
 						result = ERROR;
 						return result;
