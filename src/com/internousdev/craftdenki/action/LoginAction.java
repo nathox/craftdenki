@@ -74,13 +74,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		dto = dao.loginUserInfo(loginId, loginPassword);
 
-		session.put("loginUserInfo", dto);
+
 		if (IDerrormsg == null) {
 			if (Passerrormsg == null) {
-				if ((((LoginDTO) session.get("loginUserInfo")).getLoginId()).equals("craft")) {
-					if ((((LoginDTO) session.get("loginUserInfo")).getLoginPass()).equals("denki")) {
-						// session.put("master_Id","craft");
-						// session.put("master_Pass","denki");
+				if ((dto.getLoginId()).equals("craft")) {
+					if ((dto.getLoginPass()).equals("denki")) {
 						session.put("master_flg", "1");
 						session.put("IDerror", "");
 						session.put("Passerror", "");
@@ -88,8 +86,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						result = "master";
 						return result;
 					}
-				} else if (((LoginDTO) session.get("loginUserInfo")).getLoginId().equals(loginId)) {
-					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals(loginPassword)) {
+				} else if (dto.getLoginId().equals(loginId)) {
+					if (dto.getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId());
 						session.put("loginPass", dto.getLoginPass());
 						session.put("trueID",loginId);
@@ -98,10 +96,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						if (session.get("status") == "cart") {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
-
 							result = "cart";
 							dao.cartInfo("仮ログインId", dto.getLoginId());
 							return result;
+
+						}else if(session.get("status") == "mypage"){
+
 						} else if (session.get("status") == null) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
@@ -111,7 +111,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						}
 
 					}
-				} else if (((LoginDTO) session.get("loginUserInfo")).getLoginId().equals("noID")) {
+				} else if (dto.getLoginId().equals("noID")) {
 					if (((LoginDTO) session.get("loginUserInfo")).getLoginPass().equals("noPASS")) {
 						session.put("unknown", "入力されたIDもしくはパスワードが異なります");
 						result = ERROR;
