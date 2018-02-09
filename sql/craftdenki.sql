@@ -88,8 +88,7 @@ product_id int,
 product_count int,
 price int,
 regist_date datetime,
-update_date datetime,
-status int default 0
+update_date datetime
 );
 
 drop table if exists destination_info;
@@ -143,8 +142,8 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01",0);
-INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01",0);
+INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01");
 
 
 
