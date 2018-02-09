@@ -8,7 +8,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.UserInfoChangeDAO;
-import com.internousdev.craftdenki.dto.LoginDTO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -45,9 +44,16 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 	private UserInfoChangeDAO userInfoChangeDAO = new UserInfoChangeDAO();
 
 
+	//使わないけどコンソールのエラー消すために定義して、ゲッターセッターも作る
+		private String yuubin1;
+		private String yuubin2;
+		private String yuubin3;
+		private String yuubin4;
+		private String yuubin5;
+		private String yuubin6;
+	//
 
 	public String execute() throws SQLException{
-
 
 		/*
 		 * 必須データがＮＵＬＬだった場合等のエラー処理がまだ書けてない
@@ -58,50 +64,66 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 				 !(familyNameKana.equals("")) && !(firstNameKana.equals("")) && !(email.equals("")) &&
 				 !(answer.equals("")) && !(userAddress.equals("")) && !(telNumber.equals(""))){
 
-			//UserInfoChangeCompleteDAOで行指定するためのセッション
-			session.put("t_userId", userId);
-			//必須データ
-			session.put("t_password", password);
-			session.put("t_familyName", familyName);
-			session.put("t_firstName", firstName);
-			session.put("t_familyNameKana", familyNameKana);
-			session.put("t_firstNameKana", firstNameKana);
-			session.put("t_sex", sex);
-			session.put("t_email", email);
-			session.put("t_question", question);
-			session.put("t_answer", answer);
-			session.put("t_userAddress", userAddress);
-			session.put("t_telNumber", telNumber);
+			//jspから受け取ったフィールドの文字数が仕様に引っかかってないかチェック
+			if(
+					((password.length()>=1) && (password.length()<=16))&&
+					((familyName.length()>=1) && (familyName.length()<=16))&&
+					((firstName.length()>=1) && (firstName.length()<=16))&&
+					((familyNameKana.length()>=1) && (familyNameKana.length()<=16))&&
+					((firstNameKana.length()>=1) && (firstNameKana.length()<=16))&&
+					((email.length()>=14) && (email.length()<=32))&&
+					((answer.length()>=1) && (answer.length()<=16))
+				)
+			{
 
-			//
-			session.put("t_userAddress2", userAddress2);
-			session.put("t_userAddress3", userAddress3);
-			session.put("t_telNumber2", telNumber2);
-			session.put("t_telNumber3", telNumber3);
-			//
-			result=SUCCESS;
+				//UserInfoChangeCompleteDAOで行指定するためのセッション
+				session.put("t_userId", userId);
+				//必須データ
+				session.put("t_password", password);
+				session.put("t_familyName", familyName);
+				session.put("t_firstName", firstName);
+				session.put("t_familyNameKana", familyNameKana);
+				session.put("t_firstNameKana", firstNameKana);
+				session.put("t_sex", sex);
+				session.put("t_email", email);
+				session.put("t_question", question);
+				session.put("t_answer", answer);
+				session.put("t_userAddress", userAddress);
+				session.put("t_telNumber", telNumber);
+
+				//
+				session.put("t_userAddress2", userAddress2);
+				session.put("t_userAddress3", userAddress3);
+				session.put("t_telNumber2", telNumber2);
+				session.put("t_telNumber3", telNumber3);
+				//
+
+				result=SUCCESS;
+			}
+			else{
+				setErrorMessage("文字数が規定値範囲外です！！");
+
+				String loginid = session.get("trueID").toString();
+				list_user_info = userInfoChangeDAO.getUserInfo(loginid);
+
+				Iterator<UserInfoChangeDTO> iterator = list_user_info.iterator();
+
+				if (!(iterator.hasNext())) {list_user_info = null;}
+
+				result=ERROR;
+
+			}
 
 		}else{
 
 			setErrorMessage("必須項目の記入が抜けています！！");
-//↑これがuserInfoChange.jspに表示されるようにする
 
-			String loginid = (((LoginDTO)session.get("loginUserInfo")).getLoginId()).toString();
+			String loginid = session.get("trueID").toString();
 			list_user_info = userInfoChangeDAO.getUserInfo(loginid);
-
-
 
 			Iterator<UserInfoChangeDTO> iterator = list_user_info.iterator();
 
-			if (!(iterator.hasNext())) {
-
-				list_user_info = null;
-			}
-
-
-
-
-
+			if (!(iterator.hasNext())) {list_user_info = null;}
 
 			result=ERROR;
 		}
@@ -272,5 +294,58 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 	public void setList_user_info(ArrayList<UserInfoChangeDTO> list_user_info){
 		this.list_user_info = list_user_info;
 	}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+	public String getYuubin1() {
+		return yuubin1;
+	}
+
+	public void setYuubin1(String yuubin1) {
+		this.yuubin1 = yuubin1;
+	}
+
+	public String getYuubin2() {
+		return yuubin2;
+	}
+
+	public void setYuubin2(String yuubin2) {
+		this.yuubin2 = yuubin2;
+	}
+
+	public String getYuubin3() {
+		return yuubin3;
+	}
+
+	public void setYuubin3(String yuubin3) {
+		this.yuubin3 = yuubin3;
+	}
+
+	public String getYuubin4() {
+		return yuubin4;
+	}
+
+	public void setYuubin4(String yuubin4) {
+		this.yuubin4 = yuubin4;
+	}
+
+	public String getYuubin5() {
+		return yuubin5;
+	}
+
+	public void setYuubin5(String yuubin5) {
+		this.yuubin5 = yuubin5;
+	}
+
+	public String getYuubin6() {
+		return yuubin6;
+	}
+
+	public void setYuubin6(String yuubin6) {
+		this.yuubin6 = yuubin6;
+	}
+
+	///////////////////////////////////////////////////////////////
 
 }

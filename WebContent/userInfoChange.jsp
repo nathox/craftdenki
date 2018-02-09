@@ -20,6 +20,15 @@
 	.errorColor{color:red;}
 
 	</style>
+
+	<script type="text/javascript">
+		function nextField(i, n, m) {
+ 		if (i.value.length >= m) {
+ 	 	  i.form.elements[n].focus();
+ 		 }
+		}
+</script>
+
 </head>
 <body>
 
@@ -41,13 +50,18 @@
 			<p>秘密の質問：			<s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？',3:'好きな動物は？'}" name="question" value="question"></s:select></p>
 			<p>答え：						<s:textfield name="answer" value="%{answer}"/></p>
 
-			<p>郵便番号(７桁):<input type="text" name="yuubin" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress','userAddress');"></p>
+
+
+
+
+			<p>郵便番号:〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin1-1','userAddress','userAddress');"></p>
 			<p>住所：					<s:textfield name="userAddress" size="60" value="%{userAddress}"/></p>
 
-			<p>郵便番号(７桁):<input type="text" name="yuubin2" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress2','userAddress2');"></p>
+
+			<p>郵便番号:〒<input type="text" name="yuubin2" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input type="text" name="yuubin5" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin2','yuubin2-1','userAddress2','userAddress2');"></p>
 			<p>住所２：				<s:textfield name="userAddress2" size="60" value="%{userAddress2}"/></p>
 
-			<p>郵便番号(７桁):<input type="text" name="yuubin3" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','userAddress3','userAddress3');"></p>
+			<p>郵便番号:〒<input type="text" name="yuubin3" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input type="text" name="yuubin6" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin3','yuubin3-1','userAddress3','userAddress3');"></p>
 			<p>住所３：				<s:textfield name="userAddress3" size="60" value="%{userAddress3}"/></p>
 
 			<p>電話番号：				<s:textfield name="telNumber" value="%{telNumber}"/></p>
@@ -59,7 +73,13 @@
 		</s:iterator>
 	</s:form>
 
-	<p><input type="button" value="マイページ画面に戻る" onclick="history.back()" /></p>
+	<a href="myPage.jsp">マイページ画面へ戻る</a>
+
+	<%-- <p><input type="button" value="マイページ画面に戻る" onclick="history.back()" /></p>
+
+	<p><s:submit value="マイページ画面に戻る" action="GoMyPageAction" method="execute"/></p>
+
+	--%>
 
 </body>
 </html>
