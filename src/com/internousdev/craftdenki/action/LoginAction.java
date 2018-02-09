@@ -100,7 +100,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						session.put("trueID",loginId);
 						System.out.println((session.get("trueID")));
 						System.out.println((session.get("status")));
-						if (session.get("status") == "settlement") {
+						if (session.get("status") == ("settlement")) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
 							result = "settlement";
@@ -114,14 +114,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
 							result = "myPage";
 							return result;
 
-						} else if (session.get("status") == ("")) {
+						} else if(session.get("status") == ("")) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
 							System.out.println(session.get("trueID"));
 							System.out.println(session.get("userId"));
 							result = "myPage";
 							return result;
-						}
+				}
 
 					}
 				} else if (dto.getLoginId().equals("noID")) {

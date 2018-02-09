@@ -28,15 +28,17 @@
 					<td>ふりがな</td>
 					<td>金額</td>
 					<td>個数</td>
+					<td>レビューボタン</td>
 				</tr>
 				<tr>
 					<td><s:checkbox name="checkList" value="checked" fieldValue="%{productId}" /></td>
 
 					<td><span><s:property value="productId" /></span></td>
-					<td><a href=<s:url="action"/>><span><s:property value="productName" /></span></a></td>
+					<td><span><s:property value="productName" /></span></td>
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>
 					<td><span><s:property value="count" />個</span></td>
+					<td><s:submit action="ReviewAction" value="レビュー"/></td>
 				</tr>
 				<s:hidden name="deleteFlg" value="1"/>
 				<tr>

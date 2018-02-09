@@ -75,7 +75,7 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 		}else{  //ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす
 
 
-			session.put("status",settlement);
+			session.put("status","settlement");
 
 			return "login";
 		}
