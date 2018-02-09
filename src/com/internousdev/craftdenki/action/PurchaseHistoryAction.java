@@ -24,27 +24,30 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	public String execute() throws SQLException {
 
-		int count = 0;
+//		int count = 0;
 		if (deleteFlg == null) {
 			String userId = session.get("trueID").toString();
 			purchaseHistoryList = dao.getPurchaseHistory(userId);
 			System.out.println("aaa");
 			return SUCCESS;
 		}
+
+
 		for (String deleteId:checkList) {
+			System.out.println("DELETEID : " + deleteId);
 			dao.deleteHistoryInfo(deleteId);
-			result = "delete";
+				result = "delete";
 		}
 
 		return result;
 	}
 
-	public String getProduct_id() {
-		return product_id;
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
-	public void setProduct_id(String product_id) {
-		this.product_id = product_id;
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 
 	public ArrayList<PurchaseHistoryDTO> getPurchaseHistoryList() {
@@ -55,24 +58,6 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.purchaseHistoryList = purchaseHistoryList;
 	}
 
-	@Override
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-
-	public String getuserId() {
-		return userId;
-	}
-
-	public void setuserId(String userId) {
-		this.userId = userId;
-
-	}
-
-	public Collection<String> getcheckList() {
-		return checkList;
-	}
-
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}
@@ -81,8 +66,30 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.deleteFlg = deleteFlg;
 	}
 
-	public void setcheckList(Collection<String> checkList) {
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public Collection<String> getCheckList() {
+		return checkList;
+	}
+
+	public void setCheckList(Collection<String> checkList) {
 		this.checkList = checkList;
 	}
+
+	public String getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(String product_id) {
+		this.product_id = product_id;
+	}
+
+
 
 }
