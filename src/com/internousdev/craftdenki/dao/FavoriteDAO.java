@@ -56,15 +56,15 @@ public class FavoriteDAO {
 
 
 
-	public int deleteFavoriteInfo(String product_id){
+	public int deleteFavoriteInfo(int product_id){
 		DBConnector db=new DBConnector();
 		Connection con=db.getConnection();
 		int count=0;
-		String sql="delete from favorite_info where product_id=?";
+		String sql="delete from favorite_info where product_id = ?";
 
 		try {
 			PreparedStatement ps=con.prepareStatement(sql);
-			ps.setString(1,product_id);
+			ps.setInt(1,product_id);
 
 			count = ps.executeUpdate();
 			System.out.println(count);
