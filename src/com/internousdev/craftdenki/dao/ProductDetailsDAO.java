@@ -141,10 +141,20 @@ public class ProductDetailsDAO {
 			while(resultSet.next()){
 				Review2DTO review2DTO = new Review2DTO();
 
-				review2DTO.setId(resultSet.getInt("user_id"));
+				review2DTO.setUser_id(resultSet.getString("user_id"));
 				review2DTO.setProduct_id(resultSet.getInt("product_id"));
+				review2DTO.setReview_id(resultSet.getString("review_id"));
 				review2DTO.setBuy_item_date(resultSet.getDate("buy_item_date"));
 				review2DTO.setEvaluation_count(resultSet.getInt("evaluation_count"));
+
+
+				System.out.println("--------getReviewInfo-----------------");
+				System.out.println(review2DTO.getUser_id());
+				System.out.println(review2DTO.getProduct_id());
+				System.out.println(review2DTO.getReview_id());
+				System.out.println(review2DTO.getBuy_item_date());
+				System.out.println(review2DTO.getEvaluation_count());
+				System.out.println("------------------------------------");
 
 				reviewList.add(review2DTO);
 

@@ -9,7 +9,12 @@
 <title>商品詳細画面</title>
 
 <style type="text/css">
-#detailseList{
+#detailsList{
+border: 1px solid #b1b1b1;
+border-collapse:collapse;
+}
+
+#reviewList{
 border: 1px solid #b1b1b1;
 border-collapse:collapse;
 }
@@ -37,18 +42,22 @@ border-collapse:collapse;
 		</div>
 	</s:iterator>
 
-	<s:if test="reviewList != 0">
-	<s:iterator value="reviewList">
-		<div id="reviewList">
+	<s:if test="reviewList.size != 0 ">
+	<div id="reviewList">
+	<p>この商品のレビュー</p>
+		<s:iterator value="reviewList">
 			<div>ユーザー名:<s:property value="user_id" /></div>
 			<div>レビュー:<s:property value="review_id" /></div>
 			<div>評価:<s:property value="evaluation_count" /></div>
 			<div>投稿日時:<s:property value="buy_item_date" /></div>
-		</div>
-	</s:iterator>
+			<br>
+		</s:iterator>
+	</div>
+		<br>
 	</s:if>
 	<s:else>
 		<p>レビューはありません。</p>
+		<br>
 	</s:else>
 
 	<s:form action="CartAction">
