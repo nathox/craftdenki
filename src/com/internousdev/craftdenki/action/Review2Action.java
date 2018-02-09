@@ -7,7 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.craftdenki.dao.Review2DAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ReviewAction2 extends ActionSupport implements SessionAware {
+public class Review2Action extends ActionSupport implements SessionAware {
 
 	private String review;
 	private String productId;

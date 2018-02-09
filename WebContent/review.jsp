@@ -8,29 +8,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<s:form action="ParchaseHistoryAction">
+	<s:form action="Review2Action">
 		<table>
 			<tr>
 				<td><s:property value="session.productName" /></td>
 			</tr>
-
 			<tr>
 				<td><s:textarea name="review" rows="10" cols="60"></s:textarea></td>
 			</tr>
-
+			<tr>
+				<td>☆： <select name="evaluationCount" required>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+				</select></td>
+			</tr>
 			<tr>
 				<td><s:submit value="レビュー" /></td>
 			</tr>
 		</table>
-			☆：
-			<select name="evaluationCount" required>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-
 	</s:form>
 
 </body>
