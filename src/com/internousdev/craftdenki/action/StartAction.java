@@ -14,15 +14,15 @@ public class StartAction extends ActionSupport implements SessionAware{
 	public String execute(){
 
 
-		if(!(session.containsKey("trueId") || (session.containsKey("loginFlg")))){
+		if(!(session.containsKey("trueId") || (session.containsKey("tempLoginFlg")))){
 
 		Random rnd = new Random();
-		boolean loginFlg = false;
+		boolean tempLoginFlg = false;
 
 		System.out.println(rnd);
-		System.out.println(loginFlg);
+		System.out.println(tempLoginFlg);
 		session.put("temp_user_id", rnd);
-		session.put("loginFlg",loginFlg);
+		session.put("tempLoginFlg",tempLoginFlg);
 		System.out.println("仮ユーザーID発行");
 
 		}
