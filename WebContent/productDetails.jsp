@@ -81,8 +81,8 @@ border-collapse:collapse;
 	<br>
 
 	<s:form action="FavoriteAction">
-		<s:param name="product_id" value="%{product_id}"/>
- 		<div class=button><s:submit value=" お気に入りリストに入れる " method="execute"/></div>
+		<s:hidden name="product_id" value="%{product_id}"/>
+ 		<div class=button><s:submit value=" お気に入りリストに入れる " method="insert"/></div>
 	</s:form>
 
 </div>
