@@ -88,7 +88,8 @@ product_id int,
 product_count int,
 price int,
 regist_date datetime,
-update_date datetime
+update_date datetime,
+status int default 0
 );
 
 drop table if exists destination_info;
@@ -126,7 +127,8 @@ INSERT INTO product_info(product_id,product_name,product_name_kana,product_descr
 
 INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
 ("test","123","塩治","大輝","えんな","だいき",0,"test@test",1,1,"2018/01/20","2018/01/20",1,"あいす"),
-("test1","1234","高橋","yuuri","たかはし","ゆうり",0,"tes1t@test",1,1,"2018/01/20","2018/01/20",2,"かれー");
+("test1","1234","高橋","yuuri","たかはし","ゆうり",0,"tes1t@test",1,1,"2018/01/20","2018/01/20",2,"かれー"),
+("craft","denki","高橋","湧里","たかはし","ゆうり",0,"000@test",1,1,"2018/01/01","2018/01/02",2,"aaa");
 
 
 
@@ -142,8 +144,8 @@ INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01");
-INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01");
+INSERT INTO purchase_history_info VALUES(1,"test",10000028,1,5000,"2016/01/01","2016/01/01",0);
+INSERT INTO purchase_history_info VALUES(2,"test1",10000029,2,1000,"2016/01/01","2016/01/01",0);
 
 
 
