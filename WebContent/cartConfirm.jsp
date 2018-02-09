@@ -107,6 +107,11 @@
 				<h3><s:property value="message"/></h3>
 			</s:if>
 
+			<div>
+			<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
+			</div>
+
+
 	</div>
 </body>
 </html>

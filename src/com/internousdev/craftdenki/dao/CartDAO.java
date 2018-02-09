@@ -47,14 +47,14 @@ public class CartDAO {
 
 		}catch(Exception e){
 			e.printStackTrace();
-		}finally{
-			connection.close();
 		}
 		return cartDTO;
 	}
 
 	//カート情報削除メソッド
 	public int deleteCart(String user_id,String deleteId)throws SQLException{
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
 		String delete = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
 
 		PreparedStatement ps;
@@ -68,8 +68,6 @@ public class CartDAO {
 
 		}catch(SQLException e){
 			e.printStackTrace();
-		}finally{
-			connection.close();
 		}
 			return result;
 	}
@@ -79,18 +77,34 @@ public class CartDAO {
 
 	//カートテーブルにInsertメソッド
 	public void insertCart(String userId,int product_id,int product_count,int price) throws SQLException{
-		String insert = "INSERT INTO cart_info (id,user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?,?)";
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		String insert = "INSERT INTO cart_info (user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?)";
 		int totalPrice = product_count * price;
+
+		System.out.println("product_id");
+		System.out.println(product_id);
+
+		System.out.println("product_count");
+		System.out.println(product_count);
+
+		System.out.println("price");
+		System.out.println(price);
+
+		System.out.println("totalprice");
+		System.out.println(totalPrice);
 
 		try{
 			PreparedStatement ps = connection.prepareStatement(insert);
 			ps.setString(1,userId);
-			ps.setInt(1,product_id);
+			ps.setInt(2,product_id);
 			ps.setInt(3,product_count);
 			ps.setInt(4,price);
 			ps.setString(5,dateUtil.getDate());
 			ps.setString(6,dateUtil.getDate());
 			ps.setInt(7,totalPrice);
+
+			ps.execute();
 
 		}catch(SQLException e){
 			e.printStackTrace();

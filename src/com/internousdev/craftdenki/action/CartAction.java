@@ -47,10 +47,8 @@ public class CartAction extends ActionSupport implements SessionAware{
 		}
 
 		//商品の追加
+		System.out.println("insertFlg,id,price");
 		System.out.println(insertFlg);
-		System.out.println(product_count);
-		System.out.println(product_id);
-		System.out.println(price);
 
 		if(insertFlg.equals("1")){
 			cartDAO.insertCart(userId,this.product_id,this.product_count,this.price);
