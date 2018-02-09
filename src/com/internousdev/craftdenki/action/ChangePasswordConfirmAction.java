@@ -39,8 +39,6 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 						if(password.matches("[\\w]")){
 							if (password.matches("[\\w]{1,16}")) {
-								String defaultLoginId = ((UserInfoChangeDTO) session.get("userId")).getUserId();
-								session.put("defaultLoginId", defaultLoginId);
 
 								session.put("answer", dto.getAnswer());
 								session.put("password", password);
