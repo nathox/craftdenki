@@ -174,7 +174,7 @@
 
 		<action name="Review2Action" class="com.internousdev.craftdenki.action.Review2Action"
 			method="execute">
-			<result name="success">review.jsp</result>
+			<result name="success">productDetails.jsp</result>
 		</action>
 
 		<!-- ___________________管理者機能(高橋) _________END_________ -->
