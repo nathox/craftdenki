@@ -13,7 +13,7 @@ public class Review2DAO {
 
 	public void getReviewInfo(String userId,String productId,String buyItemDate, String review,	String evaluationCount) {
 
-		String sql = "insert into review_info(id,user_id,product_id,buy_item_date,review_id,evaluation_count values(NULL,?,?,?,?,?)";
+		String sql = "insert into review_info(id,user_id,product_id,buy_item_date,review_id,evaluation_count) values(NULL,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);

@@ -54,8 +54,11 @@
 					<td><span><s:property value="productName" /></span></td>
 					<s:hidden name="productName" value="%{productName}" />
 					<td><span><s:property value="productNameKana" /></span></td>
+					<s:hidden name="productName" value="%{productName}" />
 					<td><span><s:property value="price" />円</span></td>
+					<s:hidden name="price" value="%{price}" />
 					<td><span><s:property value="count" />個</span></td>
+					<s:hidden name="count" value="%{count}" />
 
 					<s:hidden name="registDate" value="%{registDate}" />
 					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>

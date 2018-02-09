@@ -13,6 +13,24 @@ public class Review1Action extends ActionSupport implements SessionAware {
 	private String productName;
 	private String productId;
 	private String registDate;
+	private String price;
+	private String count;
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
+	}
 
 	public String getProductName() {
 		return productName;
