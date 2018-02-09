@@ -18,7 +18,7 @@ public class PurchaseHistoryDAO {
 
 		ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 
-		String sql = "SELECT pi.product_id as product_id,phi.product_count as product_count,phi.regist_date as regist_date,phi.price as price,pi.image_file_name as image_file_name,pi.product_name as product_name,pi.product_name_kana as product_name_kana,pi.release_company as release_company,pi.release_date as release_date FROM purchase_history_info as phi LEFT JOIN product_info as pi ON phi.product_id = pi.product_id WHERE phi.user_id = ? and phi.status = 0";
+		String sql = "SELECT pi.product_id as product_id,phi.regist_date as regist_date,phi.price as price,pi.image_file_name as image_file_name,pi.product_name as product_name,pi.product_name_kana as product_name_kana,pi.release_company as release_company,pi.release_date as release_date FROM purchase_history_info as phi LEFT JOIN product_info as pi ON phi.product_id = pi.product_id WHERE phi.user_id = ? and phi.status = 0";
 
 		try {
 
