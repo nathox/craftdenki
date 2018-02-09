@@ -32,7 +32,6 @@ public class Review2DAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		;
 	}
 
 }
