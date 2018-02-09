@@ -190,7 +190,7 @@ public class ProductDetailsDAO {
 
 			DateUtil dateUtil = new DateUtil();
 
-			String sql = "UPDATE  product_info SET"
+			String sql = "UPDATE  product_info SET "
 							+ "product_id = ? , "
 							+ "product_name = ? , "
 							+ "product_name_kana = ? , "
