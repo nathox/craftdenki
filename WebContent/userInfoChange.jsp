@@ -17,6 +17,7 @@
 
 	<style type="text/css">
 
+	.errorColor{color:red;}
 
 	</style>
 </head>
@@ -24,6 +25,10 @@
 
 	<h3>ユーザー情報変更ページ</h3>
 	<s:form action="UserInfoChangeConfirmAction">
+	<div class="errorColor"><s:if test="errorMessage!=hoge">
+		<s:property value="errorMessage"  escape="false" />
+		</s:if>
+	</div>
 		<s:iterator value="list_user_info">
 			<p>ユーザーID：			<s:textfield readonly="true" name="userId"  value="%{userId}"/></p>
 			<p>パスワード：			<s:password name="password" value="%{password}"/></p>

@@ -187,6 +187,7 @@
 		<action name="GoMyPageAction"
 			class="com.internousdev.craftdenki.action.GoMyPageAction" method="execute">
 			<result name="success">myPage.jsp</result>
+			<result name="error">login.jsp</result>
 		</action>
 
 		<!-- GoCartAction -->

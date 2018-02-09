@@ -32,9 +32,12 @@
 	<p>名：								<s:property value="session.t_firstName"/></p>
 	<p>姓かな：						<s:property value="session.t_familyNameKana"/></p>
 	<p>名かな：						<s:property value="session.t_firstNameKana"/></p>
-	<p>性別：							<s:property value="session.t_sex"/></p>
+	<p>性別：							<s:if test="session.t_sex==0">男</s:if>
+												<s:if test="session.t_sex==1">女</s:if></p>
 	<p>メールアドレス：			<s:property value="session.t_email"/></p>
-	<p>秘密の質問：					<s:property value="session.t_question"/></p>
+	<p>秘密の質問：					<s:if test="session.t_question==1">嫌いな食べ物は？</s:if>
+		   										<s:if test="session.t_question==2">母親の旧姓は？</s:if>
+		   										<s:if test="session.t_question==3">好きな動物は？</s:if></p>
 	<p>答え:								<s:property value="session.t_answer"/></p>
 	<p>住所：							<s:property value="session.t_userAddress"/></p>
 	<p>住所２：						<s:property value="session.t_userAddress2"/></p>
