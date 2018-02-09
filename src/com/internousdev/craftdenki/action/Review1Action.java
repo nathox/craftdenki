@@ -10,10 +10,19 @@ public class Review1Action extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> session;
 	private String historyItemName;
+	private String productName;
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 
 	public String execute() {
 
-		session.put("hitsoryItemName", historyItemName);
+		session.put("productName", productName);
 
 		return SUCCESS;
 	}
