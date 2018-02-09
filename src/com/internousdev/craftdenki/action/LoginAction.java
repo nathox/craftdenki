@@ -101,7 +101,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 							return result;
 
 						}else if(session.get("status") == "mypage"){
+							session.put("IDerror", "");
+							session.put("Passerror", "");
 
+							result = "mypage";
+							return result;
 						} else if (session.get("status") == null) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
