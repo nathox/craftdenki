@@ -23,7 +23,7 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 
 		boolean checkUpdate =changePasswordCompleteDAO.updateInfo(
 				session.get("password").toString(),
-			((UserInfoChangeDTO) session.get("userId")).getUserId().toString());
+			((UserInfoChangeDTO) session.get("trueID")).getUserId().toString());
 
 
 		if(checkUpdate){

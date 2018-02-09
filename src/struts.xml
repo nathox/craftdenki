@@ -312,11 +312,13 @@
 		<!-- CheckUserIdAction -->
 		<action name="CheckUserIdAction" class="com.internousdev.craftdenki.action.CheckUserIdAction" method="execute">
 			<result name="success">changePassword.jsp</result>
+			<result name="error">checkUserId.jsp</result>
 		</action>
 
 		<!-- ChangePasswordConfirmAction -->
 		<action name="ChangePasswordConfirmAction" class="com.internousdev.craftdenki.action.ChangePasswordConfirmAction" method="execute">
 			<result name="success">changePasswordConfirm.jsp</result>
+			<result name="error">changePassword.jsp</result>
 		</action>
 
 		<!-- ChangePasswordCompleteAction -->
