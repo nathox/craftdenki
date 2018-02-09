@@ -86,7 +86,9 @@ border-collapse:collapse;
 	  		<p>在庫がありません。</p>
 	  	</s:else>
 	<br>
- 		<div class=button><s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();"/></div>
+		<s:if test="#session.containsKey('trueID')">
+ 			<div class=button><s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();"/></div>
+ 		</s:if>
 	</s:form>
 
 </div>
