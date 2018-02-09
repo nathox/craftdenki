@@ -14,31 +14,39 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CartAction extends ActionSupport implements SessionAware{
 
 	private Map<String,Object> session;
-	private String result;
-	private CartDAO cartDAO = new CartDAO();
+
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 	private int product_id;
 	private int product_count;
-	private int price;
+	private String price;
 	private int finalPrice;
 	private String userId;
 	private String deleteFlg;
 	private String insertFlg;
 	private String message;
 
-	public Collection<String> delete;
-	public String productName;
-	public String productNameKana;
-	public String imageFilePath;
-	public String productCount;
-	public String releaseCompany;
-	public String releaseDate;
-	public String totalPrice;
+	private Collection<String> delete;
+	private String productName;
+	private String productNameKana;
+	private String imageFilePath;
+	private String productCount;
+	private String releaseCompany;
+	private String releaseDate;
+	private String totalPrice;
+
+	private String isFlg;
 
 
 
 
 	public String execute()throws SQLException{
+		String result=ERROR;
+
+		if(isFlg!=null){
+			deleteFlg="1";
+		}
+
+		CartDAO cartDAO = new CartDAO();
 
 		//ログイン/未ログインでカートにInsertするIDを変更
 		if(session.containsKey("trueID")){
@@ -50,12 +58,12 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 		//商品の追加
 		if(insertFlg != null){
-			cartDAO.insertCart(userId,product_id,product_count,price);
+			cartDAO.insertCart(userId,product_id,product_count, Integer.parseInt(price));
 		}
 
 
-		System.out.println(insertFlg);
-		System.out.println(deleteFlg);
+		System.out.println("INSERTFLG : " + insertFlg);
+		System.out.println("DELETEFLG : " + deleteFlg);
 
 		if(deleteFlg == null){
 
@@ -63,10 +71,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 			cartList = cartDAO.getCartInfo(userId);
 			session.put("cartList", cartList);
 
-//			int size = cartList.size();
-//			for(int i=0; i<size; i++){
-//				finalPrice = finalPrice + cartList.getTotalPrice(i);
-//			}
+			int size = cartList.size();
+			for(int i=0; i<size; i++){
+				finalPrice = finalPrice + cartList.get(i).getTotalPrice();
+			}
 
 
 		}else if(deleteFlg.equals("1")){
@@ -85,6 +93,18 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 		result = SUCCESS;
 		return result;
+	}
+
+
+
+	public String getIsFlg() {
+		return isFlg;
+	}
+
+
+
+	public void setIsFlg(String isFlg) {
+		this.isFlg = isFlg;
 	}
 
 
@@ -115,13 +135,18 @@ public class CartAction extends ActionSupport implements SessionAware{
 		this.product_count = product_count;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
-		this.price = price;
 
+
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
+
+
+
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}
@@ -148,6 +173,119 @@ public class CartAction extends ActionSupport implements SessionAware{
 	}
 	public void setDelete(Collection<String> delete) {
 		this.delete = delete;
+	}
+
+
+	public int getFinalPrice() {
+		return finalPrice;
+	}
+
+
+
+	public void setFinalPrice(int finalPrice) {
+		this.finalPrice = finalPrice;
+	}
+
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+
+	public String getProductNameKana() {
+		return productNameKana;
+	}
+
+
+
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
+	}
+
+
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+	}
+
+
+
+	public String getProductCount() {
+		return productCount;
+	}
+
+
+
+	public void setProductCount(String productCount) {
+		this.productCount = productCount;
+	}
+
+
+
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+
+
+
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
+	}
+
+
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+
+
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+
+
+
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+
+
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
 
