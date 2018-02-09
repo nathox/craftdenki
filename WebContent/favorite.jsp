@@ -8,15 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<script>
-
-	</script>
-
-
-
-
-
 	★お気に入りリスト★
 	<p>
 		<s:form id="form" name="form" action="FavoriteAction">
@@ -29,9 +20,9 @@
 						<td>値段</td>
 						<td>会社</td>
 						<td>販売月</td>
-
 					</tr>
 				</thead>
+
 				<s:iterator value="favoriteList">
 					<tr>
 						<td><s:checkbox name="checkList" value="checked"
@@ -44,12 +35,11 @@
 					</tr>
 					<tr>
 						<td><s:submit value="一括削除">
-								<input type="hidden" name="deleteFlg" value="1"/>
+								<input type="hidden" name="deleteFlg" value="1" />
 							</s:submit></td>
-						<!-- 				<td><input type="button" name="delete_line" onClick="deltag('<s:property value="#st.index"/>')"
-					value="一括削除"/></td>  -->
 					</tr>
 				</s:iterator>
+
 			</table>
 		</s:form>
 </body>

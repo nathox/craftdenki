@@ -2,107 +2,108 @@ package com.internousdev.craftdenki.dto;
 
 public class PurchaseHistoryDTO {
 
+	// 商品名
+	private String productName;
 
-		//商品名
-	private String product_Name;
+	// ふりがな
+	private String productNameKana;
 
-		//ふりがな
-	private String product_Name_Kana;
+	// 商品画像
+	private String imageFileName;
 
-		//商品画像
-	private String image_File_Name;
+	private String imageFilePath;
 
-	private String image_File_Path;
-
-		//値段
+	// 値段
 	private int price;
 
-		//個数
+	// 個数
 	private int count;
 
-		//発売会社名
-	private String release_Company;
+	// 発売会社名
+	private String releaseCompany;
 
-		//発売年月日
-	private String release_Date;
-
+	// 発売年月日
+	private String releaseDate;
 
 	private int id;
 
-
-
-
-		//商品名
-	public String getproduct_Name(){
-		return product_Name;
-	}
-	public void setproduct_Name(String product_Name){
-		this.product_Name=product_Name;
+	// 商品名
+	public String getProductName() {
+		return productName;
 	}
 
-		//ふりがな
-	public String getproduct_Name_Kana(){
-		return product_Name_Kana;
-	}
-	public void setproduct_Name_Kana(String product_Name_Kana){
-		this.product_Name_Kana=product_Name_Kana;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-		//商品画像
-	public String getimage_File_Name(){
-		return image_File_Name;
-	}
-	public void setimage_File_Name(String image_File_Name){
-		this.image_File_Name=image_File_Name;
+	// ふりがな
+	public String getProductNameKana() {
+		return productNameKana;
 	}
 
-	public String getimage_File_Path(){
-		return image_File_Path;
-	}
-	public void setimage_File_Path(String image_File_Path){
-		this.image_File_Path=image_File_Path;
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
 	}
 
-		//値段
-	public int getPrice(){
+	// 商品画像
+	public String getimageFileName() {
+		return imageFileName;
+	}
+
+	public void setimageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
+	public String getimageFilePath() {
+		return imageFilePath;
+	}
+
+	public void setimageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+	}
+
+	// 値段
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(int price){
-		this.price=price;
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
-		//個数
-	public int getCount(){
+	// 個数
+	public int getCount() {
 		return count;
 	}
-	public void setCount(int count){
-		this.count=count;
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
-		//発売会社名
-	public String getrelease_Company(){
-		return release_Company;
-	}
-	public void setrelease_Company(String release_Company){
-		this.release_Company=release_Company;
+	// 発売会社名
+	public String getreleaseCompany() {
+		return releaseCompany;
 	}
 
-		//発売年月日
-	public String getrelease_Date(){
-		return release_Date;
-	}
-	public void setrelease_Date(String release_Date){
-		this.release_Date=release_Date;
+	public void setreleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
 	}
 
-	public int getId(){
+	// 発売年月日
+	public String getreleaseDate() {
+		return releaseDate;
+	}
+
+	public void setreleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public int getId() {
 		return id;
 	}
-	public void setId(int id){
-		this.id=id;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-
-
-
 
 }

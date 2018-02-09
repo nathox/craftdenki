@@ -26,7 +26,7 @@
 					</s:if></td>
 			</tr>
 			<tr>
-				<td><s:textfield name="loginId" style="ime-mode:disabled;" /></td>
+				<td><s:textfield name="loginId" style="ime-mode:disabled;" value="test" /></td>
 			</tr>
 
 
@@ -36,7 +36,7 @@
 					</s:if></td>
 			</tr>
 			<tr>
-				<td><s:password name="loginPassword" style="ime-mode:disabled;" /></td>
+				<td><s:textfield name="loginPassword" style="ime-mode:disabled;" value="123"/></td>
 			</tr>
 
 

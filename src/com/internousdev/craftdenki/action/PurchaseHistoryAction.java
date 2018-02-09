@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -12,47 +13,47 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class PurchaseHistoryAction extends ActionSupport implements SessionAware {
 
-	public Map<String, Object> session;
-
-	public PurchaseHistoryDAO purchaseHistoryDAO = new PurchaseHistoryDAO();
-
-	public ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
-
-//	public ArrayList<PurchaseHistoryDTO> getPurchaceHistoryList() {
-//		return purchaceHistoryList;
-//	}
-//
-//	public void setPurchaceHistoryList(ArrayList<PurchaseHistoryDTO> purchaceHistoryList) {
-//		this.purchaceHistoryList = purchaceHistoryList;
-//	}
-
-	private String deleteFlg = null;
+	private Map<String, Object> session;
+	private PurchaseHistoryDAO dao = new PurchaseHistoryDAO();
+	private ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
+	private String deleteFlg;
 	private String userId;
-	private String Message;
+	private String result;
+	private Collection<String> checkList;
 	private String product_id;
-	private String user_id;
-	private String delete_id;
 
 	public String execute() throws SQLException {
-		String userId = session.get("trueID").toString();
-		System.out.println(userId);
 
-		if (!session.containsKey("trueID")) {
-			return ERROR;
+		int count = 0;
+		if (deleteFlg == null) {
+			String userId = session.get("trueID").toString();
+			purchaseHistoryList = dao.getPurchaseHistory(userId);
+			System.out.println("aaa");
+			return SUCCESS;
+		}
+		for (String product_id : checkList) {
+			count += dao.deleteHistoryInfo(product_id);
+			System.out.println("product_id");
+			result = "delete";
 		}
 
-		// セッションからログインIDを取得する
+		return result;
+	}
 
-		// 購入履歴検索処理
-		if (this.deleteFlg == null || this.deleteFlg.isEmpty()) {
-			// ログインID(userID)を利用して、DAOから情報を検索する
-			purchaseHistoryList = purchaseHistoryDAO.getPurchaseHistory(userId);
-			System.out.println("sss");
-			System.out.println(purchaseHistoryList);
-		}
+	public String getProduct_id() {
+		return product_id;
+	}
 
-		return SUCCESS;
+	public void setProduct_id(String product_id) {
+		this.product_id = product_id;
+	}
 
+	public ArrayList<PurchaseHistoryDTO> getPurchaseHistoryList() {
+		return purchaseHistoryList;
+	}
+
+	public void setPurchaseHistoryList(ArrayList<PurchaseHistoryDTO> purchaseHistoryList) {
+		this.purchaseHistoryList = purchaseHistoryList;
 	}
 
 	@Override
@@ -69,21 +70,20 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	}
 
-	public String delete() throws SQLException {
-		String userId = session.get("loginId").toString();
-		int res = purchaseHistoryDAO.deleteHistory(product_id, user_id, delete_id);
-		String setMessage = null;
-		if (res > 0) {
-			setMessage("購入履歴を削除しました");
-			return setMessage;
-		} else{
-			setMessage("削除に失敗しました");
-			return setMessage;
-		}
+	public Collection<String> getCheckList() {
+		return checkList;
 	}
 
-	private void setMessage(String string) {
+	public String getDeleteFlg() {
+		return deleteFlg;
+	}
 
+	public void setDeleteFlg(String deleteFlg) {
+		this.deleteFlg = deleteFlg;
+	}
+
+	public void setCheckList(Collection<String> checkList) {
+		this.checkList = checkList;
 	}
 
 }
