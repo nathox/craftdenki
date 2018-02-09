@@ -78,18 +78,22 @@
 							<th>販売価格</th>
 							<th>在庫数</th>
 							<th>仕入数</th>
+							<th>仕入原価</th>
+							<th>仕入原価計</th>
 						</tr>
 						<s:iterator value="supplyList">
 							<tr>
-								<td><s:property value="product_id"/></td>
-								<td><s:property value="product_name"/></td>
-								<td><s:property value="price"/></td>
-								<td><s:property value="item_stock"/></td>
-								<td><s:property value="supply_count"/></td>
+								<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
+								<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
+								<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
+								<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
+								<td><s:property value="supplyCount"/><s:hidden name="supplyCount" value="%{supplyCount}"/></td>
+								<td><s:property value="supplyCost"/><s:hidden name="supplyCost" value="%{supplyCost}"/></td>
+								<td><s:property value="supplyCostTotal"/><s:hidden name="supplyCostTotal" value="%{supplyCostTotal}"/></td>
 							</tr>
 						</s:iterator>
 					</table>
-
+					<p>仕入値合計<s:property value="supplyCostAllTotal"/>円
 					<p>以上でよろしいですか？</p>
 					<s:submit value="はい"/>
 				</s:form>

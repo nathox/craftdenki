@@ -84,6 +84,7 @@ public class ProductListDAO {
 			dto.setRegist_date(resultSet.getDate("regist_date"));
 			dto.setUpdate_date(resultSet.getDate("update_date"));
 			dto.setItem_stock(resultSet.getInt("item_stock"));
+			dto.setCurrent_cost(resultSet.getInt("current_cost"));
 			productList.add(dto);
 
 		}

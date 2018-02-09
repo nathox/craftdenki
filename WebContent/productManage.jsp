@@ -105,8 +105,8 @@
 							<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
 							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
-							<td><s:textfield name="supplyCount" value="0"/></td>
-							<td><s:textfield name="supplyCost" value="0"/></td>
+							<td><s:textfield name="supply_count" value="0"/></td>
+							<td><s:textfield name="supply_cost" value="0"/></td>
 							<td><a href="<s:url action="ProductDataChangeAction">
 								<s:param name="product_id" value="%{product_id}"/>
 								</s:url>">変更画面へ</a>

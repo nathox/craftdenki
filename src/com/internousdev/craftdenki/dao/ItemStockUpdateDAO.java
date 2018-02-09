@@ -8,23 +8,32 @@ import com.internousdev.craftdenki.util.DBConnector;
 
 public class ItemStockUpdateDAO {
 
+
+	/**
+	 * 共用
+	 */
 	private DBConnector dbConnector=new DBConnector();
 	private Connection connection=dbConnector.getConnection();
 
-	private String sql = "UPDATE product_info "
-							+ "SET item_stock = item_stock + ? "
-							+ "WHERE product_id = ?";
+	/**
+	 * SQL
+	 */
+	//購入時
+	private String purchaseSQL = "UPDATE product_info "
+								+ "SET item_stock = item_stock + ? "
+								+ "WHERE product_id = ?";
 
 
-	/* 現在の在庫プラス引数(count)をUPDATEします
-	 * 仕入は正の整数(仕入数)と商品IDを
-	 * 購入は負の整数(購入数)と商品IDを
+	/**
+	 * 購入用メソッド
+	 * 現在の在庫から引数(count)を引いてUPDATEします
+	 * 購入数と商品IDを
 	 * 引数としてください。
 	 * update出来なければ、falseを返します。
 	 */
 	public boolean itemStockUpdate(int count ,int productId) throws SQLException{
 		try{
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			PreparedStatement preparedStatement = connection.prepareStatement(purchaseSQL);
 			preparedStatement.setInt(1,count);
 			preparedStatement.setInt(2, productId);
 			int res = preparedStatement.executeUpdate();
@@ -34,6 +43,39 @@ public class ItemStockUpdateDAO {
 		} catch(Exception e){
 		e.printStackTrace();
 		} finally{
+			connection.close();
+		}
+
+		return true;
+	}
+
+
+
+	private String sql = "UPDATE product_info "
+			+ "SET item_stock = item_stock + ? "
+			+ "WHERE product_id = ?";
+
+
+	/**
+	 * 仕入用メソッド
+	 * 現在の在庫に引数(count)を足してUPDATEします。
+	 * (現在の平均原価 + 仕入原価) / (現在の在庫数 + 仕入数)にて、新しい平均原価をUPDATEします。
+	 * 購入数と仕入原価と商品IDを
+	 * 引数としてください。
+	 * update出来なければ、falseを返します。
+	 */
+	public boolean itemStockUpdate(int supplyCount, int supplyCost ,int productId) throws SQLException {
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, supplyCount);
+			preparedStatement.setInt(2, productId);
+			int res = preparedStatement.executeUpdate();
+			if (res == 0) {
+				return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
 			connection.close();
 		}
 

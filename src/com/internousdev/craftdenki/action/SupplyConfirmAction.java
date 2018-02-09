@@ -1,6 +1,7 @@
 package com.internousdev.craftdenki.action;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -14,18 +15,22 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 	/*productManage.jspの仕入機能の表より、
 	 * 「商品ID」「商品名」「販売価格」「在庫」「仕入数(入力した)」の文字列(「, 」区切り)
 	 */
-	private String product_id;
-	private String product_name;
-	private String price;
-	private String item_stock;
-	private String supplycount;
+	private String product_id; //商品ID
+	private String product_name; //商品名
+	private String price; //販売価格
+	private String item_stock; //在庫
+	private String supply_count; //仕入数
+	private String supply_cost; //仕入原価
+
+	private int supplyCostAllTotal; //仕入値合計
 
 	private String errorMessage;
-	/*supplyConfirm.jspにて表示用
+	/*
+	 * supplyConfirm.jspにて表示用
 	 * 兼
 	 * SupplyCompleteActionにてUPDATE用
 	 */
-	private ArrayList<ProductDTO> supplyList = new ArrayList<>();
+	private List<ProductDTO> supplyList = new ArrayList<ProductDTO>();
 
 
 
@@ -40,7 +45,9 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 		String[] productNameList = product_name.split(", ",0);
 		String[] priceList = price.split(", ",0);
 		String[] itemStockList = item_stock.split(", ",0);
-		String[] supplyCountList = supplycount.split(", ",0);
+		String[] supplyCountList = supply_count.split(", ",0);
+		String[] supplyCostList = supply_cost.split(", ",0);
+
 
 		if(true){      //管理者判定
 
@@ -55,19 +62,37 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 				dto.setProduct_name(productNameList[i]);
 				dto.setPrice(Integer.parseInt(priceList[i]));
 				dto.setItem_stock(Integer.parseInt(itemStockList[i]));
-				dto.setSupply_count(Integer.parseInt(supplyCountList[i]));
+				dto.setSupplyCount(Integer.parseInt(supplyCountList[i]));
+				dto.setSupplyCost(Integer.parseInt(supplyCostList[i]));
+				dto.setSupplyCostTotal(Integer.parseInt(supplyCostList[i]) * Integer.parseInt(supplyCountList[i]));
+
+
 				supplyList.add(dto);
 				}
 			}
 
-			session.put("supplyList", supplyList);
-
+			for(int i = 0; i < supplyList.size(); i++){
+				supplyCostAllTotal += supplyList.get(i).getSupplyCostTotal();
+			}
 
 			result = SUCCESS;
-		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
+		}else {
+			errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
+		}
 		return result;
 	}
 
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 
 
 
@@ -77,11 +102,9 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-
 	public void setProduct_id(String product_id) {
 		this.product_id = product_id;
 	}
-
 
 
 
@@ -91,11 +114,9 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
-
 
 
 
@@ -105,18 +126,15 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-
 	public void setPrice(String price) {
 		this.price = price;
 	}
 
 
 
-
 	public String getItem_stock() {
 		return item_stock;
 	}
-
 
 
 
@@ -127,31 +145,28 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-	public String getSupplycount() {
-		return supplycount;
+
+	public String getSupply_count() {
+		return supply_count;
 	}
 
 
 
-
-	public void setSupplycount(String supplycount) {
-		this.supplycount = supplycount;
+	public void setSupply_count(String supply_count) {
+		this.supply_count = supply_count;
 	}
 
 
 
-
-	public Map<String, Object> getSession() {
-		return session;
+	public String getSupply_cost() {
+		return supply_cost;
 	}
 
 
 
-
-	public ArrayList<ProductDTO> getSupplyList() {
-		return supplyList;
+	public void setSupply_cost(String supply_cost) {
+		this.supply_cost = supply_cost;
 	}
-
 
 
 
@@ -161,23 +176,34 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
 
 
 
+	public List<ProductDTO> getSupplyList() {
+		return supplyList;
+	}
 
-	public void setSupplyList(ArrayList<ProductDTO> supplyList) {
+
+
+	public void setSupplyList(List<ProductDTO> supplyList) {
 		this.supplyList = supplyList;
 	}
 
 
 
-
-	@Override
-	public void setSession(Map<String,Object> session){
-		this.session = session;
+	public int getSupplyCostAllTotal() {
+		return supplyCostAllTotal;
 	}
+
+
+
+	public void setSupplyCostAllTotal(int supplyCostAllTotal) {
+		this.supplyCostAllTotal = supplyCostAllTotal;
+	}
+
+
+
 }

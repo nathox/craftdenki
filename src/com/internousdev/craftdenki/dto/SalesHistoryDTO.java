@@ -32,9 +32,7 @@ public class SalesHistoryDTO {
 	private int totalSales; //price * count
 	private int totalCost; //atCost * count
 	private int profit; //totalSales - totalCost
-	public int getId() {
-		return id;
-	}
+
 
 
 	/*
@@ -114,5 +112,8 @@ public class SalesHistoryDTO {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public int getId() {
+		return id;
 	}
 }
