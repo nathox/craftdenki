@@ -229,6 +229,7 @@
 			class="com.internousdev.craftdenki.action.SettlementAction"
 			method="execute">
 	<result name="success">settlement.jsp</result>
+	<result name="login">login.jsp</result>
 	</action>
 
 	<!-- SettlementConfirmAction -->

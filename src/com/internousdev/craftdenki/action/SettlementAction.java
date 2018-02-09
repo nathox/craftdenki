@@ -29,8 +29,15 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 
 	private Map<String,Object>session;
 
+
+	private String settlement;//login画面から帰ってくるためのフラグ
+
 	public String execute(){
 
+
+
+
+		if(session.containsKey("trueID")){
 
 
 		userId = session.get("trueID").toString();
@@ -62,10 +69,18 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 		session.put("telNumber2", telNumber2);
 		session.put("telNumber3", telNumber3);
 
-
-
-
 		return SUCCESS;
+
+
+		}else{  //ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす
+
+
+			session.put("status",settlement);
+
+			return "login";
+		}
+
+
 	}
 
 
