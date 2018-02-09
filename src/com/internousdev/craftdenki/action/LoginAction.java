@@ -74,6 +74,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		dto = dao.loginUserInfo(loginId, loginPassword);
 
+		if(session.containsKey("status")){
+		}else{
+			session.put("status", "");
+		}
+
+
 
 		if (IDerrormsg == null) {
 			if (Passerrormsg == null) {
@@ -90,6 +96,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					if (dto.getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId());
 						session.put("loginPass", dto.getLoginPass());
+
 						session.put("trueID",loginId);
 						System.out.println((session.get("trueID")));
 						System.out.println((session.get("status")));
@@ -106,10 +113,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 							result = "myPage";
 							return result;
-						} else if (session.get("status") == null) {
+						} else if (session.get("status") == ("")) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
-
+							System.out.println(session.get("trueID"));
+							System.out.println(session.get("userId"));
 							result = "myPage";
 							return result;
 						}
