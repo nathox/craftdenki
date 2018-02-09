@@ -93,7 +93,6 @@ public class ProductDetailsDAO {
 					productDTO.setUpdate_date(resultSet.getDate("update_date"));
 					productDTO.setItem_stock(resultSet.getInt("item_stock"));
 
-
 					System.out.println("getProductDetailsInfoList----------------------------");
 					System.out.println(productDTO.getId());
 					System.out.println(productDTO.getProduct_id());
