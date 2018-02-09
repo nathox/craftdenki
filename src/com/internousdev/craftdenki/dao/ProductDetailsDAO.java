@@ -131,17 +131,18 @@ public class ProductDetailsDAO {
 
 			ArrayList<Review2DTO> reviewList = new ArrayList<Review2DTO>();
 
-			String sql = "SELECT * FROM review_info where product_id=? ORDER BY Product_id ASC";
+			String sql = "SELECT * FROM review_info JOIN product_info ON review_info.product_id = product_info.product_id where review_info.product_id=? ORDER BY buy_item_date DESC";
 
 		try{
 			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, product_id);
 
 			ResultSet resultSet = statement.executeQuery();
 
 			while(resultSet.next()){
 				Review2DTO review2DTO = new Review2DTO();
 
-				review2DTO.setId(resultSet.getInt("id"));
+				review2DTO.setId(resultSet.getInt("user_id"));
 				review2DTO.setProduct_id(resultSet.getInt("product_id"));
 				review2DTO.setBuy_item_date(resultSet.getDate("buy_item_date"));
 				review2DTO.setEvaluation_count(resultSet.getInt("evaluation_count"));

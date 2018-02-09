@@ -51,6 +51,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 			detailsList = productDetailsDAO.getProductDetailsInfoList(productIdList);
 
+			System.out.println(detailsList);
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -60,6 +62,9 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		try{
 
 			reviewList = productDetailsDAO.getReviewInfo(product_id);
+
+			System.out.println(reviewList);
+
 
 		}catch(Exception e){
 			e.printStackTrace();

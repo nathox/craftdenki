@@ -37,15 +37,19 @@ border-collapse:collapse;
 		</div>
 	</s:iterator>
 
+	<s:if test="reviewList != 0">
 	<s:iterator value="reviewList">
 		<div id="reviewList">
 			<div>ユーザー名:<s:property value="user_id" /></div>
 			<div>レビュー:<s:property value="review_id" /></div>
 			<div>評価:<s:property value="evaluation_count" /></div>
-			<div>投稿日時:<s:property value="review_date" /></div>
+			<div>投稿日時:<s:property value="buy_item_date" /></div>
 		</div>
 	</s:iterator>
-
+	</s:if>
+	<s:else>
+		<p>レビューはありません。</p>
+	</s:else>
 
 	<s:form action="CartAction">
 		<s:if test="item_stock != 0">

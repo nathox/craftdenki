@@ -275,3 +275,9 @@ INSERT INTO favorite_info VALUES(2,"test1",10000029,"2016/01/01");
 INSERT INTO review_info VALUES(1,"test",10000028,"2016/01/01","いいキーボードです",3);
 INSERT INTO review_info VALUES(2,"test",10000029,"2016/01/01","いい本です",1);
 INSERT INTO review_info VALUES(3,"test1",10000028,"2016/01/01","いいキーボードだった",5);
+
+
+
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("domon",10000002,"2018/01/01","モンハン",5);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("d",10000002,"2018/01/02","さいこう",5);
+INSERT INTO review_info(user_id,product_id,buy_item_date,review_id,evaluation_count) VALUES("n",10000002,"2018/01/03","かよ！！！",5);
