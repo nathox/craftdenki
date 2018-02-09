@@ -27,7 +27,9 @@
 
 
 
-<h1>てすと</h1>
+	<div>
+		<h3>カートの情報一覧を今から持ってくる</h3>
+	</div>
 
 	<s:form action="SettlementConfirmAction">
 		<table>

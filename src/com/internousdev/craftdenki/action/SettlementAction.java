@@ -51,6 +51,19 @@ public class SettlementAction extends ActionSupport implements SessionAware{
 		telNumber3=dto.getTelNumber3();
 
 
+		session.put("userId",userId);
+		session.put("familyName", familyName);
+		session.put("firstName", firstName);
+		session.put("email", email);
+		session.put("userAddress", userAddress);
+		session.put("userAddress2", userAddress2);
+		session.put("userAddress3", userAddress3);
+		session.put("telNumber", telNumber);
+		session.put("telNumber2", telNumber2);
+		session.put("telNumber3", telNumber3);
+
+
+
 
 		return SUCCESS;
 	}

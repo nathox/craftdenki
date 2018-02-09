@@ -24,18 +24,32 @@
 		<p>決済確認画面</p>
 		</div>
 
+
+
+	<div>
+		<h3>カートの情報一覧を今から持ってくる</h3>
+	</div>
+
+
+
+
+
+	<div>
+			<h3><span>ユーザーID:</span><s:property value="session.userId"/></h3>
+			<h3><span>名前:</span><s:property value="session.familyName"/><s:property value="session.firstName"/></h3>
+			<h3><span>送り先住所:</span><s:property value="choseAddress" escape="false"/><span>電話番号:</span><s:property value="choseNumber" escape="false"/></h3>
+	</div>
+
+
+
+
 	<div>
 		<s:form action="SettlementCompleteAction">
-			<s:submit value="決済確認画面へ"/>
+			<s:submit value="購入する"/>
 		</s:form>
 
 
-		if(destination == "1"){
-		user_address,tel_numberの表示
 
-
-		if(destination == "2"){
-		user_address2
 	</div>
 
 	</div>
