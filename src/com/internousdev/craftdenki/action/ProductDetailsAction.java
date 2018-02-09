@@ -25,6 +25,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private int insertFlg;
 
+	private int price;
+
 	//購入個数リスト
 	private List<Integer> stockList = new ArrayList<Integer>();
 
@@ -72,6 +74,11 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 			System.out.println("-----------");
 		}
 
+		price=detailsList.get(0).getPrice();
+		System.out.println("----------------");
+		System.out.println("PRODUCTID : "+product_id);
+		System.out.println("PRICE : " + price);
+		System.out.println("----------------");
 		String result = SUCCESS;
 		return result;
 
@@ -109,6 +116,13 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	public void setItem_stock(String item_stock) {
 		this.item_stock = item_stock;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 

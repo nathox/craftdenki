@@ -18,7 +18,6 @@ public class ProductDTO {
 	private String image_file_name;
 	private String release_date;
 	private String release_company;
-	private int status;
 	private Date regist_date;
 	private Date update_date;
 	private int item_stock;
@@ -104,13 +103,6 @@ public class ProductDTO {
 	}
 	public void setRelease_company(String release_company){
 		this.release_company = release_company;
-	}
-
-	public int getStatus(){
-		return status;
-	}
-	public void setStatus(int status){
-		this.status = status;
 	}
 
 	public Date getRegist_date(){

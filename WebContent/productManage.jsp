@@ -94,7 +94,8 @@
 						<th>商品名</th>
 						<th>販売価格</th>
 						<th>在庫数</th>
-						<th>仕入入力欄</th>
+						<th>仕入数</th>
+						<th>仕入単価</th>
 						<th>商品情報変更</th>
 						<th>商品非表示</th>
 					</tr>
@@ -104,7 +105,8 @@
 							<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
 							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
-							<td><s:textfield name="supplycount" value="0"/></td>
+							<td><s:textfield name="supplyCount" value="0"/></td>
+							<td><s:textfield name="supplyCost" value="0"/></td>
 							<td><a href="<s:url action="ProductDataChangeAction">
 								<s:param name="product_id" value="%{product_id}"/>
 								</s:url>">変更画面へ</a>

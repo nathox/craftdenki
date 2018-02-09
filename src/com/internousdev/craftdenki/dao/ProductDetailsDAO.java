@@ -24,7 +24,7 @@ public class ProductDetailsDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		ProductDTO productDTO = new ProductDTO();
-		String sql = "SELECT * FROM product_info where product_id=?";
+		String sql = "SELECT * FROM product_info where product_id=? AND status = 0";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -44,7 +44,6 @@ public class ProductDetailsDAO {
 				productDTO.setImage_file_name(resultSet.getString("image_file_name"));
 				productDTO.setRelease_date(resultSet.getString("release_date"));
 				productDTO.setRelease_company(resultSet.getString("release_company"));
-				productDTO.setStatus(resultSet.getInt("status"));
 				productDTO.setRegist_date(resultSet.getDate("regist_date"));
 				productDTO.setUpdate_date(resultSet.getDate("update_date"));
 				productDTO.setItem_stock(resultSet.getInt("item_stock"));
@@ -68,7 +67,7 @@ public class ProductDetailsDAO {
 		List<ProductDTO> detailsList = new ArrayList<ProductDTO>();
 		for(int i =0; i < productIdList.length; i++){
 
-			String sql = "SELECT * FROM product_info where product_id=?";
+			String sql = "SELECT * FROM product_info where product_id = ? AND status = 0";
 
 			try{
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -90,10 +89,27 @@ public class ProductDetailsDAO {
 					productDTO.setImage_file_name(resultSet.getString("image_file_name"));
 					productDTO.setRelease_date(resultSet.getString("release_date"));
 					productDTO.setRelease_company(resultSet.getString("release_company"));
-					productDTO.setStatus(resultSet.getInt("status"));
 					productDTO.setRegist_date(resultSet.getDate("regist_date"));
 					productDTO.setUpdate_date(resultSet.getDate("update_date"));
 					productDTO.setItem_stock(resultSet.getInt("item_stock"));
+
+
+					System.out.println("getProductDetailsInfoList----------------------------");
+					System.out.println(productDTO.getId());
+					System.out.println(productDTO.getProduct_id());
+					System.out.println(productDTO.getProduct_name());
+					System.out.println(productDTO.getProduct_name_kana());
+					System.out.println(productDTO.getProduct_description());
+					System.out.println(productDTO.getCategory_id());
+					System.out.println(productDTO.getPrice());
+					System.out.println(productDTO.getImage_file_path());
+					System.out.println(productDTO.getImage_file_name());
+					System.out.println(productDTO.getRelease_date());
+					System.out.println(productDTO.getRelease_company());
+					System.out.println(productDTO.getRegist_date());
+					System.out.println(productDTO.getUpdate_date());
+					System.out.println(productDTO.getItem_stock());
+					System.out.println("-----------------------------------------------");
 
 					detailsList.add(productDTO);
 				}

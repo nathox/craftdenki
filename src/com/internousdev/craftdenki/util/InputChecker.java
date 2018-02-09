@@ -52,7 +52,7 @@ public class InputChecker {
 	public String newProductDescriptionChk(String newProductDescription) {
 		String result = "OK";
 
-		if (newProductDescription == null || newProductDescription.length() > 255) {
+		if (!newProductDescription.equals("") && newProductDescription.length() > 255) {
 			result = "商品詳細は255文字以下で入力してください。";
 		} else if (!newProductDescription.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー・「」｢｣『』 ]+$")) {
 				result = "商品詳細は半角英語、漢字、ひらがな、カタカナで入力してください。";
@@ -89,7 +89,7 @@ public class InputChecker {
 	public String newReleaseDateChk(String newReleaseDate) {
 		String result = "OK";
 
-		if (newReleaseDate == null || !newReleaseDate.matches("[012]\\d{3}/0[1-9]|[012]\\d{3}/1[0-2]")) {
+		if (!newReleaseDate.equals("") && !newReleaseDate.matches("[012]\\d{3}/0[1-9]|[012]\\d{3}/1[0-2]")) {
 			result = "発売年月はyyyy/MMの形式で入力してください。";
 		}
 
@@ -100,9 +100,9 @@ public class InputChecker {
 	public String newReleaseCompanyChk(String newReleaseCompany) {
 		String result = "OK";
 
-		if (newReleaseCompany == null || newReleaseCompany.length() > 16) {
-			result = "発売会社は16文字以下で入力してください。";
-		} else if (!newReleaseCompany.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー]+$")) {
+		if (!newReleaseCompany.equals("") && newReleaseCompany.length() > 16) {
+			result = "発売会社は16文字以下で入力してください。" + newReleaseCompany;
+		} else if (!newReleaseCompany.equals("") && !newReleaseCompany.matches("^[a-zA-Zぁ-ゞ一-龠々ァ-ヶ\\n\\r!?！？、。,.-ー]+$")) {
 			result = "発売会社は半角英語、漢字、ひらがな、カタカナで入力してください。";
 	}
 
@@ -113,7 +113,7 @@ public class InputChecker {
 	public String newProductImageChk(String newProductImage) {
 		String result = "OK";
 
-		if (newProductImage == null || !newProductImage.matches("\\w+.(jpeg|jpg|tiff|png|gif|bmp)$")) {
+		if (!newProductImage.equals("") && !newProductImage.matches("\\w+.(jpeg|jpg|tiff|png|gif|bmp)$")) {
 			result = "画像ファイル名(半角英数,_).拡張子(jpeg,jpg,tiff,png,gif,bmp)の形式で入力してください。";
 
 			/*

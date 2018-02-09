@@ -49,12 +49,16 @@ border-collapse:collapse;
 
 	<s:form action="CartAction">
 		<s:if test="item_stock != 0">
+
 			購入個数
 	  		<s:select name="product_count" list="stockList"/>
-	  		<s:param name="product_id" value="%{product_id}"/>
-			<s:param name="price" value="<s:property value='price' />"/>
+
+	  		<s:hidden name="product_id" value="%{product_id}"/>
+			<s:hidden name="price" value="%{price}"/>
+
 			<input type="hidden" name="insertFlg" value="1"/>
 	  		<div class=button><s:submit value=" カートに入れる " method="execute"/></div>
+
 	  	</s:if>
  		<s:else>
 	  		<p>在庫がありません。</p>
