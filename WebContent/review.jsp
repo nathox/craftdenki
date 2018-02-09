@@ -11,11 +11,11 @@
 	<s:form action="ParchaseHistoryAction">
 		<table>
 			<tr>
-				<td><s:property value="session.historyItemName" /></td>
+				<td><s:property value="session.productName" /></td>
 			</tr>
 
 			<tr>
-				<td><s:textarea name="review"></s:textarea></td>
+				<td><s:textarea name="review" rows="10" cols="60"></s:textarea></td>
 			</tr>
 
 			<tr>

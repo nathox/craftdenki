@@ -5,6 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript">
+	function PurchaseHistoryAction() {
+		document.getElementById('form').action = "PurchaseHistoryAction";
+	}
+
+	function Review1Action() {
+		document.getElementById('form').action = "Review1Action";
+	}
+</script>
+
+
+
+
 <title>購入履歴</title>
 </head>
 <body>
@@ -36,14 +51,17 @@
 
 					<td><span><s:property value="productId" /></span></td>
 					<td><span><s:property value="productName" /></span></td>
+					<s:hidden name="productName" value="%{productName}" />
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>
 					<td><span><s:property value="count" />個</span></td>
-					<td><s:submit action="Review1Action" value="レビュー"><s:hidden name="Flg" value="1" /></s:submit></td>
+					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>
+					<td></td>
 				</tr>
 				<s:hidden name="deleteFlg" value="1" />
 				<tr>
-					<td><s:submit value="一括削除" /></td>
+					<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();" /></td>
+
 				</tr>
 			</table>
 		</s:iterator>
