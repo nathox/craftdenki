@@ -102,7 +102,7 @@
 					</tr>
 					</table>
 						<s:submit value="削除" onclick="goCartAction();"/>
-						<s:submit value="決済" oncick="goSettlementAction();"/>
+						<s:submit value="決済" oncick="SettlementAction();"/>
 					</s:form>
 
 			</s:elseif>
@@ -113,6 +113,11 @@
 			<div>
 			<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
 			</div>
+
+	<s:form action ="SettlementAction">
+		<s:submit value ="決済画面へ(仮置き)"/>
+	</s:form>
+
 
 
 	</div>
