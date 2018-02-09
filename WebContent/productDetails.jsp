@@ -28,7 +28,6 @@ border-collapse:collapse;
 			<div>商品名:<s:property value="product_name" /></div>
 			<div>商品詳細:<s:property value="product_description" /></div>
 			<div>価格:￥<s:property value="price" />円</div>
-						<input type="hidden" name="price" value="%{price}">
 			<div>発売日:<s:property value="release_date" /></div>
 			<div>販売会社:<s:property value="release_company" /></div>
 			<div>在庫:<s:property value="item_stock" />個</div>
@@ -50,12 +49,16 @@ border-collapse:collapse;
 
 	<s:form action="CartAction">
 		<s:if test="item_stock != 0">
+
 			購入個数
 	  		<s:select name="product_count" list="stockList"/>
-	  		<s:param name="product_id" value="%{detailsList.get(0),product_id}"/>
-			<s:param name="price" value="%{detailsList.get(0),price}"/>
+
+	  		<s:hidden name="product_id" value="%{product_id}"/>
+			<s:hidden name="price" value="%{price}"/>
+
 			<input type="hidden" name="insertFlg" value="1"/>
 	  		<div class=button><s:submit value=" カートに入れる " method="execute"/></div>
+
 	  	</s:if>
  		<s:else>
 	  		<p>在庫がありません。</p>

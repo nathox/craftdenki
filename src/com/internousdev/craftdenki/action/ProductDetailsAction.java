@@ -74,6 +74,11 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 			System.out.println("-----------");
 		}
 
+		price=detailsList.get(0).getPrice();
+		System.out.println("----------------");
+		System.out.println("PRODUCTID : "+product_id);
+		System.out.println("PRICE : " + price);
+		System.out.println("----------------");
 		String result = SUCCESS;
 		return result;
 
