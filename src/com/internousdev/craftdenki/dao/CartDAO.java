@@ -21,7 +21,7 @@ public class CartDAO {
 	public ArrayList<CartDTO> getCartInfo(String user_id)throws SQLException{
 		ArrayList<CartDTO> cartDTO = new ArrayList<CartDTO>();
 
-		String sql = "SELECT ci.id as id, pi.product_name as product_name, pi.product_name_kana as product_name_kana, pi.image_file_path as image_file_path, pi.price as price, ci.product_count as product_count, pi.release_company as release_company, pi.release_date as release_date, ci.total_price as total_price FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
+		String sql = "SELECT ci.id as id,ci.product_id as product_id, pi.product_name as product_name, pi.product_name_kana as product_name_kana, pi.image_file_path as image_file_path, pi.price as price, ci.product_count as product_count, pi.release_company as release_company, pi.release_date as release_date, ci.total_price as total_price FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -32,7 +32,7 @@ public class CartDAO {
 			while(resultSet.next()){
 				CartDTO dto = new CartDTO();
 				dto.setId(resultSet.getInt("id"));
-				
+				dto.setProductId(resultSet.getInt("product_id"));
 				dto.setProductName(resultSet.getString("product_name"));
 				dto.setProductNameKana(resultSet.getString("product_name_kana"));
 				dto.setImageFilePath(resultSet.getString("image_file_path"));

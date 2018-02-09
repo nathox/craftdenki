@@ -352,14 +352,13 @@
 
 		<!-- ___________________カート機能(塩治) _________START_________ -->
 		<!-- CartAction -->
-		<action name="CartAction" class="com.internousdev.craftdenki.action.CartAction"
-			method="execute">
+		<action name="CartAction" class="com.internousdev.craftdenki.action.CartAction" method="execute">
 			<result name="success">cartConfirm.jsp</result>
+			<result name="input">cartConfirm.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->
-		<action name="LogoutAction" class="com.internousdev.craftdenki.action.LogoutAction"
-			method="execute">
+		<action name="LogoutAction" class="com.internousdev.craftdenki.action.LogoutAction" method="execute">
 			<result name="success">logout.jsp</result>
 		</action>
 		<!-- ___________________カート機能(塩治) _________END_________ -->

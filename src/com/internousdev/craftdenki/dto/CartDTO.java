@@ -11,8 +11,15 @@ public class CartDTO {
 	private String ReleaseDate;
 	private int totalPrice;
 	private int id;
+	private int productId;
 
 
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 	public int getId() {
 		return id;
 	}
