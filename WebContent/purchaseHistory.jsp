@@ -23,23 +23,23 @@
 			<table>
 				<tr>
 					<td>チェック</td>
+					<td>商品ID</td>
 					<td>商品名</td>
 					<td>ふりがな</td>
 					<td>金額</td>
 					<td>個数</td>
 				</tr>
 				<tr>
-					<td><s:checkbox name="checkList" value="checked"
-							fieldValue="%{productId}" /></td>
+					<td><s:checkbox name="checkList" value="checked" fieldValue="%{productId}" /></td>
+					<td><span><s:property value="productId" /></span></td>
 					<td><span><s:property value="productName" /></span></td>
 					<td><span><s:property value="productNameKana" /></span></td>
 					<td><span><s:property value="price" />円</span></td>
 					<td><span><s:property value="count" />個</span></td>
 				</tr>
+				<s:hidden name="deleteFlg" value="1"/>
 				<tr>
-					<td><s:submit value="一括削除">
-							<input type="hidden" name="deleteFlg" value="1" />
-						</s:submit></td>
+					<td><s:submit value="一括削除"/></td>
 				</tr>
 			</table>
 		</s:iterator>
