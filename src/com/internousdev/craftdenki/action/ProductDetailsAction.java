@@ -25,6 +25,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	private int insertFlg;
 
+	private int price;
+
 	//購入個数リスト
 	private List<Integer> stockList = new ArrayList<Integer>();
 
@@ -109,6 +111,13 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	public void setItem_stock(String item_stock) {
 		this.item_stock = item_stock;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 
