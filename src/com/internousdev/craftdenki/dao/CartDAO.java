@@ -32,6 +32,7 @@ public class CartDAO {
 			while(resultSet.next()){
 				CartDTO dto = new CartDTO();
 				dto.setId(resultSet.getInt("id"));
+				
 				dto.setProductName(resultSet.getString("product_name"));
 				dto.setProductNameKana(resultSet.getString("product_name_kana"));
 				dto.setImageFilePath(resultSet.getString("image_file_path"));
