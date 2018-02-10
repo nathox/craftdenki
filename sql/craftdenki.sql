@@ -84,11 +84,12 @@ review_id varchar(255),
 evaluation_count int
 );
 
-drop table if exists purchase_history_info;
 
+-- -----------↓購入履歴テーブル↓----------------------------
+drop table if exists purchase_history_info;
 create table purchase_history_info(
 id int not null primary key auto_increment,
-user_id varchar(16) unique,
+user_id varchar(16), -- unique消しました
 product_id int,
 product_count int,
 price int,
@@ -221,13 +222,40 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			now(), -- 登録日
 			1, -- 在庫
 			1000 -- 現在の平均原価
+		),
+
+		(
+			10000020, -- 商品ID
+			"PS4", -- 商品名
+			"ぴーえすふぉー", -- 商品名かな
+			"PS4本体。", -- 商品詳細
+			3, -- カテゴリID
+			40000, -- 販売価格
+			"./images/ps4.jpg", -- 画像ファイルパス
+			"ps4.jpg", -- 画像ファイル名
+			"2015/12", -- 発売日
+			"sany", -- 発売会社
+			now(), -- 登録日
+			15, -- 在庫
+			20000 -- 現在の平均原価
+		),
+
+		(
+			10000050, -- 商品ID
+			"Javaの本", -- 商品名
+			"じゃう˝ぁのほん", -- 商品名かな
+			"Javaの本。", -- 商品詳細
+			1, -- カテゴリID
+			4000, -- 販売価格
+			"./images/javabook.jpg", -- 画像ファイルパス
+			"javabook.jpg", -- 画像ファイル名
+			"2010/10", -- 発売日
+			"craftdenki", -- 発売会社
+			now(), -- 登録日
+			200, -- 在庫
+			100 -- 現在の平均原価
 		);
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤いおもちゃ","赤色のおもちゃです。",200,4,20000000,"あかいおもちゃ","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黄いろい掃除機","黄色の掃除機です。",200,3,30000000,"きいろいそうじき","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("黒い本","黒色の本です。",200,2,40000000,"くろいほん","2017/11");
-INSERT INTO product_info(product_name,product_description,price,category_id,product_id,product_name_kana,release_date) VALUES("赤い掃除機","赤色の掃除機です。",200,3,50000000,"あかいそうじき","2017/11");
-INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(60000000,"aaa","あああ","aaa",2,100,"./images/aaa.jpg","aaa.jpg","2017/12","aaa",0,"2017/12/12","2017/12/12",500);
-INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date,item_stock) VALUES(70000000,"bbb","びびび","bbb",3,200,"./images/bbb.gif","bbb.gif","2017/12","bbb",0,"2017/12/13","2017/12/13",500);
+
 
 
 INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
@@ -237,24 +265,74 @@ INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,f
 
 
 
-INSERT INTO product_info VALUES(28,10000028, "キーボード", "きーぼーど", "使いやすいキーボードです。", 2, 5000, "./img/keyboad1.jpg", "keyboad1.jpg", "2016/01", "fuji", 1, "2018/01/09", "2018/01/09",100,50);
-INSERT INTO product_info VALUES(29,10000029, "こころ", "こころ", "夏目漱石の代表的な本です。", 3, 500, "./img/kokoro.jpg", "kokoro.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",10,100);
-INSERT INTO product_info VALUES(30,10000030, "電話", "でんわ", "くろいでんわです。", 2, 10000, "./img/Kurodenwa.jpg", "Kurodenwa.jpg", "2016/01", "sagaone", 1, "2018/01/09", "2018/01/09",50,90);
-INSERT INTO product_info VALUES(32,10000032, "マッサージマシン", "まっさーじましん", "全身コリほぐし機能搭載高性能マッサージマシンです。", 2, 120000, "./img/massage-machine.jpg", "massage-machine.jpg", "2018/01", "sagawa", 1, "2018/01/20", "2018/01/20",10,50);
-
-
-
-INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price)VALUES
+INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES
 ("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
 
 
-INSERT INTO purchase_history_info VALUES(1,"test",10000005,1,1728,1000,"2016/01/01","2016/01/01",0);
-INSERT INTO purchase_history_info VALUES(2,"test1",10000002,2,8000,6500,"2016/01/01","2016/01/01",0);
+INSERT INTO purchase_history_info(-- ------購入履歴テーブルへ--------------
+			user_id,  -- ユーザーID
+			product_id,-- 商品ID
+			product_count, -- 購入数
+			price, -- 購入時販売価格
+			at_cost, -- 購入時原価
+			regist_date -- 購入日時
+)VALUES(
+			"test",  -- ユーザーID
+			10000005,-- 商品ID
+			1, -- 購入数
+			1728, -- 購入時販売価格
+			1000, -- 購入時原価
+			"2016/01/01" -- 購入日時
+		),
 
+		(
+			"test1",  -- ユーザーID
+			10000003,-- 商品ID
+			2, -- 購入数
+			6000, -- 購入時販売価格
+			1500, -- 購入時原価
+			now() -- 購入日時
+		),
 
-INSERT INTO destination_info(user_id,user_address,user_address2,tel_number,tel_number2)
+		(
+			"test",  -- ユーザーID
+			10000005,-- 商品ID
+			10, -- 購入数
+			1728, -- 購入時販売価格
+			1000, -- 購入時原価
+			now() -- 購入日時
+		),
+
+		(
+			"test1",  -- ユーザーID
+			10000020,-- 商品ID
+			2, -- 購入数
+			40000, -- 購入時販売価格
+			20000, -- 購入時原価
+			"2017/02/01" -- 購入日時
+		),
+
+		(
+			"test1",  -- ユーザーID
+			10000050,-- 商品ID
+			30, -- 購入数
+			4000, -- 購入時販売価格
+			100, -- 購入時原価
+			"2017/01/01" -- 購入日時
+		),
+
+		(
+			"test",  -- ユーザーID
+			10000004,-- 商品ID
+			1, -- 購入数
+			60000, -- 購入時販売価格
+			40000, -- 購入時原価
+			"2017/01/01" -- 購入日時
+		);
+
+INSERT INTO destination_info (user_id,user_address,user_address2,tel_number,tel_number2)
 VALUES("test","東京都八王子市","東京都町田市","090-0000-0000","046-000-0000"),
-("test1","千葉県佐倉市","山梨県甲府中央","080-0000-0000","080-1111-1111");
+		("test1","千葉県佐倉市","山梨県甲府中央","080-0000-0000","080-1111-1111");
 
 
 
