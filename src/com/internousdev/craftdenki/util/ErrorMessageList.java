@@ -16,4 +16,12 @@ public interface ErrorMessageList {
 	String releaseCompanyError =""; //発売会社
 	String productImageError =""; //画像ファイル名
 
+	/*-------------------------------------------------------
+	 *          仕入用エラーメッセージフィールド
+	 *-------------------------------------------------------
+	 */
+	String supplyNullError ="";
+	String supplyCountError ="";
+	String supplyCostError ="";
+
 }

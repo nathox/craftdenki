@@ -7,9 +7,10 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class SupplyConfirmAction extends ActionSupport implements SessionAware{
+public class CheckSupplyAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
 	/*productManage.jspの仕入機能の表より、
@@ -25,6 +26,7 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 	private int supplyCostAllTotal; //仕入値合計
 
 	private String errorMessage;
+	private ArrayList<String> errorSupplyMessageList = new ArrayList<>();
 	/*
 	 * supplyConfirm.jspにて表示用
 	 * 兼
@@ -36,6 +38,28 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		String result = ERROR;
+
+		System.out.println("SupplyConfirmAction--------------------");
+		System.out.println("supply_count" +supply_count);
+		System.out.println("supply_cost" + supply_cost);
+		System.out.println("------------------------------------------");
+
+		InputChecker ch = new InputChecker();
+		//仕入入力チェック
+		if(!ch.supplyCountChk(supply_count).equals("OK")) {
+			errorSupplyMessageList.add(ch.supplyCountChk(supply_count));
+		}
+		//仕入単価入力チェック
+		if(!ch.supplyCostChk(supply_cost).equals("OK")) {
+			errorSupplyMessageList.add(ch.supplyCostChk(supply_cost));
+		}
+		//入力エラーがあればproductManage.jspへ
+		if(!errorSupplyMessageList.isEmpty()) {
+			result = "error1";
+			return result;
+		}
+
+		//入力情報
 
 		/*フィールドの文字列を
 		 * 「, 」(コンマ半角スペース)で区切って
@@ -49,33 +73,36 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 		String[] supplyCostList = supply_cost.split(", ",0);
 
 
+
 		if(true){      //管理者判定
 
-			//supplyListに格納していきます
-			for(int i = 0; i < productIdList.length; i++){
-				//仕入数が0なら格納しない
-				if(supplyCountList[i].trim().equals("0")){
-					continue;
-				} else{
-				ProductDTO dto = new ProductDTO();
-				dto.setProduct_id(Integer.parseInt(productIdList[i]));
-				dto.setProduct_name(productNameList[i]);
-				dto.setPrice(Integer.parseInt(priceList[i]));
-				dto.setItem_stock(Integer.parseInt(itemStockList[i]));
-				dto.setSupplyCount(Integer.parseInt(supplyCountList[i]));
-				dto.setSupplyCost(Integer.parseInt(supplyCostList[i]));
-				dto.setSupplyCostTotal(Integer.parseInt(supplyCostList[i]) * Integer.parseInt(supplyCountList[i]));
+
+				//supplyListに格納していきます
+				for(int i = 0; i < productIdList.length; i++){
+					//仕入数が0なら格納しない
+					if(supplyCountList[i].trim().equals("0")){
+						continue;
+					} else{
+					ProductDTO dto = new ProductDTO();
+					dto.setProduct_id(Integer.parseInt(productIdList[i]));
+					dto.setProduct_name(productNameList[i]);
+					dto.setPrice(Integer.parseInt(priceList[i]));
+					dto.setItem_stock(Integer.parseInt(itemStockList[i]));
+					dto.setSupplyCount(Integer.parseInt(supplyCountList[i]));
+					dto.setSupplyCost(Integer.parseInt(supplyCostList[i]));
+					dto.setSupplyCostTotal(Integer.parseInt(supplyCostList[i]) * Integer.parseInt(supplyCountList[i]));
 
 
-				supplyList.add(dto);
+					supplyList.add(dto);
+					}
 				}
-			}
 
-			for(int i = 0; i < supplyList.size(); i++){
-				supplyCostAllTotal += supplyList.get(i).getSupplyCostTotal();
-			}
+				for(int i = 0; i < supplyList.size(); i++){
+					supplyCostAllTotal += supplyList.get(i).getSupplyCostTotal();
+				}
 
-			result = SUCCESS;
+				result = SUCCESS;
+
 		}else {
 			errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		}
@@ -203,6 +230,19 @@ public class SupplyConfirmAction extends ActionSupport implements SessionAware{
 	public void setSupplyCostAllTotal(int supplyCostAllTotal) {
 		this.supplyCostAllTotal = supplyCostAllTotal;
 	}
+
+
+
+	public ArrayList<String> getErrorSupplyMessageList() {
+		return errorSupplyMessageList;
+	}
+
+
+
+	public void setErrorSupplyMessageList(ArrayList<String> errorSupplyMessageList) {
+		this.errorSupplyMessageList = errorSupplyMessageList;
+	}
+
 
 
 
