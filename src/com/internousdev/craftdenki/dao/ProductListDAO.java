@@ -61,7 +61,7 @@ public class ProductListDAO {
 	public ArrayList<ProductDTO> getProductHideInfo() throws SQLException{
 		ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
-		String sql = "SELECT * FROM product_info WHERE status = 0 ORDER BY Product_id ASC";
+		String sql = "SELECT * FROM product_info WHERE status = 1 ORDER BY Product_id ASC";
 
 	try{
 		PreparedStatement statement = connection.prepareStatement(sql);

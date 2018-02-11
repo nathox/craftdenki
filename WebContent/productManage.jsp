@@ -101,7 +101,7 @@
 						<th>仕入数</th>
 						<th>仕入単価</th>
 						<th>商品情報変更</th>
-						<th>商品非表示</th>
+						<th>商品削除</th>
 					</tr>
 					<s:iterator value="productList">
 						<tr>
@@ -128,10 +128,15 @@
 							<td></td>
 							<td><s:submit value="仕入" onclick="goCheckSupplyAction();"/></td>
 							<td></td>
-							<td><s:submit value="非表示" onclick="goProductHideConfirmAction();"/></td>
+							<td><s:submit value="削除" onclick="goProductHideConfirmAction();"/></td>
 						</tr>
 				</table>
 			</s:form>
+			<div>
+				<s:form action="ProductRestoreAction">
+					<s:submit value="削除商品の復元"/>
+				</s:form>
+			</div>
 			<h3>新商品登録</h3>
 			<div>
 				<s:iterator value="errorMessageList">

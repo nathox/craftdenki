@@ -39,11 +39,6 @@ public class CheckSupplyAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
-		System.out.println("SupplyConfirmAction--------------------");
-		System.out.println("supply_count" +supply_count);
-		System.out.println("supply_cost" + supply_cost);
-		System.out.println("------------------------------------------");
-
 		InputChecker ch = new InputChecker();
 		//仕入入力チェック
 		if(!ch.supplyCountChk(supply_count).equals("OK")) {

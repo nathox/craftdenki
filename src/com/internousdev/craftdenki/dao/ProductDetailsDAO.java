@@ -178,7 +178,7 @@ public class ProductDetailsDAO {
 				String productDescription,
 				String categoryId,
 				String price,
-				String newImagePass,
+				String ImagePass,
 				String imageFileName,
 				String releaseDate,
 				String releaseCompany) throws SQLException {
@@ -194,6 +194,7 @@ public class ProductDetailsDAO {
 							+ "product_id = ? , "
 							+ "product_name = ? , "
 							+ "product_name_kana = ? , "
+							+ "product_description = ? , "
 							+ "category_id = ? , "
 							+ "price = ? , "
 							+ "image_file_path = ? , "
@@ -211,11 +212,41 @@ public class ProductDetailsDAO {
 				preparedStatement.setString(4,productDescription);
 				preparedStatement.setString(5,categoryId);
 				preparedStatement.setString(6,price);
-				preparedStatement.setString(7,newImagePass);
+				preparedStatement.setString(7,ImagePass);
 				preparedStatement.setString(8,imageFileName);
 				preparedStatement.setString(9,releaseDate);
 				preparedStatement.setString(10,releaseCompany);
 				preparedStatement.setString(11,dateUtil.getDate());
+				preparedStatement.setString(12,id);
+
+				res=preparedStatement.executeUpdate();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				connection.close();
+			}
+			return res;
+		}
+
+		//商品情報表示⇔非表示切り替え
+		public int productRestoreHide(
+				String productId
+				) throws SQLException {
+
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+
+			int res = 0;
+
+			DateUtil dateUtil = new DateUtil();
+
+			String sql = "UPDATE product_info SET "
+							+ "status = 1 - status "
+						+ "WHERE product_id = ?";
+
+			try {
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1,productId);
 
 				res=preparedStatement.executeUpdate();
 			}catch(Exception e) {
