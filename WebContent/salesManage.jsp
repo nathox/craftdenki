@@ -138,6 +138,7 @@
 							<td>${allTotalProfit}円</td>
 						</tr>
 			</table>
+			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>
 		</div>
 	</div>
 
