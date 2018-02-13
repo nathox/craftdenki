@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/craftdenki.css">
+	href="${pageContext.request.contextPath}/css/okamoto.css">
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
@@ -22,12 +22,12 @@
 		</div>
 		<div>
 			<div>
-				<p id="text-link"><a href='<s:url action="ProductManageAction"/>'>商品管理機能</a></p>
-				<p id="content">商品の仕入、編集、削除、新規登録
-			</div>
-				<div>
-				<p id="text-link"><a href='<s:url action="SalesManageAction"/>'>売上管理機能</a></p>
-				<p id="content">売上の確認
+				<s:form action="ProductManageAction">
+					<s:submit value="商品管理" class="icon"/>
+				</s:form>
+				<s:form action="SalesManageAction">
+					<s:submit value="売上管理" class="icon"/>
+				</s:form>
 			</div>
 		</div>
 	</div>

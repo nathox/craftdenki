@@ -23,6 +23,7 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 		if(true){      //管理者判定
 			//商品一覧を取得
 			productList = productListDAO.getProductInfo();
+			session.put("productList", productList);
 			result = SUCCESS;
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;

@@ -5,60 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="Content-Style-Type" content="text/css"/>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/okamoto.css">
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
 <meta name="keywords" content=""/>
 <title>商品管理画面</title>
-
-<style type="text/css">
-	/* ========TAG LAYOUT======== */
-	body{
-		margin:0;
-		padding:0;
-		line-height:1.6;
-		letter-spacing:1px;
-		font-family:Verdana,Helvetica,sans-serif;
-		font-size:12px;
-		color:#333;
-		background:#fff;
-	}
-	table{
-		text-align:center;
-		margin:0 auto;
-	}
-	/* ========ID LAYOUT========*/
-	#top{
-		width:780px;
-		margin:30px auto;
-		border:1px solid #333;
-	}
-	#header{
-		width:100%;
-		height:80px;
-		background-color:black;
-	}
-	#main{
-		width:100%;
-		height:500px;
-		text-align:center;
-	}
-	#footer{
-		width:100%;
-		height:80px;
-		background-color: black;
-		clear:both;
-	}
-	#text-link{
-		display:inline-block;
-		text-align:right;
-	}
-	#content{
-		font-size:6px;
-		line-height:0px;
-	}
-</style>
 
 
 <script type="text/javascript">
@@ -73,25 +26,22 @@
 
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
 	<div id="main">
+		<s:if test="productList != null">
 		<div id="top">
 			<p>商品管理画面</p>
 		</div>
 		<div>
-			<h3>商品一覧</h3>
-			<div>
+			<p class="index">商品一覧</p>
+			<div class="errorMessage">
 				<s:iterator value="errorSupplyMessageList">
 					<s:div>
 						<s:property />
 					</s:div>
 				</s:iterator>
 			</div>
-			<s:form id="form" name="form">
-				<table border="1">
+			<table class="manageTable">
+				<s:form name="form" action="CheckSupplyAction">
 					<tr>
 						<th>ID</th>
 						<th>商品名</th>
@@ -110,8 +60,8 @@
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
 							<td><s:property value="current_cost"/></td>
 							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
-							<td><s:textfield name="supply_count" value="0"/></td>
-							<td><s:textfield name="supply_cost" value="0"/></td>
+							<td><s:textfield name="supply_count" value="0" class="numberInput"/></td>
+							<td><s:textfield name="supply_cost" value="0" class="numberInput"/></td>
 							<td><a href="<s:url action="ProductDataChangeAction">
 								<s:param name="product_id" value="%{product_id}"/>
 								</s:url>">変更画面へ</a>
@@ -126,19 +76,29 @@
 							<td></td>
 							<td></td>
 							<td></td>
-							<td><s:submit value="仕入" onclick="goCheckSupplyAction();"/></td>
+							<td><s:submit value="仕入" onclick="goCheckSupplyAction();" class="mButton"/></td>
 							<td></td>
-							<td><s:submit value="削除" onclick="goProductHideConfirmAction();"/></td>
+							<td><s:submit value="削除" onclick="goProductHideConfirmAction();" class="mButton"/></td>
 						</tr>
-				</table>
-			</s:form>
-			<div>
-				<s:form action="ProductRestoreAction">
-					<s:submit value="削除商品の復元"/>
 				</s:form>
+				<s:form action="ProductRestoreAction">
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><s:submit value="削除商品の復元" class="mButton"/></td>
+						</tr>
+				</s:form>
+			</table>
 			</div>
-			<h3>新商品登録</h3>
-			<div>
+			</s:if>
+			<p  class="index">新商品登録</p>
+			<div class="errorMessage">
 				<s:iterator value="errorMessageList">
 					<s:div>
 						<s:property />
@@ -222,7 +182,7 @@
 				</div>
 
 				<br>
-				<s:submit value="登録"/>
+				<s:submit value="登録" class="mButton"/>
 			</s:form>
 		</div>
 	</div>

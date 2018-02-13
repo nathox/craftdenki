@@ -33,11 +33,14 @@ public class CheckSupplyAction extends ActionSupport implements SessionAware{
 	 * SupplyCompleteActionにてUPDATE用
 	 */
 	private List<ProductDTO> supplyList = new ArrayList<ProductDTO>();
+	private ArrayList<ProductDTO> productList = new ArrayList<>();
 
 
 
 	public String execute(){
 		String result = ERROR;
+
+		productList = (ArrayList<ProductDTO>) session.get("productList");
 
 		InputChecker ch = new InputChecker();
 		//仕入入力チェック
@@ -236,6 +239,18 @@ public class CheckSupplyAction extends ActionSupport implements SessionAware{
 
 	public void setErrorSupplyMessageList(ArrayList<String> errorSupplyMessageList) {
 		this.errorSupplyMessageList = errorSupplyMessageList;
+	}
+
+
+
+	public ArrayList<ProductDTO> getProductList() {
+		return productList;
+	}
+
+
+
+	public void setProductList(ArrayList<ProductDTO> productList) {
+		this.productList = productList;
 	}
 
 
