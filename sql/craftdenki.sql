@@ -6,8 +6,8 @@ create database if not exists craftdenki;
 use craftdenki;
 
 
+-- -----------↓会員情報テーブル↓----------------------------
 drop table if exists user_info;
-
 create table user_info(
 id int not null primary key auto_increment,
 user_id varchar(16) unique,
