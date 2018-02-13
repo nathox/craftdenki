@@ -1,0 +1,18 @@
+#productList{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+
+}
+#productList li{
+  box-sizing: border-box;
+  padding: 15px 0;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid #333;
+  background: #ccc;
+  margin-top: 20px;
+}

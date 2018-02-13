@@ -20,6 +20,50 @@
 
 <title>購入履歴</title>
 
+<style type="text/css">
+
+.box1{
+width: 50%;
+text-align: center;
+margin-left:auto;
+margin-right:auto;
+}
+body{
+text-align: center;
+}
+
+.form{
+text-align: center;
+}
+
+.okada{
+margin-bottom:65px;
+border: 1px solid #b1b1b1;
+list-style: none;
+margin-right:auto;
+width:100%;
+
+}
+.check{
+float:left;
+position:relative;
+margin-top:40px;
+margin-left:240px;
+line-height:110px;
+}
+
+li{
+margin:0;
+padding:0;
+text-align:left;
+width:100%;
+margin-right:auto;
+
+}
+
+
+</style>
+
 </head>
 <body>
 	<h1>購入商品一覧</h1>
@@ -32,35 +76,28 @@
 		<a>購入情報は以下になります。</a>
 	</s:elseif>
 
-	<s:form id="form" name="form" action="PurchaseHistoryAction">
-		<table>
-			<tr>
-				<td>チェック</td>
-				<td>商品ID</td>
-				<td>商品名</td>
-				<td>ふりがな</td>
-				<td>金額</td>
-				<td>個数</td>
-				<td>レビューボタン</td>
-			</tr>
-			<s:iterator value="purchaseHistoryList">
-				<tr>
-					<td><s:checkbox name="checkList" value="checked"
-							fieldValue="%{productId}" /></td>
-					<td><span><s:property value="productId" /></span></td>
-					<s:hidden name="productId" value="%{productId}" />
-					<td><span><s:property value="productName" /></span></td>
-					<s:hidden name="productName" value="%{productName}" />
-					<td><span><s:property value="productNameKana" /></span></td>
-					<s:hidden name="productName" value="%{productName}" />
-					<td><span><s:property value="price" />円</span></td>
-					<s:hidden name="price" value="%{price}" />
-					<td><span><s:property value="count" />個</span></td>
-					<s:hidden name="count" value="%{count}" />
 
+	<s:form class="form" name="form" action="PurchaseHistoryAction">
+		<table>
+			<s:iterator value="purchaseHistoryList">
+			<div class="check"><s:checkbox name="checkList" value="checked"
+							fieldValue="%{productId}" /></div>
+				<div class="box1">
+				<ul class="okada">
+					<li>商品ID:<span><s:property value="productId" /></span></li>
+						<s:hidden name="productId" value="%{productId}" />
+					<li>商品名:<span><s:property value="productName" /></span></li>
+					<s:hidden name="productName" value="%{productName}" />
+					<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
+					<s:hidden name="productName" value="%{productName}" />
+					<li>金額:<span><s:property value="price" />円</span></li>
+					<s:hidden name="price" value="%{price}" />
+						<li>個数:<span><s:property value="count" />個</span></li>
+					<s:hidden name="count" value="%{count}" />
 					<s:hidden name="registDate" value="%{registDate}" />
-					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>
-				</tr>
+				</ul>
+				</div>
+				<div class="review">レビューボタン:<s:submit value="レビュー" onclick="Review1Action();" /></div>
 			</s:iterator>
 			<tr>
 				<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();">

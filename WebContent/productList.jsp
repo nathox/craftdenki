@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" type="text/css" href="./css/productList.css">
 <title>商品一覧画面</title>
 
 <style type="text/css">
@@ -27,32 +28,33 @@
 				<s:property value="searchMessage" escape="false" />
 			</h3>
 		</s:if>
-
-		<s:iterator value="productList">
-			<a
-				href="<s:url action="ProductDetailsAction">
+		<ul id="productList">
+			<s:iterator value="productList">
+				<a href="<s:url action="ProductDetailsAction">
 			 <s:param name="product_id" value="%{product_id}" />
 			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
-				<div id="productList">
-					<div>
-						商品名かな:
-						<s:property value="product_name_kana" />
-					</div>
-					<div>
-						商品名:
-						<s:property value="product_name" />
-					</div>
-					<div>
-						価格:￥
-						<s:property value="price" />
-						円
-					</div>
-
-					<img class="image" src="<s:property value='image_file_path'/>">
-					<s:hidden name="product_id" value="%{product_id}" />
-				</div>
-			</a>
-		</s:iterator>
+                    <li>
+                        <img class="image" src="<s:property value='image_file_path'/>" alt="" width="300" height="200">
+					   <dl>
+                            <dt class="text">
+	                            商品名かな:
+	                            <s:property value="product_name_kana" />
+                            </dt>
+                            <dt class="text">
+	                            商品名:
+	                            <s:property value="product_name" />
+                            </dt>
+	                            <dt class="price">
+	                            価格:￥
+	                            <s:property value="price" />
+	                            円
+                            </dt>
+                            	<s:hidden name="product_id" value="%{product_id}" />
+                        </dl>
+                    </li>
+				</a>
+			</s:iterator>
+		</ul>
 	</div>
 
 
