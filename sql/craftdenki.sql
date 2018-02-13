@@ -20,7 +20,7 @@ sex tinyint,
 email varchar(32),
 status tinyint,
 logined tinyint,
-regist_date varchar(16),
+regist_date datetime,
 update_date datetime,
 question int,
 answer varchar(32)
