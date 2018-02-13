@@ -30,11 +30,11 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 	private String imageFileName; //画像ファイル名
 	private String releaseDate; //発売年月
 	private String releaseCompany; //発売会社
+	private String categoryName; //カテゴリ名
 
 	public String execute() throws SQLException{
 		String result=ERROR;
 
-		System.out.println("id: "+id);
 
 		if(true){      //管理者判定
 			result = SUCCESS;
@@ -42,7 +42,12 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 			//カテゴリテーブルよりカテゴリリストを取得
 			CategoryDAO categoryDAO = new CategoryDAO();
 			categoryList = categoryDAO.getCategoryInfo();
-
+			//カテゴリ名を取得
+			for(int i = 0; i < categoryList.size(); i++) {
+				if(categoryList.get(i).getCategoryId().equals(categoryId)) {
+					this.categoryName = categoryList.get(i).getCategoryName();
+				}
+			}
 
 
 			ProductListDAO dao = new ProductListDAO();
@@ -211,6 +216,14 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 
 	public void setReleaseCompany(String releaseCompany) {
 		this.releaseCompany = releaseCompany;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 

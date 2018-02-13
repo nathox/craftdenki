@@ -61,13 +61,9 @@
 </style>
 
 
-							<td><s:submit value="仕入" onclick="goSupplyConfirmAction();"/></td>
-							<td></td>
-							<td><s:submit value="非表示" onclick="goProductHideConfirmAction();"/></td>
-
 <script type="text/javascript">
-    function goSupplyConfirmAction(){
-        document.getElementById('form').action="SupplyConfirmAction";
+    function goCheckSupplyAction(){
+        document.getElementById('form').action="CheckSupplyAction";
     }
 
     function goProductHideConfirmAction(){
@@ -87,23 +83,32 @@
 		</div>
 		<div>
 			<h3>商品一覧</h3>
+			<div>
+				<s:iterator value="errorSupplyMessageList">
+					<s:div>
+						<s:property />
+					</s:div>
+				</s:iterator>
+			</div>
 			<s:form id="form" name="form">
 				<table border="1">
 					<tr>
 						<th>ID</th>
 						<th>商品名</th>
 						<th>販売価格</th>
+						<th>現在の単価</th>
 						<th>在庫数</th>
 						<th>仕入数</th>
 						<th>仕入単価</th>
 						<th>商品情報変更</th>
-						<th>商品非表示</th>
+						<th>商品削除</th>
 					</tr>
 					<s:iterator value="productList">
 						<tr>
 							<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
 							<td><s:property value="product_name"/><s:hidden name="product_name" value="%{product_name}"/></td>
 							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
+							<td><s:property value="current_cost"/></td>
 							<td><s:property value="item_stock"/><s:hidden name="item_stock" value="%{item_stock}"/></td>
 							<td><s:textfield name="supply_count" value="0"/></td>
 							<td><s:textfield name="supply_cost" value="0"/></td>
@@ -119,12 +124,19 @@
 							<td></td>
 							<td></td>
 							<td></td>
-							<td><s:submit value="仕入" onclick="goSupplyConfirmAction();"/></td>
 							<td></td>
-							<td><s:submit value="非表示" onclick="goProductHideConfirmAction();"/></td>
+							<td></td>
+							<td><s:submit value="仕入" onclick="goCheckSupplyAction();"/></td>
+							<td></td>
+							<td><s:submit value="削除" onclick="goProductHideConfirmAction();"/></td>
 						</tr>
 				</table>
 			</s:form>
+			<div>
+				<s:form action="ProductRestoreAction">
+					<s:submit value="削除商品の復元"/>
+				</s:form>
+			</div>
 			<h3>新商品登録</h3>
 			<div>
 				<s:iterator value="errorMessageList">

@@ -70,6 +70,22 @@
 			<p>売上画面</p>
 		</div>
 		<div>
+			<s:form action="SalesManageAction">
+			<p>検索</p>
+			購入日:
+			<s:select name="saleStartY" list="yearList" value="saleStartY"/>
+			<s:select name="saleStartMD" list="monthDayList" value="saleStartMD"/>
+			～
+			<s:select name="saleEndY" list="yearList" value="saleEndY"/>
+			<s:select name="saleEndMD" list="monthDayList" value="saleEndMD"/>
+			<br>
+			カテゴリ名:
+			<s:select name="categoryId" list="categoryList" listValue="categoryName" listKey="categoryId" value="categoryId"/>
+			<br>
+			<s:submit value="検索"/><s:hidden name="searchFlg" value="true"/>
+			</s:form>
+		</div>
+		<div>
 			<table border="1">
 					<tr>
 						<th>購入日</th>
@@ -89,15 +105,40 @@
 							<td><s:property value="categoryName"/><s:hidden name="categoryName" value="%{categoryName}"/></td>
 							<td><s:property value="productId"/><s:hidden name="productId" value="%{productId}"/></td>
 							<td><s:property value="productName"/><s:hidden name="productName" value="%{productName}"/></td>
-							<td><s:property value="price"/><s:hidden name="price" value="%{price}"/></td>
-							<td><s:property value="atCost"/><s:hidden name="atCost" value="%{atCost}"/></td>
-							<td><s:property value="productCount"/><s:hidden name="productCount" value="%{productCount}"/></td>
-							<td><s:property value="totalSales"/><s:hidden name="totalSales" value="%{totalSales}"/></td>
-							<td><s:property value="totalCost"/><s:hidden name="totalCost" value="%{totalCost}"/></td>
-							<td><s:property value="profit"/><s:hidden name="profit" value="%{profit}"/></td>
+							<td><s:property value="price"/>円<s:hidden name="price" value="%{price}"/></td>
+							<td><s:property value="atCost"/>円<s:hidden name="atCost" value="%{atCost}"/></td>
+							<td><s:property value="productCount"/>個<s:hidden name="productCount" value="%{productCount}"/></td>
+							<td><s:property value="totalSales"/>円<s:hidden name="totalSales" value="%{totalSales}"/></td>
+							<td><s:property value="totalCost"/>円<s:hidden name="totalCost" value="%{totalCost}"/></td>
+							<td><s:property value="profit"/>円<s:hidden name="profit" value="%{profit}"/></td>
 						</tr>
 					</s:iterator>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>平均</td>
+							<td>平均</td>
+							<td>計</td>
+							<td>計</td>
+							<td>計</td>
+							<td>計</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>${allAvgPrice}円</td>
+							<td>${allAvgCost}円</td>
+							<td>${allTotalCount}個</td>
+							<td>${allTotalSales}円</td>
+							<td>${allTotalCost}円</td>
+							<td>${allTotalProfit}円</td>
+						</tr>
 			</table>
+			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>
 		</div>
 	</div>
 

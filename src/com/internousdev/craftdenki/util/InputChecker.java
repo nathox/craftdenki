@@ -125,5 +125,37 @@ public class InputChecker {
 	}
 
 
+	/*---------------------------------------------------------------------------------------------------------------------
+	 * 仕入の入力チェック
+	 * --------------------------------------------------------------------------------------------------------------------
+	 */
+
+	//仕入数
+	public String supplyCountChk(String supplyCount) {
+		String result ="OK";
+
+		if(supplyCount == null) {
+			result = "仕入数が入力されておりません。再度処理をお願いいたします。";
+		} else if (supplyCount.contains(", ,")) {
+			result = "仕入数に入力されていない欄があります。全ての欄に0以上の数字を入力してください。";
+		} else if (!supplyCount.matches("^[0-9, ]+$")) {
+			result = "仕入数は半角数字で入力してください。";
+		}
+		return result;
+	}
+
+	//仕入単価
+	public String supplyCostChk(String supplyCost) {
+		String result ="OK";
+
+		if(supplyCost == null) {
+			result = "仕入単価が入力されておりません。再度処理をお願いいたします。";
+		} else if (supplyCost.contains(", ,")) {
+			result = "仕入単価に入力されていない欄があります。全ての欄に0以上の数字を入力してください。";
+		} else if (!supplyCost.matches("^[0-9, ]+$")) {
+			result = "仕入単価は半角数字で入力してください。";
+		}
+		return result;
+	}
 }
 

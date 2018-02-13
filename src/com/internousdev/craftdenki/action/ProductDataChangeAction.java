@@ -17,7 +17,7 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 	public Map<String,Object> session;
 
 	//--------------------------
-	//暫定
+	//変数名変換
 	private String product_id;
 	//--------------------------
 	private String errorMessage;
@@ -32,6 +32,7 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 	private String releaseDate;
 	private String releaseCompany;
 
+
 	private List<CategoryDTO> categoryList = new ArrayList<CategoryDTO>();
 
 
@@ -39,7 +40,7 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 		String result = ERROR;
 
 		//--------------------------
-		//暫定
+		//変数名変換
 		productId = product_id;
 		//--------------------------
 
@@ -51,11 +52,14 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 			CategoryDAO categoryDAO = new CategoryDAO();
 			categoryList = categoryDAO.getCategoryInfo();
 
-
+			//変更前の商品IDをセッションに保存
 			session.put("productId", productId);
 
+			//変更する商品IDの商品情報DTOを商品情報テーブルより取得
 			ProductDetailsDAO dao = new ProductDetailsDAO();
 			ProductDTO dto = dao.getProductDetailsInfo(Integer.parseInt(productId));
+			//取得したDTOより、以下情報をフィールド変数に代入
+			//ID,商品名、商品名かな、商品詳細、カテゴリID、販売価格、画像名、発売日、発売会社
 			id = dto.getId();
 			productName = dto.getProduct_name();
 			productNameKana = dto.getProduct_name_kana();
@@ -73,9 +77,23 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 	}
 
 
-	@Override
-	public void setSession(Map<String,Object> session){
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+
+	public String getProduct_id() {
+		return product_id;
+	}
+
+
+	public void setProduct_id(String product_id) {
+		this.product_id = product_id;
 	}
 
 
@@ -198,20 +216,6 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 		this.categoryList = categoryList;
 	}
 
-
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
-
-	public String getProduct_id() {
-		return product_id;
-	}
-
-
-	public void setProduct_id(String product_id) {
-		this.product_id = product_id;
-	}
 
 
 }

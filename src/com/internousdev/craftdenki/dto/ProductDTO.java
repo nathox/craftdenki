@@ -1,6 +1,10 @@
 package com.internousdev.craftdenki.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import com.internousdev.craftdenki.dao.CategoryDAO;
 
 
 //DB product_infoのインスタンス
@@ -28,6 +32,23 @@ public class ProductDTO {
 	private int supplyCostTotal; //仕入計
 
 	private String product_count;
+
+	//カテゴリ名
+	private String categoryName;
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(Integer category_id) {
+		List<CategoryDTO> categoryList = new ArrayList<>();
+		CategoryDAO categoryDAO = new CategoryDAO();
+		categoryList =  categoryDAO.getCategoryInfo();
+
+		for(int i = 0; i < categoryList.size(); i++) {
+			if(categoryList.get(i).getCategoryId().equals(category_id.toString())) {
+				this.categoryName = categoryList.get(i).getCategoryName();
+			}
+		}
+	}
 
 	public int getId() {
 		return id;

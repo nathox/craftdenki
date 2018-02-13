@@ -68,7 +68,7 @@
 		<div>
 			<h3>商品情報を変更しました</h3>
 			<s:form action="ProductDetailsAction">
-				<s:hidden name="productId" value="productId"/>
+				<s:hidden name="product_id" value="product_id"/>
 				<s:submit value="確認"/>
 			</s:form>
 			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>

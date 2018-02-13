@@ -16,8 +16,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private LoginDAO dao = new LoginDAO();
 	private LoginDTO dto = new LoginDTO();
 	private String result;
-	private String loginId;
-	private String loginPassword;
+	private String loginId = "a";
+	private String loginPassword = "a";
 	private String IDerrormsg;
 	private String Passerrormsg;
 
@@ -88,7 +88,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						session.put("master_flg", "1");
 						session.put("IDerror", "");
 						session.put("Passerror", "");
-
 						result = "master";
 						return result;
 					}
@@ -96,7 +95,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					if (dto.getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId());
 						session.put("loginPass", dto.getLoginPass());
-
 						session.put("trueID",loginId);
 						System.out.println((session.get("trueID")));
 						System.out.println((session.get("status")));
@@ -114,7 +112,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 							result = "myPage";
 							return result;
 
-						} else if(session.get("status") == ("")) {
+						} else {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
 							System.out.println(session.get("trueID"));

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
 <meta name="keywords" content=""/>
-<title>商品削除確認画面</title>
+<title>削除商品復元画面</title>
 
 <style type="text/css">
 	/* ========TAG LAYOUT======== */
@@ -54,7 +54,12 @@
 		display:inline-block;
 		text-align:right;
 	}
+	#content{
+		font-size:6px;
+		line-height:0px;
+	}
 </style>
+
 </head>
 <body>
 	<div id="header">
@@ -63,31 +68,47 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>商品削除確認画面</p>
+			<p>削除商品復元画面</p>
 		</div>
 		<div>
-			<s:form action="ProductHideCompleteAction">
-				<table>
+			<h3>削除商品一覧</h3>
+			<div>
+				<s:iterator value="errorSupplyMessageList">
+					<s:div>
+						<s:property />
+					</s:div>
+				</s:iterator>
+			</div>
+			<s:form action="ProductRestoreConfirmAction">
+				<table border="1">
 					<tr>
-						<th>商品ID</th>
+						<th>ID</th>
 						<th>商品名</th>
+						<th>販売価格</th>
+						<th>現在の単価</th>
+						<th>在庫数</th>
+						<th>商品詳細</th>
+						<th>商品復元</th>
 					</tr>
-					<s:iterator value="productHideList">
+					<s:iterator value="productList">
 						<tr>
-							<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
+							<td><s:property value="product_id"/></td>
 							<td><s:property value="product_name"/></td>
+							<td><s:property value="price"/></td>
+							<td><s:property value="current_cost"/></td>
+							<td><s:property value="item_stock"/></td>
+							<td><s:property value="product_description"/></td>
+							<td><s:checkbox name="checkList" value="" fieldValue="%{product_id}" /> </td>
 						</tr>
 					</s:iterator>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><s:submit value="復元"/></td>
+						</tr>
 				</table>
-				<p>以上の商品を削除してもよろしいですか？</p>
-				<s:submit value="はい"/>
 			</s:form>
-			<input type="button" value="いいえ" onClick="history.back()">
-		</div>
-	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
-</body>
-</html>

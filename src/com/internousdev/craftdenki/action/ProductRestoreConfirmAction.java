@@ -11,7 +11,7 @@ import com.internousdev.craftdenki.dao.ProductListDAO;
 import com.internousdev.craftdenki.dto.ProductDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductHideConfirmAction extends ActionSupport implements SessionAware{
+public class ProductRestoreConfirmAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 	private String errorMessage;
 
@@ -25,7 +25,7 @@ public class ProductHideConfirmAction extends ActionSupport implements SessionAw
 	 * checkした行の商品IDと商品名が入ったCollection
 	 * 渡す用
 	 */
-	private List<ProductDTO> productHideList = new ArrayList<>();
+	private List<ProductDTO> productRestoreList = new ArrayList<>();
 
 
 
@@ -48,7 +48,7 @@ public class ProductHideConfirmAction extends ActionSupport implements SessionAw
 			//商品一覧を取得
 			ProductListDAO productListDAO = new ProductListDAO();
 			List<ProductDTO> productList = new ArrayList<>();
-			productList = productListDAO.getProductInfo();
+			productList = productListDAO.getProductHideInfo();
 
 
 			//チェックした商品IDとその商品名のproductDTOをproductHideListに格納
@@ -58,7 +58,7 @@ public class ProductHideConfirmAction extends ActionSupport implements SessionAw
 						ProductDTO hideDto = new ProductDTO();
 						hideDto.setProduct_id(Integer.parseInt(productId));
 						hideDto.setProduct_name(dto.getProduct_name());
-						productHideList.add(hideDto);
+						productRestoreList.add(hideDto);
 					}
 				}
 			}
@@ -66,29 +66,68 @@ public class ProductHideConfirmAction extends ActionSupport implements SessionAw
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
 	}
-	@Override
-	public void setSession(Map<String,Object> session){
-		this.session = session;
-	}
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+
+
+
+
+
 	public Map<String, Object> getSession() {
 		return session;
 	}
-	public List<String> getCheckList(){
+
+
+
+
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
+
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+
+
+
+
+	public List<String> getCheckList() {
 		return checkList;
 	}
+
+
+
+
+
 	public void setCheckList(List<String> checkList) {
 		this.checkList = checkList;
 	}
-	public List<ProductDTO> getProductHideList() {
-		return productHideList;
+
+
+
+
+
+	public List<ProductDTO> getProductRestoreList() {
+		return productRestoreList;
 	}
-	public void setProductHideList(List<ProductDTO> productHideList) {
-		this.productHideList = productHideList;
+
+
+
+
+
+	public void setProductRestoreList(List<ProductDTO> productRestoreList) {
+		this.productRestoreList = productRestoreList;
 	}
 }

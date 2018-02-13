@@ -54,5 +54,9 @@
 	<s:submit value ="パスワード再設定"/>
 	</s:form>
 
+	<s:form action="UserCreateAction">
+	<s:submit value ="新規登録"/>
+	</s:form>
+
 </body>
 </html>

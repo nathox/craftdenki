@@ -23,9 +23,18 @@ public class ProductDataChangeCompleteAction extends ActionSupport implements Se
 	private String imageFileName; //画像ファイル名
 	private String releaseDate; //発売年月
 	private String releaseCompany; //発売会社
+	//--------------------------
+	//変数名変換
+	private String product_id;
+	//--------------------------
 
 	public String execute() throws SQLException{
 		String result = ERROR;
+
+		//--------------------------
+		//変数名変換
+		product_id = productId;
+		//--------------------------
 
 		if(true){      //管理者判定
 			result = SUCCESS;
@@ -127,5 +136,11 @@ public class ProductDataChangeCompleteAction extends ActionSupport implements Se
 	}
 	public Map<String, Object> getSession() {
 		return session;
+	}
+	public String getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(String product_id) {
+		this.product_id = product_id;
 	}
 }

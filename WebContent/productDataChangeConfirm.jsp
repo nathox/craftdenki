@@ -96,15 +96,7 @@
 							<br>
 							<br>
 							<br> カテゴリID　　　:　
-							<s:if test="categoryId==1">
-								本
-							</s:if>
-							<s:elseif test="categoryId==2">
-								家電・パソコン
-							</s:elseif>
-							<s:else>
-								おもちゃ・ゲーム
-							</s:else>
+							<s:property value="categoryName" />
 							<s:hidden name="categoryId" value="%{categoryId}" />
 
 							<br>

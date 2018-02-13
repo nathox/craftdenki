@@ -48,9 +48,9 @@ public class SalesHistoryDAO {
 						+ "LEFT JOIN "
 							+ "m_category mc "
 							+ "ON "
-								+ "pi.category_id = mc.category_id";
-		//				+ "WHERE "
-		//					+ "phi.purchase_date >= ? AND phi.purchase_date<= ? ";
+								+ "pi.category_id = mc.category_id "
+						+ "ORDER BY "
+							+ "purchase_date DESC";
 
 	/*
 	 * 全売上取得メソッド

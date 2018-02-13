@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
 <meta name="keywords" content=""/>
-<title>商品削除確認画面</title>
+<title>削除完了画面</title>
 
 <style type="text/css">
 	/* ========TAG LAYOUT======== */
@@ -63,26 +63,11 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>商品削除確認画面</p>
+			<p>削除完了画面</p>
 		</div>
 		<div>
-			<s:form action="ProductHideCompleteAction">
-				<table>
-					<tr>
-						<th>商品ID</th>
-						<th>商品名</th>
-					</tr>
-					<s:iterator value="productHideList">
-						<tr>
-							<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
-							<td><s:property value="product_name"/></td>
-						</tr>
-					</s:iterator>
-				</table>
-				<p>以上の商品を削除してもよろしいですか？</p>
-				<s:submit value="はい"/>
-			</s:form>
-			<input type="button" value="いいえ" onClick="history.back()">
+			<h3>削除が完了しました</h3>
+			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>
 		</div>
 	</div>
 	<div id="footer">

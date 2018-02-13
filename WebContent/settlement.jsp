@@ -33,11 +33,11 @@
 
 	<s:form action="SettlementConfirmAction">
 		<table>
-			<s:if test="session.userAddress != null && session.telNumber != null">
+			<s:if test="userAddress != null && telNumber != null">
 				<tr>
 					<td><input type="radio" name="destination" value="1" checked>
 					<td>宛先1:</td>
-					<td><s:property value="session.familyName"/></td><td><s:property value="session.firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress"/></td><td><s:property value="telNumber"/></td>
+					<td><s:property value="familyName"/></td><td><s:property value="firstName"/></td><td><s:property value="email"/></td><td><s:property value="userAddress"/></td><td><s:property value="telNumber"/></td>
 				</tr>
 			</s:if>
 
