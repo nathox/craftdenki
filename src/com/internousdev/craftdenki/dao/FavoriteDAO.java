@@ -8,11 +8,13 @@ import java.util.ArrayList;
 
 import com.internousdev.craftdenki.dto.FavoriteDTO;
 import com.internousdev.craftdenki.util.DBConnector;
+import com.internousdev.craftdenki.util.DateUtil;
 
 public class FavoriteDAO {
 
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
+	private DateUtil dateUtil = new DateUtil();
 
 	public ArrayList<FavoriteDTO> getFavoriteInfo(String loginId) throws SQLException {
 		ArrayList<FavoriteDTO> favoriteDTO = new ArrayList<FavoriteDTO>();
@@ -74,12 +76,13 @@ public class FavoriteDAO {
 	public void insertFavorite(String user_id, String product_id) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		String insert = "INSERT INTO favorite_info (user_id,product_id,regist_date) VALUES(?,?,NOW())";
+		String insert = "INSERT INTO favorite_info (user_id,product_id,regist_date) VALUES(?,?,?)";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(insert);
 			ps.setString(1, user_id);
 			ps.setString(2, product_id);
+			ps.setString(3, dateUtil.getDate());
 
 			ps.execute();
 

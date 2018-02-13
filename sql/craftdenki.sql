@@ -345,8 +345,8 @@ INSERT INTO m_category VALUES(3,3,"おもちゃ・げーむ","おもちゃ・げ
 
 
 
-INSERT INTO favorite_info VALUES(1,"test",10000028,"2016/01/01");
-INSERT INTO favorite_info VALUES(2,"test1",10000029,"2016/01/01");
+INSERT INTO favorite_info VALUES(1,"test",10000001,"2016/01/01");
+INSERT INTO favorite_info VALUES(2,"test1",10000002,"2016/01/01");
 
 
 INSERT INTO review_info VALUES(1,"test",10000028,"2016/01/01","いいキーボードです",3);

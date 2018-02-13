@@ -18,34 +18,62 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 	private Collection<String> checkList;
 	private String deleteFlg = "0";
-	private String insertFlg = "0";
+	private String favoriteInsertFlg ="0" ;
 	private String test = "test";
 	private String message;
 	private String productid;
 	private String userId;
 	private String result;
 
+
+
+
 	public String execute() throws SQLException {
 		FavoriteDAO dao = new FavoriteDAO();
 		int count = 0;
 
-		if (deleteFlg == null) {
+		session.put("none", null);
+
+
+
+
+
+		if (deleteFlg == "0") {
 			if (session.containsKey("trueID")) {
 				userId = session.get("trueID").toString();
 				favoriteList = dao.getFavoriteInfo(userId);
+				System.out.println(favoriteList);
 			} else {
 				userId = session.get("temp_user_id").toString();
 			}
 		}
 
-		if (insertFlg.equals("1")) {
+
+
+
+
+
+		if (favoriteInsertFlg != "0") {
 			dao.insertFavorite(userId, productid);
-			System.out.println(favoriteList);
-			insertFlg = null;
+			System.out.println("asd"+favoriteList);
+			favoriteInsertFlg = null;
+			userId = session.get("trueID").toString();
+			favoriteList = dao.getFavoriteInfo(userId);
 			result = SUCCESS;
 			return result;
-		} else if (deleteFlg.equals("1")) {
-			if (checkList == null) {
+		}
+
+
+
+
+
+
+
+
+		else if (deleteFlg.equals("1")) {
+
+			if (checkList != null) {
+				System.out.println("ちぇっくりすと");
 				for (String deleteId : checkList) {
 					count += dao.deleteFavoriteInfo(deleteId, session.get("trueID").toString());
 					System.out.println("aaa");
@@ -54,14 +82,39 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 					result = SUCCESS;
 					return result;
 				}
+
+
 			}
-		}else{
-			session.put("none", "情報はありません");
+
+
+
+
+			else {
+				result = SUCCESS;
+				return result;
+			}
+
+		}
+
+
+
+		else {
 			result = SUCCESS;
 			return result;
 		}
 		return result;
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 	public List<FavoriteDTO> getFavoriteList() {
 		return favoriteList;
@@ -127,4 +180,11 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 		this.userId = userId;
 	}
 
+	public String getFavoriteInsertFlg() {
+		return favoriteInsertFlg;
+	}
+
+	public void setFavoriteInsertFlg(String favoriteInsertFlg) {
+		this.favoriteInsertFlg = favoriteInsertFlg;
+	}
 }

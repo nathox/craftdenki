@@ -23,42 +23,35 @@
 </script>
 </head>
 <body>
-	<s:if test="session.none == null">
-		<p>★お気に入りリスト★</p>
-		<s:form id="form" name="form" action="FavoriteAction">
-			<table border="0" cellspacing="0">
+	<p>★お気に入りリスト★</p>
+	<s:form id="form" name="form" action="FavoriteAction">
+		<table border="0" cellspacing="0">
+			<tr>
+				<td>チェック</td>
+				<td>商品名</td>
+				<td>画像</td>
+				<td>値段</td>
+				<td>会社</td>
+				<td>販売月</td>
+			</tr>
+			<s:iterator value="favoriteList">
 				<tr>
-					<td>チェック</td>
-					<td>商品名</td>
-					<td>画像</td>
-					<td>値段</td>
-					<td>会社</td>
-					<td>販売月</td>
+					<td><s:checkbox name="checkList" value="1"
+							fieldValue="%{productId}" /></td>
+					<td><span><s:property value="productName" /></span></td>
+					<td><span><s:property value="imageFilePath" /></span></td>
+					<td><span><s:property value="price" /></span></td>
+					<td><span><s:property value="releaseCompany" /></span></td>
+					<td><span><s:property value="releaseDate" /></span></td>
 				</tr>
-				<tr>
-					<s:iterator value="favoriteList">
-						<td><s:checkbox name="checkList" value="1"
-								fieldValue="%{productId}" /></td>
-						<td><span><s:property value="productName" /></span></td>
-						<td><span><s:property value="imageFilePath" /></span></td>
-						<td><span><s:property value="price" /></span></td>
-						<td><span><s:property value="releaseCompany" /></span></td>
-						<td><span><s:property value="releaseDate" /></span></td>
-					</s:iterator>
-				</tr>
-				<tr>
-					<td><s:submit value="一括削除">
-							<s:hidden name="deleteFlg" value="1" />
-						</s:submit></td>
-				</tr>
-			</table>
-		</s:form>
-	</s:if>
-	<s:else>
-		<s:property value="session.none" />
-		<br>
-		<br>
-		<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
-	</s:else>
+			</s:iterator>
+			<tr>
+				<td><s:submit value="一括削除">
+						<s:hidden name="deleteFlg" value="1" />
+					</s:submit></td>
+			</tr>
+		</table>
+	</s:form>
+	<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
 </body>
 </html>
