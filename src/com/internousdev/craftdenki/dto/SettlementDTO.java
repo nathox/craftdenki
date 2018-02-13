@@ -11,6 +11,7 @@ public class SettlementDTO {
 	private String telNumber;
 	private String telNumber2;
 	private String telNumber3;
+	private int AtCost;
 
 
 
@@ -67,6 +68,14 @@ public class SettlementDTO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setAtCost(int AtCost) {
+		this.AtCost = AtCost;
+	}
+
+	public int getAtCost(){
+		return AtCost;
 	}
 
 

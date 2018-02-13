@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.craftdenki.dao.ItemStockUpdateDAO;
 import com.internousdev.craftdenki.dao.SettlementCompleteDAO;
 import com.internousdev.craftdenki.dto.CartDTO;
+import com.internousdev.craftdenki.dto.SettlementDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -55,16 +56,20 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 
 		//atCostをproduct_infoテーブルから持ってくる
-		for(int i=0; i<cartList.size(); i++){
-			atCost = settlementCompleteDAO.getCurrentCost(cartList.get(i).getProductId());
-			System.out.println(atCost + "atCostです");
-		}
+//		for(int i=0; i<cartList.size(); i++){
+//			SettlementDTO dto = settlementCompleteDAO.getCurrentCost(cartList.get(i).getProductId());
+//			int atCost = dto.getAtCost();
+//			System.out.println(atCost + "atCostです");
+//		}
 
 
 		System.out.println("履歴に追加します");
 		//購入時、商品購入履歴テーブルにインサート
 		//引数String userId,int productId,int productCount,int price,int atCost
 		for(int i = 0; i < cartList.size(); i++){
+			SettlementDTO dto = settlementCompleteDAO.getCurrentCost(cartList.get(i).getProductId());
+			int atCost = dto.getAtCost();
+			System.out.println(atCost + "atCostです");
 			settlementCompleteDAO.insertPurchaseHistory(userId,cartList.get(i).getProductId(),cartList.get(i).getProductCount(),cartList.get(i).getPrice(),atCost);
 			}
 		System.out.println("履歴完了");

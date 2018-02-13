@@ -1,6 +1,5 @@
 package com.internousdev.craftdenki.dao;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +29,7 @@ public class LoginDAO {
 			if (rs.next()) {
 				dto.setLoginId(rs.getString("user_id"));
 				dto.setLoginPass(rs.getString("password"));
-			}else{
+			} else {
 				dto.setLoginId("noID");
 				dto.setLoginPass("noPASS");
 			}
@@ -42,19 +41,20 @@ public class LoginDAO {
 		return dto;
 	}
 
-	public void cartInfo(String ProvisionalLoginId, String loginId) {
+	public void cartInfo(String tempUserId, String loginId) {
 
-		String sql = "update cart_transaction set login_id= ? where login_id = ?";
+		String sql = "update cart_info set user_id= ? where user_id = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 
 			ps.setString(1, loginId);
-			ps.setString(2, ProvisionalLoginId);
+			ps.setString(2, tempUserId);
 
 			int rs = ps.executeUpdate();
-			System.out.println(rs + "件更新しました");
-
+			if (rs >= 0) {
+				System.out.println(rs + "件更新しました");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
