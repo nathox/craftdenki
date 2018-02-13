@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+        <head>
+        <meta charset="UTF-8">
+        <title>4eachblog</title>
+
+            <style text/css>
+        /* ヘッダー部分　ここから　 */
+
+        body {
+            margin: 0px;
+        }
+
+        header{
+            width:100%;
+            height:100px;
+            line-height:50px;
+        }
+
+        header ul li{
+            float:left;
+            list-style:none;
+            padding-left:100px;
+            padding-right:100px;
+            color:black;
+            font-weight: 1000;
+            position: relative;
+            top:-20px;
+            text-align:center;
+            margin:0px auto;
+
+        }
+
+        .bar{
+        	width:100%;
+        }
+
+
+        .title{
+            font-family: 'Press Start 2P', cursive;
+            font-size:80px;
+            padding-top:50px;
+            text-align: center;
+                }
+
+        .img{
+            background-image: url("../images/danbo.jpg");
+            top:100px;
+            bottom:50px;
+                }
+
+        .kensaku{
+            text-align: center;
+        }
+
+        .button {
+		    display: inline-block;
+		    text-decoration: none;
+		    color: #67c5ff;
+			relative：left:100px;
+			width:24.7%;
+		}
+
+		.button {
+		    background: #67c5ff;
+		    color: white;
+		}
+
+
+/* ヘッダー部分　ここまで　 */
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+<div class="img">
+<div class="title">
+    CraftDenki
+</div>
+
+
+<header>
+<form class="kensaku">
+<input type="text">
+    <submit value="検索"></submit>
+</form>
+
+<ul>
+    <li>ログイン</li>
+    <li>マイページ</li>
+    <li>カート</li>
+    <li>商品一覧</li>
+</ul>
+</header>
+</div>
+
+
+
+
+
+</body>
+</html>
