@@ -11,7 +11,9 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords"content=""/>
+	<meta http-equiv="refresh" content="5;URL=home.jsp">
 	<title>決済完了画面</title>
+
 
 </head>
 <body>
