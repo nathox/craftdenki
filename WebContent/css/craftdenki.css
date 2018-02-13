@@ -2,6 +2,7 @@
 /*-------------------------------------
 	共通
 -------------------------------------*/
+	/* ========TAG LAYOUT======== */
 	body{
 		margin:0;
 		padding:0;
@@ -15,4 +16,27 @@
 	table{
 		text-align:center;
 		margin:0 auto;
+	}
+	/* ========ID LAYOUT========*/
+	#top{
+		width:780px;
+		margin:30px auto;
+		border:1px solid #333;
+		text-align:center;
+	}
+	#header{
+		width:100%;
+		height:80px;
+		background-color:black;
+	}
+	#main{
+		width:100% auto;
+		height:500px;
+		padding:200px;
+	}
+	#footer{
+		width:100%;
+		height:80px;
+		background-color: black;
+		clear:both;
 	}
