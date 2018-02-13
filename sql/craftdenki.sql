@@ -265,8 +265,7 @@ INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,f
 
 
 
-INSERT INTO cart_info(user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES
-("test",10000028,2,10000,"2018/01/20","2018/01/20",10000);
+
 
 
 INSERT INTO purchase_history_info(-- ------購入履歴テーブルへ--------------
