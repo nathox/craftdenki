@@ -17,18 +17,13 @@ public class StartAction extends ActionSupport implements SessionAware {
 			session.clear();
 		}
 
-		if (!(session.containsKey("trueId") || (session.containsKey("tempLoginFlg")))) {
-			if (!(session.containsKey("temp_user_id"))) {
+		if (!(session.containsKey("trueId") || (session.containsKey("temp_user_id")))) {
 
 				Random rnd = new Random();
-				boolean tempLoginFlg = false;
 
 				System.out.println("ランダム" + rnd + " = ランダムID");
-				System.out.println(tempLoginFlg);
 				System.out.println("仮ユーザーID発行");
 				session.put("temp_user_id", rnd);
-				session.put("tempLoginFlg", tempLoginFlg);
-			}
 		}
 
 		return SUCCESS;
