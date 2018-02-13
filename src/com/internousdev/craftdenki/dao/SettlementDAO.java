@@ -19,7 +19,7 @@ public class SettlementDAO {
 	private Connection connection = dbConnector.getConnection();
 
 
-	//ここの引数とりあえずuserIdっておいてるけど変数の確認お願いします
+
 	public SettlementDTO getDestinationInfo(String userId){
 
 		String sql = "SELECT family_name,first_name,email,user_address,user_address2,user_address3,tel_number,tel_number2,tel_number3 FROM destination_info JOIN user_info ON destination_info.user_id = user_info.user_id WHERE user_info.user_id =? ";

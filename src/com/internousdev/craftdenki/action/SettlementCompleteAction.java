@@ -29,10 +29,6 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 
 
-//ここまだできてない
-
-
-
 
 
 	@SuppressWarnings("unchecked")
@@ -42,6 +38,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 		userId = session.get("trueID").toString();
 
 		System.out.println(userId + "ユーザーID");
+
 
 
 		System.out.println("在庫を減らします");
@@ -55,12 +52,12 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 
 
-		System.out.println(productId +"商品IDです");
+
 
 		//atCostをproduct_infoテーブルから持ってくる
 		for(int i=0; i<cartList.size(); i++){
 			atCost = settlementCompleteDAO.getCurrentCost(cartList.get(i).getProductId());
-			System.out.println(atCost +"atCostです");
+			System.out.println(atCost + "atCostです");
 		}
 
 
@@ -68,7 +65,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 		//購入時、商品購入履歴テーブルにインサート
 		//引数String userId,int productId,int productCount,int price,int atCost
 		for(int i = 0; i < cartList.size(); i++){
-			settlementCompleteDAO.insertPurchaseHistory(userId,cartList.get(i).getId(),cartList.get(i).getProductCount(),cartList.get(i).getPrice(),atCost);
+			settlementCompleteDAO.insertPurchaseHistory(userId,cartList.get(i).getProductId(),cartList.get(i).getProductCount(),cartList.get(i).getPrice(),atCost);
 			}
 		System.out.println("履歴完了");
 
