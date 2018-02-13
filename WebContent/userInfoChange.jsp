@@ -54,14 +54,14 @@
 
 
 
-			<p>郵便番号:〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin1-1','userAddress','userAddress');"></p>
+			<p>郵便番号:〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','userAddress','userAddress');"></p>
 			<p>住所：					<s:textfield name="userAddress" size="60" value="%{userAddress}"/></p>
 
 
-			<p>郵便番号:〒<input type="text" name="yuubin2" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input type="text" name="yuubin5" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin2','yuubin2-1','userAddress2','userAddress2');"></p>
+			<p>郵便番号:〒<input type="text" name="yuubin2" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input type="text" name="yuubin5" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin2','yuubin5','userAddress2','userAddress2');"></p>
 			<p>住所２：				<s:textfield name="userAddress2" size="60" value="%{userAddress2}"/></p>
 
-			<p>郵便番号:〒<input type="text" name="yuubin3" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input type="text" name="yuubin6" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin3','yuubin3-1','userAddress3','userAddress3');"></p>
+			<p>郵便番号:〒<input type="text" name="yuubin3" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input type="text" name="yuubin6" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin3','yuubin6','userAddress3','userAddress3');"></p>
 			<p>住所３：				<s:textfield name="userAddress3" size="60" value="%{userAddress3}"/></p>
 
 			<p>電話番号：				<s:textfield name="telNumber" value="%{telNumber}"/></p>
