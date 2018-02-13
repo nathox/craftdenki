@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<h1>新着商品一覧</h1>
+	<h1>購入「商品一覧</h1>
 
 	<s:if test="purchaseHistoryList == null">
 		<h2>購入履歴はありません。</h2>
@@ -43,8 +43,8 @@
 				<td>個数</td>
 				<td>レビューボタン</td>
 			</tr>
-			<tr>
-				<s:iterator value="purchaseHistoryList">
+			<s:iterator value="purchaseHistoryList">
+				<tr>
 					<td><s:checkbox name="checkList" value="checked"
 							fieldValue="%{productId}" /></td>
 					<td><span><s:property value="productId" /></span></td>
@@ -60,8 +60,8 @@
 
 					<s:hidden name="registDate" value="%{registDate}" />
 					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>
-				</s:iterator>
-			</tr>
+				</tr>
+			</s:iterator>
 			<tr>
 				<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
 						<s:hidden name="deleteFlg" value="1" />
