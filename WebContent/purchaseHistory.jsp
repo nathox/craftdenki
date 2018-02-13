@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<h1>購入「商品一覧</h1>
+	<h1>購入商品一覧</h1>
 
 	<s:if test="purchaseHistoryList == null">
 		<h2>購入履歴はありません。</h2>
