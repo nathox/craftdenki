@@ -25,21 +25,32 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	public String execute() throws SQLException {
 
-//		int count = 0;
+		// int count = 0;
 		if (deleteFlg == null) {
 			String userId = session.get("trueID").toString();
 			purchaseHistoryList = dao.getPurchaseHistory(userId);
-			System.out.println("aaa");
+			System.out.println("ごぼう");
+			if (purchaseHistoryList.equals("[]")) {
+				System.out.println("はんぺん");
+			}
 			return SUCCESS;
+		} else if (deleteFlg.equals("1")) {
+			if (!(checkList == null)) {
+				for (String deleteId : checkList) {
+					System.out.println("DELETEID : " + deleteId);
+					dao.deleteHistoryInfo(deleteId);
+					result = "delete";
+					deleteFlg = null;
+					System.out.println("もちきん");
+					return result;
+				}
+			}
+			System.out.println("がんも");
+			result = "delete";
+			return result;
 		}
 
-		for (String deleteId:checkList) {
-			System.out.println("DELETEID : " + deleteId);
-			dao.deleteHistoryInfo(deleteId);
-				result = "delete";
-		}
-
-		if(reviewFlg == ("1")){
+		if (reviewFlg == "1") {
 			result = "review";
 			return result;
 		}
@@ -103,6 +114,4 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.reviewFlg = reviewFlg;
 	}
 
-
 }
-

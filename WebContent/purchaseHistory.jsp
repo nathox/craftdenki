@@ -18,9 +18,8 @@
 </script>
 
 
-
-
 <title>購入履歴</title>
+
 </head>
 <body>
 	<h1>新着商品一覧</h1>
@@ -34,21 +33,20 @@
 	</s:elseif>
 
 	<s:form id="form" name="form" action="PurchaseHistoryAction">
-		<s:iterator value="purchaseHistoryList">
-			<table>
-				<tr>
-					<td>チェック</td>
-					<td>商品ID</td>
-					<td>商品名</td>
-					<td>ふりがな</td>
-					<td>金額</td>
-					<td>個数</td>
-					<td>レビューボタン</td>
-				</tr>
-				<tr>
+		<table>
+			<tr>
+				<td>チェック</td>
+				<td>商品ID</td>
+				<td>商品名</td>
+				<td>ふりがな</td>
+				<td>金額</td>
+				<td>個数</td>
+				<td>レビューボタン</td>
+			</tr>
+			<tr>
+				<s:iterator value="purchaseHistoryList">
 					<td><s:checkbox name="checkList" value="checked"
 							fieldValue="%{productId}" /></td>
-
 					<td><span><s:property value="productId" /></span></td>
 					<s:hidden name="productId" value="%{productId}" />
 					<td><span><s:property value="productName" /></span></td>
@@ -62,15 +60,14 @@
 
 					<s:hidden name="registDate" value="%{registDate}" />
 					<td><s:submit value="レビュー" onclick="Review1Action();" /></td>
-					<td></td>
-				</tr>
-				<s:hidden name="deleteFlg" value="1" />
-				<tr>
-					<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();" /></td>
-
-				</tr>
-			</table>
-		</s:iterator>
+				</s:iterator>
+			</tr>
+			<tr>
+				<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
+						<s:hidden name="deleteFlg" value="1" />
+					</s:submit></td>
+			</tr>
+		</table>
 	</s:form>
 
 </body>
