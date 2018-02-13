@@ -27,7 +27,47 @@
 
 
 	<div>
-		<h3>カートの情報一覧を今から持ってくる</h3>
+		<h3>購入情報は以下になります。</h3>
+		<table border="1">
+			<tr>
+				<td>商品名</td>
+				<td>ふりがな</td>
+				<td>画像パス</td>
+				<td>値段</td>
+				<td>個数</td>
+				<td>発売会社</td>
+				<td>発売日</td>
+				<td>合計金額</td>
+			</tr>
+
+				<s:iterator value="cartList">
+				<tr>
+					<td><s:property value="productName" /></td>
+					<s:hidden name="productName" value="%{productName}" />
+
+					<td><s:property value="productNameKana" /></td>
+					<s:hidden name="productNameKana" value="%{productNameKana}" />
+
+					<td><s:property value="imageFilePath" /></td>
+					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
+
+					<td><s:property value="price" /><span>円</span></td>
+					<s:hidden name="price" value="%{price}" />
+
+					<td><s:property value="productCount" /><span>個</span></td>
+					<s:hidden name="productCount" value="%{productCount}" />
+
+					<td><s:property value="releaseCompany" /></td>
+					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+
+					<td><s:property value="releaseDate" /></td>
+					<s:hidden name="releaseDate" value="%{releaseDate}" />
+
+					<td><s:property value="totalPrice" /><span>円</span></td>
+					<s:hidden name="totalPrice" value="%{totalPrice}" />
+				</tr>
+				</s:iterator>
+		</table>
 	</div>
 
 

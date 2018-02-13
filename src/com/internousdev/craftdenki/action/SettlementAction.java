@@ -1,10 +1,12 @@
 package com.internousdev.craftdenki.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.SettlementDAO;
+import com.internousdev.craftdenki.dto.CartDTO;
 import com.internousdev.craftdenki.dto.SettlementDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,11 +25,24 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 	private String telNumber2;
 	private String telNumber3;
 
+	private String productName;
+	private String productNameKana;
+	private String imageFilePath;
+	private String productCount;
+	private String releaseCompany;
+	private String releaseDate;
+	private String totalPrice;
+	private int finalPrice;
+
 	private SettlementDAO settlementDAO = new SettlementDAO();
+	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 	private SettlementDTO dto = new SettlementDTO();
 
 	private Map<String, Object> session;
 
+
+
+	@SuppressWarnings("unchecked")
 	public String execute() {
 
 		System.out.println(session.get("trueID"));
@@ -61,6 +76,16 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 			session.put("telNumber2", telNumber2);
 			session.put("telNumber3", telNumber3);
 
+
+
+
+			//購入する商品の情報を持ってくる
+			cartList = (ArrayList<CartDTO>)session.get("cartList");
+			int size = cartList.size();
+			for(int i=0; i<size; i++){
+				finalPrice = finalPrice + cartList.get(i).getTotalPrice();
+			}
+
 			return SUCCESS;
 
 		} else { // ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす
@@ -70,6 +95,22 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 			return "login";
 		}
 
+	}
+
+	public ArrayList<CartDTO> getCartList() {
+		return cartList;
+	}
+
+	public void setCartList(ArrayList<CartDTO> cartList) {
+		this.cartList = cartList;
+	}
+
+	public int getFinalPrice() {
+		return finalPrice;
+	}
+
+	public void setFinalPrice(int finalPrice) {
+		this.finalPrice = finalPrice;
 	}
 
 	public String getUserId() {
@@ -150,6 +191,62 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 
 	public void setTelNumber3(String telNumber3) {
 		this.telNumber3 = telNumber3;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductNameKana() {
+		return productNameKana;
+	}
+
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
+	}
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+	}
+
+	public String getProductCount() {
+		return productCount;
+	}
+
+	public void setProductCount(String productCount) {
+		this.productCount = productCount;
+	}
+
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
 	public SettlementDAO getSettlementDAO() {
