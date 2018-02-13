@@ -13,18 +13,27 @@ public class StartAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 
-		if (!(session.containsKey("trueID"))) {
-			session.clear();
-		}
 
-		if (!(session.containsKey("trueId") || (session.containsKey("temp_user_id")))) {
 
+
+		if(!(session.containsKey("trueID"))){
+			System.out.println("本ログインしていない");
+			if(!(session.containsKey("temp_user_id"))){
+				System.out.println("仮持ってない");
 				Random rnd = new Random();
-
+				session.put("temp_user_id", rnd);
 				System.out.println("ランダム" + rnd + " = ランダムID");
 				System.out.println("仮ユーザーID発行");
-				session.put("temp_user_id", rnd);
+
+			}else{
+				System.out.println("仮ユーザーIDでログイン");
+			}
+		}else{
+			System.out.println("本ユーザーでログインしています");
 		}
+
+
+
 
 		return SUCCESS;
 	}
