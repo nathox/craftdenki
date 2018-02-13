@@ -9,15 +9,13 @@ import com.internousdev.craftdenki.util.DateUtil;
 
 public class SettlementCompleteDAO {
 
-	private DBConnector dbConnector = new DBConnector();
-
-	private Connection connection = dbConnector.getConnection();
-
 	private DateUtil dateUtil = new DateUtil();
 
 
 	//atCostを持ってくる
 	public int getCurrentCost(int productId)throws SQLException{
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
 
 		int currentCost = 0;
 		String sql = "SELECT current_cost FROM product_info WHERE product_id = ?";
@@ -36,6 +34,9 @@ public class SettlementCompleteDAO {
 
 	//商品購入履歴テーブルにインサート
 	public void insertPurchaseHistory(String userId,int productId,int productCount,int price,int atCost)throws SQLException{
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+
 		String sql ="INSERT INTO purchase_history_info(user_id,product_id,product_count,price,at_cost,regist_date) VALUES(?,?,?,?,?,?)";
 
 		try{
@@ -47,7 +48,7 @@ public class SettlementCompleteDAO {
 			ps.setInt(5, atCost);
 			ps.setString(6,dateUtil.getDate());
 
-			ps.executeQuery();
+			ps.executeUpdate();
 
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -60,13 +61,15 @@ public class SettlementCompleteDAO {
 
 	//カートの情報を削除
 	public void deleteCartInfo(String userId)throws SQLException{
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
 		String sql = "DELETE FROM cart_info WHERE user_id = ?";
 
 		try{
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, userId);
 
-			ps.executeQuery();
+			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

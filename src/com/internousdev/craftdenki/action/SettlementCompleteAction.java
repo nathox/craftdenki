@@ -41,7 +41,6 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 		cartList = (ArrayList<CartDTO>)session.get("cartList");
 		userId = session.get("trueID").toString();
 
-		System.out.println(cartList+"カーとリストです");
 		System.out.println(userId + "ユーザーID");
 
 
@@ -55,6 +54,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 
 
+
+		System.out.println(productId +"商品IDです");
 
 		//atCostをproduct_infoテーブルから持ってくる
 		for(int i=0; i<cartList.size(); i++){
