@@ -13,7 +13,7 @@ public class UserCreateCompleteDAO {
 	private Connection connection=dbConnector.getConnection();
 	private DateUtil dateUtil=new DateUtil();
 
-	private String sql1="INSERT INTO user_info (user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,secret_question,secret_answer,regist_date)"
+	private String sql1="INSERT INTO user_info (user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,question,answer,regist_date)"
 			+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
 	private String sql2="INSERT INTO destination_info(user_id,user_address,tel_number) VALUES(?,?,?)";

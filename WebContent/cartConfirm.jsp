@@ -41,8 +41,9 @@
 				<td>発売日</td>
 				<td>合計金額</td>
 			</tr>
-			<tr>
+
 				<s:iterator value="cartList">
+				<tr>
 					<td><s:checkbox name="delete" value="checked"
 							fieldValue="%{id}" /></td>
 
@@ -69,8 +70,8 @@
 
 					<td><s:property value="totalPrice" /><span>円</span></td>
 					<s:hidden name="totalPrice" value="%{totalPrice}" />
+				</tr>
 				</s:iterator>
-			</tr>
 			<tr>
 				<td><s:submit value="削除" onclick="GoCartAction();" /></td>
 				<td><s:submit value="決済" onclick="SettlementAction();" /></td>

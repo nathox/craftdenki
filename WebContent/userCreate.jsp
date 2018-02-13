@@ -54,7 +54,7 @@
     <input type="radio" name="sex" value="1">女<br>
 </s:else>
 メールアドレス:<input type="email" name="mail"
-			value='<s:property value="mail"/>' placeholder="info@example.com" />
+			value='<s:property value="mail"/>' placeholder="info@example.com" class="validate[required]" />
 		<br>
 <s:if test="secretQuestion==1">
 秘密の質問:<select name="secretQuestion" id="secretQuestion" class="validate[required]">
@@ -90,16 +90,16 @@
 </s:else>
 
 答え:<input type="text" name="secretAnswer"
-			value='<s:property value="secretAnswer"/>'>
+			value='<s:property value="secretAnswer" class="validate[required]"/>'>
 		<br>
 郵便番号(7桁):<input type="text" name="yuubin"
 			value='<s:property value="yuubin"/>' size="10" maxlength="8"
 			onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
 		<br>
 住所:<input type="text" name="address"
-			value='<s:property value="address"/>' size="60">
+			value='<s:property value="address"/>' size="60" class="validate[required]">
 		<br>
-電話番号:<input type="text" name="tel" value='<s:property value="tel"/>'
+電話番号:<input type="text" name="tel" value='<s:property value="tel" class="validate[required]"/>'
 			required>
 		<s:submit value="登録" />
 	</s:form>
