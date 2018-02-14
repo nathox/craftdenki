@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/enna.css" rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -15,20 +16,20 @@
 		document.getElementById('form').action = "SettlementAction";
 	}
 
-
 </script>
 
 
 <title>cart画面</title>
 
+
 </head>
 <body>
-
+<div class="a">
 <!-- ヘッダー -->
 <jsp:include page="home.jsp" />
+</div>
 
-
-
+<div class="b">
 	<s:if test="cartList == null">
 		<h3>ご購入情報はありません。</h3>
 	</s:if>
@@ -98,6 +99,8 @@
 	<s:form action="SettlementAction">
 		<s:submit value="決済画面へ(仮置き)" />
 	</s:form>
+
+</div>
 
 </body>
 </html>

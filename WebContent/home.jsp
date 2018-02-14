@@ -20,13 +20,11 @@
 
 </head>
 <body>
-<div id="containar">
 
 <header>
 	<div class="img">
 		<div class="title">CraftDenki</div>
 
-			<div class="enna_search">
 			<s:form method="post" action="ItemSearchAction" class="kensaku">
 				<select name="category">
 					<option value="0" selected="selected">すべてのカテゴリー</option>
@@ -37,27 +35,28 @@
 				<s:textfield name="searchWord" maxlength="16" />
 				<s:submit value="検索" />
 			</s:form>
-			</div>
 
 			<div class="bar">
 
 				<s:if test="session.trueID != null">
-					<span class="enna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
+					<span><a href='<s:url action="LogoutAction" />'>ログアウト</a></span>
 				</s:if>
 				<s:else>
-					<span class="enna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
+					<span><a href='<s:url action="GoLoginAction" />'>ログイン</a></span>
 				</s:else>
 
 
-				<span class="enna_a"><a href='<s:url action="GoMyPageAction" />' class="button">マイページ</a></span>
+				<span><a href='<s:url action="GoMyPageAction" />'>マイページ</a></span>
 
-				<span class="enna_a"><a href='<s:url action="GoCartAction" />' class="button">カート</a></span>
+				<span><a href='<s:url action="GoCartAction" />'>カート</a></span>
 
-				<span class="enna_a"><a href='<s:url action="ProductListAction" />' class="button">商品一覧</a></span>
+				<span><a href='<s:url action="ProductListAction" />'>商品一覧</a></span>
 
 			</div>
 
 	</div>
+
+
 </header>
 
 
@@ -109,6 +108,5 @@
 	</s:form>
 	-->
 
-</div>
 </body>
 </html>

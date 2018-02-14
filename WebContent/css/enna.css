@@ -41,29 +41,21 @@
 
 
 
+        header{
+            width:100%;
+            height:100px;
+            line-height:30px;
+        }
 
+/*-------------------背景イメージ-----------------------*/
         .img{
             background-image: url("../images/danbo.jpg");
             width:100%;
             top:100px;
             bottom:50px;
-                }
-
-
-
-
-
-        header{
-            width:100%;
-            height:100px;
-            line-height:50px;
         }
 
-        .button{
-        	width:25%;
-        }
-
-
+/*-------------------メニューバー-----------------------*/
         .bar {
 		  width:100%;
 		  text-align: center;
@@ -71,20 +63,14 @@
 		}
 
 		.bar a {
-		  text-decoration: none;
-		  color: #fff;
-		  font-weight: bold;
-		}
-
-		.enna_a{
+			text-decoration: none;
+		  	color: #fff;
+		  	font-weight: bold;
 			margin:10%;
 		}
 
-		.enna_search{
-			padding-bottom:20px;
-		}
 
-
+/*-------------------タイトル-----------------------*/
         .title{
             font-family: 'Press Start 2P', cursive;
             font-size:80px;
@@ -93,16 +79,13 @@
             text-align: center;
                 }
 
-        .img{
-            background-image: url("../images/danbo.jpg");
-            width:100%;
-            top:100px;
-            bottom:50px;
-                }
-
+/*-------------------検索-----------------------*/
         .kensaku{
             text-align: center;
+			padding-bottom:20px;
         }
+
+
 
         #containar{
 			top: 0px;
@@ -111,45 +94,3 @@
         }
 
 
-/* ヘッダー部分　ここまで　 */
-    </style>
-
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
-</head>
-
-
-
-
-
-
-
-<body>
-
-<div class="img">
-<div class="title">
-    CraftDenki
-</div>
-
-
-<header>
-<form class="kensaku">
-<input type="text">
-    <submit value="検索"></submit>
-</form>
-
-<ul>
-    <li>ログイン</li>
-    <li>マイページ</li>
-    <li>カート</li>
-    <li>商品一覧</li>
-</ul>
-</header>
-</div>
-
-
-
-
-
-</body>
-</html>
