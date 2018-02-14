@@ -9,12 +9,7 @@
 <link rel="stylesheet" type="text/css" href="./css/productList.css">
 <title>商品一覧画面</title>
 
-<style type="text/css">
-#productList {
-	border: 1px solid #b1b1b1;
-	border-collapse: collapse;
-}
-</style>
+
 
 </head>
 <body>
@@ -28,27 +23,30 @@
 				<s:property value="searchMessage" escape="false" />
 			</h3>
 		</s:if>
-		<ul id="productList">
+		<ul  class="thumbnail clearFix">
 			<s:iterator value="productList">
 				<a href="<s:url action="ProductDetailsAction">
 			 <s:param name="product_id" value="%{product_id}" />
 			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
                     <li>
-                        <img class="image" src="<s:property value='image_file_path'/>" alt="" width="300" height="200">
 					   <dl>
-                            <dt class="text">
-	                            商品名かな:
-	                            <s:property value="product_name_kana" />
-                            </dt>
-                            <dt class="text">
-	                            商品名:
-	                            <s:property value="product_name" />
-                            </dt>
-	                            <dt class="price">
-	                            価格:￥
-	                            <s:property value="price" />
-	                            円
-                            </dt>
+					   		<dt>
+					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
+					   		</dt>
+					   		<div class="box1">
+                            <dd>
+	                            <div class="list">商品名かな:
+	                           		<s:property value="product_name_kana" />
+	                            </div>
+	                            <div class="list">商品名:
+	                            	<s:property value="product_name" />
+	                            </div>
+	                            <div class="list">価格:￥
+	                            	<s:property value="price" />
+	                            	円
+	                            </div>
+                            </dd>
+                            </div>
                             	<s:hidden name="product_id" value="%{product_id}" />
                         </dl>
                     </li>
@@ -56,7 +54,5 @@
 			</s:iterator>
 		</ul>
 	</div>
-
-
 </body>
 </html>

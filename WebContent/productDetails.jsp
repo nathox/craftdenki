@@ -18,6 +18,50 @@
 	border: 1px solid #b1b1b1;
 	border-collapse: collapse;
 }
+
+h1{
+text-align:center;
+}
+
+.DetailsList{
+text-align:center;
+width:40%;
+margin-left:auto;
+margin-right:auto;
+}
+
+.reviewList{
+text-align:center;
+}
+
+.img{
+border: 1px solid #b1b1b1;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+margin-top:30px;
+margin-bottom:30px;
+}
+
+.list{
+margin:0;
+padding:0;
+text-align:left;
+margin-right:auto;
+border-bottom: 1px solid #b1b1b1;
+border-collapse: collapse;
+}
+
+.box1{
+border: 1px solid #b1b1b1;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+margin-top:30px;
+margin-bottom:30px;
+}
+
+
 </style>
 <script type="text/javascript">
 	function goCartAction() {
@@ -37,40 +81,42 @@
 		<h1>商品詳細</h1>
 		<s:iterator value="detailsList">
 			<div id="detailsList">
-				<div>
+			<div class="img">
+				<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
+			</div>
+			<div class="box1">
+				<div class="list">
 					商品名かな:
 					<s:property value="product_name_kana" />
 				</div>
-				<div>
+				<div class="list">
 					商品名:
 					<s:property value="product_name" />
 				</div>
-				<div>
+				<div class="list">
 					商品詳細:
 					<s:property value="product_description" />
 				</div>
-				<div>
+				<div class="list">
 					価格:￥
 					<s:property value="price" />
 					円
 				</div>
-				<div>
+				<div class="list">
 					発売日:
 					<s:property value="release_date" />
 				</div>
-				<div>
+				<div class="list">
 					販売会社:
 					<s:property value="release_company" />
 				</div>
-				<div>
+				<div class="list">
 					在庫:
 					<s:property value="item_stock" />
 					個
 				</div>
-
-				<img class="image" src="<s:property value='image_file_path'/>">
-
 			</div>
+		</div>
 		</s:iterator>
 
 		<s:if test="reviewList.size != 0 ">

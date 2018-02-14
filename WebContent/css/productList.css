@@ -1,18 +1,81 @@
-#productList{
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
+/* --- リストエリア --- */
+ul.thumbnail {
+width: 80%; /* リストエリアの幅 */
+margin: 0;
+padding: 30px 0 0; /* リストエリアのパディング（上、左右、下） */
+list-style-type: none;
+margin-left:auto;
+margin-right:auto;
+}
 
+/* --- リスト項目 --- */
+ul.thumbnail li {
+width: 320px; /* 項目の幅 */
+float: left;
 }
-#productList li{
-  box-sizing: border-box;
-  padding: 15px 0;
-  text-align: center;
-  flex-grow: 1;
-  border: 1px solid #333;
-  background: #ccc;
-  margin-top: 20px;
+
+/* --- 項目内容 --- */
+ul.thumbnail dl {
+width: 280px; /* 内容の幅 */
+margin: 0 auto; /* 内容のセンタリング */
+font-size: 80%;
+text-align:center;
 }
+
+/* --- 写真エリア --- */
+ul.thumbnail dt {
+/* height: 102px; */ /* 写真エリアの高さ（dt要素の高さを指定する場合） */
+margin: 30px 0; /* 写真エリアの下マージン */
+}
+ul.thumbnail dt img {
+border: 1px #808080 solid; /* 写真の境界線 */
+}
+
+/* --- キャプションエリア --- */
+ul.thumbnail dd {
+margin: 0 0 3px; /* キャプションエリアのマージン（上、左右、下） */
+height: 6.5em; /* キャプションエリアの高さ */
+
+
+margin:0;
+padding:0;
+text-align:left;
+margin-right:auto;
+border-collapse: collapse;
+}
+
+/* --- clearfix --- */
+.clearFix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.clearFix {
+min-height: 1px;
+}
+
+li{
+border: 1px solid #b1b1b1;
+margin: 15px;
+}
+
+h1{
+	text-align:center;
+}
+
+.box1{
+border: 1px solid #b1b1b1;
+width:90%;
+margin-left:auto;
+margin-right:auto;
+margin-top:30px;
+margin-bottom:30px;
+}
+
+.list{
+border-bottom: 1px solid #b1b1b1;
+}
+
+
