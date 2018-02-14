@@ -11,7 +11,7 @@ public class GoLoginAction extends ActionSupport implements SessionAware {
 	private Map<String,Object>session;
 
 	public String execute() {
-		session.put("trueID", null);
+		session.put("trueID", "0");
 
 		return SUCCESS;
 	}

@@ -38,11 +38,11 @@
 
 			<div class="bar">
 
-				<s:if test="session.trueID != null">
-					<span class="ennna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
+				<s:if test='%{#session.trueID == "0"}'>
+					<span class="ennna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
 				</s:if>
 				<s:else>
-					<span class="ennna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
+					<span class="ennna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
 				</s:else>
 
 
