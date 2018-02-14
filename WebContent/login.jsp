@@ -10,6 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>Insert title here</title>
 
@@ -22,7 +23,6 @@
 	padding: 20px;
 	border: 2px solid black;
 	position: absolute;
-	top: 30%;
 	left: 10%;
 }
 
@@ -33,7 +33,6 @@
 	padding: 20px;
 	border: 2px solid black;
 	position: absolute;
-	top: 30%;
 	left: 60%;
 }
 
@@ -44,7 +43,6 @@
 
 <jsp:include page="home.jsp"/>
 
-	<div id="header"></div>
 	<div class="top">
 		<s:form action="LoginAction">
 			<table>
@@ -98,6 +96,6 @@
 		</s:form>
 
 	</div>
-	<div id="footer"></div>
+
 </body>
 </html>
