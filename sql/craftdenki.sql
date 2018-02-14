@@ -96,9 +96,9 @@ price int,
 at_cost double, -- ----------------- NEW -------------------
 regist_date datetime,
 update_date datetime,
-status int default 0
+status int default 0,
 image_file_path varchar(100),
-image_file_name varchar(50),
+image_file_name varchar(50)
 );
 
 drop table if exists destination_info;
@@ -351,9 +351,9 @@ INSERT INTO favorite_info VALUES(1,"test",10000001,"2016/01/01");
 INSERT INTO favorite_info VALUES(2,"test1",10000002,"2016/01/01");
 
 
-INSERT INTO review_info VALUES(1,"test",10000028,"2016/01/01","いいキーボードです",3);
-INSERT INTO review_info VALUES(2,"test",10000029,"2016/01/01","いい本です",1);
-INSERT INTO review_info VALUES(3,"test1",10000028,"2016/01/01","いいキーボードだった",5);
+INSERT INTO review_info VALUES(1,"test",10000004,"2016/01/01","いいキーボードです",3);
+INSERT INTO review_info VALUES(2,"test",10000004,"2016/01/01","いい本です",1);
+INSERT INTO review_info VALUES(3,"test1",10000004,"2016/01/01","いいキーボードだった",5);
 
 
 
