@@ -35,6 +35,7 @@
 				<s:textfield name="searchWord" maxlength="16" />
 				<s:submit value="検索" />
 			</s:form>
+	</div>
 
 			<div class="bar">
 
@@ -54,7 +55,7 @@
 
 			</div>
 
-	</div>
+
 
 
 </header>
