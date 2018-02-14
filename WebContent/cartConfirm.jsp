@@ -24,12 +24,12 @@
 
 </head>
 <body>
-<div class="a">
+
 <!-- ヘッダー -->
 <jsp:include page="home.jsp" />
-</div>
 
-<div class="b">
+
+
 	<s:if test="cartList == null">
 		<h3>ご購入情報はありません。</h3>
 	</s:if>
@@ -100,7 +100,7 @@
 		<s:submit value="決済画面へ(仮置き)" />
 	</s:form>
 
-</div>
+
 
 </body>
 </html>
