@@ -14,38 +14,42 @@ import com.opensymphony.xwork2.ActionSupport;
 public class PurchaseHistoryAction extends ActionSupport implements SessionAware {
 
 	private Map<String, Object> session;
-	private PurchaseHistoryDAO dao = new PurchaseHistoryDAO();
+
 	private ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 	private String deleteFlg;
 	private String userId;
-	private String result;
+
 	private Collection<String> checkList;
 	private String product_id;
 	private String reviewFlg;
+	private String message;
 
 	public String execute() throws SQLException {
-
+		String result=ERROR;
+		PurchaseHistoryDAO dao = new PurchaseHistoryDAO();
 		// int count = 0;
 		if (deleteFlg == null) {
+			message=null;
+			session.put("trueID", "test");
 			String userId = session.get("trueID").toString();
 			purchaseHistoryList = dao.getPurchaseHistory(userId);
-			System.out.println("ごぼう");
 			if (purchaseHistoryList.equals("[]")) {
-				System.out.println("はんぺん");
+
 			}
 			return SUCCESS;
 		} else if (deleteFlg.equals("1")) {
+			message=null;
 			if (!(checkList == null)) {
 				for (String deleteId : checkList) {
 					System.out.println("DELETEID : " + deleteId);
 					dao.deleteHistoryInfo(deleteId);
 					result = "delete";
 					deleteFlg = null;
-					System.out.println("もちきん");
+
 					return result;
 				}
 			}
-			System.out.println("がんも");
+
 			result = "delete";
 			return result;
 		}
@@ -113,5 +117,15 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	public void setReviewFlg(String reviewFlg) {
 		this.reviewFlg = reviewFlg;
 	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
 
 }

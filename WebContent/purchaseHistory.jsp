@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/enna.css" rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -72,14 +73,13 @@ line-height:110px;
 bottom:120px;
 }
 
-.delete{
+.deleteAll{
 float:right;
 margin-right:50px;
 }
 
-.header{
-margin-bottom:130px;
-}
+
+
 
 
 </style>
@@ -87,16 +87,14 @@ margin-bottom:130px;
 </head>
 <body>
 
-<!-- ヘッダー -->
-<div class="header"><jsp:include page="home.jsp" /></div>
+<jsp:include page="home.jsp" />
 
 
 	<h1>購入商品一覧</h1>
 
-	<s:if test="purchaseHistoryList == null">
+	<s:if test="purchaseHistoryList.size()==0">
 		<h2>購入履歴はありません。</h2>
 	</s:if>
-
 	<s:elseif test="message == null">
 		<a>購入情報は以下になります。</a>
 	</s:elseif>
@@ -122,13 +120,13 @@ margin-bottom:130px;
 					<li>個数:<span><s:property value="count" />個</span></li>
 					<s:hidden name="count" value="%{count}" />
 
-					<li><s:property value="releaseCompany" /></li>
+					<li>発売会社名<s:property value="releaseCompany" /></li>
 					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
-					<li>発売会社名:<s:property value="releaseDate" /></li>
+					<li>発売年月日:<s:property value="releaseDate" /></li>
 					<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-					<li>発売年月日:<s:property value="imageFilePath" /></li>
+					<li><img src='<s:property value="imageFilePath" />'/></li>
 					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
 					<s:hidden name="registDate" value="%{registDate}" />
@@ -138,7 +136,8 @@ margin-bottom:130px;
 				<div class="review"><s:submit value="レビュー" onclick="Review1Action();" /></div>
 			</s:iterator>
 			<tr>
-				<div class="delete"><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
+
+				<div class="deleteAll"><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
 						<s:hidden name="deleteFlg" value="1" />
 					</s:submit></div>
 			</tr>
