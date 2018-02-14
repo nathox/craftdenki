@@ -25,6 +25,7 @@
 	<div class="img">
 		<div class="title">CraftDenki</div>
 
+			<div class="enna_search">
 			<s:form method="post" action="ItemSearchAction" class="kensaku">
 				<select name="category">
 					<option value="0" selected="selected">すべてのカテゴリー</option>
@@ -35,14 +36,15 @@
 				<s:textfield name="searchWord" maxlength="16" />
 				<s:submit value="検索" />
 			</s:form>
+			</div>
 
 			<div class="bar">
 
-				<s:if test='%{#session.trueID == "0"}'>
-					<span class="ennna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
+				<s:if test="session.trueID != null">
+					<span class="ennna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
 				</s:if>
 				<s:else>
-					<span class="ennna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
+					<span class="ennna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
 				</s:else>
 
 
