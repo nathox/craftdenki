@@ -25,14 +25,14 @@
 </script>
 
 </head>
-<body>
+<body class="back-image">
 	<div id="main">
 		<s:if test="productList != null">
-			<div id="top">
+			<div id="m-title">
 				<p>商品管理画面</p>
 			</div>
 			<div>
-				<p class="index">商品一覧</p>
+				<p class="m-index">商品一覧</p>
 				<div class="errorMessage">
 					<s:iterator value="errorSupplyMessageList">
 						<s:div>
@@ -41,7 +41,7 @@
 					</s:iterator>
 				</div>
 				<table class="manageTable">
-					<s:form name="form" action="CheckSupplyAction">
+					<s:form id="form" name="form">
 						<tr>
 							<th>ID</th>
 							<th>商品名</th>
@@ -97,7 +97,7 @@
 				</table>
 			</div>
 		</s:if>
-		<p  class="index">新商品登録</p>
+		<p  class="m-index">新商品登録</p>
 		<div class="errorMessage">
 			<s:iterator value="errorMessageList">
 				<s:div>
