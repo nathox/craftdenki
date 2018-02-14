@@ -112,6 +112,7 @@
 	</tr>
 	</s:if>
 </table>
+<span>宛先の住所を変更、追加するには<a href='<s:url action="UserInfoChangeAction"/>'>こちら</a></span>
 
 <br>
 <s:submit value="けってい" />

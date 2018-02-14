@@ -37,11 +37,10 @@
 
 
 
-		<h2>購入が完了しました</h2>
-		<p>「5秒後に自動でHome画面に戻す」ってしたいのでなかじーさんやり方教えてください</p>
-		<s:form action="StartAction">
-			<s:submit value="Homeに戻る"/>
-		</s:form>
+		<h2>購入が完了しました。５秒後に自動的にHome画面に切り替わります。</h2>
+		<span>自動で切り替わらない場合には<a href='<s:url action="StartAction"/>'>こちら</a></span>
+
+
 	</div>
 
 	</div>

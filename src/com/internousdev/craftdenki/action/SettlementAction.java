@@ -45,6 +45,8 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 	@SuppressWarnings("unchecked")
 	public String execute() {
 
+		session.put("payment", "payment");//userInfoChangeから帰ってくるためのフラグ
+
 		System.out.println(session.get("trueID"));
 
 		if (session.containsKey("trueID")) {
@@ -91,7 +93,6 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 		} else { // ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす
 
 			session.put("status", "settlement"); // login画面から帰ってくるためのフラグ
-
 			return "login";
 		}
 
