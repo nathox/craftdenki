@@ -20,7 +20,7 @@
 
 </head>
 <body>
-
+<div class="a">
 <header>
 	<div class="img">
 		<div class="title">CraftDenki</div>
@@ -108,6 +108,6 @@
 		<s:submit value="決済画面へ(仮置き)" style="WIDTH:200px;" />
 	</s:form>
 	-->
-
+</div>
 </body>
 </html>
