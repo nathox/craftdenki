@@ -45,7 +45,7 @@
 	岡本
 -------------------------------------*/
 
-	/* managerHome */
+/* managerHome */
 	.icon{
 		position: relative;
 		overflow: hidden;
@@ -59,13 +59,13 @@
 		background-color: #0080ff;
 	}
 
-	/* 見出し */
+/* 見出し */
 	.index{
 		font-size: 32px;
 		margin-left: 5%;
 		font-weight: bold;
 	}
-	/* 管理者テーブル */
+/* 管理者テーブル */
 	table.manageTable table, table.manageTable th, table.manageTable td {
 		border-collapse: collapse;
 		border: 1px solid #ccc;
@@ -89,22 +89,100 @@
 		background: #d9d9d9;
 	}
 
-	/* 数値入力を右寄せ */
+/* 数値入力を右寄せ */
 	.numberInput{
 		text-align: right;
 		width: 30px;
 	}
 
-	/* エラーメッセージ */
+/* エラーメッセージ */
 	.errorMessage{
 		color: red;
 		text-align: center;
 		padding-bottom:40px;
 	}
 
-	/* 管理者ボタン */
-	.mButton{
-		font-weight: bold;
-		background: #3f3f3f;
-		color: #ffffff;
-	}
+/* 管理者ボタン */
+	/* 基本 */
+		.mButton{
+			border-radius: 5px;        /* CSS3草案 */
+		    -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+		    -moz-border-radius: 5px;   /* Firefox用 */
+		    font-weight: bold;
+			background: #3f3f3f;
+			color: #ffffff;
+			box-shadow: 0 2px black;
+		}
+	/* エフェクト */
+		.mButton:hover {
+	        -ms-transform: translateY(2px);
+		    -webkit-transform: translateY(2px);
+		    transform: translateY(2px);
+		    border-bottom: none;
+		    box-shadow: none;
+		}
+	/* 入力フォーム内 */
+		.input-form .mButton{
+			width: 100px;
+			margit: 10px;
+		}
+
+/* 入力フォーム */
+	/* 基本 */
+		.input-form {
+			margin-left: 15%;
+	    	position: relative;
+	    	padding-top: 1.5rem;
+		}
+		.input-form input[type="text"],
+		.input-form select,
+		.input-form textarea {
+		    padding: 0.8em;
+		    outline: none;
+		    border: 1px solid #DDD;
+		    font-size: 16px;
+		}
+		.input-form textarea {
+			width: 300px;
+			height: 100px;
+		}
+	/* エフェクト */
+		.input-form input[type="text"]:focus,
+		.input-form select:focus,
+		.input-form textarea:focus,
+		.input-form texture:focus {
+		    box-shadow: 0 0 7px #3498db;  /* 入力欄の色を変える */
+		    border: 1px solid #3498db;    /* 入力欄の色を変える */
+		    width: 500px;                 /* 入力欄の幅を伸ばす */
+		}
+	/* placeholderを入力後フォームの右へ表示 */
+		label {
+		    top: 0;
+		    font-size: var(--font-size-small);
+		    opacity: 1;
+		    transform: translateY(0);
+		    transition: all 0.2s ease-out;
+		}
+
+		input:placeholder-shown + label {
+		    opacity: 0;
+		    transform: translateY(1rem);
+		}
+
+
+	/* 入力項目名 */
+		.input-form span{
+			font-size:20px;
+			font-weight: bold;
+		}
+
+	/* 必須 */
+		.input-form  .hissu{
+			font-size:10px;
+			padding: 5px;
+			color: white;
+			background-color: red;
+			border-radius: 5px;        /* CSS3草案 */
+		    -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+		    -moz-border-radius: 5px;   /* Firefox用 */
+		}

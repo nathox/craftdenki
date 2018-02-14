@@ -5,62 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="Content-Style-Type" content="text/css"/>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/okamoto.css">
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
 <meta name="keywords" content=""/>
 <title>商品変更画面</title>
 
-<style type="text/css">
-	/* ========TAG LAYOUT======== */
-	body{
-		margin:0;
-		padding:0;
-		line-height:1.6;
-		letter-spacing:1px;
-		font-family:Verdana,Helvetica,sans-serif;
-		font-size:12px;
-		color:#333;
-		background:#fff;
-	}
-	table{
-		text-align:center;
-		margin:0 auto;
-	}
-	/* ========ID LAYOUT========*/
-	#top{
-		width:780px;
-		margin:30px auto;
-		border:1px solid #333;
-	}
-	#header{
-		width:100%;
-		height:80px;
-		background-color:black;
-	}
-	#main{
-		width:100%;
-		height:500px;
-		text-align:center;
-	}
-	#footer{
-		width:100%;
-		height:80px;
-		background-color: black;
-		clear:both;
-	}
-	#text-link{
-		display:inline-block;
-		text-align:right;
-	}
-</style>
+
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
 	<div id="main">
 		<div id="top">
 			<p>商品変更画面</p>
@@ -72,36 +27,40 @@
 				</s:div>
 			</s:iterator>
 		</div>
-		<div>
-			<s:form action="CheckProductChangeAction">
+		<div class="input-form">
+			<s:form action="CheckProductChangeAction" >
 				<s:hidden name="id" value="%{id}"/>
 				<span>商品ID</span>
 				<span>必須</span>
 				<div>
-					<s:textfield name="productId" value="%{productId}" placeholder="半角数字8桁 例)12345678"/>
+					<s:textfield  name="productId" value="%{productId}" placeholder="半角数字8桁 例)12345678"/>
+					<label for="dynamic-label-input">半角数字8桁 例)12345678</label>
 				</div>
 
 				<span>商品名</span>
 				<span>必須</span>
 				<div>
-					<s:textfield name="productName" value="%{productName}" placeholder="半角数字8桁 例)12345678"/>
+					<s:textfield name="productName" value="%{productName}" placeholder="50字以内 例)除脂肪メソッド8"/>
+					<label for="dynamic-label-input">50字以内 例)除脂肪メソッド</label>
 				</div>
 
 				<span>商品名かな</span>
 				<span>必須</span>
 				<div>
 					<s:textfield name="productNameKana" value="%{productNameKana}" placeholder="ひらがな 例)じょしぼうめそっど"/>
+					<label for="dynamic-label-input">ひらがな 例)じょしぼうめそっど</label>
 				</div>
 
 				<span>商品詳細</span>
 				<div>
-					<s:textfield name="productDescription" value="%{productDescription}" placeholder="例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
+					<s:textarea name="productDescription" value="%{productDescription}" placeholder="250字以内 例)岡田隆先生の著書。ダイエット・減量の入門書!!"/>
+					<label for="dynamic-label-input">250字以内 例)岡田隆先生の著書。ダイエット・減量の入門書!!</label>
 				</div>
 
 				<span>カテゴリID</span>
 				<span>必須</span>
 				<div>
-					<s:select name="categoryId" list="categoryList" listValue="categoryName" listKey="categoryId" value="categoryId">
+					<s:select name="categoryId" list="categoryList" listValue="categoryName" listKey="categoryId">
 					</s:select>
 				</div>
 
@@ -109,29 +68,29 @@
 				<span>必須</span>
 				<div>
 					<s:textfield name="price" value="%{price}" placeholder="半角数字 例)1300"/>
+					<label for="dynamic-label-input">半角数字 例)1300</label>
 				</div>
 
 				<span>画像ファイル名</span>
 				<div>
-					<s:textfield name="imageFileName" value="%{imageFileName}" placeholder="ファイル名.拡張子例)bazooka"/>
+					<s:textfield name="imageFileName" value="%{imageFileName}" placeholder="ファイル名.拡張子 例)bazooka"/>
+					<label for="dynamic-label-input">ファイル名.拡張子 例)bazooka</label>
 				</div>
 
 				<span>発売年月</span>
 				<div>
 					<s:textfield name="releaseDate" value="%{releaseDate}" placeholder="yyyy/MM 例)2018年2月は2017/02"/>
+					<label for="dynamic-label-input">yyyy/MM 例)2018年2月は2017/02</label>
 				</div>
 
 				<span>発売会社</span>
 				<div>
-					<s:textfield name="releaseCompany" value="%{releaseCompany}" placeholder="例)ベースボール・マガジン社"/>
+					<s:textfield name="releaseCompany" value="%{releaseCompany}" placeholder="16字以内 例)ベースボール・マガジン社"/>
+					<label for="dynamic-label-input">16字以内 例)ベースボール・マガジン社</label>
 				</div>
 
-				<s:submit value="登録"/>
+				<s:submit value="登録" class="mButton"/>
 			</s:form>
-		</div>
-	</div>
-	<div id="footer">
-		<div id="pr">
 		</div>
 	</div>
 </body>

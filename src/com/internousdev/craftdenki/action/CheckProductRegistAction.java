@@ -2,11 +2,14 @@ package com.internousdev.craftdenki.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.craftdenki.dao.CategoryDAO;
 import com.internousdev.craftdenki.dao.ProductListDAO;
+import com.internousdev.craftdenki.dto.CategoryDTO;
 import com.internousdev.craftdenki.util.ErrorMessageList;
 import com.internousdev.craftdenki.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -21,10 +24,12 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 	private String newReleaseDate; //発売年月
 	private String newReleaseCompany; //発売会社
 	private String newProductImage; //画像ファイル名
+	private String categoryName; //カテゴリ名
 
 	private ArrayList<String> errorMessageList = new ArrayList<>();
 	private Map<String, Object> session;
 	private String errorMessage;
+	private List<CategoryDTO> categoryList = new ArrayList<CategoryDTO>();
 
 
 
@@ -33,6 +38,17 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 
 		if(true){      //管理者判定
 			result = SUCCESS;
+
+			//カテゴリテーブルよりカテゴリリストを取得
+			CategoryDAO categoryDAO = new CategoryDAO();
+			categoryList = categoryDAO.getCategoryInfo();
+			//カテゴリ名を取得
+			for(int i = 0; i < categoryList.size(); i++) {
+				if(categoryList.get(i).getCategoryId().equals(newCategoryId)) {
+					this.categoryName = categoryList.get(i).getCategoryName();
+				}
+			}
+
 
 			ProductListDAO dao = new ProductListDAO();
 
@@ -141,16 +157,6 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 
 
 
-	public String getNewCategoryId() {
-		return newCategoryId;
-	}
-
-
-
-	public void setNewCategoryId(String newCategoryId) {
-		this.newCategoryId = newCategoryId;
-	}
-
 
 
 	public String getNewBuyPrice() {
@@ -230,6 +236,36 @@ public class CheckProductRegistAction extends ActionSupport implements SessionAw
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+
+	public String getNewCategoryId() {
+		return newCategoryId;
+	}
+
+
+	public void setNewCategoryId(String newCategoryId) {
+		this.newCategoryId = newCategoryId;
+	}
+
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+
+	public List<CategoryDTO> getCategoryList() {
+		return categoryList;
+	}
+
+
+	public void setCategoryList(List<CategoryDTO> categoryList) {
+		this.categoryList = categoryList;
 	}
 
 
