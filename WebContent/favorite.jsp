@@ -6,6 +6,7 @@
 <head>
 <link href="css/enna.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/craftdenki.css" rel="stylesheet">
 <title>Insert title here</title>
 
 <script>
@@ -92,49 +93,10 @@ margin-bottom:130px;
 
 </head>
 <body>
-<header>
-	<div class="img">
-		<div class="title">CraftDenki</div>
-
-			<div class="enna_search">
-			<s:form method="post" action="ItemSearchAction" class="kensaku">
-				<select name="category">
-					<option value="0" selected="selected">すべてのカテゴリー</option>
-					<option value="1">本</option>
-					<option value="2">家電・パソコン</option>
-					<option value="3">おもちゃ・げーむ</option>
-				</select>
-				<s:textfield name="searchWord" maxlength="16" />
-				<s:submit value="検索" />
-			</s:form>
-			</div>
-
-			<div class="bar">
-
-				<s:if test="session.trueID != null">
-					<span class="enna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
-				</s:if>
-				<s:else>
-					<span class="enna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
-				</s:else>
-
-
-				<span class="enna_a"><a href='<s:url action="GoMyPageAction" />' class="button">マイページ</a></span>
-
-				<span class="enna_a"><a href='<s:url action="GoCartAction" />' class="button">カート</a></span>
-
-				<span class="enna_a"><a href='<s:url action="ProductListAction" />' class="button">商品一覧</a></span>
-
-			</div>
-
-	</div>
-</header>
-
+<jsp:include page="home.jsp" />
 
 <main>
 
-
-<br><br><br><br><br><br><br>
 	<p>★お気に入りリスト★</p>
 	<s:form id="form" name="form" action="FavoriteAction">
 		<table border="0" cellspacing="0">
