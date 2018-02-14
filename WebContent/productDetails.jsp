@@ -17,9 +17,14 @@
 #reviewList {
 	border: 1px solid #b1b1b1;
 	border-collapse: collapse;
+	text-align:center;
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
 }
 
-h1{
+h1,h2{
 text-align:center;
 }
 
@@ -30,13 +35,10 @@ margin-left:auto;
 margin-right:auto;
 }
 
-.reviewList{
-text-align:center;
-}
 
 .img{
-border: 1px solid #b1b1b1;
-width:60%;
+
+width:auto;
 margin-left:auto;
 margin-right:auto;
 margin-top:30px;
@@ -53,13 +55,14 @@ border-collapse: collapse;
 }
 
 .box1{
-border: 1px solid #b1b1b1;
+
 width:60%;
 margin-left:auto;
 margin-right:auto;
 margin-top:30px;
 margin-bottom:30px;
 }
+
 
 
 </style>
@@ -82,7 +85,7 @@ margin-bottom:30px;
 		<s:iterator value="detailsList">
 			<div id="detailsList">
 			<div class="img">
-				<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
+				<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="300" height="240">
 			</div>
 			<div class="box1">
 				<div class="list">
@@ -119,35 +122,7 @@ margin-bottom:30px;
 		</div>
 		</s:iterator>
 
-		<s:if test="reviewList.size != 0 ">
-			<div id="reviewList">
-				<p>この商品のレビュー</p>
-				<s:iterator value="reviewList">
-					<div>
-						ユーザー名:
-						<s:property value="user_id" />
-					</div>
-					<div>
-						レビュー:
-						<s:property value="review_id" />
-					</div>
-					<div>
-						評価:
-						<s:property value="evaluation_count" />
-					</div>
-					<div>
-						投稿日時:
-						<s:property value="buy_item_date" />
-					</div>
-					<br>
-				</s:iterator>
-			</div>
-			<br>
-		</s:if>
-		<s:else>
-			<p>レビューはありません。</p>
-			<br>
-		</s:else>
+
 
 		<s:form action="CartAction" id="form" name="form">
 			<s:if test="item_stock != 0">
@@ -179,8 +154,37 @@ margin-bottom:30px;
 				</div>
 			</s:if>
 		</s:form>
-
 	</div>
+	<s:if test="reviewList.size != 0 ">
+			<div id="reviewList">
+				<h2>この商品のレビュー</h2>
+				<s:iterator value="reviewList">
+				<div class="box1">
+					<div class="review">
+						ユーザー名:
+						<s:property value="user_id" />
+					</div>
+					<div class="review">
+						レビュー:
+						<s:property value="review_id" />
+					</div>
+					<div class="review">
+						評価:
+						<s:property value="evaluation_count" />
+					</div>
+					<div class="review">
+						投稿日時:
+						<s:property value="buy_item_date" />
+					</div>
+				</div>
+				</s:iterator>
+			</div>
+			<br>
+		</s:if>
+		<s:else>
+			<h2>レビューはありません。</h2>
+			<br>
+		</s:else>
 
 
 </body>
