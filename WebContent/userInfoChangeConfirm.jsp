@@ -17,7 +17,9 @@
 	<style type="text/css">
 
 
+
 	</style>
+
 
 </head>
 <body>
@@ -25,6 +27,7 @@
 	<h3>下記内容でユーザー情報を変更します、よろしいですか？</h3>
 
 	<s:form action="UserInfoChangeCompleteAction">
+
 
 	<p>ユーザーID:					<s:property value="session.t_userId"/></p>
 	<p>パスワード：					<s:property value="session.t_password"/></p>

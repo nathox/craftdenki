@@ -47,7 +47,7 @@
 		}
 	</script>
 
-
+	<link href="css/userInfoChange.css" rel="stylesheet">
 
 </head>
 <body>
@@ -58,35 +58,114 @@
 		<s:property value="errorMessage"  escape="false" />
 		</s:if>
 	</div>
+
+
+
+
+
 		<s:iterator value="list_user_info">
-			<p>ユーザーID：			<s:textfield readonly="true" name="userId"  value="%{userId}" class="validate[required,minSize[1],maxSize[8]]" /></p>
-			<p>パスワード：			<s:password name="password" value="%{password}" class="validate[required,minSize[1],maxSize[16]]"/></p>
-			<p>姓：						<s:textfield name="familyName" id="familyName" value="%{familyName}" class="validate[required,minSize[1],maxSize[16]]" /></p>
-			<p>名：						<s:textfield name="firstName" id="firstName" value="%{firstName}" class="validate[required,minSize[1],maxSize[16]]" /></p>
-			<p>姓かな：				<s:textfield name="familyNameKana" id="familyNameKana" value="%{familyNameKana}" class="validate[required,minSize[1],maxSize[16]]" /></p>
-			<p>名かな：				<s:textfield name="firstNameKana" id="firstNameKana" value="%{firstNameKana}" class="validate[required,minSize[1],maxSize[16]]"/></p>
-			<p>性別：					<s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"  ></s:radio></p>
-			<p>メールアドレス：	<s:textfield name="email" value="%{email}" class="validate[required,minSize[14],maxSize[32]]" /></p>
-			<p>秘密の質問：			<s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？',3:'好きな動物は？'}" name="question" value="question" class="validate[required]"></s:select></p>
-			<p>答え：						<s:textfield name="answer" value="%{answer}" class="validate[required,minSize[1],maxSize[16]]" /></p>
+
+		<table>
+
+			<tr>
+			<th class="red">ユーザーID<em>必須</em></th>
+						<td><s:textfield readonly="true" name="userId"  value="%{userId}" class="validate[required,minSize[1],maxSize[8]]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">パスワード<em>必須</em></th>
+						<td><s:password name="password" value="%{password}" class="validate[required,minSize[1],maxSize[16]]"/>
+			</td></tr>
+
+			<tr>
+			<th class="red">姓<em>必須</em></th>
+						<td><s:textfield name="familyName" id="familyName" value="%{familyName}" class="validate[required,minSize[1],maxSize[16]]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">名<em>必須</em></th>
+						<td><s:textfield name="firstName" id="firstName" value="%{firstName}" class="validate[required,minSize[1],maxSize[16]]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">姓かな<em>必須</em></th>
+						<td><s:textfield name="familyNameKana" id="familyNameKana" value="%{familyNameKana}" class="validate[required,minSize[1],maxSize[16]]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">名かな<em>必須</em></th>
+						<td><s:textfield name="firstNameKana" id="firstNameKana" value="%{firstNameKana}" class="validate[required,minSize[1],maxSize[16]]"/>
+			</td></tr>
+
+			<tr>
+			<th class="red">性別<em>必須</em></th>
+						<td><s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"  ></s:radio>
+			</td></tr>
+
+			<tr>
+			<th class="red">メールアドレス<em>必須</em></th>
+						<td><s:textfield name="email" value="%{email}" class="validate[required,minSize[14],maxSize[32]]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">秘密の質問<em>必須</em></th>
+						<td><s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？',3:'好きな動物は？'}" name="question" value="question" class="validate[required]"></s:select>
+			</td></tr>
+
+			<tr>
+			<th class="red">答え<em>必須</em></th>
+						<td><s:textfield name="answer" value="%{answer}" class="validate[required,minSize[1],maxSize[16]]" />
+			</td></tr>
 
 
 
+			<tr>
+			<th>郵便番号</th>
+						<td>〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','userAddress','userAddress');">
+			</td></tr>
+
+			<tr>
+			<th class="red">住所<em>必須</em></th>
+						<td><s:textfield name="userAddress" size="60" value="%{userAddress}" class="validate[required]"/>
+			</td></tr>
+
+			<tr>
+			<th>郵便番号</th>
+						<td>〒<input type="text" name="yuubin2" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input type="text" name="yuubin5" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin2','yuubin5','userAddress2','userAddress2');">
+			</td></tr>
+
+			<tr>
+			<th>住所２</th>
+						<td><s:textfield name="userAddress2" size="60" value="%{userAddress2}"/>
+			</td></tr>
+
+			<tr>
+			<th>郵便番号</th>
+						<td>〒<input type="text" name="yuubin3" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input type="text" name="yuubin6" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin3','yuubin6','userAddress3','userAddress3');">
+			</td></tr>
+
+			<tr>
+			<th>住所３</th>
+						<td><s:textfield name="userAddress3" size="60" value="%{userAddress3}"/>
+			</td></tr>
+
+			<tr>
+			<th class="red">電話番号<em>必須</em></th>
+						<td><s:textfield name="telNumber" value="%{telNumber}" class="validate[required]" />
+			</td></tr>
+
+			<tr>
+			<th class="red">電話番号２<em>必須</em></th>
+						<td><s:textfield name="telNumber2" value="%{telNumber2}"/>
+			</td></tr>
+
+			<tr>
+			<th class="red">電話番号３<em>必須</em></th>
+						<td><s:textfield name="telNumber3" value="%{telNumber3}"/>
+			</td></tr>
 
 
-			<p>郵便番号:〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','userAddress','userAddress');"></p>
-			<p>住所：					<s:textfield name="userAddress" size="60" value="%{userAddress}" class="validate[required]"/></p>
-
-
-			<p>郵便番号:〒<input type="text" name="yuubin2" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input type="text" name="yuubin5" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin2','yuubin5','userAddress2','userAddress2');"></p>
-			<p>住所２：				<s:textfield name="userAddress2" size="60" value="%{userAddress2}"/></p>
-
-			<p>郵便番号:〒<input type="text" name="yuubin3" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input type="text" name="yuubin6" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin3','yuubin6','userAddress3','userAddress3');"></p>
-			<p>住所３：				<s:textfield name="userAddress3" size="60" value="%{userAddress3}"/></p>
-
-			<p>電話番号：				<s:textfield name="telNumber" value="%{telNumber}" class="validate[required]" /></p>
-			<p>電話番号２：			<s:textfield name="telNumber2" value="%{telNumber2}"/></p>
-			<p>電話番号３：			<s:textfield name="telNumber3" value="%{telNumber3}"/></p>
+			</table>
 
 			<s:submit value="確認"/>
 

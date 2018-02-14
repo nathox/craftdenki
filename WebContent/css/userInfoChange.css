@@ -1,0 +1,29 @@
+table{
+			width:600px;
+			border-collapse:collapse;
+			font-size:0.8em;
+			border:1px #cccccc solid;
+			}
+
+th{
+			border-left:6px solid #cccccc;
+			background-color:#eeeeee;
+			}
+
+.red{
+			border-left-color:#ff0000;
+			}
+
+td.th{
+			padding:10px;
+			border-top:1px solid #cccccc;
+			}
+
+em{
+			color:#ff0000;
+			font-size:smaller;
+			}
+
+#submit{
+				padding-top:10px;
+				}
