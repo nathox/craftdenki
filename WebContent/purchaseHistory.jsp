@@ -103,11 +103,13 @@ margin-right:50px;
 	<s:form class="form" name="form" action="PurchaseHistoryAction">
 		<table>
 			<s:iterator value="purchaseHistoryList">
-			<div class="check"><s:checkbox name="checkList" value="checked"
-							fieldValue="%{productId}" /></div>
+			<!-- <div class="check"><s:checkbox name="checkList" value="checked"
+							fieldValue="%{productId}" /></div> -->
+				<div class="check"><s:checkbox name="checkList" value="checked"
+				fieldValue="%{id}" /></div>
 				<div class="box1">
 				<ul class="okada">
-
+					<s:hidden name="id" value="%{id}"/>
 					<li>商品名:<span><s:property value="productName" /></span></li>
 					<s:hidden name="productName" value="%{productName}" />
 
@@ -120,7 +122,7 @@ margin-right:50px;
 					<li>個数:<span><s:property value="count" />個</span></li>
 					<s:hidden name="count" value="%{count}" />
 
-					<li>発売会社名<s:property value="releaseCompany" /></li>
+					<li>発売会社名:<s:property value="releaseCompany" /></li>
 					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
 					<li>発売年月日:<s:property value="releaseDate" /></li>

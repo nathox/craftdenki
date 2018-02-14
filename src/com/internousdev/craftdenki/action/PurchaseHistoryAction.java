@@ -20,12 +20,19 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String userId;
 
 	private Collection<String> checkList;
+	private String id;
 	private String product_id;
 	private String reviewFlg;
 	private String message;
 
+	private String releaseCompany;
+	private String releaseDate;
+
 	public String execute() throws SQLException {
 		String result=ERROR;
+
+
+
 		PurchaseHistoryDAO dao = new PurchaseHistoryDAO();
 		// int count = 0;
 		if (deleteFlg == null) {
@@ -38,16 +45,25 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 			}
 			return SUCCESS;
 		} else if (deleteFlg.equals("1")) {
+			String[] idList=id.split(", ",0);
 			message=null;
+			int count=0;
+			int idListNumber=0;
 			if (!(checkList == null)) {
 				for (String deleteId : checkList) {
 					System.out.println("DELETEID : " + deleteId);
-					dao.deleteHistoryInfo(deleteId);
+					count += dao.deleteHistoryInfoById( String.valueOf(idList[idListNumber]));
+				}
+				System.out.println("削除された件数: " + count);
 					result = "delete";
 					deleteFlg = null;
 
+					PurchaseHistoryDAO dao1 = new PurchaseHistoryDAO();
+					String userId = session.get("trueID").toString();
+					purchaseHistoryList = dao1.getPurchaseHistory(userId);
+
 					return result;
-				}
+
 			}
 
 			result = "delete";
@@ -60,6 +76,36 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		}
 
 		return result;
+	}
+
+
+
+	public String getId() {
+		return id;
+	}
+
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 
 	public Map<String, Object> getSession() {
