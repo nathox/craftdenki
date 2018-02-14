@@ -23,6 +23,12 @@
 
 </head>
 <body>
+
+<!-- ヘッダー -->
+<jsp:include page="home.jsp" />
+
+
+
 	<s:if test="cartList == null">
 		<h3>ご購入情報はありません。</h3>
 	</s:if>
