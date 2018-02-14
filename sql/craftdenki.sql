@@ -97,6 +97,8 @@ at_cost double, -- ----------------- NEW -------------------
 regist_date datetime,
 update_date datetime,
 status int default 0
+image_file_path varchar(100),
+image_file_name varchar(50),
 );
 
 drop table if exists destination_info;

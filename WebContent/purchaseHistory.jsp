@@ -27,6 +27,7 @@ width: 50%;
 text-align: center;
 margin-left:auto;
 margin-right:auto;
+
 }
 body{
 text-align: center;
@@ -42,6 +43,8 @@ border: 1px solid #b1b1b1;
 list-style: none;
 margin-right:auto;
 width:100%;
+padding-top:10px;
+padding-bottom:10px;
 
 }
 .check{
@@ -58,7 +61,24 @@ padding:0;
 text-align:left;
 width:100%;
 margin-right:auto;
+text-align: justify;
+}
 
+.review{
+float:right;
+position:relative;
+margin-right:150px;
+line-height:110px;
+bottom:120px;
+}
+
+.delete{
+float:right;
+margin-right:50px;
+}
+
+.header{
+margin-bottom:130px;
 }
 
 
@@ -66,6 +86,11 @@ margin-right:auto;
 
 </head>
 <body>
+
+<!-- ヘッダー -->
+<div class="header"><jsp:include page="home.jsp" /></div>
+
+
 	<h1>購入商品一覧</h1>
 
 	<s:if test="purchaseHistoryList == null">
@@ -84,25 +109,38 @@ margin-right:auto;
 							fieldValue="%{productId}" /></div>
 				<div class="box1">
 				<ul class="okada">
-					<li>商品ID:<span><s:property value="productId" /></span></li>
-						<s:hidden name="productId" value="%{productId}" />
+
 					<li>商品名:<span><s:property value="productName" /></span></li>
 					<s:hidden name="productName" value="%{productName}" />
+
 					<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
 					<s:hidden name="productName" value="%{productName}" />
+
 					<li>金額:<span><s:property value="price" />円</span></li>
 					<s:hidden name="price" value="%{price}" />
-						<li>個数:<span><s:property value="count" />個</span></li>
+
+					<li>個数:<span><s:property value="count" />個</span></li>
 					<s:hidden name="count" value="%{count}" />
+
+					<li><s:property value="releaseCompany" /></li>
+					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+
+					<li>発売会社名:<s:property value="releaseDate" /></li>
+					<s:hidden name="releaseDate" value="%{releaseDate}" />
+
+					<li>発売年月日:<s:property value="imageFilePath" /></li>
+					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
+
 					<s:hidden name="registDate" value="%{registDate}" />
+
 				</ul>
 				</div>
-				<div class="review">レビューボタン:<s:submit value="レビュー" onclick="Review1Action();" /></div>
+				<div class="review"><s:submit value="レビュー" onclick="Review1Action();" /></div>
 			</s:iterator>
 			<tr>
-				<td><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
+				<div class="delete"><s:submit value="一括削除" onclick="PurchaseHistoryAction();">
 						<s:hidden name="deleteFlg" value="1" />
-					</s:submit></td>
+					</s:submit></div>
 			</tr>
 		</table>
 	</s:form>
