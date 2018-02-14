@@ -7,16 +7,15 @@ table{
 
 th{
 			border-left:6px solid #cccccc;
-			background-color:#eeeeee;
+			/*Å™ç∂ë§ÇÃêF*/
+			background-color:#efefef;
+						width:150px;
 			}
 
-.red{
-			border-left-color:#ff0000;
-			}
-
-td.th{
+tr{
 			padding:10px;
 			border-top:1px solid #cccccc;
+			height:40px;
 			}
 
 em{
@@ -24,6 +23,12 @@ em{
 			font-size:smaller;
 			}
 
-#submit{
+#userInfoCheck{
+				background-color:#ff0000;
+				color:#ffffff;
 				padding-top:10px;
+				width:150px;
+				height:60px;
+				border:10pxÅ@#000;
+				margin-left:450px;
 				}

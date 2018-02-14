@@ -53,6 +53,7 @@
 <body>
 
 	<h3>ユーザー情報変更ページ</h3>
+	<br>
 	<s:form id="form_1" action="UserInfoChangeConfirmAction">
 	<div class="errorColor"><s:if test="errorMessage!=hoge">
 		<s:property value="errorMessage"  escape="false" />
@@ -68,56 +69,46 @@
 		<table>
 
 			<tr>
-			<th class="red">ユーザーID<em>必須</em></th>
+			<th>ユーザーID<em>必須</em></th>
 						<td><s:textfield readonly="true" name="userId"  value="%{userId}" class="validate[required,minSize[1],maxSize[8]]" />
 			</td></tr>
 
 			<tr>
-			<th class="red">パスワード<em>必須</em></th>
+			<th>パスワード<em>必須</em></th>
 						<td><s:password name="password" value="%{password}" class="validate[required,minSize[1],maxSize[16]]"/>
 			</td></tr>
 
 			<tr>
-			<th class="red">姓<em>必須</em></th>
-						<td><s:textfield name="familyName" id="familyName" value="%{familyName}" class="validate[required,minSize[1],maxSize[16]]" />
+			<th>お名前<em>必須</em></th>
+						<td><span style="margin-left:2em;"></span>氏：<s:textfield name="familyName" id="familyName" value="%{familyName}" class="validate[required,minSize[1],maxSize[16]]" />
+								<span style="margin-left:2em;"></span>名：<s:textfield name="firstName" id="firstName" value="%{firstName}" class="validate[required,minSize[1],maxSize[16]]" />
 			</td></tr>
 
 			<tr>
-			<th class="red">名<em>必須</em></th>
-						<td><s:textfield name="firstName" id="firstName" value="%{firstName}" class="validate[required,minSize[1],maxSize[16]]" />
+			<th>ふりがな<em>必須</em></th>
+						<td>氏かな：<s:textfield name="familyNameKana" id="familyNameKana" value="%{familyNameKana}" class="validate[required,minSize[1],maxSize[16]]" />
+								名かな：<s:textfield name="firstNameKana" id="firstNameKana" value="%{firstNameKana}" class="validate[required,minSize[1],maxSize[16]]"/>
 			</td></tr>
 
 			<tr>
-			<th class="red">姓かな<em>必須</em></th>
-						<td><s:textfield name="familyNameKana" id="familyNameKana" value="%{familyNameKana}" class="validate[required,minSize[1],maxSize[16]]" />
-			</td></tr>
-
-			<tr>
-			<th class="red">名かな<em>必須</em></th>
-						<td><s:textfield name="firstNameKana" id="firstNameKana" value="%{firstNameKana}" class="validate[required,minSize[1],maxSize[16]]"/>
-			</td></tr>
-
-			<tr>
-			<th class="red">性別<em>必須</em></th>
+			<th>性別<em>必須</em></th>
 						<td><s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"  ></s:radio>
 			</td></tr>
 
 			<tr>
-			<th class="red">メールアドレス<em>必須</em></th>
-						<td><s:textfield name="email" value="%{email}" class="validate[required,minSize[14],maxSize[32]]" />
+			<th>メールアドレス<em>必須</em></th>
+						<td><s:textfield name="email" value="%{email}" size="40" class="validate[required,minSize[14],maxSize[32]]" />
 			</td></tr>
 
 			<tr>
-			<th class="red">秘密の質問<em>必須</em></th>
+			<th>秘密の質問<em>必須</em></th>
 						<td><s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？',3:'好きな動物は？'}" name="question" value="question" class="validate[required]"></s:select>
 			</td></tr>
 
 			<tr>
-			<th class="red">答え<em>必須</em></th>
-						<td><s:textfield name="answer" value="%{answer}" class="validate[required,minSize[1],maxSize[16]]" />
+			<th>答え<em>必須</em></th>
+						<td><s:textfield name="answer" value="%{answer}" size="40" class="validate[required,minSize[1],maxSize[16]]" />
 			</td></tr>
-
-
 
 			<tr>
 			<th>郵便番号</th>
@@ -125,7 +116,7 @@
 			</td></tr>
 
 			<tr>
-			<th class="red">住所<em>必須</em></th>
+			<th>住所１<em>必須</em></th>
 						<td><s:textfield name="userAddress" size="60" value="%{userAddress}" class="validate[required]"/>
 			</td></tr>
 
@@ -149,36 +140,36 @@
 						<td><s:textfield name="userAddress3" size="60" value="%{userAddress3}"/>
 			</td></tr>
 
+
+
+
 			<tr>
-			<th class="red">電話番号<em>必須</em></th>
+			<th>電話番号１<em>必須</em></th>
 						<td><s:textfield name="telNumber" value="%{telNumber}" class="validate[required]" />
 			</td></tr>
 
 			<tr>
-			<th class="red">電話番号２<em>必須</em></th>
+			<th>電話番号２</th>
 						<td><s:textfield name="telNumber2" value="%{telNumber2}"/>
 			</td></tr>
 
 			<tr>
-			<th class="red">電話番号３<em>必須</em></th>
+			<th>電話番号３</th>
 						<td><s:textfield name="telNumber3" value="%{telNumber3}"/>
 			</td></tr>
 
 
 			</table>
 
-			<s:submit value="確認"/>
+			<br>
+			<s:submit value="変更確認画面へ" id="userInfoCheck"/>
+
 
 		</s:iterator>
 	</s:form>
-
+<br>
 	<a href="myPage.jsp">マイページ画面へ戻る</a>
 
-	<%-- <p><input type="button" value="マイページ画面に戻る" onclick="history.back()" /></p>
-
-	<p><s:submit value="マイページ画面に戻る" action="GoMyPageAction" method="execute"/></p>
-
-	--%>
 
 </body>
 </html>
