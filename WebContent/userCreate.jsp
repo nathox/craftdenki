@@ -37,10 +37,10 @@
 	<s:property value="errorMessage" escape="false" />
 </s:if><br>
 ログインPASS:<input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,minSize[6],maxSize[16]]" /><br>
-姓:<input type="text" id="familyName" name="familyName" value='<s:property value="familyName"/>' required /><br>
-名:<input type="text" id="firstName" name="firstName" value='<s:property value="firstName"/>' /><br>
-姓(かな):<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' /><br>
-名(かな):<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' /><br>
+姓:<input type="text" id="familyName" name="familyName" value='<s:property value="familyName"/>' class="validate[required]" /><br>
+名:<input type="text" id="firstName" name="firstName" value='<s:property value="firstName"/>' class="validate[required]"/><br>
+姓(かな):<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required]" /><br>
+名(かな):<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required]"/><br>
 <s:if test="sex==0">
 性別:<input type="radio" name="sex" value="0" checked class="validate[required]">男
     <input type="radio" name="sex" value="1">女<br>
@@ -90,7 +90,7 @@
 </s:else>
 
 答え:<input type="text" name="secretAnswer"
-			value='<s:property value="secretAnswer" class="validate[required]"/>'>
+			value='<s:property value="secretAnswer"/>' class="validate[required]">
 		<br>
 郵便番号(7桁):<input type="text" name="yuubin"
 			value='<s:property value="yuubin"/>' size="10" maxlength="8"
@@ -99,8 +99,8 @@
 住所:<input type="text" name="address"
 			value='<s:property value="address"/>' size="60" class="validate[required]">
 		<br>
-電話番号:<input type="text" name="tel" value='<s:property value="tel" class="validate[required]"/>'
-			required>
+電話番号:<input type="text" name="tel" value='<s:property value="tel" />'
+			class="validate[required]">
 		<s:submit value="登録" />
 	</s:form>
 <a href="login.jsp">戻る</a>
