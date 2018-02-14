@@ -13,10 +13,17 @@
 	<meta name="keywords"content=""/>
 	<meta http-equiv="refresh" content="5;URL=home.jsp">
 	<title>決済完了画面</title>
+<style>
 
+
+
+
+</style>
 
 </head>
 <body>
+
+<jsp:include page="home.jsp"/>
 	<div id="header">
 		<div id="pr">
 		</div>

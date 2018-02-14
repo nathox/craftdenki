@@ -13,8 +13,20 @@
 	<meta name="keywords"content=""/>
 	<title>決済画面</title>
 
+
+
+
+<style>
+
+
+
+
+</style>
+
 </head>
 <body>
+
+<jsp:include page="home.jsp"/>
 	<div id="header">
 		<div id="pr">
 		</div>

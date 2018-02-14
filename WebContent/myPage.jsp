@@ -43,6 +43,6 @@
 		</s:form>
 	</div>
 
-	<a href="home.jsp">ホームへ戻る</a>
+	<a href='<s:url action="StartAction"/>'>ホームへ戻る</a>
 </body>
 </html>

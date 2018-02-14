@@ -98,7 +98,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						session.put("trueID",loginId);
 
 
-						System.out.println(session.get("temp_user_id").toString()+ "仮ユーザーID");
 						System.out.println(dto.getLoginId());
 						dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
 
