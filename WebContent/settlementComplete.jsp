@@ -24,14 +24,9 @@
 <body>
 
 <jsp:include page="home.jsp"/>
-	<div id="header">
-		<div id="pr">
-		</div>
+	<div id="top">
+	<p> みないで </p>
 	</div>
-	<div id="main">
-		<div id="top">
-		<p>決済完了画面</p>
-		</div>
 
 	<div>
 
