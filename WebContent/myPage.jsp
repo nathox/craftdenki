@@ -12,39 +12,34 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<!-- ヘッダー-->
-	<jsp:include page="home.jsp" />
 	<title>MyPage</title>
 
 	<style type="text/css">
-<%--↑ここまではインターノウスの教材の文脈をそのままコピペしています。↑ --%>
-
 
 	</style>
+
+	<link href="css/userInfoChange.css" rel="stylesheet">
+
 </head>
 <body>
+	<!-- ヘッダー-->
+	<jsp:include page="home.jsp" />
 
-<%--↓マイページ画面で最低限必要な文脈を記入しています。各機能担当者のクラス名が変更になる場合は都度修正が必要です。↓ --%>
-
-	<h3>マイページ画面</h3>
-	<div>
 		<s:form action="PurchaseHistoryAction">
-			<s:submit value="購入履歴"/>
+				<s:submit value="購入履歴" id="myPageButton1" />
 		</s:form>
-	</div>
 
-	<div>
 		<s:form action="FavoriteAction">
-			<s:submit value="お気に入りリスト"/>
+				<s:submit value="お気に入りリスト" id="myPageButton2"/>
 		</s:form>
-	</div>
 
-	<div>
 		<s:form action="UserInfoChangeAction">
-			<s:submit value="ユーザー情報変更"/>
+				<s:submit value="ユーザー情報変更" id="myPageButton3"/>
 		</s:form>
-	</div>
 
+<%--
 	<a href='<s:url action="StartAction"/>'>ホームへ戻る</a>
+--%>
+
 </body>
 </html>

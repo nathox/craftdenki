@@ -74,7 +74,7 @@
 			</td></tr>
 
 			<tr>
-			<th>パスワード<em>必須</em></th>
+			<th>新パスワード<em>必須</em></th>
 						<td><s:password name="password" value="%{password}" class="validate[required,minSize[1],maxSize[16]]"/>
 			</td></tr>
 

@@ -36,7 +36,7 @@
 						<td><s:property value="session.t_userId"/></td></tr>
 
 			<tr>
-			<th>パスワード</th>
+			<th>新パスワード</th>
 						<td><s:property value="session.t_password"/></td></tr>
 
 			<tr>

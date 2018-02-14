@@ -32,3 +32,45 @@ em{
 				border:10pxÅ@#000;
 				margin-left:450px;
 				}
+
+
+
+
+#myPageButton1{
+				padding-top:50px;
+				background-color:#b3ff8e;
+				color:#ffffff;
+				font-size:3em;
+				position:absolute;
+				top:200px;
+				left:200px;
+				width:300px;
+				height:300px;
+				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				}
+
+#myPageButton2{
+				padding-top:50px;
+				background-color:#fca0ca;
+				color:#ffffff;
+				font-size:3em;
+				position:absolute;
+				top:200px;
+				left:500px;
+				width:300px;
+				height:300px;
+				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				}
+
+#myPageButton3{
+				padding-top:50px;
+				background-color:#f7ff8c;
+				color:#ffffff;
+				font-size:3em;
+				position:absolute;
+				top:200px;
+				left:800px;
+				width:300px;
+				height:300px;
+				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				}
