@@ -148,15 +148,28 @@ public class ProductListDAO {
 								+ "category_id,"
 								+ "price,"
 								+ "image_file_path,"
-								+ "image_file_name"
+								+ "image_file_name,"
 								+ "release_date,"
 								+ "release_company,"
 								+ "regist_date) "
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 		int res=0;
 
 		try {
+			System.out.println(this.getClass());
+			System.out.println(product_id);
+			System.out.println(product_name);
+			System.out.println(product_name_kana);
+			System.out.println(product_description);
+			System.out.println(category_id);
+			System.out.println(price);
+			System.out.println(image_file_path);
+			System.out.println(image_file_name);
+			System.out.println(release_date);
+			System.out.println(release_company);
+			System.out.println(dateUtil.getDate());
+
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setString(1,product_id);
 			preparedStatement.setString(2, product_name);

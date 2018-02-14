@@ -20,10 +20,12 @@
 
 </head>
 <body>
-
+<div class="a">
 <header>
 	<div class="img">
+		<a href='<s:url action="StartAction" />' class="title-color">
 		<div class="title">CraftDenki</div>
+		</a>
 
 			<s:form method="post" action="ItemSearchAction" class="kensaku">
 				<select name="category">
@@ -108,6 +110,6 @@
 		<s:submit value="決済画面へ(仮置き)" style="WIDTH:200px;" />
 	</s:form>
 	-->
-
+</div>
 </body>
 </html>
