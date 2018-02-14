@@ -12,7 +12,9 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>MyPage画面</title>
+	<!-- ヘッダー-->
+	<jsp:include page="home.jsp" />
+	<title>MyPage</title>
 
 	<style type="text/css">
 <%--↑ここまではインターノウスの教材の文脈をそのままコピペしています。↑ --%>
