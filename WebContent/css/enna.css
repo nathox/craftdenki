@@ -8,34 +8,17 @@
 			font-size:12px;
 			color:#333;
 			background:#fff;
+			height: 100%;
+			position:relative;
+			height:auto !important;
+			min-height:100%;
+
 		}
 		table{
 			text-align:center;
 			margin:0 auto;
 		}
-		/* ========ID LAYOUT========*/
-		#top{
-			width:780px;
-			margin:30px auto;
-			border:1px solid #333;
-			text-align:center;
-		}
-		#header{
-			width:100%;
-			height:80px;
-			background-color:black;
-		}
-		#main{
-			width:100% auto;
-			height:500px;
-			padding:200px;
-		}
-		#footer{
-			width:100%;
-			height:80px;
-			background-color: black;
-			clear:both;
-		}
+
 
 /*-------------------ここまで共通---------------------*/
 
@@ -98,5 +81,38 @@
         	padding-bottom:150px;
         }
 
+
+/*------------------フッター-----------------------*/
+		html{
+		    height:100%;
+		}
+		footer {
+		    background-image:url("../images/danbo.jpg");
+		    position:absolute;
+		    bottom: 0;
+		    width: 100%;
+		    height:120px;
+		}
+		main{
+		    margin-top:10px;
+		}
+
+		.under{
+		    font-family: 'Press Start 2P', cursive;
+		    font-size:20px;
+		    color:firebrick;
+		    text-align: center;
+		    padding-top:50px;
+		    background-image:url("../images/danbo.jpg");
+		}
+		.guide ul{
+		    display:flex;
+		    margin:0;
+		}
+		.guide li{
+		    list-style-type:none;
+		    flex-grow: 1;
+		    text-align:center;
+		}
 
 

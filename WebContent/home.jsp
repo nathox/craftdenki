@@ -63,6 +63,31 @@
 </header>
 
 
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<footer>
+
+        <div class="under">
+            CraftDenki All right reserved.
+        </div>
+        <div class="guide">
+
+            <ul>
+                <li>お問い合わせ</li>
+                <li>ヘルプ</li>
+                <li>ご利用ガイド</li></ul>
+
+    </div>
+
+
+</footer>
+
 	<!-- とりあえずHome画面の雛形作っています好きなように変更してください -->
 	<!--
 	<s:if test="session.trueID == null">
