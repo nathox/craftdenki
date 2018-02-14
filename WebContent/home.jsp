@@ -20,6 +20,7 @@
 
 </head>
 <body>
+<div id="containar">
 
 <header>
 	<div class="img">
@@ -41,18 +42,18 @@
 			<div class="bar">
 
 				<s:if test="session.trueID != null">
-					<span class="ennna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
+					<span class="enna_a"><a href='<s:url action="LogoutAction" />' class="button">ログアウト</a></span>
 				</s:if>
 				<s:else>
-					<span class="ennna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
+					<span class="enna_a"><a href='<s:url action="GoLoginAction" />' class="button">ログイン</a></span>
 				</s:else>
 
 
-				<span class="ennna_a"><a href='<s:url action="GoMyPageAction" />' class="button">マイページ</a></span>
+				<span class="enna_a"><a href='<s:url action="GoMyPageAction" />' class="button">マイページ</a></span>
 
-				<span class="ennna_a"><a href='<s:url action="GoCartAction" />' class="button">カート</a></span>
+				<span class="enna_a"><a href='<s:url action="GoCartAction" />' class="button">カート</a></span>
 
-				<span class="ennna_a"><a href='<s:url action="ProductListAction" />' class="button">商品一覧</a></span>
+				<span class="enna_a"><a href='<s:url action="ProductListAction" />' class="button">商品一覧</a></span>
 
 			</div>
 
@@ -108,6 +109,6 @@
 	</s:form>
 	-->
 
-
+</div>
 </body>
 </html>

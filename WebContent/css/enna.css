@@ -77,7 +77,7 @@
 		}
 
 		.enna_a{
-			margin:30px;
+			margin:10%;
 		}
 
 		.enna_search{
@@ -102,6 +102,12 @@
 
         .kensaku{
             text-align: center;
+        }
+
+        #containar{
+        	position: fixed;
+			top: 0px;
+			width:100%;
         }
 
 
