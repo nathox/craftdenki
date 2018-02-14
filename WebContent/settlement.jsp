@@ -24,9 +24,6 @@
 
 	<jsp:include page="home.jsp" />
 
-	<div id="top">
-	<p> みないで </p>
-	</div>
 
 	<div>
 		<h3>宛先を選択してください</h3>

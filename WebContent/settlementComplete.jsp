@@ -24,9 +24,6 @@
 <body>
 
 <jsp:include page="home.jsp"/>
-	<div id="top">
-	<p> みないで </p>
-	</div>
 
 	<div>
 
@@ -38,6 +35,5 @@
 
 	</div>
 
-	</div>
 </body>
 </html>
