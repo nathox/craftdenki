@@ -31,7 +31,7 @@
 <!-- ヘッダー-->
 <jsp:include page="home.jsp" />
 
-
+<div class="main">
 
 
 	<s:if test="cartList == null">
@@ -41,7 +41,7 @@
 	<s:form id="form" name="form" action="SettlementAction">
 		<h3>カート情報は以下になります。</h3>
 
-
+<!--
 		<table>
 			<s:iterator value="purchaseHistoryList">
 			<div class="check"><s:checkbox name="delete" value="checked"
@@ -77,10 +77,10 @@
 			</s:iterator>
 
 		</table>
+ -->
 
 
 
-		<!--
 		<table border="1">
 			<tr>
 				<td></td>
@@ -125,7 +125,7 @@
 				</tr>
 				</s:iterator>
 		</table>
-		-->
+
 
 
 
@@ -147,7 +147,7 @@
 		<s:submit value="決済画面へ(仮置き)" />
 	</s:form>
 
-
+</div>
 
 </body>
 </html>

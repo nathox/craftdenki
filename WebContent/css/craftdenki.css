@@ -17,6 +17,11 @@
 		text-align:center;
 		margin:0 auto;
 	}
+
+	.main{
+		padding-rigth:150px;
+		padding-left:150px;
+	}
 	/* ========ID LAYOUT========*/
 	#top{
 		width:780px;
