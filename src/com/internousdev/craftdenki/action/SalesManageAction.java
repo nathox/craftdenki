@@ -4,8 +4,10 @@ import static com.internousdev.craftdenki.util.DateUtil.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -31,6 +33,11 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 	private String allTotalSales; //全売上合計
 	private String allTotalCost; //全原価合計
 	private String allTotalProfit; //全利益合計
+	private List<Integer> categorySalesList = new ArrayList<>(); //カテゴリ毎売上リスト
+	private List<Integer> categoryProfitList = new ArrayList<>(); //カテゴリ毎利益リスト
+	private List<Integer> productSalesList = new ArrayList<>(); //商品毎売上リスト
+	private List<Integer> productProfitList = new ArrayList<>(); //商品毎利益リスト
+	private List<String> productNametList = new ArrayList<>(); //対象カテゴリの商品名リスト
 	/*
 	 * 検索条件
 	 */
@@ -98,6 +105,23 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 					this.allTotalCost = String.format("%,.0f", allTotalCost);
 					this.allTotalProfit = String.format("%,.0f", allTotalProfit);
 
+					//カテゴリごとの売上・利益リスト用意
+					for(int i = 1; i <= categoryList.size(); i++) {
+						categorySalesList.add(0);
+						categoryProfitList.add(0);
+					}
+					//カテゴリごとの売上・利益集計
+					for(SalesHistoryDTO dto: salesHistoryList) {
+						for(int i = 1; i <= categoryList.size(); i++) {
+							if(dto.getCategoryId() == i) {
+								categorySalesList.set(i - 1, categorySalesList.get(i-1) + dto.getTotalSales());
+								categoryProfitList.set(i - 1, categoryProfitList.get(i-1) + dto.getProfit());
+								continue;
+							}
+						}
+
+					}
+
 			}else{
 			/**------------------------------
 			 * 検索実行後(ページ遷移二回目以降)
@@ -155,6 +179,52 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 					this.allTotalCost = String.format("%,.0f", allTotalCost);
 					this.allTotalProfit = String.format("%,.0f", allTotalProfit);
 
+
+					if(categoryId.equals("0")) {
+						//カテゴリごとの売上・利益リスト用意
+						for(int i = 1; i <= categoryList.size(); i++) {
+							categorySalesList.add(0);
+							categoryProfitList.add(0);
+						}
+						//カテゴリごとの売上・利益集計
+						for(SalesHistoryDTO dto: salesHistoryList) {
+							for(int i = 1; i <= categoryList.size(); i++) {
+								if(dto.getCategoryId() == i) {
+									categorySalesList.set(i - 1, categorySalesList.get(i-1) + dto.getTotalSales());
+									categoryProfitList.set(i - 1, categoryProfitList.get(i-1) + dto.getProfit());
+									continue;
+								}
+							}
+						}
+					} else {
+						//対象カテゴリの商品名リストを作成
+						Set<String> productNameSet = new HashSet<>();
+						for(SalesHistoryDTO dto: salesHistoryList) {
+							if(dto.getCategoryId() == Integer.parseInt(categoryId)){
+								//Setに商品名を格納(重複なしのコレクション)
+								productNameSet.add(dto.getProductName());
+								}
+							}
+						productNametList = new ArrayList<String>(productNameSet);
+
+						//商品ごとの売上・利益リスト用意
+						for(int i = 1; i <= productNametList.size(); i++) {
+							productSalesList.add(0);
+							productProfitList.add(0);
+						}
+						//商品ごとの売上・利益集計
+						for(SalesHistoryDTO dto: salesHistoryList) {
+							if(dto.getCategoryId() == Integer.parseInt(categoryId)){
+								for(int i = 0; i < productNametList.size(); i++) {
+									if(dto.getProductName() == productNametList.get(i)) {
+										productNametList.set(i, productNametList.get(i) + dto.getTotalSales());
+										productNametList.set(i, productNametList.get(i) + dto.getProfit());
+										continue;
+									}
+								}
+							}
+						}
+					}
 			}
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;
@@ -226,6 +296,12 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 	public void setCategoryList(List<CategoryDTO> categoryList) {
 		this.categoryList = categoryList;
 	}
+	public List<Integer> getCategoryProfitList() {
+		return categoryProfitList;
+	}
+	public void setCategoryProfitList(List<Integer> categoryProfitList) {
+		this.categoryProfitList = categoryProfitList;
+	}
 	public String getCategoryId() {
 		return categoryId;
 	}
@@ -240,6 +316,24 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 	}
 	public String getAllAvgCost() {
 		return allAvgCost;
+	}
+	public List<Integer> getProductSalesList() {
+		return productSalesList;
+	}
+	public void setProductSalesList(List<Integer> productSalesList) {
+		this.productSalesList = productSalesList;
+	}
+	public List<Integer> getProductProfitList() {
+		return productProfitList;
+	}
+	public void setProductProfitList(List<Integer> productProfitList) {
+		this.productProfitList = productProfitList;
+	}
+	public List<String> getProductNametList() {
+		return productNametList;
+	}
+	public void setProductNametList(List<String> productNametList) {
+		this.productNametList = productNametList;
 	}
 	public void setAllAvgCost(String allAvgCost) {
 		this.allAvgCost = allAvgCost;
@@ -267,5 +361,11 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 	}
 	public void setAllTotalProfit(String allTotalProfit) {
 		this.allTotalProfit = allTotalProfit;
+	}
+	public List<Integer> getCategorySalesList() {
+		return categorySalesList;
+	}
+	public void setCategorySalesList(List<Integer> categorySalesList) {
+		this.categorySalesList = categorySalesList;
 	}
 }

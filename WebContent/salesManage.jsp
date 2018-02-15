@@ -13,6 +13,10 @@
 <meta name="keywords" content=""/>
 <title>売上画面</title>
 
+<!--ライブラリ読み込み -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+
 
 </head>
 <body class="back-image step2">
@@ -92,6 +96,105 @@
 						</tr>
 			</table>
 		</div>
+		<s:if test="categoryId > 0">
+<!-- 		<p class="m-index">商品毎の売上</p>
+			<canvas id="proSalesChart"></canvas>
+
+		<p class="m-index">商品毎の利益</p>
+			<canvas id="proProfitChart"></canvas> -->
+		</s:if>
+
+		<s:else>
+		<p class="m-index">カテゴリ毎の売上</p>
+			<canvas id="cateSalesChart"></canvas>
+
+		<p class="m-index">カテゴリ毎の利益</p>
+			<canvas id="cateProfitChart"></canvas>
+						<script>
+							var ctx = document.getElementById("cateSalesChart").getContext('2d');
+							var myChart = new Chart(ctx, {
+							  type: 'pie',
+							  data: {
+							    labels: ["${categoryList.get(1).getCategoryName()}",
+							    		 "${categoryList.get(2).getCategoryName()}",
+							    		 "${categoryList.get(3).getCategoryName()}"],
+							    datasets: [{
+							      backgroundColor: [
+							        "#2ecc71",
+							        "#3498db",
+							        "#95a5a6",
+							      ],
+							      data: [${categorySalesList.get(0)},
+							    		 ${categorySalesList.get(1)},
+							    		 ${categorySalesList.get(2)}]
+							    }]
+							  }
+							});
+
+							var ctx = document.getElementById("cateProfitChart").getContext('2d');
+							var myChart = new Chart(ctx, {
+							  type: 'pie',
+							  data: {
+							    labels: ["${categoryList.get(1).getCategoryName()}",
+							    		 "${categoryList.get(2).getCategoryName()}",
+							    		 "${categoryList.get(3).getCategoryName()}"],
+							    datasets: [{
+							      backgroundColor: [
+							        "#2ecc71",
+							        "#3498db",
+							        "#95a5a6",
+							      ],
+							      data: [${categoryProfitList.get(0)},
+							    		 ${categoryProfitList.get(1)},
+							    		 ${categoryProfitList.get(2)}]
+							    }]
+							  }
+							});
+<%--
+							var ctx = document.getElementById("proSalesChart").getContext('2d');
+							var myChart = new Chart(ctx, {
+							  type: 'pie',
+							  data: {
+							    labels: ["${productNametList.get(0)}",
+							    		 "${productNametList.get(1)}",
+							    		 "${productNametList.get(2)}"],
+							    datasets: [{
+							      backgroundColor: [
+							        "#2ecc71",
+							        "#3498db",
+							        "#95a5a6",
+							      ],
+							      data: [${productSalesList.get(0)},
+							    		 ${productSalesList.get(1)},
+							    		 ${productSalesList.get(2)}]
+							    }]
+							  }
+							});
+
+							var ctx = document.getElementById("proProfitChart").getContext('2d');
+							var myChart = new Chart(ctx, {
+							  type: 'pie',
+							  data: {
+								  labels: ["${productNametList.get(0)}",
+							    		 "${productNametList.get(1)}",
+							    		 "${productNametList.get(2)}"],
+							    datasets: [{
+							      backgroundColor: [
+							        "#2ecc71",
+							        "#3498db",
+							        "#95a5a6",
+							      ],
+							      data: [${productProfitList.get(0)},
+							    		 ${productProfitList.get(1)},
+							    		 ${productProfitList.get(2)}]
+							    }]
+							  }
+							});
+						--%>
+						</script>
+		</s:else>
+
+
 	</div>
 
 </body>
