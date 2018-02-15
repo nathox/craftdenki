@@ -15,6 +15,27 @@
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
 	rel="stylesheet">
 <link href="css/home.css" rel="stylesheet">
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.validationEngine.js"></script>
+<script src="js/jquery.validationEngine-ja.js"></script>
+<script src="js/jquery.autoKana.js"></script>
+<link rel="stylesheet" href="css/validationEngine.jquery.css">
+<link href="css/userInfoChange.css" rel="stylesheet">
+<script>
+	$(function() {
+		$.fn.autoKana('#familyName', '#familyNameKana');
+		$.fn.autoKana('#firstName', '#firstNameKana');
+	});
+	$(function() {
+		jQuery("#form_1").validationEngine();
+	});
+	function nextField(i, n, m) {
+ 		if (i.value.length >= m) {
+ 	 	  i.form.elements[n].focus();
+ 		 }
+		}
+</script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 
 </head>
 <body>

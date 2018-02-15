@@ -78,7 +78,8 @@ margin-bottom:30px;
 
 </head>
 <body>
-
+<!-- ヘッダー-->
+	<jsp:include page="home.jsp" />
 
 	<div class="DetailsList">
 		<h1>商品詳細</h1>
@@ -186,6 +187,6 @@ margin-bottom:30px;
 			<br>
 		</s:else>
 
-
+ <jsp:include page="footer.jsp"/>
 </body>
 </html>
