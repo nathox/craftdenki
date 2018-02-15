@@ -35,13 +35,15 @@ public class SettlementCompleteDAO {
 		return dto;
 	}
 
+
+
 	// 商品購入履歴テーブルにインサート
-	public void insertPurchaseHistory(String userId, int productId, int productCount, int price, int atCost)
+	public void insertPurchaseHistory(String userId, int productId, int productCount, int price, int atCost, String  imageFilePath)
 			throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "INSERT INTO purchase_history_info(user_id,product_id,product_count,price,at_cost,regist_date) VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO purchase_history_info(user_id,product_id,product_count,price,at_cost,regist_date,image_file_path) VALUES(?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -51,6 +53,7 @@ public class SettlementCompleteDAO {
 			ps.setInt(4, price);
 			ps.setInt(5, atCost);
 			ps.setString(6, dateUtil.getDate());
+			ps.setString(7, imageFilePath);
 
 			ps.executeUpdate();
 
