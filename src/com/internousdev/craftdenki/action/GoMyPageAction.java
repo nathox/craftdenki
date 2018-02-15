@@ -29,8 +29,13 @@ public class GoMyPageAction extends ActionSupport implements SessionAware {
 
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO 自動生成されたメソッド・スタブ
 		this.session=session;
 	}
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
 
 }
