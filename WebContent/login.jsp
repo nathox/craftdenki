@@ -17,85 +17,114 @@
 
 <style>
 .top {
-	height: 200px;
-	width: 300px;
-	margin: 0px;
-	padding: 20px;
-	border: 2px solid black;
-	position: absolute;
-	left: 10%;
+	float: left;
+	height: 230px;
+	width: 320px;
+	padding-top: 0px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border: 0.5px solid black;
+	font-family: SimHei;
+	margin-top:10px;
+	margin-left:25px;
+	margin-right:25px;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
-#top2 {
-	height: 200px;
-	width: 300px;
-	margin: 0px;
-	padding: 20px;
-	border: 2px solid black;
-	position: absolute;
-	left: 60%;
+#box {
+	border-bottom: 1px solid black;
+	position: center;
+	font-size: 17px;
+	text-align: center;
 }
 
+#message {
+	font-size: 13px;
+}
 
+p {
+	width: 200px;
+	background: #CCC;
+}
+
+.left {
+	margin-right: auto;
+}
 </style>
 </head>
 <body>
+	<jsp:include page="home.jsp" />
+	<div class="main">
+		<div class="top _1">
+			<div id="box">ログイン</div>
 
-<jsp:include page="home.jsp"/>
 
-	<div class="top">
-		<s:form action="LoginAction">
-			<table>
-				<tr>
-					<td><s:if test="session.unknown != ''">
-
+			<s:form action="LoginAction">
+				<table>
+					<tr>
+						<s:if test="session.unknown != ''">
 							<s:property value="session.unknown" />
-
-						</s:if></td>
-				</tr>
-
-
-				<tr>
-					<td><s:if test="session.IDerrormsg != ''">
-							<s:property value="session.IDerror" />
-						</s:if></td>
-				</tr>
-				<tr>
-					<td><s:textfield name="loginId" style="ime-mode:disabled;"
-							value="test" /></td>
-				</tr>
-
-
-				<tr>
-					<td><s:if test="session.Passerrormsg != ''">
+						</s:if>
+					</tr>
+					<br>
+					<tr>ユーザーID
+					</tr>
+					<br>
+					<tr>
+						<s:textfield name="loginId" style="ime-mode:disabled;"
+							value="test" size="40" />
+					</tr>
+					<tr>
+						<td><s:if test="session.IDerrormsg != ''">
+								<br>
+								<s:property value="session.IDerror" />
+							</s:if></td>
+					</tr>
+					<br>
+					<tr>パスワード
+					</tr>
+					<br>
+					<tr>
+						<s:textfield name="loginPassword" style="ime-mode:disabled;"
+							value="123" size="40" />
+					</tr>
+					<tr>
+						<s:if test="session.Passerrormsg != ''">
+							<br>
 							<s:property value="session.Passerror" />
-						</s:if></td>
-				</tr>
-				<tr>
-					<td><s:textfield name="loginPassword"
-							style="ime-mode:disabled;" value="123" /></td>
-				</tr>
+						</s:if>
+					</tr>
+					<br>
+					<tr>
+						<td><s:submit value="ログイン" size="30" /></td>
+					</tr>
 
-
+				</table>
+			</s:form>
+			<table>
+				<br>
+				<br>
 				<tr>
-					<td><s:submit value="ログイン" /></td>
+					<td><span>パスワードを忘れてしまった方は<a
+							href='<s:url action="ChangePasswordAction"/>'>こちら</a>から
+					</span></td>
 				</tr>
 			</table>
+		</div>
+		<div class="top _2">
+			<div id="box">新規登録</div>
+			<br>
+			<div id="message">
+				会員登録をお願いします。 <br> <br> 会員登録は無料です。
+			</div>
+			<br> <br>
+			<s:form action="UserCreateAction">
+				<s:submit value="新規登録" />
+			</s:form>
 
-		</s:form>
+		</div>
 	</div>
-
-	<div id="top2">
-
-		<s:form action="ChangePasswordAction">
-			<s:submit value="パスワード再設定" />
-		</s:form>
-
-		<s:form action="UserCreateAction">
-			<s:submit value="新規登録" />
-		</s:form>
-
-	</div>
-
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
