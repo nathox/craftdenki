@@ -130,9 +130,9 @@
 
 
 
-
-		<td><s:submit value="削除" onclick="GoCartAction();" /></td>
-		<td><s:submit value="決済" onclick="SettlementAction();" /></td>
+		<br><br><br>
+		<td><s:submit value="削除" onclick="GoCartAction();" class="button"/></td>
+		<td><s:submit value="決済に進む" onclick="SettlementAction();" class="button"/></td>
 	</s:form>
 
 	<s:if test="message != null">
@@ -141,13 +141,6 @@
 		</h3>
 	</s:if>
 
-	<div>
-		<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
-	</div>
-
-	<s:form action="SettlementAction">
-		<s:submit value="決済画面へ(仮置き)" />
-	</s:form>
 
 </div>
 <jsp:include page="footer.jsp" />
