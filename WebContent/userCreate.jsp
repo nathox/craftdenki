@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<script src="js/jquery-1.8.2.min.js"></script>
+<!--<script src="js/jquery-1.8.2.min.js"></script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.autoKana.js"></script>
@@ -20,8 +20,7 @@
 		jQuery("#form_1").validationEngine();
 	});
 </script>
-
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>-->
 <meta charset="utf-8">
 <title>新規登録</title>
 </head>
