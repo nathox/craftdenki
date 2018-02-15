@@ -17,56 +17,52 @@
 		text-align:center;
 		margin:0 auto;
 	}
-	/* ========ID LAYOUT========*/
-	#top{
-		width:780px;
-		margin:30px auto;
-		border:1px solid #333;
-		text-align:center;
-	}
-	#header{
-		width:100%;
-		height:80px;
-		background-color:black;
-	}
-	#main{
-		width:100% auto;
-		height:500px;
-		padding:200px;
-	}
-	#footer{
-		width:100%;
-		height:80px;
-		background-color: black;
-		clear:both;
+
+	.main{
+		margin-bottom:200px;
+		margin-right:150px;
+		margin-left:150px;
 	}
 
 
-/*-------------------------------------
-	ここから
--------------------------------------*/
-	.subtitle{
-		text-align:center;
-		font-weight: bold;
-		font-size:16px;
+/*==================================ボタンcss===========================================*/
+	/*------------------共通部分------------------*/
+		input[type="submit"], input[type="button"]{
+				border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    -moz-border-radius: 5px;
+			    font-weight: bold;
+				background: #3f3f3f;
+				color: #ffffff;
+				box-shadow: 0 2px black;
+				width:100px;
+				height:30px;
+				text-align:center;
+				margin-right:10px;
+			}
+		input[type="submit"]:hover,  input[type="button"]:hover{
+		        -ms-transform: translateY(2px);
+			    -webkit-transform: translateY(2px);
+			    transform: translateY(2px);
+			    border-bottom: none;
+			    box-shadow: none;
+			}
+	/*------------------各ページボタンcss------------------*/
+		/* 商品表内 */
+			.manageTable input[type="submit"]{
+				width: 100%;
+				margit: 0px;
+			}
+		/* 入力フォーム内 */
+			.input-form input[type="submit"]{
+				width: 100px;
+				margin: 10px 0px 30px 20px;
+			}
+		/* 確認画面 */
+		.m-confirm input[type="submit"], .m-confirm input[type="button"]:hover{
+			width: 100px;
+			margin: 10px 0px 30px 20px;
+		}
 
-		color:black;
-	}
-
-	.center{
-		text-align:center;
-	}
-	.right{
-		text-align:right;
-	}
-	.left{
-		text-align:left;
-	}
-
-	.destination{
-		margin-left: 50%;
-	}
-	.left8{
-		margin-left: 70%;
-	}
+/*==================================フォームcss===========================================*/
 
