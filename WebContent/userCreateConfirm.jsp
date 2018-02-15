@@ -168,5 +168,7 @@ table.company td {
 <s:submit value="戻る"/>
 </s:form>
 
+<jsp:include page="footer.jsp"/>
+
 </body>
 </html>

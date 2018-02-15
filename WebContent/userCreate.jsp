@@ -31,7 +31,7 @@
 <table>
 	<tr>
 		<th>ユーザーID<em>必須</em></th>
-			<td><input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required,minSize[6]]" /></td>
+			<td><input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required]" /></td>
 	</tr>
 	<s:if test="errorMessage!=hoge">
 	<s:property value="errorMessage" escape="false" />
@@ -39,7 +39,7 @@
 
 	<tr>
 		<th>パスワード<em>必須</em></th>
-			<td><input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,minSize[6],maxSize[16]]" /></td>
+			<td><input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,maxSize[16]]" /></td>
 	</tr>
 	<tr>
 		<th>お名前<em>必須</em></th>

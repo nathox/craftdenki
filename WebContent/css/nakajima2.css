@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+		#footer {
+		    background-image:url("../images/danbo.jpg");
+		}
+.under{
+    font-family: 'Press Start 2P', cursive;
+    font-size:20px;
+    color:firebrick;
+    text-align: center;
+    padding-top:50px;
+    background-image:url("danbo3.jpg");
+}
+.guide ul{
+    display:flex;
+    margin:0;
+}
+.guide li{
+    list-style-type:none;
+    flex-grow: 1;
+    text-align:center;
+}

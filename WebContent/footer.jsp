@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/home.css" rel="stylesheet">
+<link href="css/nakajima2.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
 	rel="stylesheet">
 <script src="js/footerFixed.js"></script>
