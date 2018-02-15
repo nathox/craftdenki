@@ -1,3 +1,5 @@
+@CHARSET "UTF-8";
+
 table{
 			width:600px;
 			border-collapse:collapse;
@@ -7,7 +9,7 @@ table{
 
 th{
 			border-left:6px solid #cccccc;
-			/*ª¶‘¤‚ÌF*/
+			/*â†‘å·¦å´ã®è‰²*/
 			background-color:#efefef;
 						width:150px;
 			}
@@ -29,7 +31,7 @@ em{
 				padding-top:10px;
 				width:150px;
 				height:60px;
-				border:10px@#000;
+				border:10pxã€€#000;
 				margin-left:450px;
 				}
 
