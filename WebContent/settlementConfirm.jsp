@@ -22,38 +22,29 @@
 	<jsp:include page="home.jsp" />
 	<div class="main">
 
-	<h3>決済確認</h3>
+		<h3>決済確認</h3>
 
 
+		<h4>購入者情報</h4>
 
+		<div class="blank">
+			<span>お名前:</span>
+			<s:property value="session.familyName" />
+			<s:property value="session.firstName" />
 
-		<div>
-			<table>
-
-				<tr>
-					<td><div class="right">名前:</div></td>
-					<td><div class="left">
-							<s:property value="session.familyName" />
-							<s:property value="session.firstName" />
-						</div></td>
-				</tr>
-
-				<tr>
-					<td><div class="right">お届け先住所:</div></td>
-					<td><div class="left">
-							<s:property value="choseAddress" escape="false" />
-						</div></td>
-				</tr>
-
-				<tr>
-					<td><div class="right">電話番号:</div></td>
-					<td><div class="left">
-							<s:property value="choseNumber" escape="false" />
-						</div></td>
-				</tr>
-
-			</table>
 		</div>
+
+		<div class="blank">
+			<span>お届け先住所:</span>
+			<s:property value="choseAddress" escape="false" />
+		</div>
+
+		<div class="blank">
+			<span>お電話番号:</span>
+			<s:property value="choseNumber" escape="false" />
+		</div>
+
+
 
 
 		<br>
@@ -101,13 +92,13 @@
 		</table>
 
 
-		<p>合計:\  -</p>
+		<p>合計:\ -</p>
 
 
 		<br>
 
 
-		<div class="left8">
+		<div class="left6">
 			<s:form action="SettlementCompleteAction">
 				<s:submit value="購入する" />
 			</s:form>

@@ -311,9 +311,27 @@
 
 
 	/* sanoここから*/
-		.left8{
-		margin-right: 20%;
+
+		.left1{
+		padding-left:7%;
 		}
 
+
+		.left2{
+			padding-left:8em;
+		}
+		.left6{
+		padding-left: 50%;
+		}
+
+
+		.blank span{
+		display: inline-block;
+		width: 8em;
+		}
+
+		.phone{
+		padding-left:24px;
+		}
 
 
