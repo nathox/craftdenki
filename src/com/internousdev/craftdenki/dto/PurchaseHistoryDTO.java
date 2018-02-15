@@ -59,25 +59,29 @@ public class PurchaseHistoryDTO {
 	}
 
 	// 商品画像
-	public String getimageFileName() {
-		return imageFileName;
-	}
 
-	public void setimageFileName(String imageFileName) {
-		this.imageFileName = imageFileName;
-	}
 
-	public String getimageFilePath() {
-		return imageFilePath;
-	}
 
-	public void setimageFilePath(String imageFilePath) {
-		this.imageFilePath = imageFilePath;
-	}
 
 	// 値段
 	public int getPrice() {
 		return price;
+	}
+
+	public String getImageFileName() {
+		return imageFileName;
+	}
+
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
 	}
 
 	public void setPrice(int price) {
