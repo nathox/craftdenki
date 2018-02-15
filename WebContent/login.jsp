@@ -95,16 +95,12 @@ p {
 							<s:property value="session.Passerror" />
 						</s:if>
 					</tr>
-					<br>
 					<tr>
 						<td><s:submit value="ログイン" size="30" class="button"/></td>
 					</tr>
-
 				</table>
 			</s:form>
 			<table>
-				<br>
-				<br>
 				<tr>
 					<td><span>パスワードを忘れてしまった方は<a
 							href='<s:url action="ChangePasswordAction"/>'>こちら</a>から
