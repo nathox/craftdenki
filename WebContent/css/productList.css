@@ -56,9 +56,15 @@ visibility: hidden;
 min-height: 1px;
 }
 
-li{
+.list1{
 border: 1px solid #b1b1b1;
-margin: 15px;
+border-radius: 20% ;
+margin:0 0px 60px 60px;
+box-shadow:1px 1px 5px #000;
+background-image: url("../images/danbo.jpg");
+}
+.list1:hover {
+    box-shadow:1px 1px 10px #000;
 }
 
 h1,h3{

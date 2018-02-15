@@ -13,8 +13,10 @@
 
 </head>
 <body>
-<!-- ヘッダー -->
+<!-- ヘッダー-->
+	<jsp:include page="home.jsp" />
 
+<div class="main">
 	<div class="ProductList">
 		<h1>商品一覧</h1>
 
@@ -29,7 +31,7 @@
 				<a href="<s:url action="ProductDetailsAction">
 			 <s:param name="product_id" value="%{product_id}" />
 			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
-                    <li>
+                    <li class="list1">
 					   <dl>
 					   		<dt>
 					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
@@ -55,5 +57,7 @@
 			</s:iterator>
 		</ul>
 	</div>
+	</div>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
