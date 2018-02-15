@@ -61,7 +61,7 @@ border: 1px solid #b1b1b1;
 border-radius: 20% ;
 margin:0 0px 60px 65px;
 box-shadow:1px 1px 5px #000;
-background-image: url("../images/wall8.jpg");
+background-image: url("../images/mokume1.jpg");
 }
 .list1:hover {
     box-shadow:1px 1px 10px #000;
@@ -92,3 +92,9 @@ border-bottom: 1px solid #b1b1b1;
 
 }
 
+.main{
+	background-image: url("../images/kusa2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
