@@ -103,6 +103,8 @@
 					<s:property value="message" />
 				</h3>
 			</s:if>
+
+			<!-- <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p> -->
 	</div>
 	<jsp:include page="footer.jsp" />
 </body>
