@@ -13,6 +13,7 @@ public class Review1Action extends ActionSupport implements SessionAware {
 	private String productName;
 	private String productId;
 	private String registDate;
+
 	public String execute() {
 
 		session.put("productName", productName);

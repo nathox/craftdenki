@@ -27,7 +27,7 @@ public class PurchaseHistoryDTO {
 	// 発売年月日
 	private String releaseDate;
 
-	private int id;
+	private String id;
 
 	private String productcount;
 
@@ -94,28 +94,28 @@ public class PurchaseHistoryDTO {
 	}
 
 	// 発売会社名
-	public String getreleaseCompany() {
+	public String getReleaseCompany() {
 		return releaseCompany;
 	}
 
-	public void setreleaseCompany(String releaseCompany) {
+	public void setReleaseCompany(String releaseCompany) {
 		this.releaseCompany = releaseCompany;
 	}
 
 	// 発売年月日
-	public String getreleaseDate() {
+	public String getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setreleaseDate(String releaseDate) {
+	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -142,6 +142,8 @@ public class PurchaseHistoryDTO {
 	public String getProductCount() {
 		return 	productcount;
 		}
+
+
 
 
 

@@ -31,15 +31,15 @@ public class PurchaseHistoryDAO {
 
 				PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
 
-				dto.setId(Integer.parseInt(rs.getString("id")));
+				dto.setId(rs.getString("id"));
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductNameKana(rs.getString("product_name_kana"));
 				dto.setimageFileName(rs.getString("image_file_name"));
 				dto.setimageFilePath(rs.getString("image_file_path"));
 				dto.setPrice(rs.getInt("price"));
 				dto.setCount(rs.getInt("product_count"));
-				dto.setreleaseCompany(rs.getString("release_company"));
-				dto.setreleaseDate(rs.getString("release_date"));
+				dto.setReleaseCompany(rs.getString("release_company"));
+				dto.setReleaseDate(rs.getString("release_date"));
 				dto.setProductId(rs.getString("product_id"));
 				dto.setRegistDate(rs.getString("regist_date"));
 
@@ -55,28 +55,8 @@ public class PurchaseHistoryDAO {
 		return purchaseHistoryList;
 	}
 
-	public int deleteHistoryInfo(String product_id) {
-		String sql = "update purchase_history_info set status = 1 where product_id = ?";
-		PreparedStatement ps;
-		int result = 0;
-
-		System.out.println("ccc");
-		System.out.println(product_id);
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setString(1, product_id);
-
-			result = ps.executeUpdate();
-			return result;
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	public int deleteHistoryInfoById(String id) {
-		String sql = "update purchase_history_info set status = 1 where id = ?";
+	public int deleteHistoryInfo(String id) {
+		String sql = "update purchase_history_info set status = 1 where id =?";
 		PreparedStatement ps;
 		int result = 0;
 
@@ -84,7 +64,7 @@ public class PurchaseHistoryDAO {
 		System.out.println(id);
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, id);
+			ps.setString(1,id);
 
 			result = ps.executeUpdate();
 			return result;
