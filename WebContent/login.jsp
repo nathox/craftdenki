@@ -97,7 +97,7 @@ p {
 					</tr>
 					<br>
 					<tr>
-						<td><s:submit value="ログイン" size="30" /></td>
+						<td><s:submit value="ログイン" size="30" class="button"/></td>
 					</tr>
 
 				</table>
@@ -120,7 +120,7 @@ p {
 			</div>
 			<br> <br>
 			<s:form action="UserCreateAction">
-				<s:submit value="新規登録" />
+				<s:submit value="新規登録" class="button"/>
 			</s:form>
 
 		</div>

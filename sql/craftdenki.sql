@@ -69,9 +69,10 @@ drop table if exists favorite_info;
 create table favorite_info(
 id int not null primary key auto_increment,
 user_id varchar(16),
-product_id int unique,
+product_id int,
 regist_date datetime
 );
+--product_id エラーが出るためuniqueはずしました
 
 drop table if exists review_info;
 
