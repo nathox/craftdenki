@@ -18,13 +18,12 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 	private int product_id;
 	private int product_count;
-	private String price;
 	private int finalPrice;
+	private String price;
 	private String userId;
-	private String deleteFlg;
-	private String insertFlg;
+	private String deleteFlg = null;
+	private String insertFlg = null;
 	private String message;
-
 	private Collection<String> delete;
 	private String productName;
 	private String productNameKana;
@@ -33,60 +32,45 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private String releaseCompany;
 	private String releaseDate;
 	private String totalPrice;
-
 	private String isFlg;
-
-
-
 
 	public String execute()throws SQLException{
 		String result=ERROR;
-
-		if(isFlg!=null){
-			deleteFlg="1";
-		}
-
 		CartDAO cartDAO = new CartDAO();
 
-		//ログイン/未ログインでカートにInsertするIDを変更
-		if(session.containsKey("trueID")){
-			userId = session.get("trueID").toString();
-		}else{
-			userId = session.get("temp_user_id").toString();
+		if(isFlg!=null){
+			this.deleteFlg="1";
 		}
 
+		if(session.containsKey("trueID")){
+			this.userId = session.get("trueID").toString();
+		}else{
+			this.userId = session.get("temp_user_id").toString();
+		}
 
-		//商品の追加
 		if(insertFlg != null){
 			cartDAO.insertCart(userId,product_id,product_count, Integer.parseInt(price));
 		}
 
-
-		System.out.println("INSERTFLG : " + insertFlg);
-		System.out.println("DELETEFLG : " + deleteFlg);
-
 		if(deleteFlg == null){
-
-			//カート情報取得
 			cartList = cartDAO.getCartInfo(userId);
 			session.put("cartList", cartList);
-
 			int size = cartList.size();
 			for(int i=0; i<size; i++){
 				finalPrice = finalPrice + cartList.get(i).getTotalPrice();
 			}
 
-
 		}else if(deleteFlg.equals("1")){
-
-			//商品の削除
 			for(String deleteId:delete){
 				int res = cartDAO.deleteCart(userId,Integer.parseInt(deleteId));
 
 				if(res > 0){
-					setMessage("カート情報を削除しました。");
+					String setMessage = "カート情報を削除しました。";
+					System.out.println(setMessage+"hhhh"+res);
+
 				}else if(res == 0){
-					setMessage("カート情報の削除に失敗しました。");
+					String setMessage = "カート情報の削除に失敗しました。";
+					System.out.println(setMessage+"hhhh"+res);
 				}
 			}
 		}
@@ -109,9 +93,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 
 
-	public void setCartList(ArrayList<CartDTO> cartList) {
-		this.cartList = cartList;
-	}
 
 	@Override
 	public void setSession(Map<String, Object> session) {
@@ -120,7 +101,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public ArrayList<CartDTO> getCartList(){
 		return this.cartList;
 	}
-
+	public void setCartList(ArrayList<CartDTO> cartList) {
+		this.cartList = cartList;
+	}
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -145,15 +128,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 		this.price = price;
 	}
 
-
-
-	public String getDeleteFlg() {
-		return deleteFlg;
-	}
-	public void setDeleteFlg(String deleteFlg) {
-		this.deleteFlg = deleteFlg;
-
-	}
 	public String getMessage() {
 		return message;
 	}

@@ -20,7 +20,7 @@
 	width:100%;
 	text-align:center;
 }
-
+</style>
 </head>
 <body>
 	<jsp:include page="home.jsp" />

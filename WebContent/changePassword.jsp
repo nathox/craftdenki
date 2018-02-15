@@ -25,7 +25,7 @@
 	text-align:right;
 	padding:10px;
 }
-.in{
+input[type="text"], input[type="password"]{
 	width:250px;
 	padding:5px;
 	margin:5px;
@@ -60,14 +60,14 @@ color:red;
 	<s:property value="questionMessage" /><br>
 	</div>
 	<label>答え:</label>
-	<input class="in" type="text" name="answer" value="" class="validate[required]" ><br>
+	<input type="text" name="answer" value="" class="validate[required]" ><br>
 
 	<label>ログインPASS:</label>
-	<input class="in" type="password" name="password" id="pass" value=""
+	<input type="password" name="password" id="pass" value=""
 		class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" /><br>
 
 	<label>確認用:</label>
-	<input class="in" type="password" name="checkPassword" id="pass2" value="" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber],equals[pass]]" /><br>
+	<input type="password" name="checkPassword" id="pass2" value="" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber],equals[pass]]" /><br>
 
 	<s:submit class="button" value="変更"/>
 	</s:form>
