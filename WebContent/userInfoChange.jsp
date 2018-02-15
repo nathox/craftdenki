@@ -52,6 +52,10 @@
 </head>
 <body>
 
+   <jsp:include page="home.jsp"/>
+
+        <div class="main">
+
 	<h3>ユーザー情報変更ページ</h3>
 	<br>
 	<s:form id="form_1" action="UserInfoChangeConfirmAction">
@@ -169,6 +173,9 @@
 	</s:form>
 <br>
 	<a href="myPage.jsp">マイページ画面へ戻る</a>
+
+</div>
+    <jsp:include page="footer.jsp"/>
 
 
 </body>
