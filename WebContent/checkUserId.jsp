@@ -12,23 +12,32 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>ログインID確認画面</title>
+
+<style type="text/css">
+.form{
+	width:100%;
+	text-align:center;
+}
+</style>
 </head>
+
 <body>
-	<div>
+	<jsp:include page="home.jsp" />
+	<div class="form">
 	<s:form action="CheckUserIdAction">
-				<tr>
-				<td>
+
+
+
 				<label>ログインID：</label>
-				</td>
-				<td>
-				<input type="text" name="userId" value="test"/>
-				</td>
-			</tr>
+				<input type="text" name="userId" value="test"/><br>
+
 
 		<s:submit value="確認"/>
 	</s:form>
 	</div>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

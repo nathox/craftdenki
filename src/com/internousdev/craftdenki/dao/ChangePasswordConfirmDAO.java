@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Map;
 
-import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.internousdev.craftdenki.util.DBConnector;;
 
 
@@ -20,29 +19,7 @@ public class ChangePasswordConfirmDAO {
 
 	public Map<String, Object> session;
 
-	public UserInfoChangeDTO checkAnswer(String answer) {
 
-
-		UserInfoChangeDTO userInfoChangeDTO = new UserInfoChangeDTO();
-		try{
-			String sql ="select * from user_info where answer=?";
-			PreparedStatement ps = conn.prepareStatement(sql);
-
-			ps.setString(1, answer);
-			ResultSet rs = ps.executeQuery();
-
-			if (rs.next()) {
-
-				userInfoChangeDTO.setAnswer(rs.getString("answer"));
-			}
-
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-
-
-		return userInfoChangeDTO;
-	}
 
 
 	public boolean checkAnswer2(String answer ){

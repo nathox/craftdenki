@@ -11,15 +11,17 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>Password変更完了画面</title>
 </head>
 <body>
+	<jsp:include page="home.jsp" />
 		<div><br>
 			<h3>パスワードを変更しました。</h3>
 
 			<div>
-				<a href='<s:url action="LoginAction" />'>ログインへ</a>
+				<a href='<s:url action="GoLoginAction" />'>ログインへ</a>
 			</div>
 		</div>
 </body>

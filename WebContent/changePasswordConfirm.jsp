@@ -11,10 +11,12 @@
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>Password確認</title>
 </head>
 <body>
+	<jsp:include page="home.jsp" />
 				<s:form action="ChangePasswordCompleteAction">
 
 
