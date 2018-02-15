@@ -16,19 +16,13 @@
 
 </head>
 <body class="back-image step1">
-	<div id="main">
-		<div id="top">
+	<div class="main">
+		<div id="m-title">
 			<p>管理者Home画面</p>
 		</div>
+		<!-- メニューバー -->
+			<jsp:include page="managerMenu.jsp" />
 		<div>
-			<div>
-				<s:form action="ProductManageAction">
-					<s:submit value="商品管理" class="icon"/>
-				</s:form>
-				<s:form action="SalesManageAction">
-					<s:submit value="売上管理" class="icon"/>
-				</s:form>
-			</div>
 		</div>
 	</div>
 

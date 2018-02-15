@@ -20,7 +20,7 @@ public class ProductHideCompleteAction extends ActionSupport implements SessionA
 
 
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 
 			//「, 」区切りの文字列からString配列へ

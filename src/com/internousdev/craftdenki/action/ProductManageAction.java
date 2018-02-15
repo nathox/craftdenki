@@ -23,7 +23,7 @@ public class ProductManageAction extends ActionSupport implements SessionAware{
 	public String execute() throws SQLException{
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			//カテゴリテーブルよりカテゴリリストを取得
 			CategoryDAO categoryDAO = new CategoryDAO();
 			categoryList = categoryDAO.getCategoryInfo();

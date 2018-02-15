@@ -31,6 +31,8 @@
 			<div id="m-title">
 				<p>商品管理画面</p>
 			</div>
+			<!-- メニューバー -->
+				<jsp:include page="managerMenu.jsp" />
 			<div>
 				<p class="m-index">商品一覧</p>
 				<div class="errorMessage">

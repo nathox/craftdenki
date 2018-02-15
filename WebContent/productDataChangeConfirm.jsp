@@ -20,6 +20,8 @@
 		<div id="m-title">
 			<p>商品情報変更確認画面</p>
 		</div>
+		<!-- メニューバー -->
+			<jsp:include page="managerMenu.jsp" />
 		<div class="m-log">
 			<s:form action="ProductDataChangeCompleteAction">
 

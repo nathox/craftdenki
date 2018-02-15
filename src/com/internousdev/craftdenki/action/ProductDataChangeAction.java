@@ -45,7 +45,7 @@ public class ProductDataChangeAction extends ActionSupport implements SessionAwa
 		//--------------------------
 
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 
 			//カテゴリテーブルよりカテゴリリストを取得

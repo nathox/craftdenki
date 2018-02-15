@@ -34,7 +34,7 @@ public class ProductRestoreConfirmAction extends ActionSupport implements Sessio
 	public String execute() throws SQLException{
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 
 			//checkListがnullならerrorM.jspへ

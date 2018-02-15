@@ -21,7 +21,7 @@ public class ProductRestoreAction extends ActionSupport implements SessionAware{
 	public String execute() throws SQLException{
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 			productList = productListDAO.getProductHideInfo();
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";

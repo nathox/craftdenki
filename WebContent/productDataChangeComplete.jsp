@@ -20,13 +20,14 @@
 		<div id="m-title">
 			<p>商品情報変更完了画面</p>
 		</div>
+		<!-- メニューバー -->
+			<jsp:include page="managerMenu.jsp" />
 		<div class="m-log">
 			商品情報を変更しました
 			<s:form action="ProductDetailsAction">
 				<s:hidden name="product_id" value="product_id"/>
 				<s:submit value="確認"/>
 			</s:form>
-			<input type="button" value="管理者HOME" onclick="/craftdenki/managerHome.jsp" class="button"/>
 		</div>
 	</div>
 </body>

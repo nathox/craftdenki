@@ -47,7 +47,7 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 			/**---------------------------
 			 * 検索未実行(ページ遷移一回目)
@@ -124,7 +124,7 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 					LocalDate target = sqlDate2LocalDate(dto.getPurchaseDate());
 					//DTOの購入日時が絞り込み期間内にあればtrue
 					if(target.compareTo(str) >= 0 && target.compareTo(end) <= 0) {
-						if(categoryId =="0" || dto.getCategoryId() == Integer.parseInt(categoryId)){
+						if(categoryId.equals("0") || dto.getCategoryId() == Integer.parseInt(categoryId)){
 							localSalesHistoryList.add(dto);
 						}
 					}

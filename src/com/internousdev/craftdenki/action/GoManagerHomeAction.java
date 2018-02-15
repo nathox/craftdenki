@@ -14,7 +14,7 @@ public class GoManagerHomeAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 		}else errorMessage = "不正なアクセスです。もう一度ログインをお願いいたします。";
 		return result;

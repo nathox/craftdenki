@@ -5,74 +5,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="Content-Style-Type" content="text/css"/>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/okamoto.css">
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
 <meta name="keywords" content=""/>
 <title>削除商品復元画面</title>
 
-<style type="text/css">
-	/* ========TAG LAYOUT======== */
-	body{
-		margin:0;
-		padding:0;
-		line-height:1.6;
-		letter-spacing:1px;
-		font-family:Verdana,Helvetica,sans-serif;
-		font-size:12px;
-		color:#333;
-		background:#fff;
-	}
-	table{
-		text-align:center;
-		margin:0 auto;
-	}
-	/* ========ID LAYOUT========*/
-	#top{
-		width:780px;
-		margin:30px auto;
-		border:1px solid #333;
-	}
-	#header{
-		width:100%;
-		height:80px;
-		background-color:black;
-	}
-	#main{
-		width:100%;
-		height:500px;
-		text-align:center;
-	}
-	#footer{
-		width:100%;
-		height:80px;
-		background-color: black;
-		clear:both;
-	}
-	#text-link{
-		display:inline-block;
-		text-align:right;
-	}
-	#content{
-		font-size:6px;
-		line-height:0px;
-	}
-</style>
 
 </head>
-<body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
+<body class="back-image step3">
+	<div class="main">
+		<div id="m-title">
 			<p>削除商品復元画面</p>
 		</div>
+		<!-- メニューバー -->
+			<jsp:include page="managerMenu.jsp" />
+		<span class="m-index">
+			削除商品一覧
+		</span>
 		<div>
-			<h3>削除商品一覧</h3>
-			<div>
+			<div class="errorMessage">
 				<s:iterator value="errorSupplyMessageList">
 					<s:div>
 						<s:property />
@@ -80,7 +34,7 @@
 				</s:iterator>
 			</div>
 			<s:form action="ProductRestoreConfirmAction">
-				<table border="1">
+				<table class="manageTable">
 					<tr>
 						<th>ID</th>
 						<th>商品名</th>
@@ -92,13 +46,13 @@
 					</tr>
 					<s:iterator value="productList">
 						<tr>
-							<td><s:property value="product_id"/></td>
-							<td><s:property value="product_name"/></td>
-							<td><s:property value="price"/></td>
-							<td><s:property value="current_cost"/></td>
-							<td><s:property value="item_stock"/></td>
-							<td><s:property value="product_description"/></td>
-							<td><s:checkbox name="checkList" value="" fieldValue="%{product_id}" /> </td>
+							<td><span><s:property value="product_id"/></span></td>
+							<td><span><s:property value="product_name"/></span></td>
+							<td><span><s:property value="price"/></span></td>
+							<td><span><s:property value="current_cost"/></span></td>
+							<td><span><s:property value="item_stock"/></span></td>
+							<td><span><s:property value="product_description"/></span></td>
+							<td><span><s:checkbox name="checkList" value="" fieldValue="%{product_id}" /></span></td>
 						</tr>
 					</s:iterator>
 						<tr>
@@ -112,3 +66,7 @@
 						</tr>
 				</table>
 			</s:form>
+		</div>
+	</div>
+</body>
+</html>

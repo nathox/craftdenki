@@ -36,7 +36,7 @@ public class ProductDataChangeCompleteAction extends ActionSupport implements Se
 		product_id = productId;
 		//--------------------------
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 
 			ProductDetailsDAO dao = new ProductDetailsDAO();

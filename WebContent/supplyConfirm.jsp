@@ -14,18 +14,20 @@
 <title>仕入確認画面</title>
 
 </head>
-<body>
-	<div id="main">
-		<div id="top">
+<body class="back-image step4">
+	<div class="main">
+		<div id="m-title">
 			<p>仕入確認画面</p>
 		</div>
+		<!-- メニューバー -->
+				<jsp:include page="managerMenu.jsp" />
 		<div>
 			<s:if test="supplyList.size() == 0">
-				仕入情報がありません。
+				<p class="errorMessage">仕入情報がありません。</p>
 			</s:if>
 			<s:else>
 				<s:form action="SupplyCompleteAction">
-					<table border="1">
+					<table class="manageTable">
 						<tr>
 							<th>ID</th>
 							<th>商品名</th>
@@ -37,18 +39,18 @@
 						</tr>
 						<s:iterator value="supplyList">
 							<tr>
-								<td><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></td>
-								<td><s:property value="product_name"/></td>
-								<td><s:property value="price"/></td>
-								<td><s:property value="item_stock"/></td>
-								<td><s:property value="supplyCount"/><s:hidden name="supplyCount" value="%{supplyCount}"/></td>
-								<td><s:property value="supplyCost"/><s:hidden name="supplyCost" value="%{supplyCost}"/></td>
-								<td><s:property value="supplyCostTotal"/></td>
+								<td><span><s:property value="product_id"/><s:hidden name="product_id" value="%{product_id}"/></span></td>
+								<td><span><s:property value="product_name"/></span></td>
+								<td><span><s:property value="price"/></span></td>
+								<td><span><s:property value="item_stock"/></span></td>
+								<td><span><s:property value="supplyCount"/><s:hidden name="supplyCount" value="%{supplyCount}"/></span></td>
+								<td><span><s:property value="supplyCost"/><s:hidden name="supplyCost" value="%{supplyCost}"/></span></td>
+								<td><span><s:property value="supplyCostTotal"/></span></td>
 							</tr>
 						</s:iterator>
 					</table>
-					<p>仕入値合計<s:property value="supplyCostAllTotal"/>円
-					<p>以上でよろしいですか？</p>
+					<p class="m-log">仕入値合計<s:property value="supplyCostAllTotal"/>円
+					<p class="m-log">以上でよろしいですか？</p>
 					<s:submit value="はい"/>
 				</s:form>
 				<s:form action="ProductManageAction">

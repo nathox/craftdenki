@@ -36,7 +36,7 @@ public class CheckProductChangeAction extends ActionSupport implements SessionAw
 		String result=ERROR;
 
 
-		if(true){      //管理者判定
+		if(session.get("master_flg") == "1"){      //管理者判定
 			result = SUCCESS;
 
 			//カテゴリテーブルよりカテゴリリストを取得

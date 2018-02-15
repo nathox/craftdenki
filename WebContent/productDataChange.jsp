@@ -20,6 +20,8 @@
 		<div id="m-title">
 			<p>商品変更画面</p>
 		</div>
+		<!-- メニューバー -->
+			<jsp:include page="managerMenu.jsp" />
 		<div class="errorMessage">
 			<s:iterator value="errorMessageList">
 				<s:div>
