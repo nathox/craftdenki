@@ -6,7 +6,6 @@
 <link href="css/home.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
 	rel="stylesheet">
-<script src="js/jquery-1.8.2.min.js"></script>
 <script src="js/footerFixed.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
