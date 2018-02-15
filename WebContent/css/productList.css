@@ -59,9 +59,9 @@ min-height: 1px;
 .list1{
 border: 1px solid #b1b1b1;
 border-radius: 20% ;
-margin:0 0px 60px 60px;
+margin:0 0px 60px 65px;
 box-shadow:1px 1px 5px #000;
-background-image: url("../images/danbo.jpg");
+background-image: url("../images/wall8.jpg");
 }
 .list1:hover {
     box-shadow:1px 1px 10px #000;
