@@ -41,18 +41,14 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 			message=null;
 			if (!(checkList == null)) {
 				for (String deleteId: checkList) {
-					System.out.println("DELETEID : " + deleteId);
 					dao.deleteHistoryInfo(deleteId);
 				}
 
+				result = "delete";
+			}
 				PurchaseHistoryDAO dao1 = new PurchaseHistoryDAO();
 				String userId = session.get("trueID").toString();
 				purchaseHistoryList = dao1.getPurchaseHistory(userId);
-
-				result = "delete";
-				return result;
-			}
-
 			result = "delete";
 			return result;
 		}
