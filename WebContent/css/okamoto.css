@@ -27,7 +27,7 @@
 
 /*==================================ボタンcss===========================================*/
 	/*------------------共通部分------------------*/
-		input[type="submit"], input[type="button"]{
+		input[type="submit"], input[type="button"], .button{
 				border-radius: 5px;
 			    -webkit-border-radius: 5px;
 			    -moz-border-radius: 5px;
@@ -59,7 +59,7 @@
 				margin: 10px 0px 30px 20px;
 			}
 		/* 確認画面 */
-			.m-log input[type="submit"], .m-log input[type="button"]:hover{
+			.m-log input[type="submit"], .m-log input[type="button"]{
 				width: 100px;
 				margin: 10px 0px 30px 0px;
 			}

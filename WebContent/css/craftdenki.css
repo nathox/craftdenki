@@ -59,7 +59,7 @@
 				margin: 10px 0px 30px 20px;
 			}
 		/* 確認画面 */
-			.m-log input[type="submit"], .m-log input[type="button"]:hover{
+			.m-log input[type="submit"], .m-log input[type="button"]{
 				width: 100px;
 				margin: 10px 0px 30px 0px;
 			}
