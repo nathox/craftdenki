@@ -25,8 +25,8 @@
 </script>
 
 </head>
-<body class="back-image">
-	<div id="main">
+<body class="back-image step2">
+	<div class="main">
 		<s:if test="productList != null">
 			<div id="m-title">
 				<p>商品管理画面</p>
@@ -76,9 +76,9 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td><s:submit value="仕入" onclick="goCheckSupplyAction();" class="mButton"/></td>
+								<td><s:submit value="仕入" onclick="goCheckSupplyAction();"/></td>
 								<td></td>
-								<td><s:submit value="削除" onclick="goProductHideConfirmAction();" class="mButton"/></td>
+								<td><s:submit value="削除" onclick="goProductHideConfirmAction();"/></td>
 							</tr>
 					</s:form>
 					<s:form action="ProductRestoreAction">
@@ -91,7 +91,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td><s:submit value="商品の復元" class="mButton"/></td>
+								<td><s:submit value="商品の復元" class="button"/></td>
 							</tr>
 					</s:form>
 				</table>
@@ -183,7 +183,7 @@
 				</div>
 
 				<br>
-				<s:submit value="登録" class="mButton"/>
+				<s:submit value="登録"/>
 			</s:form>
 		</div>
 	</div>

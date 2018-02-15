@@ -27,7 +27,7 @@
 
 /*==================================ボタンcss===========================================*/
 	/*------------------共通部分------------------*/
-		.button{
+		input[type="submit"], input[type="button"]{
 				border-radius: 5px;
 			    -webkit-border-radius: 5px;
 			    -moz-border-radius: 5px;
@@ -40,7 +40,7 @@
 				text-align:center;
 				margin-right:10px;
 			}
-		.button:hover {
+		input[type="submit"]:hover,  input[type="button"]:hover{
 		        -ms-transform: translateY(2px);
 			    -webkit-transform: translateY(2px);
 			    transform: translateY(2px);
@@ -49,15 +49,20 @@
 			}
 	/*------------------各ページボタンcss------------------*/
 		/* 商品表内 */
-			.manageTable .button{
+			.manageTable input[type="submit"]{
 				width: 100%;
 				margit: 0px;
 			}
 		/* 入力フォーム内 */
-			.input-form .button{
+			.input-form input[type="submit"]{
 				width: 100px;
-				margit: 10px;
+				margin: 10px 0px 30px 20px;
 			}
+		/* 確認画面 */
+		.m-confirm input[type="submit"], .m-confirm input[type="button"]:hover{
+			width: 100px;
+			margin: 10px 0px 30px 20px;
+		}
 
 /*==================================フォームcss===========================================*/
 

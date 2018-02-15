@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body class="back-image step1">
 	<div id="main">
 		<div id="top">
 			<p>管理者Home画面</p>

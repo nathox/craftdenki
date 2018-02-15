@@ -15,12 +15,12 @@
 
 
 </head>
-<body>
-	<div id="main">
-		<div id="top">
+<body class="back-image step3">
+	<div class="main">
+		<div id="m-title">
 			<p>商品変更画面</p>
 		</div>
-		<div>
+		<div class="errorMessage">
 			<s:iterator value="errorMessageList">
 				<s:div>
 					<s:property />
@@ -89,7 +89,7 @@
 					<label for="dynamic-label-input">16字以内 例)ベースボール・マガジン社</label>
 				</div>
 
-				<s:submit value="登録" class="mButton"/>
+				<s:submit value="登録"/>
 			</s:form>
 		</div>
 	</div>
