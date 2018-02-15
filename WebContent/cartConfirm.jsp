@@ -42,46 +42,6 @@
 			<s:form id="form" name="form" action="SettlementAction">
 				<h4>カート情報は以下になります。</h4>
 
-				<!--
-		<table>
-			<s:iterator value="purchaseHistoryList">
-			<div class="check"><s:checkbox name="delete" value="checked"
-							fieldValue="%{id}" /></div>
-				<div class="box1">
-				<ul class="okada">
-
-					<li>商品名:<span><s:property value="productName" /></span></li>
-					<s:hidden name="productName" value="%{productName}" />
-
-					<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
-					<s:hidden name="productName" value="%{productName}" />
-
-					<li>金額:<span><s:property value="price" />円</span></li>
-					<s:hidden name="price" value="%{price}" />
-
-					<li>個数:<span><s:property value="count" />個</span></li>
-					<s:hidden name="count" value="%{count}" />
-
-					<li><s:property value="releaseCompany" /></li>
-					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-
-					<li>発売会社名:<s:property value="releaseDate" /></li>
-					<s:hidden name="releaseDate" value="%{releaseDate}" />
-
-					<li>発売年月日:<s:property value="imageFilePath" /></li>
-					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
-
-					<s:hidden name="registDate" value="%{registDate}" />
-
-				</ul>
-				</div>
-			</s:iterator>
-
-		</table>
- -->
-
-
-
 				<table border="1">
 					<tr>
 						<td></td>
@@ -133,7 +93,7 @@
 				<br>
 				<br>
 				<td><s:submit value="削除" onclick="CartAction();"
-						class="button" /></td>
+						class="button" ><s:hidden name="isFlg" value="1" /></s:submit></td>
 				<td><s:submit value="決済に進む" onclick="SettlementAction();"
 						class="button" /></td>
 			</s:form>
