@@ -22,15 +22,14 @@
 	<jsp:include page="home.jsp" />
 
 	<div class="main">
-		<div>
 
 
+		<div class="center">
 
-			<h2>購入が完了しました。５秒後に自動的にHome画面に切り替わります。</h2>
+			<h3>購入が完了しました。3秒後に自動でHome画面に戻ります。</h3>
 			<span>自動で切り替わらない場合には<a href='<s:url action="StartAction"/>'>こちら</a></span>
-
-
 		</div>
+
 	</div>
 
 	<jsp:include page="footer.jsp" />
