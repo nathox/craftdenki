@@ -2,7 +2,6 @@
 /*-------------------------------------
 	共通
 -------------------------------------*/
-	/* ========TAG LAYOUT======== */
 	body{
 		margin:0;
 		padding:0;
@@ -19,9 +18,13 @@
 	}
 
 	.main{
-		margin-bottom:200px;
 		margin-right:150px;
 		margin-left:150px;
+		margin-bottom:200px;
+	}
+
+	h3{
+		border-bottom:solid black 1px;
 	}
 
 
@@ -97,6 +100,7 @@
 			/* 背景画像が読み込まれる前に表示される背景のカラー */
 			background-color: #464646;
 		}
+
 		/* 階段写真 */
 			.step1{
 				/* 画像ファイルの指定 */
@@ -154,7 +158,7 @@
 				/* ふち文字 */
 				color: white;
 				text-shadow:
-		        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+		        #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
 		        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
 		        black 0px 1px 0, black  0-1px 0,/*右、左*/
 		        black -1px 0 0, black 1px 0 0;/*上、下*/
@@ -169,25 +173,25 @@
 				font-wight:bold;
 			}
 		/* 確認画面 */
-		.m-log{
-			font-size: 16px;
-			margin-left: 5%;
-			font-weight: bold;
-			/* ふち文字 */
-			color: white;
-			text-shadow:
-	        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
-	        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
-	        black 0px 1px 0, black  0-1px 0,/*右、左*/
-	        black -1px 0 0, black 1px 0 0;/*上、下*/
-		}
-		.m-log span{
-			text-shadow:
-	        #ff353a 1px 1px 0, black -1px -1px 0,/*右下、左上*/
-	        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
-	        black 0px 1px 0, black  0-1px 0,/*右、左*/
-	        black -1px 0 0, black 1px 0 0;/*上、下*/
-		}
+			.m-log{
+				font-size: 16px;
+				margin-left: 5%;
+				font-weight: bold;
+				/* ふち文字 */
+				color: white;
+				text-shadow:
+		        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+		        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+		        black 0px 1px 0, black  0-1px 0,/*右、左*/
+		        black -1px 0 0, black 1px 0 0;/*上、下*/
+			}
+			.m-log span{
+				text-shadow:
+		        #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
+		        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+		        black 0px 1px 0, black  0-1px 0,/*右、左*/
+		        black -1px 0 0, black 1px 0 0;/*上、下*/
+			}
 
 
 /*==================================テーブルcss===========================================*/
@@ -209,7 +213,7 @@
 				line-height: 1.5;
 			}
 
-			table.manageTable th {
+			table.manageTable th, #table-total td {
 				padding: 10px;
 				font-weight: bold;
 				vertical-align: top;
@@ -252,7 +256,7 @@
 				.input-form {
 					color: white;
 					text-shadow:
-				        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+				       #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
 				        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
 				        black 0px 1px 0, black  0-1px 0,/*右、左*/
 				        black -1px 0 0, black 1px 0 0;/*上、下*/
@@ -267,6 +271,8 @@
 				    outline: none;
 				    border: 1px solid #DDD;
 				    font-size: 16px;
+				    box-shadow: 0 0 7px #606060;
+				    border: 1px solid #606060;
 				}
 				.input-form textarea {
 					width: 300px;

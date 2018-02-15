@@ -66,7 +66,7 @@
 							<td><s:property value="profit"/>円<s:hidden name="profit" value="%{profit}"/></td>
 						</tr>
 					</s:iterator>
-						<tr>
+						<tr id="table-total">
 							<td></td>
 							<td></td>
 							<td></td>

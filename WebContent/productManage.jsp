@@ -99,6 +99,10 @@
 				</table>
 			</div>
 		</s:if>
+		<s:else>
+			<!-- メニューバー -->
+				<jsp:include page="managerMenu.jsp" />
+		</s:else>
 		<p  class="m-index">新商品登録</p>
 		<div class="errorMessage">
 			<s:iterator value="errorMessageList">
