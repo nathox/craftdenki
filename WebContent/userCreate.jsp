@@ -104,6 +104,6 @@
 		<s:submit value="登録" />
 	</s:form>
 <a href="login.jsp">戻る</a>
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
