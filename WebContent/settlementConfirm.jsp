@@ -22,12 +22,7 @@
 	<jsp:include page="home.jsp" />
 	<div class="main">
 
-
-
-		<div class="subtitle">
-			<p>購入情報は以下になります。</p>
-		</div>
-
+	<h3>決済確認</h3>
 
 
 

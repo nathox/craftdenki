@@ -27,17 +27,13 @@
 	<div class="main">
 
 
-		<div class="subtitle">
-			<p>宛先を選択してください</p>
-		</div>
+		<h3>お届け先選択</h3>
 
 
 
 		<div>
 			<table>
-				<tr>
-					<th colspan="2">お客様情報</th>
-				<tr>
+
 					<th>
 						<div class="right">お名前:</div>
 					</th>

@@ -26,7 +26,7 @@
 
 		<div class="center">
 
-			<h3>購入が完了しました。3秒後に自動でHome画面に戻ります。</h3>
+			<h2>購入が完了しました。3秒後に自動でHome画面に戻ります。</h2>
 			<span>自動で切り替わらない場合には<a href='<s:url action="StartAction"/>'>こちら</a></span>
 		</div>
 
