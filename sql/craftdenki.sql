@@ -72,7 +72,6 @@ user_id varchar(16),
 product_id int,
 regist_date datetime
 );
---product_id エラーが出るためuniqueはずしました
 
 drop table if exists review_info;
 
