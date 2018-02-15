@@ -246,11 +246,7 @@
 			<result name="error">login.jsp</result>
 		</action>
 
-		<!-- GoCartAction -->
-		<action name="GoCartAction" class="com.internousdev.craftdenki.action.GoCartAction"
-			method="execute">
-			<result name="success">cartConfirm.jsp</result>
-		</action>
+
 
 
 

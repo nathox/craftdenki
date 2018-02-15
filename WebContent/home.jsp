@@ -51,7 +51,7 @@
 
 				<span><a href='<s:url action="GoMyPageAction" />'>マイページ</a></span>
 
-				<span><a href='<s:url action="GoCartAction" />'>カート</a></span>
+				<span><a href='<s:url action="CartAction" />'>カート</a></span>
 
 				<span><a href='<s:url action="ProductListAction" />'>商品一覧</a></span>
 
