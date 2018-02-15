@@ -22,8 +22,7 @@
 		<!-- メニューバー -->
 			<jsp:include page="managerMenu.jsp" />
 		<div class="m-log">
-			<h3>新商品登録が完了しました</h3>
-			<a href="/craftdenki/managerHome.jsp">管理者HOMEへ戻 る</a>
+			新商品登録が完了しました
 		</div>
 	</div>
 </body>
