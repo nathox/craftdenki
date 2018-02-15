@@ -148,7 +148,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"青い本です。", -- 商品詳細
 			1, -- カテゴリID
 			1000, -- 販売価格
-			"./images/blueBook.jpg", -- 画像ファイルパス
+			"./images/book.jpg", -- 画像ファイルパス
 			"blueBook.jpg", -- 画像ファイル名
 			"2010/02", -- 発売日
 			"amezoooon", -- 発売会社
