@@ -43,6 +43,21 @@ public class PurchaseHistoryDAO {
 				dto.setProductId(rs.getString("product_id"));
 				dto.setRegistDate(rs.getString("regist_date"));
 
+				System.out.println("PurchaseHistoryDAO---------");
+				System.out.println(dto.getId());
+				System.out.println(dto.getProductName());
+				System.out.println(dto.getProductNameKana());
+				System.out.println(dto.getImageFileName());
+				System.out.println(dto.getImageFilePath());
+				System.out.println(dto.getPrice());
+				System.out.println(dto.getCount());
+				System.out.println(dto.getReleaseCompany());
+				System.out.println(dto.getReleaseDate());
+				System.out.println(dto.getProductId());
+				System.out.println(dto.getRegistDate());
+				System.out.println("----------------------------");
+
+
 				System.out.println(rs.getString("product_count"));
 
 				purchaseHistoryList.add(dto);

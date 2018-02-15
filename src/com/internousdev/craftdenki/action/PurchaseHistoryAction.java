@@ -23,7 +23,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String product_id;
 	private String reviewFlg;
 	private String message;
-	private String imageFilePath;
+//	private String imageFilePath;
 
 	public String execute() throws SQLException {
 		String result=ERROR;
@@ -126,11 +126,11 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.message = message;
 	}
 
-	public String getImageFilePath() {
-		return imageFilePath;
-		}
-		public void setImageFilePath(String imageFilePath) {
-		this.imageFilePath = imageFilePath;
-		}
+//	public String getImageFilePath() {
+//		return imageFilePath;
+//		}
+//		public void setImageFilePath(String imageFilePath) {
+//		this.imageFilePath = imageFilePath;
+//		}
 
 }

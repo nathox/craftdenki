@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/enna.css" rel="stylesheet">
+<link href="css/craftdenki.css" rel="stylesheet">
 
 
 <script type="text/javascript">
@@ -23,7 +23,7 @@
 
 <style type="text/css">
 .box1 {
-	width: 50%;
+	width: 65%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -39,20 +39,18 @@ body {
 
 .okada {
 	margin-bottom: 65px;
-	border: 1px solid #b1b1b1;
+	border-top: 2px dotted #b1b1b1;
+	border-bottom: 2px dotted #b1b1b1;
 	list-style: none;
 	margin-right: auto;
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	line-height:2;
 }
 
 .check {
 	float: left;
 	position: relative;
-	margin-top: 40px;
-	margin-left: 240px;
+	margin-top: 130px;
+	left:100px;
 	line-height: 110px;
 }
 
@@ -63,31 +61,39 @@ li {
 	width: 100%;
 	margin-right: auto;
 	text-align: justify;
+	height:30px;
 }
 
 .review {
 	float: right;
 	position: relative;
-	margin-right: 150px;
 	line-height: 110px;
-	bottom: 120px;
+	bottom: 220px;
 }
 
 .delete {
 	float: right;
 	margin-right: 50px;
+
 }
 .iFP{
 	text-align:right;
-	width:250px;
-	 height:200px;
+	float:right;
+	object-fit:contain;
 	}
+
+.ayame{
+margin:50px;}
+
+
 </style>
 
 </head>
 <body>
 
 	<jsp:include page="home.jsp" />
+	<div class="main">
+
 
 
 	<h1>購入商品一覧</h1>
@@ -107,7 +113,12 @@ li {
 					<s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
 				</div>
 				<div class="box1">
+
 					<ul class="okada">
+					<div class="ayame">
+						<li>
+						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
 						<li>商品名:<span><s:property value="productName" /></span></li>
 						<s:hidden name="productName" value="%{productName}" />
@@ -127,25 +138,31 @@ li {
 						<li>発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-						<li>
-						<div class="iFP">a<img src="<s:property value='image_file_path'/>"></div></li>
-						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
 
 
+
+					</div>
 
 					</ul>
+
+
 				</div>
 				<div class="review">
-					<s:submit value="レビュー" onclick="Review1Action();" />
+					<p><a href='<s:url action="Review1Action"/>'>レビュー</a></p>
 				</div>
 			</s:iterator>
 			<div class="delete">
-			<s:submit value="一括削除" onclick="PurchaseHistoryAction();">
+			<p><a href='<s:url action="PurchaseHistoryAction"/>'>削除</a></p>
 				<s:hidden name="deleteFlg" value="1" />
-			</s:submit></div>
+			</div>
 		</table>
 	</s:form>
+
+
+</div>
+<div class="ayame"></div>
+   <jsp:include page="footer.jsp"/>
 
 </body>
 </html>
