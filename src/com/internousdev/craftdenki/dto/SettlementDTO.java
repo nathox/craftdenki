@@ -12,6 +12,7 @@ public class SettlementDTO {
 	private String telNumber2;
 	private String telNumber3;
 	private int AtCost;
+	private String imageFilePath;
 
 
 
@@ -76,6 +77,12 @@ public class SettlementDTO {
 
 	public int getAtCost(){
 		return AtCost;
+	}
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
 	}
 
 

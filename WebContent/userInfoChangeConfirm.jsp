@@ -25,6 +25,9 @@
 </head>
 <body>
 
+   <jsp:include page="home.jsp"/>
+           <div class="main">
+
 	<h3>下記内容でユーザー情報を変更します、よろしいですか？</h3>
 
 	<s:form action="UserInfoChangeCompleteAction">
@@ -101,6 +104,9 @@
 	</s:form>
 
 				<p><input type="button" value="ユーザー情報変更画面に戻る" onclick="history.back()" /></p>
+
+</div>
+    <jsp:include page="footer.jsp"/>
 
 </body>
 </html>

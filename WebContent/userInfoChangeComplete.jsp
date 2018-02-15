@@ -24,13 +24,16 @@
 </head>
 <body>
 
+   <jsp:include page="home.jsp"/>
+           <div class="main">
+
 	<h3>ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。</h3>
 
 	自動で切り替わらない場合は<a href="myPage.jsp">こちら</a>
 
 
-
-
+</div>
+    <jsp:include page="footer.jsp"/>
 
 </body>
 </html>

@@ -14,15 +14,24 @@
 	<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>Password変更完了画面</title>
+
+<style type="text/css">
+.main{
+	width:100%;
+	text-align:center;
+}
+
 </head>
 <body>
 	<jsp:include page="home.jsp" />
-		<div><br>
-			<h3>パスワードを変更しました。</h3>
+	<div class="main">
+
+			<h3>パスワードを変更しました。</h3><br>
 
 			<div>
 				<a href='<s:url action="GoLoginAction" />'>ログインへ</a>
 			</div>
 		</div>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

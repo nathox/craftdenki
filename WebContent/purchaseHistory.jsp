@@ -45,6 +45,7 @@ body {
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	line-height:2;
 }
 
 .check {
@@ -72,10 +73,15 @@ li {
 	bottom: 120px;
 }
 
-.deleteAll {
+.delete {
 	float: right;
 	margin-right: 50px;
 }
+.iFP{
+	text-align:right;
+	width:250px;
+	 height:200px;
+	}
 </style>
 
 </head>
@@ -115,16 +121,18 @@ li {
 						<li>個数:<span><s:property value="count" />個</span></li>
 						<s:hidden name="count" value="%{count}" />
 
-						<li>発売会社名<s:property value="releaseCompany" /></li>
+						<li>発売会社名:<s:property value="releaseCompany" /></li>
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
 						<li>発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-						<li><img src='<s:property value="imageFilePath" />' /></li>
+						<li>
+						<div class="iFP">a<img src="<s:property value='image_file_path'/>"></div></li>
 						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
-						<s:hidden name="registDate" value="%{registDate}" />
+
+
 
 					</ul>
 				</div>
@@ -132,9 +140,10 @@ li {
 					<s:submit value="レビュー" onclick="Review1Action();" />
 				</div>
 			</s:iterator>
+			<div class="delete">
 			<s:submit value="一括削除" onclick="PurchaseHistoryAction();">
 				<s:hidden name="deleteFlg" value="1" />
-			</s:submit>
+			</s:submit></div>
 		</table>
 	</s:form>
 

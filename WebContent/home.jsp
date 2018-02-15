@@ -16,8 +16,6 @@
 	rel="stylesheet">
 <link href="css/home.css" rel="stylesheet">
 
-
-
 </head>
 <body>
 <div class="a">

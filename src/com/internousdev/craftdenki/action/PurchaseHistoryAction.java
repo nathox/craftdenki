@@ -23,6 +23,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String product_id;
 	private String reviewFlg;
 	private String message;
+	private String imageFilePath;
 
 	public String execute() throws SQLException {
 		String result=ERROR;
@@ -41,18 +42,14 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 			message=null;
 			if (!(checkList == null)) {
 				for (String deleteId: checkList) {
-					System.out.println("DELETEID : " + deleteId);
 					dao.deleteHistoryInfo(deleteId);
 				}
 
+				result = "delete";
+			}
 				PurchaseHistoryDAO dao1 = new PurchaseHistoryDAO();
 				String userId = session.get("trueID").toString();
 				purchaseHistoryList = dao1.getPurchaseHistory(userId);
-
-				result = "delete";
-				return result;
-			}
-
 			result = "delete";
 			return result;
 		}
@@ -129,6 +126,11 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.message = message;
 	}
 
-
+	public String getImageFilePath() {
+		return imageFilePath;
+		}
+		public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+		}
 
 }

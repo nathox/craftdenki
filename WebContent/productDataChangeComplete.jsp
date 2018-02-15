@@ -26,7 +26,7 @@
 				<s:hidden name="product_id" value="product_id"/>
 				<s:submit value="確認"/>
 			</s:form>
-			<input type="button" value="管理者HOME" onclick="/craftdenki/managerHome.jsp"/>
+			<input type="button" value="管理者HOME" onclick="/craftdenki/managerHome.jsp" class="button"/>
 		</div>
 	</div>
 </body>

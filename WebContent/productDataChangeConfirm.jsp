@@ -22,7 +22,6 @@
 		</div>
 		<div class="m-log">
 			<s:form action="ProductDataChangeCompleteAction">
-						<div>
 
 							<s:hidden name="id" value="%{id}"/>
 
@@ -80,12 +79,11 @@
 
 							<p>以上でよろしいですか？</p>
 							<s:submit value="はい"/>
-						</div>
 			</s:form>
-							<input type="button" value="いいえ" onClick="history.back()">
-							<br>
-						</div>
-
+				<input type="button" value="いいえ" onClick="history.back()">
+				<br>
 		</div>
+
+	</div>
 </body>
 </html>

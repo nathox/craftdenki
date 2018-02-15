@@ -26,6 +26,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	private int productCount;
 	private int price;
 	private int atCost;
+	private String imageFilePath;
 
 
 
@@ -70,7 +71,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			SettlementDTO dto = settlementCompleteDAO.getCurrentCost(cartList.get(i).getProductId());
 			int atCost = dto.getAtCost();
 			System.out.println(atCost + "atCostです");
-			settlementCompleteDAO.insertPurchaseHistory(userId,cartList.get(i).getProductId(),cartList.get(i).getProductCount(),cartList.get(i).getPrice(),atCost);
+			settlementCompleteDAO.insertPurchaseHistory(userId,cartList.get(i).getProductId(),cartList.get(i).getProductCount(),cartList.get(i).getPrice(),atCost,getImageFilePath());
 			}
 		System.out.println("履歴完了");
 
@@ -95,8 +96,6 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
-
 
 
 
@@ -211,6 +210,18 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 	public void setAtCost(int atCost) {
 		this.atCost = atCost;
+	}
+
+
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
 	}
 
 

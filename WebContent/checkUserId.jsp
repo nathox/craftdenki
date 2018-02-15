@@ -17,22 +17,25 @@
 <title>ログインID確認画面</title>
 
 <style type="text/css">
-.form{
+.main{
 	width:100%;
 	text-align:center;
+}
+input{
+	padding:5px 10px;
+	border-radius:3px;
+	margin-bottom:10px;
 }
 </style>
 </head>
 
 <body>
 	<jsp:include page="home.jsp" />
-	<div class="form">
+	<div class="main">
 	<s:form action="CheckUserIdAction">
 
-
-
-				<label>ログインID：</label>
-				<input type="text" name="userId" value="test"/><br>
+		<label>ログインID：</label>
+		<input type="text" name="userId" value="test"/><br>
 
 
 		<s:submit value="確認"/>
