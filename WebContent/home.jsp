@@ -21,6 +21,7 @@
 <script src="js/jquery.autoKana.js"></script>
 <link rel="stylesheet" href="css/validationEngine.jquery.css">
 <link href="css/userInfoChange.css" rel="stylesheet">
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 <script>
 	$(function() {
 		$.fn.autoKana('#familyName', '#familyNameKana');
@@ -35,8 +36,6 @@
  		 }
 		}
 </script>
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-
 </head>
 <body>
 <div class="a">

@@ -19,8 +19,8 @@
 	$(function() {
 		jQuery("#form_1").validationEngine();
 	});
-</script>
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>-->
+</script>-->
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 <meta charset="utf-8">
 <title>新規登録</title>
 </head>
