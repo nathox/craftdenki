@@ -94,7 +94,7 @@ li {
 	</s:elseif>
 
 
-	<s:form class="form" name="form" action="PurchaseHistoryAction">
+	<s:form id="form" name="form" action="PurchaseHistoryAction">
 		<table>
 			<s:iterator value="purchaseHistoryList">
 				<div class="check">
@@ -129,7 +129,7 @@ li {
 					</ul>
 				</div>
 				<div class="review">
-					<input type="submit" value="レビュー" onclick="Review1Action();" />
+					<s:submit value="レビュー" onclick="Review1Action();" />
 				</div>
 			</s:iterator>
 			<s:submit value="一括削除" onclick="PurchaseHistoryAction();">
