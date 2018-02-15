@@ -35,7 +35,7 @@ margin-right:auto;
 
 }
 body{
-text-align: center;
+
 }
 
 .form{
@@ -95,9 +95,9 @@ margin-bottom:130px;
 <body>
 <jsp:include page="home.jsp" />
 
-<main>
+<div class="main">
 
-	<p>★お気に入りリスト★</p>
+	<h3>お気に入りリスト</h3>
 	<s:form id="form" name="form" action="FavoriteAction">
 		<table border="0" cellspacing="0">
 
@@ -130,16 +130,15 @@ margin-bottom:130px;
 	</s:form>
 	<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
 
-</main>
+</div>
 
 
 
 
 
 
-<footer>
-</footer>
 
 
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
