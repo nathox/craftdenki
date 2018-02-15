@@ -51,7 +51,7 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 			detailsList = productDetailsDAO.getProductDetailsInfoList(productIdList);
 
-			System.out.println(detailsList);
+//			System.out.println(detailsList);
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -63,7 +63,7 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 			reviewList = productDetailsDAO.getReviewInfo(product_id);
 
-			System.out.println(reviewList);
+//			System.out.println(reviewList);
 
 
 		}catch(Exception e){
@@ -74,16 +74,16 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		//1から在庫数までの選択表示用List
 		for(int i=1; i<= detailsList.get(0).getItem_stock() ; i++){
 			stockList.add(i);
-			System.out.println("----在庫数");
-			System.out.print(i + " ");
-			System.out.println("-----------");
+//			System.out.println("----在庫数");
+//			System.out.print(i + " ");
+//			System.out.println("-----------");
 		}
 
 		price=detailsList.get(0).getPrice();
-		System.out.println("----------------");
-		System.out.println("PRODUCTID : "+product_id);
-		System.out.println("PRICE : " + price);
-		System.out.println("----------------");
+//		System.out.println("----------------");
+//		System.out.println("PRODUCTID : "+product_id);
+//		System.out.println("PRICE : " + price);
+//		System.out.println("----------------");
 		String result = SUCCESS;
 		return result;
 

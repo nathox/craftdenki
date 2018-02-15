@@ -35,7 +35,7 @@
 		<h3>カート情報</h3>
 
 
-		<s:if test="cartList == null">
+		<s:if test="nothing == null">
 			<h4>ご購入情報はありません。</h4>
 		</s:if>
 		<s:else>
@@ -93,7 +93,7 @@
 				<br>
 				<br>
 				<td><s:submit value="削除" onclick="CartAction();"
-						class="button" ><s:hidden name="isFlg" value="1" /></s:submit></td>
+						class="button" ><s:hidden name="cartDeleteFlg" value="1" /></s:submit></td>
 				<td><s:submit value="決済に進む" onclick="SettlementAction();"
 						class="button" /></td>
 			</s:form>

@@ -93,22 +93,22 @@ public class ProductDetailsDAO {
 					productDTO.setUpdate_date(resultSet.getDate("update_date"));
 					productDTO.setItem_stock(resultSet.getInt("item_stock"));
 
-					System.out.println("getProductDetailsInfoList----------------------------");
-					System.out.println(productDTO.getId());
-					System.out.println(productDTO.getProduct_id());
-					System.out.println(productDTO.getProduct_name());
-					System.out.println(productDTO.getProduct_name_kana());
-					System.out.println(productDTO.getProduct_description());
-					System.out.println(productDTO.getCategory_id());
-					System.out.println(productDTO.getPrice());
-					System.out.println(productDTO.getImage_file_path());
-					System.out.println(productDTO.getImage_file_name());
-					System.out.println(productDTO.getRelease_date());
-					System.out.println(productDTO.getRelease_company());
-					System.out.println(productDTO.getRegist_date());
-					System.out.println(productDTO.getUpdate_date());
-					System.out.println(productDTO.getItem_stock());
-					System.out.println("-----------------------------------------------");
+//					System.out.println("getProductDetailsInfoList----------------------------");
+//					System.out.println(productDTO.getId());
+//					System.out.println(productDTO.getProduct_id());
+//					System.out.println(productDTO.getProduct_name());
+//					System.out.println(productDTO.getProduct_name_kana());
+//					System.out.println(productDTO.getProduct_description());
+//					System.out.println(productDTO.getCategory_id());
+//					System.out.println(productDTO.getPrice());
+//					System.out.println(productDTO.getImage_file_path());
+//					System.out.println(productDTO.getImage_file_name());
+//					System.out.println(productDTO.getRelease_date());
+//					System.out.println(productDTO.getRelease_company());
+//					System.out.println(productDTO.getRegist_date());
+//					System.out.println(productDTO.getUpdate_date());
+//					System.out.println(productDTO.getItem_stock());
+//					System.out.println("-----------------------------------------------");
 
 					detailsList.add(productDTO);
 				}
@@ -117,7 +117,7 @@ public class ProductDetailsDAO {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("詳細情報の件数 : "+ detailsList.size());
+//		System.out.println("詳細情報の件数 : "+ detailsList.size());
 		return detailsList;
 	}
 
@@ -148,13 +148,13 @@ public class ProductDetailsDAO {
 				review2DTO.setEvaluation_count(resultSet.getInt("evaluation_count"));
 
 
-				System.out.println("--------getReviewInfo-----------------");
-				System.out.println(review2DTO.getUser_id());
-				System.out.println(review2DTO.getProduct_id());
-				System.out.println(review2DTO.getReview_id());
-				System.out.println(review2DTO.getBuy_item_date());
-				System.out.println(review2DTO.getEvaluation_count());
-				System.out.println("------------------------------------");
+//				System.out.println("--------getReviewInfo-----------------");
+//				System.out.println(review2DTO.getUser_id());
+//				System.out.println(review2DTO.getProduct_id());
+//				System.out.println(review2DTO.getReview_id());
+//				System.out.println(review2DTO.getBuy_item_date());
+//				System.out.println(review2DTO.getEvaluation_count());
+//				System.out.println("------------------------------------");
 
 				reviewList.add(review2DTO);
 
