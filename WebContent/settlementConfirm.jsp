@@ -5,43 +5,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="Content-Style-Type" content="text/css"/>
-	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
-	<meta http-equiv="imagetoolbar" content="no"/>
-	<meta name="description" content=""/>
-	<meta name="keywords"content=""/>
-	<title>決済確認画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>決済確認画面</title>
+<link href="./css/sano.css" rel="stylesheet">
 
 <style>
-
-
-
-
 </style>
 
 </head>
 <body>
+	<jsp:include page="home.jsp" />
+	<div class="main">
 
-<jsp:include page="home.jsp"/>
+
+
+		<div class="subtitle">
+			<p>購入情報は以下になります。</p>
+		</div>
 
 
 
-	<div>
-		<h3>購入情報は以下になります。</h3>
+
+
+		<div>
+			<table>
+
+				<tr>
+					<td><div class="right">名前:</div></td>
+					<td><div class="left">
+							<s:property value="session.familyName" />
+							<s:property value="session.firstName" />
+						</div></td>
+				</tr>
+
+				<tr>
+					<td><div class="right">お届け先住所:</div></td>
+					<td><div class="left">
+							<s:property value="choseAddress" escape="false" />
+						</div></td>
+				</tr>
+
+				<tr>
+					<td><div class="right">電話番号:</div></td>
+					<td><div class="left">
+							<s:property value="choseNumber" escape="false" />
+						</div></td>
+				</tr>
+
+			</table>
+		</div>
+
+
+		<br>
+
+
 		<table border="1">
 			<tr>
-				<td>商品名</td>
-				<td>ふりがな</td>
-				<td>画像パス</td>
-				<td>値段</td>
-				<td>個数</td>
-				<td>発売会社</td>
-				<td>発売日</td>
-				<td>合計金額</td>
+				<th>商品名</th>
+				<th>ふりがな</th>
+				<th>画像パス</th>
+				<th>値段</th>
+				<th>個数</th>
+				<th>発売会社</th>
+				<th>発売日</th>
+				<th>合計金額</th>
 			</tr>
 
-				<s:iterator value="cartList">
+			<s:iterator value="cartList">
 				<tr>
 					<td><s:property value="productName" /></td>
 					<s:hidden name="productName" value="%{productName}" />
@@ -67,33 +102,27 @@
 					<td><s:property value="totalPrice" /><span>円</span></td>
 					<s:hidden name="totalPrice" value="%{totalPrice}" />
 				</tr>
-				</s:iterator>
+			</s:iterator>
 		</table>
-	</div>
 
 
+		<p>合計:\  -</p>
 
 
-
-	<div>
-			<h3><span>ユーザーID:</span><s:property value="session.userId"/></h3>
-			<h3><span>名前:</span><s:property value="session.familyName"/><s:property value="session.firstName"/></h3>
-			<h3><span>送り先住所:</span><s:property value="choseAddress" escape="false"/></h3>
-			<h3><span>電話番号:</span><s:property value="choseNumber" escape="false"/></h3>
-	</div>
+		<br>
 
 
+		<div class="left8">
+			<s:form action="SettlementCompleteAction">
+				<s:submit value="購入する" />
+			</s:form>
+		</div>
 
 
-	<div>
-		<s:form action="SettlementCompleteAction">
-			<s:submit value="購入する"/>
-		</s:form>
-
+		<br>
 
 
 	</div>
-
-	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

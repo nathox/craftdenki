@@ -12,6 +12,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <title>決済画面</title>
+<link href="./css/sano.css" rel="stylesheet">
 
 
 
@@ -21,73 +22,97 @@
 
 </head>
 <body>
-
 	<jsp:include page="home.jsp" />
 
-
-	<div>
-		<h3>宛先を選択してください</h3>
-	</div>
+	<div class="main">
 
 
+		<div class="subtitle">
+			<p>宛先を選択してください</p>
+		</div>
 
-	<div>
-		<table>
-			<tr>
-				<td>名前:</td>
-				<td><s:property value="familyName" />
-					<s:property value="firstName" /></td>
-			</tr>
-			<tr>
-				<td>メールアドレス</td>
-				<td><s:property value="email" /></td>
-			</tr>
 
-		</table>
-	</div>
 
-	<s:form action="SettlementConfirmAction">
-		<table>
-			<s:if test="userAddress != null && telNumber != null">
+		<div>
+			<table>
 				<tr>
-					<td><input type="radio" name="destination" value="1" checked>
-					<td>宛先1:</td>
-					<td><s:property value="userAddress" /></td>
-					<td><s:property value="telNumber" /></td>
-				</tr>
-			</s:if>
-
-
-
-
-			<s:if test="userAddress2 != null && telNumber2 != null">
+					<th colspan="2">お客様情報</th>
 				<tr>
-					<td><input type="radio" name="destination" value="2">
-					<td>宛先2:</td>
-					<td><s:property value="userAddress2" /></td>
-					<td><s:property value="telNumber2" /></td>
+					<th>
+						<div class="right">お名前:</div>
+					</th>
+					<td>
+						<div class="left">
+							<s:property value="familyName" />
+							<s:property value="firstName" />
+						</div>
+					</td>
 				</tr>
-			</s:if>
-
-			<s:if test="userAddress3 != null && telNumber3 != null">
 				<tr>
-					<td><input type="radio" name="destination" value="3">
-					<td>宛先3:</td>
-					<td><s:property value="userAddress3" /></td>
-					<td><s:property value="telNumber3" /></td>
+					<th>
+						<div class="right">メールアドレス:</div>
+					</th>
+					<td>
+						<div class="left">
+							<s:property value="email" />
+						</div>
+					</td>
 				</tr>
-			</s:if>
-		</table>
-		<span>宛先の住所を変更、追加するには<a
-			href='<s:url action="UserInfoChangeAction"/>'>こちら</a></span>
+
+			</table>
+		</div>
+
+
+		<s:form action="SettlementConfirmAction">
+			<table>
+				<s:if test="userAddress != null && telNumber != null">
+					<tr>
+						<td><input type="radio" name="destination" value="1" checked>
+						<th>宛先1:</th>
+						<td><s:property value="userAddress" /></td>
+						<td><s:property value="telNumber" /></td>
+					</tr>
+				</s:if>
+
+
+
+
+				<s:if test="userAddress2 != null && telNumber2 != null">
+					<tr>
+						<td><input type="radio" name="destination" value="2">
+						<th>宛先2:</th>
+						<td><s:property value="userAddress2" /></td>
+						<td><s:property value="telNumber2" /></td>
+					</tr>
+				</s:if>
+
+				<s:if test="userAddress3 != null && telNumber3 != null">
+					<tr>
+						<td><input type="radio" name="destination" value="3">
+						<th>宛先3:</th>
+						<td><s:property value="userAddress3" /></td>
+						<td><s:property value="telNumber3" /></td>
+					</tr>
+				</s:if>
+			</table>
+
+			<div class="destination">
+				<span>宛先の住所を変更、追加するには<a
+					href='<s:url action="UserInfoChangeAction"/>'>こちら</a></span>
+			</div>
+
+
+			<br>
+			<div class="left8">
+				<s:submit value="けってい" />
+			</div>
+		</s:form>
+
 
 		<br>
-		<s:submit value="けってい" />
-	</s:form>
 
-
-	<div></div>
 
 	</div>
-	</ body>
+	<jsp:include page="footer.jsp" />
+</body>
 </html>
