@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<link href="css/craftdenki.css" rel="stylesheet">
+<link href="css/enna.css" rel="stylesheet">
 
 
 
@@ -33,13 +33,15 @@
 
 <div class="main">
 
+	<h3>カート情報</h3>
+
 
 	<s:if test="cartList == null">
-		<h3>ご購入情報はありません。</h3>
+		<h4>ご購入情報はありません。</h4>
 	</s:if>
 
 	<s:form id="form" name="form" action="SettlementAction">
-		<h3>カート情報は以下になります。</h3>
+		<h4>カート情報は以下になります。</h4>
 
 <!--
 		<table>
@@ -148,6 +150,6 @@
 	</s:form>
 
 </div>
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

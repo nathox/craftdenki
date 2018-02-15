@@ -19,8 +19,9 @@
 	}
 
 	.main{
-		padding-rigth:150px;
-		padding-left:150px;
+		margin-bottom:200px;
+		margin-right:150px;
+		margin-left:150px;
 	}
 	/* ========ID LAYOUT========*/
 	#top{
