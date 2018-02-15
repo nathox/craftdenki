@@ -5,14 +5,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
+
+
+<%--
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+
+	--%>
+
+
+
+
+
+
 	<meta charset="utf-8">
-	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
 	<title>UserInfoChange画面</title>
 
 	<style type="text/css">
@@ -21,6 +35,12 @@
 
 	</style>
 
+
+
+
+
+<%--
+	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="js/jquery.validationEngine.js"></script>
 	<script src="js/jquery.validationEngine-ja.js"></script>
@@ -47,6 +67,14 @@
 		}
 	</script>
 
+	--%>
+
+
+
+
+
+
+
 	<link href="css/userInfoChange.css" rel="stylesheet">
 
 </head>
@@ -54,7 +82,9 @@
 
    <jsp:include page="home.jsp"/>
 
-        <div class="main">
+
+
+       <div class="main">
 
 	<h3>ユーザー情報変更ページ</h3>
 	<br>
