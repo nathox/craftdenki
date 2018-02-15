@@ -93,7 +93,8 @@ border-bottom: 1px solid #b1b1b1;
 }
 
 .main{
-	background-image: url("../images/kusa2.jpg");
+	margin-top:0;
+
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
