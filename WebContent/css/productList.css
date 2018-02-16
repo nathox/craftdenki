@@ -150,7 +150,7 @@ min-height: 1px;
 }
 
 .list1{
-border: 1px solid #b1b1b1;
+border: 1px solid black;
 border-radius: 20% ;
 margin:0 0px 60px 65px;
 box-shadow:1px 1px 5px #000;
@@ -161,7 +161,7 @@ background-image: url("../images/mokume1.jpg");
 }
 
 .detailsList{
-	border: 1px solid #b1b1b1;
+	border: 1px solid black;
 	border-radius: 20% ;
 	box-shadow:1px 1px 5px #000;
 	background-image: url("../images/mokume1.jpg");
@@ -187,7 +187,7 @@ h3{
 	border-style: none;
 }
 .detailsTable tr, .detailsTable tr{
-	border-bottom: 1px solid #b1b1b1;
+	border-bottom: 1px solid black;
 }
 
 .detailsTable span{

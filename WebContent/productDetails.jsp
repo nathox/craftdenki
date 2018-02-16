@@ -24,6 +24,7 @@
 <body>
 <!-- ヘッダー-->
 	<jsp:include page="home.jsp" />
+	<div class="main">
 
 	<div class="DetailsList">
 		<h3>商品詳細</h3>
@@ -138,6 +139,7 @@
 			<h2>レビューはありません。</h2>
 			<br>
 		</s:else> --%>
+	</div>
 
  <jsp:include page="footer.jsp"/>
 </body>
