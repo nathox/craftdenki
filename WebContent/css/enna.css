@@ -1,53 +1,376 @@
+@CHARSET "UTF-8";
+/*-------------------------------------
+	共通
+-------------------------------------*/
+	body{
+		margin:0;
+		padding:0;
+		line-height:1.6;
+		letter-spacing:1px;
+		font-family:Verdana,Helvetica,sans-serif;
+		font-size:12px;
+		color:#333;
+		background:#fff;
+	}
+	table{
+		text-align:center;
+		margin:0 auto;
+	}
 
+	.main{
+		margin-right:150px;
+		margin-left:150px;
+		margin-bottom:200px;
+	}
+
+	h3{
+		border-bottom:solid black 1px;
+	}
+
+/*==================================ボタンcss===========================================*/
+	/*------------------共通部分------------------*/
+		input[type="submit"], input[type="button"]{
+				border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    -moz-border-radius: 5px;
+			    font-weight: bold;
+				background: #3f3f3f;
+				color: #ffffff;
+				box-shadow: 0 2px black;
+				width:100px;
+				height:30px;
+				text-align:center;
+				margin-right:10px;
+			}
+		input[type="submit"]:hover,  input[type="button"]:hover{
+		        -ms-transform: translateY(2px);
+			    -webkit-transform: translateY(2px);
+			    transform: translateY(2px);
+			    border-bottom: none;
+			    box-shadow: none;
+			}
+	/*------------------各ページボタンcss------------------*/
+		/* 商品表内 */
+			.manageTable input[type="submit"]{
+				width: 100%;
+				margit: 0px;
+			}
+		/* 入力フォーム内 */
+			.input-form input[type="submit"]{
+				width: 100px;
+				margin: 10px 0px 30px 20px;
+			}
+		/* 確認画面 */
+			.m-log input[type="submit"], .m-log input[type="button"]{
+				width: 100px;
+				margin: 10px 0px 30px 0px;
+			}
+		/* 管理者Home */
+			#m-home input[type="submit"]{
+				width: 100px;
+				float: right;
+				position: relative;
+				left: 200px;
+			}
+
+
+/*==================================背景css===========================================*/
+	/*------------------共通部分-----------------*/
+
+		/*--------------未定義--------------*/
+
+	/*------------------各ページ-----------------*/
+		/* 背景画像基本設定 */
+		.back-image{
+			/* 画像を常に天地左右の中央に配置 */
+			background-position: center center;
+
+			/* 画像をタイル状に繰り返し表示しない */
+			background-repeat: no-repeat;
+
+			/* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+			background-attachment: fixed;
+
+			/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+			background-size: cover;
+
+			/* 背景画像が読み込まれる前に表示される背景のカラー */
+			background-color: #464646;
+		}
+		/* 階段写真 */
+			.step1{
+				/* 画像ファイルの指定 */
+			background-image: url("../images/step1.png");
+			}
+			.step2{
+				/* 画像ファイルの指定 */
+			background-image: url("../images/step2.png");
+			}
+			.step3{
+				/* 画像ファイルの指定 */
+			background-image: url("../images/step3.png");
+			}
+			.step4{
+				/* 画像ファイルの指定 */
+			background-image: url("../images/step4.png");
+			}
+			.step5{
+				/* 画像ファイルの指定 */
+			background-image: url("../images/step5.png");
+			}
+/*==================================文字レイアウトcss===========================================*/
+	/*------------------共通部分------------------*/
+		/*
 		body{
-			margin:0;
-			padding:0;
 			line-height:1.6;
 			letter-spacing:1px;
 			font-family:Verdana,Helvetica,sans-serif;
 			font-size:12px;
 			color:#333;
-			background:#fff;
 		}
+		*/
+
+	/*------------------各ページ------------------*/
+		/* 管理者タイトル */
+			#m-title{
+				width:100%;
+				text-align:center;
+				font-size:56px;
+				font-weight: bold;
+				/* ふち文字 */
+				color: white;
+				text-shadow:
+		        black 5px 5px 0, black -2px -2px 0,/*右下、左上*/
+		        black -2px 2px 0, black 2px -2px 0,/*右上、左下*/
+		        black 0px 2px 0, black  0 -2px 0,/*右、左*/
+		        black -2px 0 0, black 2px 0 0;/*上、下*/
+			}
+
+		/* 管理者見出し */
+			.m-index{
+				font-size: 32px;
+				margin-left: 5%;
+				font-weight: bold;
+				/* ふち文字 */
+				color: white;
+				text-shadow:
+		        #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
+		        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+		        black 0px 1px 0, black  0-1px 0,/*右、左*/
+		        black -1px 0 0, black 1px 0 0;/*上、下*/
+			}
+
+		/* エラーメッセージ */
+			.errorMessage{
+				color: red;
+				text-align: center;
+				padding-bottom:40px;
+				font-size: 30px;
+				font-wight:bold;
+			}
+		/* 確認画面 */
+		.m-log{
+			font-size: 16px;
+			margin-left: 5%;
+			font-weight: bold;
+			/* ふち文字 */
+			color: white;
+			text-shadow:
+	        black 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+	        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+	        black 0px 1px 0, black  0-1px 0,/*右、左*/
+	        black -1px 0 0, black 1px 0 0;/*上、下*/
+		}
+		.m-log span{
+			text-shadow:
+	        #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
+	        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+	        black 0px 1px 0, black  0-1px 0,/*右、左*/
+	        black -1px 0 0, black 1px 0 0;/*上、下*/
+		}
+
+
+/*==================================テーブルcss===========================================*/
+	/*------------------共通部分------------------*/
+		/*
 		table{
 			text-align:center;
 			margin:0 auto;
 		}
+		*/
 
-		.main{
-			margin-bottom:200px;
-			margin-left:200px;
-			margin-right:200px;
-		}
+	/*------------------各ページ------------------*/
+
+		/* 管理者テーブル */
+
+			table.manageTable table, table.manageTable th, table.manageTable td {
+				border-collapse: collapse;
+				border: 1px solid #ccc;
+				line-height: 1.5;
+			}
+
+			table.manageTable th, #table-total td {
+				padding: 10px;
+				font-weight: bold;
+				vertical-align: top;
+				background: #3f3f3f;
+				color: #ffffff;
+			}
+
+			table.manageTable td {
+				padding: 10px;
+				vertical-align: top;
+			}
+
+			table.manageTable tr:nth-child(2n) {
+				background: #d9d9d9;
+			}
+			table.manageTable tr:nth-child(2n-1) {
+				background: white;
+			}
+				/* 数値入力を右寄せ */
+				table.manageTable input[type="text"]{
+					text-align: right;
+					width: 60px;
+					padding: 0px;
+				}
+				table.manageTable input[type="text"]:focus{
+				    box-shadow: 0 0 7px #ff0000;  /* 入力欄の色を変える */
+				    border: 1px solid #ff0000;    /* 入力欄の色を変える */
+				}
+
+/*==================================入力フォームcss===========================================*/
+	/*------------------共通部分------------------*/
+
+		/*--------------未定義--------------*/
+
+	/*------------------各ページ------------------*/
+
+		/* 管理者フォーム */
+
+			/* フォームの形やフォント */
+				.input-form {
+					color: white;
+					text-shadow:
+				       #606060 3px 3px 0, black -1px -1px 0,/*右下、左上*/
+				        black -1px 1px 0, black 1px -1px 0,/*右上、左下*/
+				        black 0px 1px 0, black  0-1px 0,/*右、左*/
+				        black -1px 0 0, black 1px 0 0;/*上、下*/
+					padding-left: 15%;
+			    	position: relative;
+			    	padding-top: 1.5rem;
+				}
+				.input-form input[type="text"],
+				.input-form select,
+				.input-form textarea {
+				    padding: 0.8em;
+				    outline: none;
+				    border: 1px solid #DDD;
+				    font-size: 16px;
+				    box-shadow: 0 0 7px #606060;
+				    border: 1px solid #606060;
+				}
+				.input-form textarea {
+					width: 300px;
+					height: 100px;
+				}
+			/* エフェクト */
+				.input-form select:focus {
+				    box-shadow: 0 0 7px #ff0000;  /* 入力欄の色を変える */
+				    border: 1px solid #ff0000;    /* 入力欄の色を変える */
+				}
+				.input-form input[type="text"]:focus,
+				.input-form textarea:focus,
+				.input-form texture:focus {
+				    box-shadow: 0 0 7px #ff0000;  /* 入力欄の色を変える */
+				    border: 1px solid #ff0000;    /* 入力欄の色を変える */
+				    width: 500px;                 /* 入力欄の幅を伸ばす */
+				}
+			/* 入力後フォームの右へplaceholderの内容を表示 */
+				label {
+				    top: 0;
+				    font-size: var(--font-size-small);
+				    opacity: 1;
+				    transform: translateY(0);
+				    transition: all 0.2s ease-out;
+				}
+
+				input:placeholder-shown + label {
+				    opacity: 0;
+				    transform: translateY(1rem);
+				}
+			/* 入力項目名css */
+				.input-form span{
+					font-size:20px;
+					font-weight: bold;
+				}
+			/* 必須css */
+				.input-form  .hissu{
+					font-size:10px;
+					padding: 5px;
+					color: white;
+					background-color: red;
+					border-radius: 5px;        /* CSS3草案 */
+				    -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+				    -moz-border-radius: 5px;   /* Firefox用 */
+				}
 
 
-/*-------------------------Home��ʂ�CSS�ł͂���܂���I-----------------------------------------*/
+/*-------------------------Home画面のCSSではありません！-----------------------------------------*/
 
 
+.box1 {
+	width: 65%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
-		h3{
-			border-bottom:solid black 1px;
-		}
+.form {
+	text-align: center;
+}
 
-		.button{
-			border-radius: 5px;
-		    -webkit-border-radius: 5px;
-		    -moz-border-radius: 5px;
-		    font-weight: bold;
-			background: #3f3f3f;
-			color: #ffffff;
-			box-shadow: 0 2px black;
-			width:100px;
-			height:30px;
-			text-align:center;
-			margin-right:10px;
-		}
+.okada {
+	margin-bottom: 65px;
+	border-top: 2px dotted #b1b1b1;
+	border-bottom: 2px dotted #b1b1b1;
+	list-style: none;
+	margin-right: auto;
+	width: 100%;
+}
 
-	.button:hover {
-	        -ms-transform: translateY(2px);
-		    -webkit-transform: translateY(2px);
-		    transform: translateY(2px);
-		    border-bottom: none;
-		    box-shadow: none;
-		}
+.check {
+	float: left;
+	position: relative;
+	margin-top: 130px;
+	left:100px;
+	line-height: 110px;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	width: 100%;
+	margin-right: auto;
+	text-align: justify;
+	height:30px;
+}
+
+
+.delete {
+	float: right;
+	margin-right: 50px;
+
+}
+.iFP{
+	text-align:right;
+	float:right;
+	object-fit:contain;
+	}
+
+.ayame{
+margin:50px;}
+
+

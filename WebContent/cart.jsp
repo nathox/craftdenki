@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<!----------------------------------- 現在使用していません ------------------------------------->
+
 <!DOCTYPE html>
 <html>
 <head>
