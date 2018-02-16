@@ -159,7 +159,7 @@ function nextField(i, n, m) {
 
 <header>
     <nav>
-        <div id="logo"></div>
+        <a href='<s:url action="StartAction" />'><div id="logo"></div></a>
         	<div class="search">
         		<table class="table-header"><s:form method="post" action="ItemSearchAction" class="kensaku">
             		<tr>
