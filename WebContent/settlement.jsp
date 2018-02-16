@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 
 	<div class="main">
 
@@ -45,9 +45,12 @@
 		<br>
 
 
-		<p>お届け先</p>
+
+
+			<div class="blank">お届け先</div>
 
 		<s:form action="SettlementConfirmAction">
+
 			<div class="left1">
 				<s:if test="userAddress != null">
 					<div class="radio">

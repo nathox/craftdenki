@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 	<div class="main">
 
 		<h3>決済確認</h3>

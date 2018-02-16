@@ -313,7 +313,7 @@
 	/* sanoここから*/
 
 		.left1{
-		padding-left:7%;
+		padding-left:12%;
 		}
 
 
@@ -321,7 +321,13 @@
 			padding-left:8em;
 		}
 		.left6{
-		padding-left: 50%;
+		padding-left: 40%;
+		}
+
+
+
+		.blank{
+			padding-left: 8%;
 		}
 
 
@@ -332,6 +338,11 @@
 
 		.phone{
 		padding-left:24px;
+		}
+
+
+		h4{
+			padding-left:5%;
 		}
 
 
