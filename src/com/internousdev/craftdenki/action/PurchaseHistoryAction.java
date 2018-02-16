@@ -3,6 +3,7 @@ package com.internousdev.craftdenki.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,8 +16,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 	private Map<String, Object> session;
 
-	private ArrayList<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
-	private String deleteFlg;
+	private List<PurchaseHistoryDTO> purchaseHistoryList = new ArrayList<PurchaseHistoryDTO>();
 	private String userId;
 
 	private Collection<String> checkList;
@@ -25,18 +25,37 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String message;
 //	private String imageFilePath;
 
+	private String imageFilePath;
+	private String productName;
+	private String productNameKana;
+	private String price;
+	private String count;
+	private String releaseCompany;
+	private String deleteFlg;
+
 	public String execute() throws SQLException {
 		String result=ERROR;
+
+		System.out.println("PurchaseHistoryAction-----");
+		System.out.println(imageFilePath);
+		System.out.println(productName);
+		System.out.println(productNameKana);
+		System.out.println(price);
+		System.out.println(count);
+		System.out.println(releaseCompany);
+		System.out.println(deleteFlg);
+		System.out.println("---------------------------");
+
 		PurchaseHistoryDAO dao = new PurchaseHistoryDAO();
-		// int count = 0;
+
 		if (deleteFlg == null) {
 			message=null;
 			session.put("trueID", "test");
 			String userId = session.get("trueID").toString();
 			purchaseHistoryList = dao.getPurchaseHistory(userId);
-			if (purchaseHistoryList.equals("[]")) {
-
-			}
+//			if (purchaseHistoryList.equals("[]")) {
+//
+//			}
 			return SUCCESS;
 		} else if (deleteFlg.equals("1")) {
 			message=null;
@@ -70,20 +89,12 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 
-	public ArrayList<PurchaseHistoryDTO> getPurchaseHistoryList() {
+	public List<PurchaseHistoryDTO> getPurchaseHistoryList() {
 		return purchaseHistoryList;
 	}
 
-	public void setPurchaseHistoryList(ArrayList<PurchaseHistoryDTO> purchaseHistoryList) {
+	public void setPurchaseHistoryList(List<PurchaseHistoryDTO> purchaseHistoryList) {
 		this.purchaseHistoryList = purchaseHistoryList;
-	}
-
-	public String getDeleteFlg() {
-		return deleteFlg;
-	}
-
-	public void setDeleteFlg(String deleteFlg) {
-		this.deleteFlg = deleteFlg;
 	}
 
 	public String getUserId() {
@@ -126,11 +137,60 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 		this.message = message;
 	}
 
-//	public String getImageFilePath() {
-//		return imageFilePath;
-//		}
-//		public void setImageFilePath(String imageFilePath) {
-//		this.imageFilePath = imageFilePath;
-//		}
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductNameKana() {
+		return productNameKana;
+	}
+
+	public void setProductNameKana(String productNameKana) {
+		this.productNameKana = productNameKana;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
+	}
+
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
+	}
+
+	public String getDeleteFlg() {
+		return deleteFlg;
+	}
+
+	public void setDeleteFlg(String deleteFlg) {
+		this.deleteFlg = deleteFlg;
+	}
 
 }
