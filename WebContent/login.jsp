@@ -22,7 +22,7 @@
 
 .Bbox {
 	width: 550px;
-	height: 300px;
+	height: 330px;
 	border: 1px solid black;
 	float: left;
 }
@@ -46,6 +46,10 @@ text-align:center;
 td {
 	text-align: left;
 }
+
+#a{
+clear:both;
+}
 </style>
 </head>
 <body>
@@ -68,7 +72,7 @@ td {
 								</s:if></td>
 						</tr>
 						<tr>
-							<td><br>ユーザーID<br></td>
+							<td>ユーザーID</td>
 						</tr>
 
 						<tr>
@@ -77,9 +81,9 @@ td {
 						</tr>
 						<tr>
 							<td><s:if test="session.IDerrormsg != ''">
-									<br>
+
 									<s:property value="session.IDerror" />
-									<br>
+
 								</s:if></td>
 						</tr>
 
@@ -112,7 +116,7 @@ td {
 
 					<tr>
 
-						<td><br> <span>パスワードを忘れてしもた方は<a
+						<td><span>パスワードを忘れてしもた方は<a
 								href='<s:url action="ChangePasswordAction"/>'>こちら</a>から
 						</span></td>
 
@@ -152,7 +156,7 @@ td {
 		</div>
 
 	</div>
-
+<div id="a"></div>
 	<jsp:include page="footer.jsp" />
 
 </body>
