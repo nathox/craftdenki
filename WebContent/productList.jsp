@@ -32,7 +32,7 @@
 
 		<!-- 表示件数1ページ目 -->
 
-			<s:iterator value="productList" begin="0" end="50">
+			<s:iterator value="productList" >
 				<a href="<s:url action="ProductDetailsAction">
 			 <s:param name="product_id" value="%{product_id}" />
 			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
