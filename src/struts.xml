@@ -343,7 +343,6 @@
 			class="com.internousdev.craftdenki.action.UserInfoChangeCompleteAction"
 			method="execute">
 			<result name="success">userInfoChangeComplete.jsp</result>
-			<result name="settlement">settlement0.jsp</result>
 		</action>
 
 		<!-- ___________________ユーザー情報変更機能(雑賀) _________END_________ -->

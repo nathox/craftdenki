@@ -71,12 +71,7 @@ public class UserInfoChangeCompleteAction extends ActionSupport implements Sessi
  * 各セッションの値をＤＡＯのデータベース書き込むメソッドの引数として利用
  */
 
-		if(session.get("payment") == ("payment")){
-			session.put("payment", "");
-			result = "settlement";
-			return result;
 
-		}
 
 
 		result=SUCCESS;
