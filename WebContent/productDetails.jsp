@@ -26,9 +26,9 @@
 	<jsp:include page="home.jsp" />
 
 	<div class="DetailsList">
-		<h1>商品詳細</h1>
+		<h3>商品詳細</h3>
 		<s:iterator value="detailsList">
-			<div id="detailsList">
+			<div class="detailsList">
 				<div class="img">
 					<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="300" height="240">
 				</div>
