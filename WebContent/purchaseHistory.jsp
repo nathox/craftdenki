@@ -19,7 +19,7 @@
 <title>購入履歴</title>
 </head>
 <body>
-<jsp:include page="home.jsp" />
+<jsp:include page="home2.jsp" />
 
 
 	<div class="main">
