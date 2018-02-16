@@ -55,7 +55,35 @@ input[type="submit"].myPageButton{
 	font-size:2.8em;
 	border:solid 5px #000000;
 	margin-top:20px;
+
 }
+
+input[type="submit"].myPageButton.history{
+
+		background-image:url("../images/history.png");
+	background-repeat:no-repeat;
+	background-size:290px 290px;
+
+}
+
+input[type="submit"].myPageButton.favorite{
+
+	background-image:url("../images/star.png");
+	background-repeat:no-repeat;
+	background-size:290px 290px;
+}
+
+input[type="submit"].myPageButton.info{
+
+	background-image:url("../images/infoChange.png");
+	background-repeat:no-repeat;
+	background-size:290px 290px;
+}
+
+
+
+
+
 
 
 
