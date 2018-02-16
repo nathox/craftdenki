@@ -70,7 +70,8 @@ create table favorite_info(
 id int not null primary key auto_increment,
 user_id varchar(16),
 product_id int,
-regist_date datetime
+regist_date datetime,
+unique(user_id,product_id)
 );
 
 drop table if exists review_info;

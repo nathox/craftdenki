@@ -10,7 +10,7 @@ public class FavoriteDTO {
 	private String price;
 	private String releaseCompany;
 	private String releaseDate;
-	private String ProductId;
+	private String productId;
 
 	public String getProductName() {
 		return productName;
@@ -69,11 +69,11 @@ public class FavoriteDTO {
 	}
 
 	public String getProductId() {
-		return ProductId;
+		return productId;
 	}
 
-	public void setProductId(String ProductId) {
-		this.ProductId = ProductId;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 
 	public String getId() {

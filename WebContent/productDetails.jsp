@@ -97,11 +97,8 @@
 			</s:else>
 			<br>
 			<s:if test="#session.containsKey('trueID')">
-
-
 				<div class="button">
 					<s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();">
-						<s:hidden name="productid" value="%{product_id}" />
 						<s:hidden name="favoriteInsertFlg" value="1" />
 					</s:submit>
 				</div>
