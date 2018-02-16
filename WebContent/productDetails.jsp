@@ -77,7 +77,7 @@
 
 
 
-		<s:form action="CartAction" id="form" name="form">
+		<s:form action="CartAction" class="form" name="form">
 			<s:if test="item_stock != 0">
 
 			購入個数
@@ -99,7 +99,7 @@
 			<s:if test="#session.containsKey('trueID')">
 
 
-				<div class=button>
+				<div class="button">
 					<s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();">
 						<s:hidden name="productid" value="%{product_id}" />
 						<s:hidden name="favoriteInsertFlg" value="1" />
