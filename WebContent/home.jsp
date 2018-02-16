@@ -62,9 +62,9 @@
 				<s:if test="session.trueID != null">
 					<span><a href='<s:url action="LogoutAction" />'>ログアウト</a></span>
 				</s:if>
-				<s:else>
+				<s:if test="session.trueID == null">
 					<span><a href='<s:url action="GoLoginAction" />'>ログイン</a></span>
-				</s:else>
+				</s:if>
 
 
 				<span><a href='<s:url action="GoMyPageAction" />'>マイページ</a></span>

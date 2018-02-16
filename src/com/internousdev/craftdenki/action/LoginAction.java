@@ -1,6 +1,7 @@
 package com.internousdev.craftdenki.action;
 
 import java.util.Map;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -79,6 +80,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			session.put("status", "");
 		}
 
+		if(!(session.containsKey("temp_user_id"))){
+			Random rnd = new Random();
+			session.put("temp_user_id", rnd);
+			System.out.println("ここまで１");
+		}
 
 
 		if (IDerrormsg == null) {
@@ -99,6 +105,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 
 						System.out.println(dto.getLoginId());
+						System.out.println(session.get("temp_user_id").toString()+"1a");
+						System.out.println(dto.getLoginId()+"2b");
 						dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
 
 						if (session.get("status") == ("settlement")) {
