@@ -516,7 +516,19 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 INSERT INTO user_info(user_id,password,family_name,first_name,family_name_kana,first_name_kana,sex,email,status,logined,regist_date,update_date,question,answer)VALUES
 ("test","123","塩治","大輝","えんな","だいき",0,"test@test",1,1,"2018/01/20","2018/01/20",1,"あいす"),
 ("test1","1234","高橋","yuuri","たかはし","ゆうり",0,"tes1t@test",1,1,"2018/01/20","2018/01/20",2,"かれー"),
-("craft","denki","高橋","湧里","たかはし","ゆうり",0,"000@test",1,1,"2018/01/01","2018/01/02",2,"aaa");
+("craft","denki","高橋","湧里","たかはし","ゆうり",0,"000@test",1,1,"2018/01/01","2018/01/02",2,"aaa"),
+("oda","oda","織田","信長","おだ","のぶなが",0,"odanobunaga@gmail.com",1,1,"2018/02/16","2018/02/16",1,"あけち"),
+("toyotomi","toyotomi","豊臣","秀吉","とよとみ","ひでよし",0,"toyotomihideyoshi@gmail.com",1,1,"2018/02/16","2018/02/16",2,"きのした"),
+("tokugawa","tokugawa","徳川","家康","とくがわ","いえやす",0,"tokugawaieyasu@gmail.com",1,1,"2018/02/16","2018/02/16",3,"いぬ"),
+("takeda","takeda","武田","信玄","たけだ","しんげん",0,"takedashingen@gmail.com",1,1,"2018/02/16","2018/02/16",1,"しんげんもち"),
+("uesugi","uesugi","上杉","謙信","うえすぎ","けんしん",0,"uesugikenshin@gmail.com",1,1,"2018/02/16","2018/02/16",2,"とらちよ"),
+("akechi","akechi","明智","光秀","あけち","みつひで",0,"akechimitsuhide@gmail.com",1,1,"2018/02/16","2018/02/16",1,"美濃"),
+("ishida","ishida","石田","三成","いしだ","みつなり",0,"ishidamitsunari@gmail.com",1,1,"2018/02/16","2018/02/16",1,"近衛"),
+("naoe","kanetsugu","直江","兼続","なおえ","かねつぐ",0,"naoekanetsugu@gmail.com",1,1,"2018/02/16","2018/02/16",1,"越後"),
+("date","date","伊達","正宗","だて","まさむね",0,"datemasamune@gmail.com",1,1,"2018/02/16","2018/02/16",2,"出羽"),
+("sanada","yukimura","真田","幸村","さなだ","ゆきむら",0,"sanadayukimura@gmail.com",1,1,"2018/02/16","2018/02/16",3,"信濃"),
+("maeda","maeda","前田","慶次","まえだ","けいじ",0,"maedakeiji@gmail.com",1,1,"2018/02/16","2018/02/16",3,"尾張");
+
 
 
 
