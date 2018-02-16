@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="./css/purchaseHistory.css">
 
 <script type="text/javascript">
-	function PurchaseHistoryAction() {
+	function goPurchaseHistoryAction() {
 		document.getElementById('form').action = "PurchaseHistoryAction";
 	}
-	function Review1Action() {
+	function goReview1Action() {
 		document.getElementById('form').action = "Review1Action";
 	}
 </script>
@@ -55,13 +55,21 @@
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 					</ul>
 					</div>
+					<!--
 					<div class="review">
 						<p><a href='<s:url action="Review1Action"/>'>レビュー</a></p>
 					</div>
+					-->
+					<s:submit onclick="goReview1Action();" value="レビュー"/>
 				</s:iterator>
 			</table>
+			<s:hidden name="deleteFlg" value="1"/>
+			<s:submit onclick="goPurchaseHistoryAction();" value="削除"/>
+
 			<!-- <div class="delete">  -->
+			<!--
 			<a href='<s:url action="PurchaseHistoryAction"/>'>
+
 				<s:param name="imageFilePath" value='<s:property value="imageFilePath"/>'/>
 				<s:param name="productName" value="%{productName}"/>
 				<s:param name="productNameKana" value="%{productNameKana}"/>
@@ -69,7 +77,9 @@
 				<s:param name="count" value="%{count}"/>
 				<s:param name="releaseCompany" value="%{releaseCompany}"/>
 				<s:param name="releaseDate" value="%{releaseDate}"/>
+
 				<s:param name="deleteFlg" value="1"/>'>削除</a>
+				-->
 			<!-- </div>  -->
 		</s:form>
 	</s:if>
