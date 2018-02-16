@@ -51,6 +51,12 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 		result=SUCCESS;
 
+
+		/**ユーザー登録完了後ログイン状態にする為セッションにユーザーIDを格納**/
+
+		session.put("trueId", loginUserId);
+
+
 		return result;
 	}
 
