@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 	<title>MyPage</title>
 
+	<link href="css/craftdenki.css" rel="stylesheet">
 	<link href="css/userInfoChange.css" rel="stylesheet">
 
 </head>
@@ -17,21 +18,23 @@
 	<jsp:include page="home2.jsp" />
 
 	  <div class="main">
-			<div class="wideBox">
+			                  <div class="wideBox">
+
+		<h3>マイページ</h3>
 
 		<s:form action="PurchaseHistoryAction">
-				<s:submit value="購入履歴" id="myPageButton1" />
+				<s:submit value="購入履歴" class="myPageButton"/>
 		</s:form>
 
 		<s:form action="FavoriteAction">
-				<s:submit value="お気に入りリスト" id="myPageButton2"/>
+				<s:submit value="お気に入りリスト" class="myPageButton"/>
 		</s:form>
 
 		<s:form action="UserInfoChangeAction">
-				<s:submit value="ユーザー情報変更" id="myPageButton3"/>
+				<s:submit value="ユーザー情報変更" class="myPageButton"/>
 		</s:form>
 
-			</div>
+			               </div>
 	 </div>
 
 	    <jsp:include page="footer.jsp"/>
