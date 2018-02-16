@@ -1,36 +1,28 @@
-.box1 {
-	width: 65%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 body {
 	text-align: center;
 }
 
-.form {
-	text-align: center;
-}
 
-.okada {
+
+.box23 {
 	margin-bottom: 65px;
 	border-top: 2px dotted #b1b1b1;
 	border-bottom: 2px dotted #b1b1b1;
 	list-style: none;
+	width: 65%;
+	margin-left: auto;
 	margin-right: auto;
-	width: 100%;
 }
 
-.check {
+.check23 {
 	float: left;
 	position: relative;
 	margin-top: 130px;
 	left:100px;
 	line-height: 110px;
 }
-
-li {
+.itemlist23 {
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -40,16 +32,11 @@ li {
 	height:30px;
 }
 
-.review {
-	float: right;
-	position: relative;
-	line-height: 110px;
-	bottom: 220px;
-}
 
-.delete {
+
+.delete23 {
 	float: right;
-	margin-right: 50px;
+	margin-right: 120px;
 
 }
 .iFP{
@@ -58,6 +45,6 @@ li {
 	object-fit:contain;
 	}
 
-.ayame{
+.empty{
 margin:50px;
 }
