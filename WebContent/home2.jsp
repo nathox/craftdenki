@@ -6,29 +6,6 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css">
-.home2{
-
-  /* 画像ファイルの指定 */
-
-
-  /* 画像を常に天地左右の中央に配置 */
-    background-position: center center;
-
-  /* 画像をタイル状に繰り返し表示しない */
-    background-repeat: no-repeat;
-
-  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-    background-attachment: fixed;
-
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-    background-size: cover;
-
-  /* 背景画像が読み込まれる前に表示される背景のカラー */
-    background-color: white;
-    margin:0 auto;
-    padding-top:200px;
-
-}
   /* 下にスクロールでヘッダー非表示・上にスクロールでヘッダー表示*/
 header {
     position:fixed;
@@ -65,7 +42,7 @@ header{
     margin-top:30px;
     margin-bottom:20px;
     width: 200px;
-    height: 70px;
+    height:70px;
     background-repeat:no-repeat;
     background-image:url("images/logo.png");
     background-size: 200px;
