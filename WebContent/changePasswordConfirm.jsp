@@ -27,11 +27,24 @@
 
 
 
+	<span>ログインPASS:</span><s:property value="password" escape="false" />
+							<input type="hidden" value="%{password}"/>
+							<input type="hidden" value="%{userId}"/>
+							<input type="hidden" value="%{answer}"/>
+
+
 
 		<s:form action="ChangePasswordCompleteAction">
 			<s:submit value="完了" />
 		</s:form>
 		<!--
+
+		02/16 勝手にCSSいじらせていただきました（中途半端でごめんなさい）sano
+
+
+
+
+
 				<s:form action="ChangePasswordCompleteAction">
 					<tr id="box">
 						<td>
