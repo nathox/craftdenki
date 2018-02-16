@@ -68,6 +68,9 @@
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 						合計金額:<s:property value="totalPrice" /><br>
 						<s:hidden name="totalPrice" value="%{totalPrice}" />
+
+						<p>&nbsp;</p>
+
 				</div>
 
 <!--
