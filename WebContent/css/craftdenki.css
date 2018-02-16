@@ -315,38 +315,30 @@
 				    -moz-border-radius: 5px;   /* Firefox用 */
 				}
 
-/*==================================背景css===========================================*/
+
+
+
+/*==================================アイテム表示css===========================================*/
 	/*------------------共通部分------------------*/
 
-		.box1 {
-			width: 65%;
-			text-align: center;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.formitem {
-			text-align: center;
-		}
-
-		.okada {
+		.box23 {
 			margin-bottom: 65px;
 			border-top: 2px dotted #b1b1b1;
 			border-bottom: 2px dotted #b1b1b1;
 			list-style: none;
+			width: 65%;
+			margin-left: auto;
 			margin-right: auto;
-			width: 100%;
 		}
-		//チェックボックスのdivに付けてください
-		.checkitem {
+
+		.check23 {
 			float: left;
 			position: relative;
 			margin-top: 130px;
 			left:100px;
 			line-height: 110px;
 		}
-		//liにclass名をつけてください
-		.itemlist {
+		.itemlist23 {
 			margin: 0;
 			padding: 0;
 			text-align: left;
@@ -356,18 +348,17 @@
 			height:30px;
 		}
 
-		.deleteitem {
+		.delete23 {
 			float: right;
-			margin-right: 50px;
-		}
+			margin-right: 120px;
 
+		}
 		.iFP{
 			text-align:right;
 			float:right;
 			object-fit:contain;
-			margin-top:20px;
 			}
 
-
-
-
+		.empty{
+		margin:50px;
+		}

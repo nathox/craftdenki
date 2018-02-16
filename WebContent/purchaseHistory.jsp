@@ -28,12 +28,12 @@
 	<h3>購入商品一覧</h3>
 	<!-- purchaseHistoryListの中身が0の場合、購入履歴は無し -->
 	<s:if test="purchaseHistoryList.size()==0">
-		<h2>購入履歴はありません。</h2>
+		<h4>購入履歴はありません。</h4>
 	</s:if>
 
 	<!-- purchaseHistoryListの中身が0の場合、購入履歴は無し -->
 	<s:if test="purchaseHistoryList.size() > 0">
-		<a>購入情報は以下になります。</a>
+		<h4>購入情報は以下になります。</h4>
 
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
 
