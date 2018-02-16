@@ -23,133 +23,74 @@
 		}
 	}
 </script>
-<style type="text/css">
-p{
-font-size:30px;
-}
-.box1{
-width: 50%;
-text-align: center;
-margin-left:auto;
-margin-right:auto;
-
-}
-body{
-
+<style>
+.Abox {
+	width: 1000px;
+	height: 300px;
+	border: 1px solid black;
 }
 
-.form{
-text-align: center;
+table {
+	text-align: center;
 }
-
-.okada{
-margin-bottom:65px;
-border: 1px solid #b1b1b1;
-list-style: none;
-margin-right:auto;
-width:100%;
-padding-top:10px;
-padding-bottom:10px;
-
-}
-.check{
-float:left;
-position:relative;
-margin-top:40px;
-margin-left:240px;
-line-height:110px;
-}
-
-li{
-margin:0;
-padding:0;
-text-align:left;
-width:100%;
-margin-right:auto;
-text-align: justify;
-}
-
-.review{
-float:right;
-position:relative;
-margin-right:150px;
-line-height:110px;
-bottom:120px;
-}
-
-.delete{
-float:right;
-margin-right:50px;
-}
-
-.header{
-margin-bottom:130px;
-}
-
-
-
 </style>
 
 
 </head>
 <body>
-<jsp:include page="home.jsp" />
+	<jsp:include page="home.jsp" />
 
-<div class="main">
+	<div class="main">
 
-	<h3>お気に入りリスト</h3>
-	<s:form id="form" name="form" action="FavoriteAction">
-		<table border="0" cellspacing="0">
+		<h3>お気に入りリスト</h3>
+		<s:form id="form" name="form" action="FavoriteAction">
 
 			<s:iterator value="favoriteList">
+				<div class="Abox">
+					<table>
+						<tr>
+							<td><div class="check">
+									<s:checkbox name="checkList" value="1"
+										fieldValue="%{productId}" />
+								</div></td>
+						</tr>
+						<tr>
+							<td><div id="memo"></div></td>
+							<td><img src="<s:property value='imageFilePath'/>"
+								width="auto" height="200px"></td>
+							<s:hidden name="imageFilePath"
+								value='<s:property value="imageFilePath"/>' />
+							<td>商品名:<span><s:property value="productName" /></span></td>
+							<s:hidden name="productName" value="%{productName}" />
+							<td>画像: <span><s:property value="imageFilePath" /></span></td>
+							<td>金額: <span><s:property value="price" /></span></td>
+							<s:hidden name="price" value="%{price}" />
 
-				<div class="check23">
-					<s:checkbox name="checkList" value="1"
-							fieldValue="%{productId}" />
+							<td>会社: <span><s:property value="releaseCompany" /></span></td>
+							<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+							<td>登録日時: <span><s:property value="releaseDate" /></span></td>
+							<s:hidden name="id" value="%{id}" />
+
+							<s:hidden name="releaseDate" value="%{releaseDate}" />
+							<s:hidden name="productId" value="%{productId}" />
+
+							</div>
+						</tr>
+
+					</table>
+
 				</div>
 
-					<ul class="box23">
-
-					<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
-					<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
-					<li>商品名:<span><s:property value="productName" /></span></li>
-
-					<s:hidden name="productName" value="%{productName}" />
-					<li>画像:<span><s:property value="imageFilePath" /></span></li>
-
-					<li>金額:<span><s:property value="price" /></span></li>
-					<s:hidden name="price" value="%{price}" />
-
-					<li>会社:<span><s:property value="releaseCompany" /></span></li>
-					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-
-					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
-					<s:hidden name="id" value="%{id}"/>
-
-					<s:hidden name="releaseDate" value="%{releaseDate}" />
-					<s:hidden name="productId" value="%{productId}" />
-
-					</ul>
 			</s:iterator>
-			<tr>
-				<td><s:submit value="一括削除">
-						<s:hidden name="deleteFlg" value="1" />
-					</s:submit></td>
-			</tr>
-		</table>
-	</s:form>
 
+			<s:submit value="一括削除">
+				<s:hidden name="deleteFlg" value="1" />
+			</s:submit>
 
-</div>
+		</s:form>
 
+	</div>
 
-
-
-
-
-
-
-
-<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
