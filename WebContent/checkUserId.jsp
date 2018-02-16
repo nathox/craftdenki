@@ -1,46 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="s" uri="/struts-tags"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link href="css/craftdenki.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link href="css/craftdenki.css" rel="stylesheet">
 
 <title>ログインID確認画面</title>
 
+
+
 <style type="text/css">
-.main{
-	width:100%;
-	text-align:center;
+.kageyama {
+	text-align: center;
+	padding-top:10px;
 }
-input{
-	padding:5px 10px;
-	border-radius:3px;
-	margin-bottom:10px;
+
+.kageyama2 {
+	float: left;
+}
+
+.kageyama3 {
+	padding-left: 45%;
 }
 </style>
+
+
 </head>
 
 <body>
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 	<div class="main">
-	<s:form action="CheckUserIdAction">
-
-		<label>ログインID：</label>
-		<input type="text" name="userId" value="test"/><br>
 
 
-		<s:submit value="確認"/>
-	</s:form>
+		<h3>パスワード変更画面</h3>
+
+		<div class="kageyama">
+
+
+
+			<s:form action="CheckUserIdAction">
+				<table>
+					<tr>
+						<td><div class="kageyama2">ログインID</div></td>
+					</tr>
+					<tr>
+						<td><div class="kageyama2">
+								<input type="text" name="userId" value="test" />
+							</div></td>
+					</tr>
+				</table>
+
+				<div class="kageyama3">
+					<s:submit value="確認" />
+				</div>
+			</s:form>
+		</div>
+
 	</div>
-	<jsp:include page="footer.jsp"/>
+	<!--
+			<s:form action="CheckUserIdAction">
+
+				<label>ログインID</label>
+				<span><input type="text" name="userId" value="test" /></span>
+				<br>
+
+
+				<s:submit value="確認" />
+			</s:form>
+
+
+-->
+
+	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
