@@ -18,7 +18,7 @@
 
 <div class="main">
 	<div class="ProductList">
-		<h1>商品一覧</h1>
+		<h3>商品一覧</h3>
 
 		<!-- 検索時のメッセージ(sano -->
 		<s:if test="searchMessage != ''">
