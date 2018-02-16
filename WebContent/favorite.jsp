@@ -103,22 +103,24 @@ margin-bottom:130px;
 
 			<s:iterator value="favoriteList">
 
-				<div class="check"><s:checkbox name="checkList" value="1"
-							fieldValue="%{productId}" /></div>
+				<div class="check">
+					<s:checkbox name="checkList" value="1"
+							fieldValue="%{productId}" />
+				</div>
 				<div class="box1">
-				<ul class="okada">
+					<ul class="okada">
 
 
 
-				<li>商品名:<span><s:property value="productName" /></span></li>
-				<li>画像:<span><s:property value="imageFilePath" /></span></li>
-				<li>金額:<span><s:property value="price" /></span></li>
-				<li>会社:<span><s:property value="releaseCompany" /></span></li>
-				<li>登録日時:<span><s:property value="releaseDate" /></span></li>
+					<li>商品名:<span><s:property value="productName" /></span></li>
+					<li>画像:<span><s:property value="imageFilePath" /></span></li>
+					<li>金額:<span><s:property value="price" /></span></li>
+					<li>会社:<span><s:property value="releaseCompany" /></span></li>
+					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
 
+					<s:hidden name="id" value="%{id}"/>
 
-
-				</ul>
+					</ul>
 				</div>
 			</s:iterator>
 			<tr>

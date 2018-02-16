@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.dto;
 
 public class FavoriteDTO {
 
+	private String id;
 	private String productName;
 	private String productNameKana;
 	private String imageFilePath;
@@ -73,5 +74,13 @@ public class FavoriteDTO {
 
 	public void setProductId(String ProductId) {
 		this.ProductId = ProductId;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

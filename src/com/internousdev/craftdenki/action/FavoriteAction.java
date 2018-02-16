@@ -28,6 +28,7 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 
 
+
 	public String execute() throws SQLException {
 		FavoriteDAO dao = new FavoriteDAO();
 		int count = 0;
@@ -37,7 +38,7 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 
 
-
+	//削除ボタンを押していない時点
 		if (deleteFlg == "0") {
 			if (session.containsKey("trueID")) {
 				userId = session.get("trueID").toString();
@@ -61,17 +62,8 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 			favoriteList = dao.getFavoriteInfo(userId);
 			result = SUCCESS;
 			return result;
-		}
-
-
-
-
-
-
-
-
-		else if (deleteFlg.equals("1")) {
-
+		}  else if (deleteFlg.equals("1")) {    //削除ボタンを押したあと
+			//checkListがnullじゃないとき
 			if (checkList != null) {
 				System.out.println("ちぇっくりすと");
 				for (String deleteId : checkList) {
@@ -82,22 +74,12 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 					result = SUCCESS;
 					return result;
 				}
-
-
-			}
-
-
-
-
+			}  //checkListがnullのとき
 			else {
 				result = SUCCESS;
 				return result;
 			}
-
 		}
-
-
-
 		else {
 			result = SUCCESS;
 			return result;
