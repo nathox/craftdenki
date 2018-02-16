@@ -23,14 +23,11 @@
 </style>
 </head>
 <body>
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 	<div class="main">
 
-			<h3>パスワードを変更しました。</h3><br>
+			<h2>パスワードを変更しました。</h2><br>
 
-			<div>
-				<a href='<s:url action="GoLoginAction" />'>ログインへ</a>
-			</div>
 		</div>
 	<jsp:include page="footer.jsp"/>
 </body>
