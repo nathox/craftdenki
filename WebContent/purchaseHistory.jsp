@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/craftdenki.css">
-<link rel="stylesheet" href="./css/purchaseHistory.css">
+<link href="css/purchaseHistory.css" rel="stylesheet">
 
 <script type="text/javascript">
 	function goPurchaseHistoryAction() {
@@ -20,71 +20,69 @@
 </head>
 <body>
 <jsp:include page="home.jsp" />
+
+
 	<div class="main">
-	<h1>購入商品一覧</h1>
+
+
+	<h3>購入商品一覧</h3>
 	<!-- purchaseHistoryListの中身が0の場合、購入履歴は無し -->
 	<s:if test="purchaseHistoryList.size()==0">
 		<h2>購入履歴はありません。</h2>
 	</s:if>
+
 	<!-- purchaseHistoryListの中身が0の場合、購入履歴は無し -->
 	<s:if test="purchaseHistoryList.size() > 0">
 		<a>購入情報は以下になります。</a>
+
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
+
+
 			<table>
 				<s:iterator value="purchaseHistoryList">
-				<div class="check">
+			<div class="check23">
 					<s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
-				</div>
-				<div class="box1">
-					<!-- <ul class="okada"> -->
-					<!-- <div class="ayame"> -->
-					<ul>
-						<li><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+			</div>
+
+
+
+					<ul class="box23">
+
+
+						<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
 						<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
-						<li>商品名:<span><s:property value="productName" /></span></li>
+						<li class="itemlist23">商品名:<span><s:property value="productName" /></span></li>
 						<s:hidden name="productName" value="%{productName}" />
-						<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
+						<li class="itemlist23">ふりがな:<span><s:property value="productNameKana" /></span></li>
 						<s:hidden name="productNameKana" value="%{productNameKana}" />
-						<li>金額:<span><s:property value="price" />円</span></li>
+						<li class="itemlist23">金額:<span><s:property value="price" />円</span></li>
 						<s:hidden name="price" value="%{price}" />
-						<li>個数:<span><s:property value="count" />個</span></li>
+						<li class="itemlist23">個数:<span><s:property value="count" />個</span></li>
 						<s:hidden name="count" value="%{count}" />
-						<li>発売会社名:<s:property value="releaseCompany" /></li>
+						<li class="itemlist23">発売会社名:<s:property value="releaseCompany" /></li>
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-						<li>発売年月日:<s:property value="releaseDate" /></li>
+						<li class="itemlist23">発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
+
+
 					</ul>
-					</div>
-					<!--
-					<div class="review">
-						<p><a href='<s:url action="Review1Action"/>'>レビュー</a></p>
-					</div>
-					-->
-					<s:submit onclick="goReview1Action();" value="レビュー"/>
+
+
+
 				</s:iterator>
 			</table>
+
+				<div class="delete23">
 			<s:hidden name="deleteFlg" value="1"/>
 			<s:submit onclick="goPurchaseHistoryAction();" value="削除"/>
+				</div>
 
-			<!-- <div class="delete">  -->
-			<!--
-			<a href='<s:url action="PurchaseHistoryAction"/>'>
-
-				<s:param name="imageFilePath" value='<s:property value="imageFilePath"/>'/>
-				<s:param name="productName" value="%{productName}"/>
-				<s:param name="productNameKana" value="%{productNameKana}"/>
-				<s:param name="price" value="%{price}"/>
-				<s:param name="count" value="%{count}"/>
-				<s:param name="releaseCompany" value="%{releaseCompany}"/>
-				<s:param name="releaseDate" value="%{releaseDate}"/>
-
-				<s:param name="deleteFlg" value="1"/>'>削除</a>
-				-->
-			<!-- </div>  -->
 		</s:form>
+
 	</s:if>
 	</div>
-	<!-- <div class="ayame"></div>  -->
+
+		 <div class="empty"></div>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
