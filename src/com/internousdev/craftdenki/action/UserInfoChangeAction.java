@@ -38,6 +38,14 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 			list_user_info = null;
 		}
 
+
+		if(session.get("payment") == ("payment")){  //settlement.jspから飛んできた場合、destinationChange.jspに飛ばす
+
+			session.put("payment","");
+			result = "destination";
+			return result;
+		}
+
 		result = SUCCESS;
 
 		return result;

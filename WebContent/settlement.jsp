@@ -49,7 +49,7 @@
 
 		<s:form action="SettlementConfirmAction">
 			<div class="left1">
-				<s:if test="userAddress != null && telNumber != null">
+				<s:if test="userAddress != null">
 					<div class="radio">
 						<input type="radio" name="destination" value="1" checked>
 						<span><s:property value="userAddress" /></span>
@@ -59,7 +59,7 @@
 					</div>
 				</s:if>
 
-				<s:if test="userAddress2 != null && telNumber2 != null">
+				<s:if test="userAddress2 != null">
 					<div class="radio">
 						<input type="radio" name="destination" value="2"> <span><s:property
 								value="userAddress2" /></span>
@@ -69,7 +69,7 @@
 					</div>
 				</s:if>
 
-				<s:if test="userAddress3 != null && telNumber3 != null">
+				<s:if test="userAddress3 != null">
 					<div class="radio">
 						<input type="radio" name="destination" value="3"> <span><s:property
 								value="userAddress3" /></span>

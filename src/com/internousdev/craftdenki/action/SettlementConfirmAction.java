@@ -33,6 +33,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	@SuppressWarnings("unchecked")
 	public String execute(){
 
+		session.put("payment",""); //ユーザー変更画面へのフラグを消している
 		System.out.println(destination);
 
 

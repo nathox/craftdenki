@@ -45,7 +45,7 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 	@SuppressWarnings("unchecked")
 	public String execute() {
 
-		session.put("payment", "payment");//userInfoChangeから帰ってくるためのフラグ
+		session.put("payment", "payment");//((userInfoChangeから帰ってくるためのフラグ,))
 
 		System.out.println(session.get("trueID"));
 

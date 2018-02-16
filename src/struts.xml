@@ -287,6 +287,15 @@
 		</action>
 
 
+
+		<!-- DestinationChangeAction 決済画面での住所変更 -->
+		<action name="DestinationChangeAction"
+				class="com.internousdev.craftdenki.action.DestinationChangeAction"
+				method="execute">
+		<result name="success">settlement0.jsp</result>
+		</action>
+
+
 		<!-- 決済機能 (終) -->
 
 
@@ -318,6 +327,7 @@
 			class="com.internousdev.craftdenki.action.UserInfoChangeAction"
 			method="execute">
 			<result name="success">userInfoChange.jsp</result>
+			<result name="destination">destinationChange.jsp</result>
 		</action>
 
 		<!-- UserInfoChangeConfirmAction -->
