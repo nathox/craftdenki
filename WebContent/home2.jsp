@@ -6,6 +6,12 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css">
+
+
+
+.home2{
+	padding-top:200px;
+}
   /* 下にスクロールでヘッダー非表示・上にスクロールでヘッダー表示*/
 header {
     position:fixed;
