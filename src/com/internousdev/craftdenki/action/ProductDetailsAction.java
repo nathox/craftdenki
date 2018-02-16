@@ -17,6 +17,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 	//セッション情報取得
 	public Map<String, Object> session;
 
+	private String id;
+
 	private String product_id;
 
 	private int product_count;
@@ -174,6 +176,18 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 
 	public void setProductDetailsDAO(ProductDetailsDAO productDetailsDAO) {
 		this.productDetailsDAO = productDetailsDAO;
+	}
+
+
+
+	public String getId() {
+		return id;
+	}
+
+
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 

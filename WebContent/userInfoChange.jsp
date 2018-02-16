@@ -80,7 +80,7 @@
 </head>
 <body>
 
-   <jsp:include page="home.jsp"/>
+   <jsp:include page="home2.jsp"/>
 
 
 
@@ -203,7 +203,7 @@
 			</table>
 
 			<br>
-			<s:submit value="変更確認画面へ" id="userInfoCheck"/>
+			<s:submit value="入力内容確認画面へ" class="userCreateButton"/>
 
 
 		</s:iterator>

@@ -9,21 +9,15 @@
 	<meta charset="utf-8">
 	<title>MyPage</title>
 
-	<style type="text/css">
-
-	</style>
-
 	<link href="css/userInfoChange.css" rel="stylesheet">
 
 </head>
 <body>
-	<!-- ヘッダー-->
-	<jsp:include page="home.jsp" />
+
+	<jsp:include page="home2.jsp" />
 
 	  <div class="main">
-<div class="wideBox">
-
-
+			<div class="wideBox">
 
 		<s:form action="PurchaseHistoryAction">
 				<s:submit value="購入履歴" id="myPageButton1" />
@@ -37,11 +31,9 @@
 				<s:submit value="ユーザー情報変更" id="myPageButton3"/>
 		</s:form>
 
-<%--
-	<a href='<s:url action="StartAction"/>'>ホームへ戻る</a>
---%>
-</div>
+			</div>
 	 </div>
+
 	    <jsp:include page="footer.jsp"/>
 
 </body>

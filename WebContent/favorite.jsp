@@ -104,7 +104,7 @@ margin-bottom:130px;
 			<s:iterator value="favoriteList">
 
 				<div class="check">
-					<s:checkbox name="checkList" value="1"
+					<s:checkbox name="checkList" value=""
 							fieldValue="%{productId}" />
 				</div>
 				<div class="box1">
@@ -118,7 +118,6 @@ margin-bottom:130px;
 					<li>会社:<span><s:property value="releaseCompany" /></span></li>
 					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
 
-					<s:hidden name="id" value="%{id}"/>
 
 					</ul>
 				</div>
