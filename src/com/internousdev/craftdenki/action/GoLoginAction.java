@@ -11,9 +11,13 @@ public class GoLoginAction extends ActionSupport implements SessionAware {
 	private Map<String,Object>session;
 
 	public String execute() {
-		session.put("trueID", "0");
+
 
 		return SUCCESS;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
 	@Override

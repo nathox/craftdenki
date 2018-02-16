@@ -23,11 +23,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String Passerrormsg;
 
 	public String execute() {
-		{
-			session.put("unknown", "");
-			session.put("IDerror", "");
-			session.put("Passerror", "");
-		}
+
+		session.put("unknown", "");
+		session.put("IDerror", "");
+		session.put("Passerror", "");
 
 		result = ERROR;
 
@@ -44,12 +43,15 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (length1 < 1) { // 最小文字数よりも少なかった場合
 			String IDerrormsg = "IDは半角1文字以上8文字以内で入力してください";
 			this.IDerrormsg = IDerrormsg;
+
 		} else if (length1 > 8) { // 最大文字数よりも多かった場合
 			String IDerrormsg = "IDは半角1文字以上8文字以内で入力してください";
 			this.IDerrormsg = IDerrormsg;
+
 		} else if (length1 == 0) { // 文字数が0だった場合
 			String IDerrormsg = "IDを入力してください";
 			this.IDerrormsg = IDerrormsg;
+
 		}
 
 		// Passについて
@@ -59,6 +61,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (m2.find() == false) {
 			String Passerrormsg = "パスワードは半角英数字で入力してください";
 			this.Passerrormsg = Passerrormsg;
+
 		}
 
 		int length2 = loginPassword.getBytes().length;
@@ -75,17 +78,16 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		dto = dao.loginUserInfo(loginId, loginPassword);
 
-		if(session.containsKey("status")){
-		}else{
+		if (session.containsKey("status")) {
+		} else {
 			session.put("status", "");
 		}
 
-		if(!(session.containsKey("temp_user_id"))){
+		if (!(session.containsKey("temp_user_id"))) {
 			Random rnd = new Random();
 			session.put("temp_user_id", rnd);
 			System.out.println("ここまで１");
 		}
-
 
 		if (IDerrormsg == null) {
 			if (Passerrormsg == null) {
@@ -99,29 +101,29 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					}
 				} else if (dto.getLoginId().equals(loginId)) {
 					if (dto.getLoginPass().equals(loginPassword)) {
-						session.put("loginId", dto.getLoginId());
+						session.put("loginId", dto.getLoginId()); // 使ってないかも
 						session.put("loginPass", dto.getLoginPass());
-						session.put("trueID",loginId);
 
+						session.put("trueID", loginId);
 
 						System.out.println(dto.getLoginId());
-						System.out.println(session.get("temp_user_id").toString()+"1a");
-						System.out.println(dto.getLoginId()+"2b");
-						dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
+						System.out.println(session.get("temp_user_id").toString() + "1a");
+						System.out.println(dto.getLoginId() + "2b");
+						dao.cartInfo(session.get("temp_user_id").toString(), loginId);
 
 						if (session.get("status") == ("settlement")) {
-							session.put("IDerror", "");
-							session.put("Passerror", "");
-							result = "settlement";
+							session.put("IDerror", ""); // 使ってないかも
+							session.put("Passerror", ""); // 使ってないかも
 							session.put("status", "");
-							dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId() + "仮ユーザーID2");
+							dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
+							result = "settlement";
 							return result;
-						}else if(session.get("status") == ("mypage")){
+						} else if (session.get("status") == ("mypage")) {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
 							session.put("status", "");
 
-							dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId() + "仮ユーザーID3");
+							dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
 
 							result = "myPage";
 							return result;
@@ -129,20 +131,17 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						} else {
 							session.put("IDerror", "");
 							session.put("Passerror", "");
-							System.out.println(session.get("trueID"));
-							System.out.println(session.get("userId"));
 							dao.cartInfo(session.get("temp_user_id").toString(), dto.getLoginId());
 							result = "myPage";
 							return result;
-				}
+						}
 
 					}
-				} else if (dto.getLoginId().equals("noID")) {
-					if (dto.getLoginPass().equals("noPASS")) {
+				} else if (dto.getLoginId().equals("0")) {
+					if (dto.getLoginPass().equals("0")) {
 						session.put("unknown", "入力されたIDもしくはパスワードが異なります");
 						result = ERROR;
 						return result;
-
 					}
 				}
 			}

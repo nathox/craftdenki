@@ -31,51 +31,66 @@
 		jQuery("#form_1").validationEngine();
 	});
 	function nextField(i, n, m) {
- 		if (i.value.length >= m) {
- 	 	  i.form.elements[n].focus();
- 		 }
+		if (i.value.length >= m) {
+			i.form.elements[n].focus();
 		}
+	}
 </script>
 </head>
 <body>
-<div class="a">
-<header>
-	<div class="img">
-		<a href='<s:url action="StartAction" />' class="title-color">
-		<div class="title">CraftDenki</div>
-		</a>
+	<div class="a">
+		<header>
+			<div class="img">
+				<a href='<s:url action="StartAction" />' class="title-color">
+					<div class="title">CraftDenki</div>
+				</a>
 
-			<s:form method="post" action="ItemSearchAction" class="kensaku">
-				<select name="category">
-					<option value="0" selected="selected">すべてのカテゴリー</option>
-					<option value="1">本</option>
-					<option value="2">家電・パソコン</option>
-					<option value="3">おもちゃ・げーむ</option>
-				</select>
-				<s:textfield name="searchWord" maxlength="16" />
-				<s:submit value="検索" />
-			</s:form>
-	</div>
+				<s:form method="post" action="ItemSearchAction" class="kensaku">
+					<select name="category">
+						<option value="0" selected="selected">すべてのカテゴリー</option>
+						<option value="1">本</option>
+						<option value="2">家電・パソコン</option>
+						<option value="3">おもちゃ・げーむ</option>
+					</select>
+					<s:textfield name="searchWord" maxlength="16" />
+					<s:submit value="検索" />
+				</s:form>
+			</div>
 
 			<div class="bar">
 
-				<s:if test="session.trueID != null">
-					<span><a href='<s:url action="LogoutAction" />'>ログアウト</a></span>
-				</s:if>
 				<s:if test="session.trueID == null">
-					<span><a href='<s:url action="GoLoginAction" />'>ログイン</a></span>
+					<s:if test="session.temp_user_id == null">
+						<span><a href='<s:url action="GoLoginAction" />'>ログイン1</a></span>
+					</s:if>
+				</s:if>
+				
+				<s:if test="session.trueID == null">
+					<s:if test="session.temp_user_id != null">
+						<span><a href='<s:url action="GoLoginAction" />'>ログイン2</a></span>
+					</s:if>
+				</s:if>
+				
+				<s:if test="session.trueID != null">
+					<s:if test="session.temp_user_id != null">
+						<span><a href='<s:url action="LogoutAction" />'>ログアウト1</a></span>
+					</s:if>
+				</s:if>
+				
+				<s:if test="session.trueID != null">
+					<s:if test="session.temp_user_id == null">
+						<span><a href='<s:url action="LogoutAction" />'>ログアウト2</a></span>
+					</s:if>
 				</s:if>
 
 
-				<span><a href='<s:url action="GoMyPageAction" />'>マイページ</a></span>
-
-				<span><a href='<s:url action="CartAction" />'>カート</a></span>
-
-				<span><a href='<s:url action="ProductListAction" />'>商品一覧</a></span>
+				<span><a href='<s:url action="GoMyPageAction" />'>マイページ</a></span> <span><a
+					href='<s:url action="CartAction" />'>カート</a></span> <span><a
+					href='<s:url action="ProductListAction" />'>商品一覧</a></span>
 
 			</div>
 
-<!--
+			<!--
 
 
 </header>
@@ -107,8 +122,8 @@
 </footer>
 -->
 
-	<!-- とりあえずHome画面の雛形作っています好きなように変更してください -->
-	<!--
+			<!-- とりあえずHome画面の雛形作っています好きなように変更してください -->
+			<!--
 	<s:if test="session.trueID == null">
 		<s:form action="GoLoginAction">
 			<s:submit value="ログイン(login.jsp)" style="WIDTH:200px;color:red;" />
@@ -154,6 +169,6 @@
 		<s:submit value="決済画面へ(仮置き)" style="WIDTH:200px;" />
 	</s:form>
 	-->
-</div>
+	</div>
 </body>
 </html>

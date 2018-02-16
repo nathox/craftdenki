@@ -1,6 +1,7 @@
 package com.internousdev.craftdenki.action;
 
 import java.util.Map;
+import java.util.Random;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -13,6 +14,12 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	public String execute() {
 
 		session.clear();
+
+		Random rnd = new Random();
+		session.put("temp_user_id", rnd);
+		System.out.println("ランダム" + rnd + " = ランダムID");
+		System.out.println("仮ユーザーID発行");
+
 		return SUCCESS;
 	}
 

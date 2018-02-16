@@ -73,7 +73,7 @@ p {
 					<br>
 					<tr>
 						<s:textfield name="loginId" style="ime-mode:disabled;"
-							value="test" size="40" />
+							size="40" />
 					</tr>
 					<tr>
 						<td><s:if test="session.IDerrormsg != ''">
@@ -86,8 +86,8 @@ p {
 					</tr>
 					<br>
 					<tr>
-						<s:textfield name="loginPassword" style="ime-mode:disabled;"
-							value="123" size="40" />
+						<s:password name="loginPassword" style="ime-mode:disabled;"
+							 size="40" />
 					</tr>
 					<tr>
 						<s:if test="session.Passerrormsg != ''">
