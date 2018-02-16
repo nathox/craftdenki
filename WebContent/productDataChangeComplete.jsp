@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/okamoto.css">
+	href="${pageContext.request.contextPath}/css/craftdenki.css">
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content="">
