@@ -5,67 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/productList.css">
 <title>商品詳細画面</title>
 
-<style type="text/css">
-#detailsList {
-	border: 1px solid #b1b1b1;
-	border-collapse: collapse;
-}
 
-#reviewList {
-	border: 1px solid #b1b1b1;
-	border-collapse: collapse;
-	text-align:center;
-	width:60%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:30px;
-}
-
-h1,h2{
-text-align:center;
-}
-
-.DetailsList{
-text-align:center;
-width:40%;
-margin-left:auto;
-margin-right:auto;
-}
-
-
-.img{
-
-width:auto;
-margin-left:auto;
-margin-right:auto;
-margin-top:30px;
-margin-bottom:30px;
-}
-
-.list{
-margin:0;
-padding:0;
-text-align:left;
-margin-right:auto;
-border-bottom: 1px solid #b1b1b1;
-border-collapse: collapse;
-}
-
-.box1{
-
-width:60%;
-margin-left:auto;
-margin-right:auto;
-margin-top:30px;
-margin-bottom:30px;
-}
-
-
-
-</style>
 <script type="text/javascript">
 	function goCartAction() {
 		document.getElementById('form').action = "CartAction";
@@ -85,42 +29,49 @@ margin-bottom:30px;
 		<h1>商品詳細</h1>
 		<s:iterator value="detailsList">
 			<div id="detailsList">
-			<div class="img">
-				<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="300" height="240">
+				<div class="img">
+					<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="300" height="240">
+				</div>
+				<table class="detailsTable">
+					<tr>
+						<td class="nowrap">商品名かな</td>
+						<td>:</td>
+						<td><s:property value="product_name_kana" /></td>
+					</tr>
+					<tr>
+						<td class="nowrap">商品名</td>
+						<td>:</td>
+						<td><s:property value="product_name" /></td>
+					</tr>
+					<tr>
+						<td class="nowrap">商品詳細</td>
+						<td>:</td>
+						<td><s:property value="product_description" /></td>
+					</tr>
+					<tr>
+						<td class="nowrap">価格</td>
+						<td>:</td>
+						<td>￥<s:property value="price" />
+						円</td>
+					</tr>
+					<tr>
+						<td class="nowrap">発売日</td>
+						<td>:</td>
+						<td><s:property value="release_date" /></td>
+					</tr>
+					<tr>
+						<td class="nowrap">販売会社</td>
+						<td>:</td>
+						<td><s:property value="release_company" /></td>
+					</tr>
+					<tr>
+						<td class="nowrap">在庫</td>
+						<td>:</td>
+						<td><s:property value="item_stock" />
+						個</td>
+					</tr>
+				</table>
 			</div>
-			<div class="box1">
-				<div class="list">
-					商品名かな:
-					<s:property value="product_name_kana" />
-				</div>
-				<div class="list">
-					商品名:
-					<s:property value="product_name" />
-				</div>
-				<div class="list">
-					商品詳細:
-					<s:property value="product_description" />
-				</div>
-				<div class="list">
-					価格:￥
-					<s:property value="price" />
-					円
-				</div>
-				<div class="list">
-					発売日:
-					<s:property value="release_date" />
-				</div>
-				<div class="list">
-					販売会社:
-					<s:property value="release_company" />
-				</div>
-				<div class="list">
-					在庫:
-					<s:property value="item_stock" />
-					個
-				</div>
-			</div>
-		</div>
 		</s:iterator>
 
 
@@ -156,6 +107,7 @@ margin-bottom:30px;
 			</s:if>
 		</s:form>
 	</div>
+	<%--
 	<s:if test="reviewList.size != 0 ">
 			<div id="reviewList">
 				<h2>この商品のレビュー</h2>
@@ -185,7 +137,7 @@ margin-bottom:30px;
 		<s:else>
 			<h2>レビューはありません。</h2>
 			<br>
-		</s:else>
+		</s:else> --%>
 
  <jsp:include page="footer.jsp"/>
 </body>

@@ -36,20 +36,22 @@
 					   		<dt>
 					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
 					   		</dt>
-					   		<div class="box1">
-                            <dd>
-	                            <div class="list">商品名かな:
-	                           		<s:property value="product_name_kana" />
-	                            </div>
-	                            <div class="list">商品名:
-	                            	<s:property value="product_name" />
-	                            </div>
-	                            <div class="list">価格:￥
-	                            	<s:property value="price" />
-	                            	円
-	                            </div>
-                            </dd>
-                            </div>
+					   		<table class="detailsTable">
+					   			<tr>
+		                            <td class="nowrap">商品名かな</td>
+		                            <td>:</td>
+		                            <td><s:property value="product_name_kana" /></td>
+	                            </tr>
+	                            <tr>
+		                            <td class="nowrap">商品名</td>
+		                            <td>:</td>
+	                            	<td><s:property value="product_name" /></td>
+                            	</tr>
+		                            <td class="nowrap">価格</td>
+		                            <td>:</td>
+		                            <td>￥<s:property value="price" />￥</td>
+	                            </tr>
+                            </table>
                             	<s:hidden name="product_id" value="%{product_id}" />
                         </dl>
                     </li>

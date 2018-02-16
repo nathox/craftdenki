@@ -165,17 +165,23 @@ h3{
 	border-bottom:solid black 1px;
 }
 
-.box1{
-
-width:90%;
-margin-left:auto;
-margin-right:auto;
-margin-top:30px;
-margin-bottom:30px;
+.detailsTable{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	border-style: none;
+}
+.detailsTable tr, .detailsTable tr{
+	border-bottom: 1px solid #b1b1b1;
 }
 
-.list{
-border-bottom: 1px solid #b1b1b1;
+.detailsTable span{
+	width: auto;
+}
+.nowrap{
+	white-space: nowrap;
 }
 
 .ProductList{
