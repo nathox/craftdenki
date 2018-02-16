@@ -103,24 +103,33 @@ margin-bottom:130px;
 
 			<s:iterator value="favoriteList">
 
-				<div class="check">
-					<s:checkbox name="checkList" value=""
+				<div class="check23">
+					<s:checkbox name="checkList" value="1"
 							fieldValue="%{productId}" />
 				</div>
-				<div class="box1">
-					<ul class="okada">
 
+					<ul class="box23">
 
-
+					<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+					<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
 					<li>商品名:<span><s:property value="productName" /></span></li>
-					<li>画像:<span><s:property value="imageFilePath" /></span></li>
-					<li>金額:<span><s:property value="price" /></span></li>
-					<li>会社:<span><s:property value="releaseCompany" /></span></li>
-					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
 
+					<s:hidden name="productName" value="%{productName}" />
+					<li>画像:<span><s:property value="imageFilePath" /></span></li>
+
+					<li>金額:<span><s:property value="price" /></span></li>
+					<s:hidden name="price" value="%{price}" />
+
+					<li>会社:<span><s:property value="releaseCompany" /></span></li>
+					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+
+					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
+					<s:hidden name="id" value="%{id}"/>
+
+					<s:hidden name="releaseDate" value="%{releaseDate}" />
+					<s:hidden name="productId" value="%{productId}" />
 
 					</ul>
-				</div>
 			</s:iterator>
 			<tr>
 				<td><s:submit value="一括削除">
@@ -129,7 +138,7 @@ margin-bottom:130px;
 			</tr>
 		</table>
 	</s:form>
-	<a href='<s:url action="StartAction" />'>Home画面に戻る</a>
+
 
 </div>
 
