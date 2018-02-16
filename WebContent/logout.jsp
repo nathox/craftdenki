@@ -18,18 +18,9 @@
 </head>
 <body>
 	<!-- ヘッダー-->
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 	<div class="main">
-		<div id="header">
-			<div id="pr"></div>
-		</div>
-		<div id="main">
-			<div id="top">
-				<p>ログアウトしました。</p>
-			</div>
-
-
-		</div>
+				<h3>ログアウトしました。</h3>
 	</div>
 	<jsp:include page="footer.jsp" />
 </body>

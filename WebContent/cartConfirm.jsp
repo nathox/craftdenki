@@ -44,62 +44,33 @@
 
 				<br><br>
 
-
-<!--
-				<table border="1">
-					<tr>
-						<td></td>
-						<td>商品名</td>
-						<td>ふりがな</td>
-						<td>画像パス</td>
-						<td>値段</td>
-						<td>個数</td>
-						<td>発売会社</td>
-						<td>発売日</td>
-						<td>合計金額</td>
-					</tr>
-
-					<s:iterator value="cartList">
-						<tr>
-							<td><s:checkbox name="delete" value="checked"
-									fieldValue="%{id}" /></td>
-
-							<td><s:property value="productName" /></td>
-							<s:hidden name="productName" value="%{productName}" />
-							<td><s:property value="productNameKana" /></td>
-							<s:hidden name="productNameKana" value="%{productNameKana}" />
-
-							<td><s:property value="imageFilePath" /></td>
-							<s:hidden name="imageFilePath" value="%{imageFilePath}" />
-
-							<td><s:property value="price" /><span>円</span></td>
-							<s:hidden name="price" value="%{price}" />
-
-							<td><s:property value="productCount" /><span>個</span></td>
-							<s:hidden name="productCount" value="%{productCount}" />
-
-							<td><s:property value="releaseCompany" /></td>
-							<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-
-							<td><s:property value="releaseDate" /></td>
-							<s:hidden name="releaseDate" value="%{releaseDate}" />
-
-							<td><s:property value="totalPrice" /><span>円</span></td>
-							<s:hidden name="totalPrice" value="%{totalPrice}" />
-						</tr>
-					</s:iterator>
-				</table>
-
--->
-
-
 		<table>
 			<s:iterator value="cartList">
-				<div class="check23">
+			<div class="ph-box">
+				<div class="ph-check">
 					<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
 				</div>
 
+						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
+							<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
 
+						商品名:<span><s:property value="productName" /></span><br>
+						<s:hidden name="productName" value="%{productName}" />
+						ふりがな:<span><s:property value="productNameKana" /></span><br>
+						<s:hidden name="productNameKana" value="%{productNameKana}" />
+						金額:<span><s:property value="price" />円</span><br>
+						<s:hidden name="price" value="%{price}" />
+						個数:<span><s:property value="productCount" />個</span><br>
+						<s:hidden name="productCount" value="%{productCount}" />
+						発売会社名:<s:property value="releaseCompany" /><br>
+						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+						発売年月日:<s:property value="releaseDate" /><br>
+						<s:hidden name="releaseDate" value="%{releaseDate}" />
+						合計金額:<s:property value="totalPrice" /><br>
+						<s:hidden name="totalPrice" value="%{totalPrice}" />
+				</div>
+
+<!--
 					<ul class="box23">
 						<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
 						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
@@ -125,7 +96,7 @@
 						<li class="itemlist23">合計金額:<s:property value="totalPrice" /></li>
 						<s:hidden name="totalPrice" value="%{totalPrice}" />
 					</ul>
-
+-->
 			</s:iterator>
 
 		</table>
