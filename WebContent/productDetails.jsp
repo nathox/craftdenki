@@ -77,7 +77,7 @@
 
 
 
-		<s:form action="CartAction" class="form" name="form">
+		<s:form action="CartAction" id="form" name="form">
 			<s:if test="item_stock != 0">
 
 			購入個数
