@@ -19,7 +19,21 @@ public class FavoriteDAO {
 	public ArrayList<FavoriteDTO> getFavoriteInfo(String loginId) throws SQLException {
 		ArrayList<FavoriteDTO> favoriteDTO = new ArrayList<FavoriteDTO>();
 		// SQL文わからない
-		String sql = "SELECT pi.id as id, pi.product_id as product_id,pi.product_name as product_name,pi.product_name_kana as product_name_kana,pi.image_file_path as image_file_path,pi.image_file_name as image_file_name,pi.price as price,pi.release_company as release_company,pi.release_date as release_date from product_info as pi JOIN favorite_info as fi ON fi.product_id = pi.product_id where fi.user_id = ?";
+		String sql = "SELECT "
+						+ "pi.id as id, "
+						+ "pi.product_id as product_id,"
+						+ "pi.product_name as product_name,"
+						+ "pi.product_name_kana as product_name_kana,"
+						+ "pi.image_file_path as image_file_path,"
+						+ "pi.image_file_name as image_file_name,"
+						+ "pi.price as price,"
+						+ "pi.release_company as release_company,"
+						+ "pi.release_date as release_date "
+					+ "FROM "
+						+ "product_info as pi "
+					+ "JOIN favorite_info as fi "
+					+ "ON fi.product_id = pi.id "
+					+ "WHERE fi.user_id = ?";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
