@@ -35,44 +35,38 @@
 	<s:if test="purchaseHistoryList.size() > 0">
 		<h4>購入情報は以下になります。</h4>
 
-		<br>
-		<br>
+		<p>&nbsp;&nbsp;</p>
 
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
+			<s:iterator value="purchaseHistoryList">
+			<div class="ph-box">
 
-
-
-				<s:iterator value="purchaseHistoryList">
-			<div class="check23">
+				<div class="ph-check">
 					<s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
-			</div>
+				</div>
 
-
-
-					<ul class="box23">
-
-
-						<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+					<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
 						<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
-						<li class="itemlist23">商品名:<span><s:property value="productName" /></span></li>
+
+
+
+						商品名:<span><s:property value="productName" /></span><br>
 						<s:hidden name="productName" value="%{productName}" />
-						<li class="itemlist23">ふりがな:<span><s:property value="productNameKana" /></span></li>
+						ふりがな:<span><s:property value="productNameKana" /></span><br>
 						<s:hidden name="productNameKana" value="%{productNameKana}" />
-						<li class="itemlist23">金額:<span><s:property value="price" />円</span></li>
+						金額:<span><s:property value="price" />円</span><br>
 						<s:hidden name="price" value="%{price}" />
-						<li class="itemlist23">個数:<span><s:property value="count" />個</span></li>
+						個数:<span><s:property value="count" />個</span><br>
 						<s:hidden name="count" value="%{count}" />
-						<li class="itemlist23">発売会社名:<s:property value="releaseCompany" /></li>
+						発売会社名:<s:property value="releaseCompany" /><br>
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-						<li class="itemlist23">発売年月日:<s:property value="releaseDate" /></li>
+						発売年月日:<s:property value="releaseDate" /><br>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-<br>
 
+					<p>&nbsp;</p>
 
-					</ul>
-
-
+			</div>
 
 				</s:iterator>
 

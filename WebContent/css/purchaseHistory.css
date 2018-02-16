@@ -35,4 +35,12 @@
 	object-fit:contain;
 }
 
+.box32{
+	margin-bottom: 30px;
+	margin-top:30px;
 
+	list-style: none;
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+}
