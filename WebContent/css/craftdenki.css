@@ -321,44 +321,42 @@
 /*==================================アイテム表示css===========================================*/
 	/*------------------共通部分------------------*/
 
-		.box23 {
-			margin-bottom: 65px;
-			border-top: 2px dotted #b1b1b1;
-			border-bottom: 2px dotted #b1b1b1;
-			list-style: none;
-			width: 65%;
-			margin-left: auto;
-			margin-right: auto;
-		}
 
-		.check23 {
-			float: left;
-			position: relative;
-			margin-top: 130px;
-			left:100px;
-			line-height: 110px;
-		}
-		.itemlist23 {
-			margin: 0;
-			padding: 0;
-			text-align: left;
-			width: 100%;
-			margin-right: auto;
-			text-align: justify;
-			height:30px;
-		}
+.box23 {
+	margin-bottom: 65px;
+	border-top: 2px dotted #b1b1b1;
+	border-bottom: 2px dotted #b1b1b1;
+	list-style: none;
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-		.delete23 {
-			float: right;
-			margin-right: 120px;
+.check23 {
+	float: left;
+	left:100px;
+	margin-top:50px;
+}
 
-		}
-		.iFP{
-			text-align:right;
-			float:right;
-			object-fit:contain;
-			}
+.itemlist23 {
+	text-align: left;
+	width: 100%;
+	margin-right: auto;
+	height:30px;
+}
 
-		.empty{
-		margin:50px;
-		}
+.delete23 {
+	float: right;
+	margin-right: 120px;
+}
+
+.iFP{
+	text-align:right;
+	float:right;
+	object-fit:contain;
+}
+
+.empty{
+	margin:50px;
+}
+

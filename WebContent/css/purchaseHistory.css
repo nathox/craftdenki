@@ -1,8 +1,4 @@
 
-
-
-
-
 .box23 {
 	margin-bottom: 65px;
 	border-top: 2px dotted #b1b1b1;
@@ -15,34 +11,28 @@
 
 .check23 {
 	float: left;
-	position: relative;
-	margin-top: 130px;
 	left:100px;
-	line-height: 110px;
+	margin-top:50px;
 }
+
 .itemlist23 {
-	margin: 0;
-	padding: 0;
 	text-align: left;
 	width: 100%;
 	margin-right: auto;
-	text-align: justify;
 	height:30px;
 }
-
-
 
 .delete23 {
 	float: right;
 	margin-right: 120px;
-
 }
+
 .iFP{
 	text-align:right;
 	float:right;
 	object-fit:contain;
-	}
+}
 
 .empty{
-margin:50px;
+	margin:50px;
 }

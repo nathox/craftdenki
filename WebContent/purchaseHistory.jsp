@@ -35,6 +35,9 @@
 	<s:if test="purchaseHistoryList.size() > 0">
 		<h4>購入情報は以下になります。</h4>
 
+		<br>
+		<br>
+
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
 
 
@@ -63,6 +66,8 @@
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 						<li class="itemlist23">発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
+
+						<br>
 
 
 					</ul>
