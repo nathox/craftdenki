@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<link href="css/enna.css" rel="stylesheet">
+<link href="css/craftdenki.css" rel="stylesheet">
 
 
 
@@ -95,40 +95,36 @@
 
 		<table>
 			<s:iterator value="cartList">
-				<div class="check">
+				<div class="check23">
 					<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
 				</div>
 
-				<div class="box1">
-					<ul class="okada">
-					<div class="ayame">
-						<li>
-						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+
+					<ul class="box23">
+						<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
 						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
-						<li>商品名:<span><s:property value="productName" /></span></li>
+						<li class="itemlist23">商品名:<span><s:property value="productName" /></span></li>
 						<s:hidden name="productName" value="%{productName}" />
 
-						<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
+						<li class="itemlist23">ふりがな:<span><s:property value="productNameKana" /></span></li>
 						<s:hidden name="productNameKana" value="%{productNamekana}" />
 
-						<li>金額:<span><s:property value="price" />円</span></li>
+						<li class="itemlist23">金額:<span><s:property value="price" />円</span></li>
 						<s:hidden name="price" value="%{price}" />
 
-						<li>個数:<span><s:property value="productCount" />個</span></li>
+						<li class="itemlist23">個数:<span><s:property value="productCount" />個</span></li>
 						<s:hidden name="productCount" value="%{productCount}" />
 
-						<li>発売会社名:<s:property value="releaseCompany" /></li>
+						<li class="itemlist23">発売会社名:<s:property value="releaseCompany" /></li>
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
-						<li>発売年月日:<s:property value="releaseDate" /></li>
+						<li class="itemlist23">発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-						<li>合計金額:<s:property value="totalPrice" /></li>
+						<li class="itemlist23">合計金額:<s:property value="totalPrice" /></li>
 						<s:hidden name="totalPrice" value="%{totalPrice}" />
-					</div>
 					</ul>
-				</div>
 
 			</s:iterator>
 
