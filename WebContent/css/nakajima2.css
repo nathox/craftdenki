@@ -5,7 +5,7 @@
     background: #2c3e50;
 		}
 .under{
-    font-family: 'Press Start 2P', cursive;
+
     font-size:20px;
     color:white;
     text-align: center;
@@ -19,4 +19,7 @@
     list-style-type:none;
     flex-grow: 1;
     text-align:center;
+    text-decoration: none;
+	color: #fff;
+	font-weight: bold;
 }

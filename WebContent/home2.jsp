@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html">
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -56,8 +56,8 @@ header{
     height:120px;
     line-height:30px;
     background-color:ghostwhite;
-    background-image:url("images/cork.jpg");
-    background-repeat: no-repeat;
+    background-image:url("images/Paper01.jpg");
+
 }
 /*ロゴ*/
 #logo{
@@ -109,7 +109,7 @@ input.area{
     }*/
 
 </style>
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
 <link href="css/jquery.minimalect.css" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/validationEngine.jquery.css">

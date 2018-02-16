@@ -4,11 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <link href="css/craftdenki.css" rel="stylesheet">
-<link href="css/useInfoChange.css" rel="stylesheet">
+<link href="css/userInfoChange.css" rel="stylesheet">
+<link href="css/nakajima.css" rel="stylesheet">
 
 
-<!--<script src="js/jquery-1.8.2.min.js"></script>
+<!--<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.autoKana.js"></script>
@@ -23,41 +25,45 @@
 	});
 </script>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>-->
-<meta charset="utf-8">
 <title>新規登録</title>
 </head>
 <body>
 <jsp:include page="home2.jsp"/>
 <div class="main">
+<ol class="stepBar">
+<li class="visited"><span>1</span><br>必要事項の入力</li>
+<li><span>2</span><br>入力内容の確認</li>
+<li><span>3</span><br>登録完了</li>
+</ol>
 <h3>ユーザー登録</h3>
 <s:form id="form_1" action="UserCreateConfirmAction">
-<table>
-	<tr>
-		<th>ユーザーID<em>必須</em></th>
+<table class="userCreateTable">
+	<tr class="userCreateTr">
+		<th class="userCreateTh">ユーザーID<em class="userCreateEm">必須</em></th>
 			<td><input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required]" /></td>
 	</tr>
 	<s:if test="errorMessage!=hoge">
 	<s:property value="errorMessage" escape="false" />
 	</s:if>
 
-	<tr>
-		<th>パスワード<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">パスワード<em class="userCreateEm">必須</em></th>
 			<td><input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,maxSize[16]]" /></td>
 	</tr>
-	<tr>
-		<th>お名前<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">お名前<em class="userCreateEm">必須</em></th>
 			<td><span style="margin-left:2em;"></span>氏：<input type="text" id="familyName" name="familyName" value='<s:property value="familyName"/>' class="validate[required]" />
 				<span style="margin-left:2em;"></span>名：<input type="text" id="firstName" name="firstName" value='<s:property value="firstName"/>' class="validate[required]"/>
 			</td>
 	</tr>
-	<tr>
-		<th>ふりがな<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">ふりがな<em class="userCreateEm">必須</em></th>
 			<td>氏かな：<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required]" />
     			名かな：<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required]"/>
     		</td>
     </tr>
-    <tr>
-    	<th>性別<em>必須</em></th>
+    <tr class="userCreateTr">
+    	<th class="userCreateTh">性別<em class="userCreateEm">必須</em></th>
     		<td>
 			<s:if test="sex==0">
 				<input type="radio" name="sex" value="0" checked class="validate[required]">男
@@ -73,12 +79,12 @@
 			</s:else>
 			</td>
 	</tr>
-	<tr>
-		<th>メールアドレス<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">メールアドレス<em class="userCreateEm">必須</em></th>
 			<td><input type="email" name="mail"value='<s:property value="mail"/>' placeholder="info@example.com" class="validate[required]" /></td>
 	</tr>
-	<tr>
-		<th>秘密の質問<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">秘密の質問<em class="userCreateEm">必須</em></th>
 			<td>
 			<s:if test="secretQuestion==1">
 				<select name="secretQuestion" id="secretQuestion" class="validate[required]">
@@ -114,20 +120,20 @@
 			</s:else>
 			</td>
 	</tr>
-	<tr>
-		<th>答え<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">答え<em class="userCreateEm">必須</em></th>
 			<td><input type="text" name="secretAnswer"value='<s:property value="secretAnswer"/>' class="validate[required]"></td>
 	</tr>
-	<tr>
-		<th>郵便番号</th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">郵便番号</th>
 			<td>〒<input type="text" name="yuubin" value='<s:property value="yuubin"/>' size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"></td>
 	</tr>
-	<tr>
-		<th>住所<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">住所<em class="userCreateEm">必須</em></th>
 			<td><input type="text" name="address" value='<s:property value="address"/>' size="60" class="validate[required]"></td>
 	</tr>
-	<tr>
-		<th>電話番号<em>必須</em></th>
+	<tr class="userCreateTr">
+		<th class="userCreateTh">電話番号<em class="userCreateEm">必須</em></th>
 			<td><input type="text" name="tel" value='<s:property value="tel" />' class="validate[required]"></td>
 	</tr>
 
