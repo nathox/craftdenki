@@ -21,17 +21,32 @@
 
 
 	</style>
+
+		<link href="css/craftdenki.css" rel="stylesheet">
+		<link href="css/nakajima.css" rel="stylesheet">
+		<link href="css/userInfoChange.css" rel="stylesheet">
+
+
 </head>
 <body>
 
    <jsp:include page="home.jsp"/>
            <div class="main">
+			<div class="wideBox">
+
+
+
+			<ol class="stepBar">
+				<li class="visited"><span>1</span><br>必要事項の入力</li>
+				<li class="visited"><span>2</span><br>入力内容の確認</li>
+				<li class="visited"><span>3</span><br>変更完了</li>
+			</ol>
 
 	<h3>ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。</h3>
 
 	自動で切り替わらない場合は<a href="myPage.jsp">こちら</a>
 
-
+</div>
 </div>
     <jsp:include page="footer.jsp"/>
 

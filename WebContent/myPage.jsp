@@ -20,7 +20,10 @@
 	<!-- ヘッダー-->
 	<jsp:include page="home.jsp" />
 
-	<div class="main">
+	  <div class="main">
+<div class="wideBox">
+
+
 
 		<s:form action="PurchaseHistoryAction">
 				<s:submit value="購入履歴" id="myPageButton1" />
@@ -37,8 +40,8 @@
 <%--
 	<a href='<s:url action="StartAction"/>'>ホームへ戻る</a>
 --%>
-
-	</div>
+</div>
+	 </div>
 	    <jsp:include page="footer.jsp"/>
 
 </body>

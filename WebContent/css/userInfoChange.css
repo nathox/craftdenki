@@ -1,26 +1,32 @@
 @CHARSET "UTF-8";
 
-table{
+.wideBox{
+	width:900px;
+	background-color:#ffffff;
+	margin:0 auto;
+}
+
+table.userCreateTable{
 			width:600px;
 			border-collapse:collapse;
 			font-size:0.8em;
 			border:1px #cccccc solid;
 			}
 
-th{
+th.userCreateTh{
 			border-left:6px solid #cccccc;
 			/*↑左側の色*/
 			background-color:#efefef;
 						width:150px;
 			}
 
-tr{
+tr.userCreateTr{
 			padding:10px;
 			border-top:1px solid #cccccc;
 			height:40px;
 			}
 
-em{
+em.userCreateEm{
 			color:#ff0000;
 			font-size:smaller;
 			}
@@ -31,24 +37,36 @@ em{
 				padding-top:10px;
 				width:150px;
 				height:60px;
-				border:10px　#000;
-				margin-left:450px;
+				border:solid 1px　#000;
+				margin:0 auto;
+
+				margin-left:600px;
 				}
+
+
+#userChangeBack{
+	width:200px;
+	margin:0 auto;
+	margin-left:550px;
+	margin-top:10px;
+	}
 
 
 
 
 #myPageButton1{
+				/*border:solid 30px; #000000;*/
+
 				padding-top:50px;
 				background-color:#ffffff;
 				color:#000000;
 				font-size:3em;
-				position:absolute;
-				top:200px;
-				left:300px;
 				width:300px;
 				height:300px;
-				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				text-shadow: 0.5px 0.5px 0 #000,-0.5px 0.5px 0 #000,0.5px -0.5px 0 #000,-0.5px -0.5px 0 #000
+				/*position:absolute;
+				top:200px;
+				left:300px;*/
 				}
 
 #myPageButton2{
@@ -56,12 +74,12 @@ em{
 				background-color:#ffffff;
 				color:#000000;
 				font-size:3em;
-				position:absolute;
-				top:200px;
-				left:600px;
 				width:300px;
 				height:300px;
 				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				position:absolute;
+				top:200px;
+				left:600px;
 				}
 
 #myPageButton3{
@@ -69,10 +87,13 @@ em{
 				background-color:#ffffff;
 				color:#000000;
 				font-size:3em;
-				position:absolute;
-				top:200px;
-				left:900px;
 				width:300px;
 				height:300px;
 				text-shadow: 1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000
+				position:absolute;
+				top:200px;
+				left:900px;
 				}
+
+
+
