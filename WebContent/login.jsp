@@ -54,7 +54,7 @@ p {
 </style>
 </head>
 <body>
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 	<div class="main">
 		<div class="top _1">
 			<div id="box">ログイン</div>

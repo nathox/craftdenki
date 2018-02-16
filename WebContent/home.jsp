@@ -61,25 +61,25 @@
 
 				<s:if test="session.trueID == null">
 					<s:if test="session.temp_user_id == null">
-						<span><a href='<s:url action="GoLoginAction" />'>ログイン1</a></span>
+						<span><a href='<s:url action="GoLoginAction" />'>ログイン</a></span>
 					</s:if>
 				</s:if>
-				
+
 				<s:if test="session.trueID == null">
 					<s:if test="session.temp_user_id != null">
-						<span><a href='<s:url action="GoLoginAction" />'>ログイン2</a></span>
+						<span><a href='<s:url action="GoLoginAction" />'>ログイン</a></span>
 					</s:if>
 				</s:if>
-				
+
 				<s:if test="session.trueID != null">
 					<s:if test="session.temp_user_id != null">
-						<span><a href='<s:url action="LogoutAction" />'>ログアウト1</a></span>
+						<span><a href='<s:url action="LogoutAction" />'>ログアウト</a></span>
 					</s:if>
 				</s:if>
-				
+
 				<s:if test="session.trueID != null">
 					<s:if test="session.temp_user_id == null">
-						<span><a href='<s:url action="LogoutAction" />'>ログアウト2</a></span>
+						<span><a href='<s:url action="LogoutAction" />'>ログアウト</a></span>
 					</s:if>
 				</s:if>
 
@@ -141,9 +141,7 @@
 		<s:submit value="マイページへ" style="WIDTH:200px;color:blue;" />
 	</s:form>
 
-	<s:form action="GoCartAction">
-		<s:submit value="カート画面へ" style="WIDTH:200px;color:green;" />
-	</s:form>
+
 
 	<s:form action="ProductListAction">
 		<s:submit value="商品一覧へ(productList.jsp)"
