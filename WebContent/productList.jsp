@@ -49,7 +49,7 @@
                             	</tr>
 		                            <td class="nowrap">価格</td>
 		                            <td>:</td>
-		                            <td>￥<s:property value="price" />￥</td>
+		                            <td>￥<s:property value="price" />円</td>
 	                            </tr>
                             </table>
                             	<s:hidden name="product_id" value="%{product_id}" />
