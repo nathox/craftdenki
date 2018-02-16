@@ -23,6 +23,7 @@
 		margin-bottom:200px;
 	}
 
+
 	h3{
 		border-bottom:solid black 1px;
 	}
@@ -368,9 +369,11 @@ li {
 	text-align:right;
 	float:right;
 	object-fit:contain;
+	margin-top:20px;
 	}
 
 .ayame{
-margin:50px;}
+	margin:10px;
+	}
 
 

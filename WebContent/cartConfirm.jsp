@@ -42,6 +42,10 @@
 			<s:form id="form" name="form" action="SettlementAction">
 				<h4>カート情報は以下になります。</h4>
 
+				<br><br>
+
+
+<!--
 				<table border="1">
 					<tr>
 						<td></td>
@@ -61,25 +65,24 @@
 									fieldValue="%{id}" /></td>
 
 							<td><s:property value="productName" /></td>
-							<s:hidden name="productName" value="%{productName}" /><!-- ok -->
-
+							<s:hidden name="productName" value="%{productName}" />
 							<td><s:property value="productNameKana" /></td>
-							<s:hidden name="productNameKana" value="%{productNameKana}" /><!-- ok -->
+							<s:hidden name="productNameKana" value="%{productNameKana}" />
 
 							<td><s:property value="imageFilePath" /></td>
-							<s:hidden name="imageFilePath" value="%{imageFilePath}" /><!-- ok -->
+							<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
 							<td><s:property value="price" /><span>円</span></td>
-							<s:hidden name="price" value="%{price}" /><!-- ok -->
+							<s:hidden name="price" value="%{price}" />
 
 							<td><s:property value="productCount" /><span>個</span></td>
-							<s:hidden name="productCount" value="%{productCount}" /><!-- ok -->
+							<s:hidden name="productCount" value="%{productCount}" />
 
 							<td><s:property value="releaseCompany" /></td>
-							<s:hidden name="releaseCompany" value="%{releaseCompany}" /><!-- ok -->
+							<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
 							<td><s:property value="releaseDate" /></td>
-							<s:hidden name="releaseDate" value="%{releaseDate}" /><!-- ok -->
+							<s:hidden name="releaseDate" value="%{releaseDate}" />
 
 							<td><s:property value="totalPrice" /><span>円</span></td>
 							<s:hidden name="totalPrice" value="%{totalPrice}" />
@@ -87,7 +90,7 @@
 					</s:iterator>
 				</table>
 
-
+-->
 
 
 		<table>
@@ -130,7 +133,6 @@
 			</s:iterator>
 
 		</table>
-
 
 
 				<br>
