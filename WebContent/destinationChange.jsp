@@ -91,23 +91,13 @@
 			<h3>お届け先変更、追加ページ</h3>
 			<br>
 			<s:form id="form_1" action="DestinationChangeAction">
-				<div class="errorColor">
-					<s:if test="errorMessage!=hoge">
-						<s:property value="errorMessage" escape="false" />
-					</s:if>
-				</div>
-
-
-
-
 
 				<s:iterator value="list_user_info">
 
-					<table>
+					<table class="userCreateTable">
 
-
-						<tr>
-							<th>郵便番号</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">郵便番号</th>
 							<td>〒<input type="text" name="yuubin1" size="4"
 								maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input
 								type="text" name="yuubin4" size="4" maxlength="4"
@@ -115,14 +105,14 @@
 							</td>
 						</tr>
 
-						<tr>
-							<th>住所１</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所１<em class="userCreateEm">必須</em></th>
 							<td><s:textfield name="userAddress" size="60"
 									value="%{userAddress}" class="validate[required]" /></td>
 						</tr>
 
-						<tr>
-							<th>郵便番号</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">郵便番号</th>
 							<td>〒<input type="text" name="yuubin2" size="4"
 								maxlength="3" onkeyup="nextField(this, 'yuubin5', 3)">-<input
 								type="text" name="yuubin5" size="4" maxlength="4"
@@ -130,14 +120,14 @@
 							</td>
 						</tr>
 
-						<tr>
-							<th>住所２</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所２</th>
 							<td><s:textfield name="userAddress2" size="60"
 									value="%{userAddress2}" /></td>
 						</tr>
 
-						<tr>
-							<th>郵便番号</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">郵便番号</th>
 							<td>〒<input type="text" name="yuubin3" size="4"
 								maxlength="3" onkeyup="nextField(this, 'yuubin6', 3)">-<input
 								type="text" name="yuubin6" size="4" maxlength="4"
@@ -145,28 +135,33 @@
 							</td>
 						</tr>
 
-						<tr>
-							<th>住所３</th>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所３</th>
 							<td><s:textfield name="userAddress3" size="60"
 									value="%{userAddress3}" /></td>
 						</tr>
 
 
-						<tr>
-							<th>電話番号</th>
+
+
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号１<em class="userCreateEm">必須</em></th>
 							<td><s:textfield name="telNumber" value="%{telNumber}"
 									class="validate[required]" /></td>
 						</tr>
 
-						<tr>
-							<th>電話番号２</th>
-							<td><s:textfield name="telNumber2" value="%{telNumber2}" /></td>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号２</th>
+							<td><s:textfield name="telNumber2" value="%{telNumber2}" />
+							</td>
 						</tr>
 
-						<tr>
-							<th>電話番号３</th>
-							<td><s:textfield name="telNumber3" value="%{telNumber3}" /></td>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号３</th>
+							<td><s:textfield name="telNumber3" value="%{telNumber3}" />
+							</td>
 						</tr>
+
 
 
 					</table>
