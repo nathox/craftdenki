@@ -323,7 +323,8 @@
 
 
 .box23 {
-	margin-bottom: 65px;
+	margin-bottom: 30px;
+	margin-top:30px;
 	border-top: 2px dotted #b1b1b1;
 	border-bottom: 2px dotted #b1b1b1;
 	list-style: none;
@@ -335,7 +336,7 @@
 .check23 {
 	float: left;
 	left:100px;
-	margin-top:50px;
+	margin-top:100px;
 }
 
 .itemlist23 {
@@ -348,6 +349,7 @@
 .delete23 {
 	float: right;
 	margin-right: 120px;
+	margin-top:100px;
 }
 
 .iFP{
@@ -356,7 +358,4 @@
 	object-fit:contain;
 }
 
-.empty{
-	margin:50px;
-}
 

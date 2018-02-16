@@ -41,7 +41,7 @@
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
 
 
-			<table>
+
 				<s:iterator value="purchaseHistoryList">
 			<div class="check23">
 					<s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
@@ -67,7 +67,7 @@
 						<li class="itemlist23">発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-						<br>
+<br>
 
 
 					</ul>
@@ -75,7 +75,7 @@
 
 
 				</s:iterator>
-			</table>
+
 
 				<div class="delete23">
 			<s:hidden name="deleteFlg" value="1"/>
@@ -87,7 +87,7 @@
 	</s:if>
 	</div>
 
-		 <div class="empty"></div>
+
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
