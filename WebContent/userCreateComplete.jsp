@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!--  <meta http-equiv="refresh" content="5;URL=/craftdenki">-->
+<meta http-equiv="refresh" content="5;URL=/craftdenki">
 <title>完了画面</title>
 <link href="css/userInfoChange.css" rel="stylesheet">
 </head>

@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/craftdenki.css" rel="stylesheet">
+<link href="css/useInfoChange.css" rel="stylesheet">
+
 
 <!--<script src="js/jquery-1.8.2.min.js"></script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <link rel="stylesheet" href="css/validationEngine.jquery.css">
-<link href="css/userInfoChange.css" rel="stylesheet">
 <script>
 	$(function() {
 		$.fn.autoKana('#familyName', '#familyNameKana');
@@ -19,13 +21,15 @@
 	$(function() {
 		jQuery("#form_1").validationEngine();
 	});
-</script>-->
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+</script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>-->
 <meta charset="utf-8">
 <title>新規登録</title>
 </head>
 <body>
-<jsp:include page="home.jsp"/>
+<jsp:include page="home2.jsp"/>
+<div class="main">
+<h3>ユーザー登録</h3>
 <s:form id="form_1" action="UserCreateConfirmAction">
 <table>
 	<tr>
@@ -123,7 +127,7 @@
 			<td><input type="text" name="address" value='<s:property value="address"/>' size="60" class="validate[required]"></td>
 	</tr>
 	<tr>
-		<th>電話番号１<em>必須</em></th>
+		<th>電話番号<em>必須</em></th>
 			<td><input type="text" name="tel" value='<s:property value="tel" />' class="validate[required]"></td>
 	</tr>
 
@@ -131,6 +135,8 @@
 		<s:submit value="登録" />
 	</s:form>
 <a href="login.jsp">戻る</a>
+</div>
 <jsp:include page="footer.jsp"/>
+
 </body>
 </html>
