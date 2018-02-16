@@ -29,7 +29,7 @@ p.back {
 </head>
 <body>
 
-   <jsp:include page="home.jsp"/>
+   <jsp:include page="home2.jsp"/>
            <div class="main">
            <div class="wideBox">
 
@@ -39,7 +39,9 @@ p.back {
 <li><span>3</span><br>変更完了</li>
 </ol>
 
-	<h3>下記内容でユーザー情報を変更します、よろしいですか？</h3>
+	<h3>入力内容確認画面</h3>
+
+	<p>下記内容でユーザー情報を変更します、よろしいですか？</p><br>
 
 	<s:form action="UserInfoChangeCompleteAction">
 
@@ -110,11 +112,11 @@ p.back {
 
 	</table>
 
-			<br><s:submit value="変更する" id="userInfoCheck"/>
+			<br><s:submit value="変更する" class="userCreateButton"/>
 
 	</s:form>
 				<br>
-				<input type="button" id="userChangeBack" value="ユーザー情報変更画面に戻る" onclick="history.back()" />
+				<input type="button" class="userCreateButton" value="ユーザー情報変更画面に戻る" onclick="history.back()" />
 
 </div>
 </div>

@@ -30,7 +30,7 @@
 </head>
 <body>
 
-   <jsp:include page="home.jsp"/>
+   <jsp:include page="home2.jsp"/>
            <div class="main">
 			<div class="wideBox">
 
@@ -42,7 +42,9 @@
 				<li class="visited"><span>3</span><br>変更完了</li>
 			</ol>
 
-	<h3>ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。</h3>
+	<h3>変更完了</h3>
+
+	ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。<br>
 
 	自動で切り替わらない場合は<a href="myPage.jsp">こちら</a>
 
