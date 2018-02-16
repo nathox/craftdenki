@@ -15,7 +15,7 @@
 </head>
 <body>
 <!-- ヘッダー-->
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 
 <div class="main">
 	<div class="ProductList">
@@ -23,12 +23,16 @@
 
 		<!-- 検索時のメッセージ(sano -->
 		<s:if test="searchMessage != ''">
-			<h3>
+			<h1>
 				<s:property value="searchMessage" escape="false" />
-			</h3>
+			</h1>
 		</s:if>
 		<ul  class="thumbnail clearFix">
-			<s:iterator value="productList">
+
+
+		<!-- 表示件数1ページ目 -->
+
+			<s:iterator value="productList" begin="0" end="50">
 				<a href="<s:url action="ProductDetailsAction">
 			 <s:param name="product_id" value="%{product_id}" />
 			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
@@ -58,6 +62,10 @@
                     </li>
 				</a>
 			</s:iterator>
+
+
+
+
 		</ul>
 	</div>
 	</div>
