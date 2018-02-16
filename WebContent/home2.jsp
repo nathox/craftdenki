@@ -182,7 +182,7 @@ function nextField(i, n, m) {
     </nav>
     <div class="bar">
     <s:if test="session.trueID != null">
-        <span><a href='<s:url action="LogoutAction" />'><i class="fas fa-sign-out-alt"></i>ログアウト</a></span>
+        <span><a href='<s:url action="LogoutAction" />'>ログアウト<i class="fas fa-sign-out-alt"></i></a></span>
     </s:if>
     <s:else>
         <span><a href='<s:url action="GoLoginAction" />'><i class="fas fa-sign-in-alt"></i>ログイン</a></span>
