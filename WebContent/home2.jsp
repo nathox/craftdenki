@@ -9,7 +9,7 @@
 .home2{
 
   /* 画像ファイルの指定 */
-    background-image: url("images/cork.jpg");
+
 
   /* 画像を常に天地左右の中央に配置 */
     background-position: center center;
@@ -42,7 +42,7 @@ header {
 .bar {
   width:100%;
   text-align: center;
-  background-color: rgba(33, 39, 98, 0.5);
+  background-color: #2c3e50;
 
 }
 .bar a {
@@ -67,7 +67,7 @@ header{
     width: 200px;
     height: 70px;
     background-repeat:no-repeat;
-    background-image:url("images/logo2.png");
+    background-image:url("images/logo.png");
     background-size: 200px;
 }
 /*検索フォーム左にロゴ真ん中にフォーム右に空div*/

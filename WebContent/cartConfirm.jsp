@@ -28,7 +28,7 @@
 <body>
 
 	<!-- ヘッダー-->
-	<jsp:include page="home.jsp" />
+	<jsp:include page="home2.jsp" />
 
 	<div class="main">
 
@@ -95,36 +95,38 @@
 
 		<table>
 			<s:iterator value="cartList">
-				<div class="checkitem">
+				<div class="check">
 					<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
 				</div>
 
 				<div class="box1">
 					<ul class="okada">
-						<li class="itemlist">
+					<div class="ayame">
+						<li>
 						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
 						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
 
-						<li class="itemlist">商品名:<span><s:property value="productName" /></span></li>
+						<li>商品名:<span><s:property value="productName" /></span></li>
 						<s:hidden name="productName" value="%{productName}" />
 
-						<li class="itemlist">ふりがな:<span><s:property value="productNameKana" /></span></li>
+						<li>ふりがな:<span><s:property value="productNameKana" /></span></li>
 						<s:hidden name="productNameKana" value="%{productNamekana}" />
 
-						<li class="itemlist">金額:<span><s:property value="price" />円</span></li>
+						<li>金額:<span><s:property value="price" />円</span></li>
 						<s:hidden name="price" value="%{price}" />
 
-						<li class="itemlist">個数:<span><s:property value="productCount" />個</span></li>
+						<li>個数:<span><s:property value="productCount" />個</span></li>
 						<s:hidden name="productCount" value="%{productCount}" />
 
-						<li class="itemlist">発売会社名:<s:property value="releaseCompany" /></li>
+						<li>発売会社名:<s:property value="releaseCompany" /></li>
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
-						<li class="itemlist">発売年月日:<s:property value="releaseDate" /></li>
+						<li>発売年月日:<s:property value="releaseDate" /></li>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
 
-						<li class="itemlist">合計金額:<s:property value="totalPrice" /></li>
+						<li>合計金額:<s:property value="totalPrice" /></li>
 						<s:hidden name="totalPrice" value="%{totalPrice}" />
+					</div>
 					</ul>
 				</div>
 

@@ -340,16 +340,16 @@
 	margin-right: auto;
 	width: 100%;
 }
-//チェックボックスのdivに付けてください
-.checkitem {
+
+.check {
 	float: left;
 	position: relative;
 	margin-top: 130px;
 	left:100px;
 	line-height: 110px;
 }
-//liにclass名をつけてください
-.itemlist {
+
+li {
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -369,8 +369,9 @@
 	text-align:right;
 	float:right;
 	object-fit:contain;
-	margin-top:20px;
 	}
 
+.ayame{
+margin:50px;}
 
 
