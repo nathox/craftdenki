@@ -7,10 +7,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="./css/productList.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 
 <title>商品一覧画面</title>
 
-
+<script>
+$(function() {
+  var page = 0;
+  function draw() {
+    $('#page').html(page + 1);
+    $('li').hide();
+    $('li:first,li:gt(' + page * 8 + '):lt(8)').show();
+  }
+  $('#prev').click(function() {
+    if (page > 0) {
+      page--;
+      draw();
+    }
+  });
+  $('#next').click(function() {
+    if (page < ($('li').size() - 1) / 8 - 1) {
+      page++;
+      draw();
+    }
+  });
+  draw();
+});
+</script>
 
 </head>
 <body>
@@ -62,11 +85,10 @@
                     </li>
 				</a>
 			</s:iterator>
-
-
-
-
 		</ul>
+
+		<span id="prev">＜</span> <span id="page"></span> <span id="next">＞</span>
+
 	</div>
 	</div>
 	<jsp:include page="footer.jsp"/>
