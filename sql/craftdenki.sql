@@ -149,7 +149,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			1000, -- 販売価格
 			"./images/bluebook.jpg", -- 画像ファイルパス
-			"bluebook.jpg", -- 画像ファイル名
+			"blueook.jpg", -- 画像ファイル名
 			"2010/02", -- 発売日
 			"amezoooon", -- 発売会社
 			now(), -- 登録日
@@ -164,7 +164,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"PS4のゲームソフト。", -- 商品詳細
 			3, -- カテゴリID
 			8000, -- 販売価格
-			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"./images/MHW.jpg", -- 画像ファイルパス
 			"monhan.jpg", -- 画像ファイル名
 			"2018/01", -- 発売日
 			"capcum", -- 発売会社
@@ -180,7 +180,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"一人暮らし用の冷蔵庫", -- 商品詳細
 			2, -- カテゴリID
 			6000, -- 販売価格
-			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"./images/reizouko.jpg", -- 画像ファイルパス
 			"reizouko.jpg", -- 画像ファイル名
 			"2000/02", -- 発売日
 			"お宝倉庫", -- 発売会社
@@ -196,7 +196,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"踊り炊き機能付き。銅釜。", -- 商品詳細
 			2, -- カテゴリID
 			60000, -- 販売価格
-			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"./images/suihannki.jpg", -- 画像ファイルパス
 			"odoridaki.jpg", -- 画像ファイル名
 			"2017/08", -- 発売日
 			"sharq", -- 発売会社
@@ -233,7 +233,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"PS4本体。", -- 商品詳細
 			3, -- カテゴリID
 			40000, -- 販売価格
-			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"./images/ps4.jpg", -- 画像ファイルパス
 			"ps4.jpg", -- 画像ファイル名
 			"2015/12", -- 発売日
 			"sany", -- 発売会社
@@ -249,7 +249,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			"Javaの本。", -- 商品詳細
 			1, -- カテゴリID
 			4000, -- 販売価格
-			"./images/zukaikinnniku.jpg", -- 画像ファイルパス
+			"./images/javabook.jpg", -- 画像ファイルパス
 			"javabook.jpg", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
@@ -257,6 +257,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			200, -- 在庫
 			100 -- 現在の平均原価
 		);
+
 
 
 

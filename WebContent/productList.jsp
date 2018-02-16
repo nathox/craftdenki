@@ -34,7 +34,7 @@
                     <li class="list1">
 					   <dl>
 					   		<dt>
-					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
+					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="auto">
 					   		</dt>
 					   		<div class="box1">
                             <dd>
