@@ -21,6 +21,7 @@
 <body>
 <jsp:include page="home2.jsp"/>
 <div class="main">
+<div class="wideBox">
 
 <h3>ユーザー登録</h3>
 <ol class="stepBar">
@@ -28,7 +29,7 @@
 <li class="visited"><span>2</span><br>入力内容の確認</li>
 <li><span>3</span><br>登録完了</li>
 </ol>
-<h3>登録する内容は以下でよろしいですか?</h3>
+<p>登録する内容は以下でよろしいですか?</p>
 
 <table class="userCreateTable">
 
@@ -83,7 +84,7 @@
 
 </table>
 	<s:form action="UserCreateCompleteAction" >
-		<s:submit value="完了"/>
+		<s:submit value="登録する" class="userCreateButton"/>
 	</s:form>
 
 <s:form action="UserCreateAction">
@@ -100,8 +101,9 @@
 <input type="hidden" name="yuubin" value="<s:property value="yuubin" />">
 <input type="hidden" name="address" value="<s:property value="address" />">
 <input type="hidden" name="tel" value="<s:property value="tel" />">
-<s:submit value="戻る"/>
+<s:submit value="戻る" class="userCreateButton"/>
 </s:form>
+</div>
 </div>
 <jsp:include page="footer.jsp"/>
 

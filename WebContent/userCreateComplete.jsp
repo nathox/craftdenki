@@ -8,7 +8,7 @@
 <meta http-equiv="refresh" content="3;URL=<s:url action='ProductListAction' />">
 <title>完了画面</title>
 <link href="css/nakajima.css" rel="stylesheet">
-<link href="craftdenki.css" rel="stylesheet">
+<link href="css/craftdenki.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="home2.jsp"/>
@@ -22,11 +22,11 @@
 <li class="visited"><span>2</span><br>入力内容の確認</li>
 <li class="visited"><span>3</span><br>登録完了</li>
 </ol>
-
-ユーザーの登録が完了しました。
+<br><br><br><br><br><br><br>
+<h1>ユーザーの登録が完了しました。
 5秒後にログイン画面に遷移します。
 ジャンプしない場合は、以下のURLをクリックしてください。
-<a href='<s:url action="ProductListAction"/>'>移転先のページ</a>
+<a href='<s:url action="ProductListAction"/>'>移転先のページ</a></h1>
 </div>
 <jsp:include page="footer.jsp"/>
 </body>
