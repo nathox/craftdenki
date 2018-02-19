@@ -213,12 +213,6 @@
 	</s:form>
 
 
-
-	<%--
-<br>
-	<a href="myPage.jsp">マイページ画面へ戻る</a>
-
-	--%>
 </div>
 </div>
     <jsp:include page="footer.jsp"/>

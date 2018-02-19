@@ -12,6 +12,7 @@ public class CartDTO {
 	private int totalPrice;
 	private int id;
 	private int productId;
+	private int finalPrice;
 
 
 	public int getProductId() {
@@ -73,6 +74,12 @@ public class CartDTO {
 	}
 	public void setReleaseDate(String releaseDate) {
 		ReleaseDate = releaseDate;
+	}
+	public int getFinalPrice() {
+		return finalPrice;
+	}
+	public void setFinalPrice(int finalPrice) {
+		this.finalPrice = finalPrice;
 	}
 
 

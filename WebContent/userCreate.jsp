@@ -134,15 +134,17 @@
 		<th class="userCreateTh">答え<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" name="secretAnswer"value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"></td>
 	</tr>
-	<tr class="userCreateTr">
+			<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
-						<td class="userCreateTd">〒<input type="text" name="yuubin" id="yuubin"
-			value='<s:property value="yuubin"/>' size="10" maxlength="8"onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+						<td class="userCreateTd">〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');">
 			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" class="validate[required,minSize[10],maxSize[50]]"></td>
 	</tr>
+
+
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">電話番号<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' class="validate[required,minSize[10],maxSize[13]]" ></td>

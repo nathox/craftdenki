@@ -4,9 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="css/enna.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/craftdenki.css" rel="stylesheet">
+
 <title>Insert title here</title>
 
 <script>
@@ -24,67 +24,11 @@
 	}
 </script>
 <style type="text/css">
-p{
-font-size:30px;
-}
-.box1{
-width: 50%;
-text-align: center;
-margin-left:auto;
-margin-right:auto;
 
-}
-body{
 
-}
 
-.form{
-text-align: center;
-}
 
-.okada{
-margin-bottom:65px;
-border: 1px solid #b1b1b1;
-list-style: none;
-margin-right:auto;
-width:100%;
-padding-top:10px;
-padding-bottom:10px;
 
-}
-.check{
-float:left;
-position:relative;
-margin-top:40px;
-margin-left:240px;
-line-height:110px;
-}
-
-li{
-margin:0;
-padding:0;
-text-align:left;
-width:100%;
-margin-right:auto;
-text-align: justify;
-}
-
-.review{
-float:right;
-position:relative;
-margin-right:150px;
-line-height:110px;
-bottom:120px;
-}
-
-.delete{
-float:right;
-margin-right:50px;
-}
-
-.header{
-margin-bottom:130px;
-}
 
 
 
@@ -101,41 +45,56 @@ margin-bottom:130px;
 	<s:form id="form" name="form" action="FavoriteAction">
 		<table border="0" cellspacing="0">
 
+		<p>&nbsp;&nbsp;</p>
+
 			<s:iterator value="favoriteList">
 
-				<div class="check23">
+			<div class="ph-box">
+
+
+
+				<div class="ph-check">
 					<s:checkbox name="checkList" value="1"
 							fieldValue="%{productId}" />
 				</div>
 
-					<ul class="box23">
+<br><br>
 
-					<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
+					<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
+						<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
+
+
+
 					<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
-					<li>商品名:<span><s:property value="productName" /></span></li>
+					商品名:<span><s:property value="productName" /></span><br>
 
-					<s:hidden name="productName" value="%{productName}" />
-					<li>画像:<span><s:property value="imageFilePath" /></span></li>
-
-					<li>金額:<span><s:property value="price" /></span></li>
+					金額:<span><s:property value="price" /></span><br>
 					<s:hidden name="price" value="%{price}" />
 
-					<li>会社:<span><s:property value="releaseCompany" /></span></li>
+					発売会社名:<span><s:property value="releaseCompany" /></span><br>
 					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 
-					<li>登録日時:<span><s:property value="releaseDate" /></span></li>
+					発売年月日:<span><s:property value="releaseDate" /></span><br>
 					<s:hidden name="id" value="%{id}"/>
 
 					<s:hidden name="releaseDate" value="%{releaseDate}" />
 					<s:hidden name="productId" value="%{productId}" />
 
-					</ul>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+					</div>
 			</s:iterator>
-			<tr>
-				<td><s:submit value="一括削除">
+
+
+
+
+			<div class="delete23">
+				<s:submit value="一括削除"/>
 						<s:hidden name="deleteFlg" value="1" />
-					</s:submit></td>
-			</tr>
+					</div>
+
 		</table>
 	</s:form>
 
