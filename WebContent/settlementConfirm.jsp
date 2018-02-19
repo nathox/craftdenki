@@ -19,6 +19,8 @@
 
 </head>
 <body>
+
+
 	<jsp:include page="home2.jsp" />
 	<div class="main">
 
