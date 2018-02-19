@@ -21,7 +21,7 @@
 	margin-top: 40px;
 	margin-left:37%;
 	width: 400px;
-	height: 290px;
+	height: 300px;
 	border: 1px solid black;
 	text-align: right;
 	padding-top: 10px;
