@@ -16,6 +16,9 @@
 <title>Password確認</title>
 
 <style type="text/css">
+.center{
+	text-align: center;
+}
 </style>
 </head>
 <body>
@@ -25,18 +28,19 @@
 		<h3>パスワード変更画面</h3>
 
 
+		<div class="center">
+			<span>ログインPASS:</span>
+			<s:property value="password" escape="false" />
+			<input type="hidden" value="%{password}" /> <input type="hidden"
+				value="%{userId}" /> <input type="hidden" value="%{answer}" />
 
 
-	<span>ログインPASS:</span><s:property value="password" escape="false" />
-							<input type="hidden" value="%{password}"/>
-							<input type="hidden" value="%{userId}"/>
-							<input type="hidden" value="%{answer}"/>
 
+			<s:form action="ChangePasswordCompleteAction">
+				<s:submit value="完了" />
+			</s:form>
 
-
-		<s:form action="ChangePasswordCompleteAction">
-			<s:submit value="完了" />
-		</s:form>
+		</div>
 		<!--
 
 		02/16 勝手にCSSいじらせていただきました（中途半端でごめんなさい）sano

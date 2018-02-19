@@ -19,11 +19,13 @@
 <style type="text/css">
 .form {
 	margin-top: 40px;
+	margin-left:37%;
 	width: 400px;
 	height: 290px;
 	border: 1px solid black;
 	text-align: right;
 	padding-top: 10px;
+
 }
 
 input[type="text"], input[type="password"] {
@@ -36,7 +38,9 @@ input[type="text"], input[type="password"] {
 .q {
 	border-bottom: 1px solid black;
 	text-align: left;
-	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+
 }
 
 .error {
