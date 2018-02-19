@@ -10,7 +10,7 @@
 	<title>MyPage</title>
 
 	<link href="css/craftdenki.css" rel="stylesheet">
-	<link href="css/userInfoChange.css" rel="stylesheet">
+<%-- 	<link href="css/userInfoChange.css" rel="stylesheet"> --%>
 
 </head>
 <body>

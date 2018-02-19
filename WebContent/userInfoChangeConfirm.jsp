@@ -23,7 +23,7 @@ p.back {
 	</style>
 
 	<link href="css/craftdenki.css" rel="stylesheet">
-	<link href="css/userInfoChange.css" rel="stylesheet">
+<%-- 	<link href="css/userInfoChange.css" rel="stylesheet"> --%>
 	<link href="css/nakajima.css" rel="stylesheet">
 
 </head>
