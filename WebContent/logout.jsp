@@ -20,7 +20,8 @@
 	<!-- ヘッダー-->
 	<jsp:include page="home2.jsp" />
 	<div class="main">
-				<h3>ログアウトしました。</h3>
+		<h3>ログアウト完了画面</h3>
+		<h2>ログアウトしました。</h2>
 	</div>
 	<jsp:include page="footer.jsp" />
 </body>
