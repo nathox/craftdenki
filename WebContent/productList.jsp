@@ -7,33 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="./css/productList.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
 
 <title>商品一覧画面</title>
 
-<script>
-$(function() {
-  var page = 0;
-  function draw() {
-    $('#page').html(page + 1);
-    $('li').hide();
-    $('li:first,li:gt(' + page * 8 + '):lt(8)').show();
-  }
-  $('#prev').click(function() {
-    if (page > 0) {
-      page--;
-      draw();
-    }
-  });
-  $('#next').click(function() {
-    if (page < ($('li').size() - 1) / 8 - 1) {
-      page++;
-      draw();
-    }
-  });
-  draw();
-});
-</script>
+
 
 </head>
 <body>
@@ -50,44 +28,70 @@ $(function() {
 				<s:property value="searchMessage" escape="false" />
 			</h1>
 		</s:if>
+
 		<ul  class="thumbnail clearFix">
-
-
 		<!-- 表示件数1ページ目 -->
 
-			<s:iterator value="productList" >
-				<a href="<s:url action="ProductDetailsAction">
-			 <s:param name="product_id" value="%{product_id}" />
-			 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
-                    <li class="list1">
-					   <dl>
-					   		<dt>
-					   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
-					   		</dt>
-					   		<table class="detailsTable">
-					   			<tr>
-		                            <td class="nowrap">商品名かな</td>
-		                            <td>:</td>
-		                            <td><s:property value="product_name_kana" /></td>
-	                            </tr>
-	                            <tr>
-		                            <td class="nowrap">商品名</td>
-		                            <td>:</td>
-	                            	<td><s:property value="product_name" /></td>
-                            	</tr>
-		                            <td class="nowrap">価格</td>
-		                            <td>:</td>
-		                            <td>￥<s:property value="price" />円</td>
-	                            </tr>
-                            </table>
-                            	<s:hidden name="product_id" value="%{product_id}" />
-                        </dl>
-                    </li>
-				</a>
-			</s:iterator>
-		</ul>
 
-		<span id="prev">＜</span> <span id="page"></span> <span id="next">＞</span>
+				<s:iterator value="productList" >
+					<a href="<s:url action="ProductDetailsAction">
+				 <s:param name="product_id" value="%{product_id}" />
+				 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
+	                    <li class="list1">
+						   <dl>
+						   		<dt>
+						   			<img class="image" src="<s:property value='image_file_path'/>" alt="Photo" width="250" height="200">
+						   		</dt>
+						   		<table class="detailsTable">
+						   			<tr>
+			                            <td class="nowrap">商品名かな</td>
+			                            <td>:</td>
+			                            <td><s:property value="product_name_kana" /></td>
+		                            </tr>
+		                            <tr>
+			                            <td class="nowrap">商品名</td>
+			                            <td>:</td>
+		                            	<td><s:property value="product_name" /></td>
+	                            	</tr>
+			                            <td class="nowrap">価格</td>
+			                            <td>:</td>
+			                            <td>￥<s:property value="price" />円</td>
+		                            </tr>
+	                            </table>
+	                            	<s:hidden name="product_id" value="%{product_id}" />
+	                        </dl>
+	                    </li>
+					</a>
+				</s:iterator>
+		</ul>
+<s:if test="pageSelect < trueList.size() -1">
+		<form action="ProductListAction">
+			<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
+			<div class=button>
+					<s:submit value=" 次へ" />
+				</div>
+		</form>
+</s:if>
+
+		<span>
+			<s:iterator value="pageList" status="st">
+			<a href="<s:url action='ProductListAction'>
+			<s:param name='pageList' value=''/></s:url>">
+			<div>
+			<s:property />
+			</div>
+			</a>
+			</s:iterator>
+		</span>
+
+<s:if test="pageSelect > 0">
+		<form action="ProductListAction">
+			<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
+			<div class=button>
+					<s:submit value=" 前へ" />
+				</div>
+		</form>
+</s:if>
 
 	</div>
 	</div>

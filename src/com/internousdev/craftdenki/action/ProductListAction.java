@@ -3,12 +3,14 @@ package com.internousdev.craftdenki.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ProductListDAO;
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.util.ProductListChange;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -24,9 +26,24 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	//商品情報格納
 	public ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
 
+	//productListを9個ごとに格納したList
+	private ArrayList<ArrayList<ProductDTO>> trueList = new ArrayList<>();
+
+	private int pageSelect;
+
+	private int pageCount;
+
+	private List<Integer> pageList = new ArrayList<>();
+
 
 
 	public String execute() throws SQLException{
+
+		/**
+		 * 確認
+		 */
+		System.out.println("pageSelect");
+		System.out.println(pageSelect);
 
 		//商品情報取得メソッド
 		productList = productListDAO.getProductInfo();
@@ -35,6 +52,33 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 		if(!(iterator.hasNext())){
 			productList = null;
 		}
+
+		//productListを9個ごとに格納
+		ProductListChange change = new ProductListChange();
+		trueList = change.productListChange(productList);
+
+		for(int i = 0; i < trueList.size(); i++){
+			pageList.add(i + 1);
+		}
+
+		//ページ表示の確認
+		System.out.println();
+		for(ArrayList<ProductDTO> array: trueList){
+			for(ProductDTO dto: array){
+				System.out.println(dto.getId());
+			}
+			System.out.println("--------------------");
+		}
+
+		for(int i = 0; i < trueList.size(); i++){
+			if(i == pageSelect){
+				productList = trueList.get(i);
+				break;
+			}
+		}
+
+
+
 
 		String result = SUCCESS;
 		return result;
@@ -63,5 +107,39 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	public void setProductList(ArrayList<ProductDTO> productList){
 		this.productList = productList;
 	}
+
+	public ArrayList<ArrayList<ProductDTO>> getTrueList() {
+		return trueList;
+	}
+
+	public void setTrueList(ArrayList<ArrayList<ProductDTO>> trueList) {
+		this.trueList = trueList;
+	}
+
+	public int getPageSelect() {
+		return pageSelect;
+	}
+
+	public void setPageSelect(int pageSelect) {
+		this.pageSelect = pageSelect;
+	}
+
+	public List<Integer> getPageList() {
+		return pageList;
+	}
+
+	public void setPageList(List<Integer> pageList) {
+		this.pageList = pageList;
+	}
+
+	public int getPageCount() {
+		return pageCount;
+	}
+
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+
 
 }
