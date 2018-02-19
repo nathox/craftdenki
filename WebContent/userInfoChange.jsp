@@ -113,44 +113,44 @@
 		<table class="userCreateTable">
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">ユーザーID<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">ユーザーID<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield readonly="true" name="userId"  value="%{userId}" class="validate[required,minSize[1],maxSize[8]]" />
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">新パスワード<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">新パスワード<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:password name="password" value="%{password}" class="validate[required,minSize[1],maxSize[16]]"/>
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">お名前<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="familyName" id="familyName" value="%{familyName}" class="validate[required,minSize[1],maxSize[16]]" />(姓)　
 								<s:textfield name="firstName" id="firstName" value="%{firstName}" class="validate[required,minSize[1],maxSize[16]]" />(名)
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">ふりがな<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">ふりがな<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="familyNameKana" id="familyNameKana" value="%{familyNameKana}" class="validate[required,minSize[1],maxSize[16]]" />(せい)
 								<s:textfield name="firstNameKana" id="firstNameKana" value="%{firstNameKana}" class="validate[required,minSize[1],maxSize[16]]"/>(めい)
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">性別<em class="userCreateEm">必須</em></th>
-						<td class="userCreateTd"><s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"  ></s:radio>
+			<th class="userCreateTh">性別<em class="userCreateEm">※</em></th>
+						<td class="userCreateTd">　<s:radio list="#{0:'男', 1:'女'}" name="sex" value="sex"  ></s:radio>
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">メールアドレス<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">メールアドレス<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="email" value="%{email}" size="40" class="validate[required,minSize[14],maxSize[32]]" />
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">秘密の質問<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">秘密の質問<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:select list="#{1:'嫌いな食べ物は？',2:'母親の旧姓は？',3:'好きな動物は？'}" name="question" value="question" class="validate[required]"></s:select>
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">答え<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">答え<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="answer" value="%{answer}" size="40" class="validate[required,minSize[1],maxSize[16]]" />
 			</td></tr>
 
@@ -160,7 +160,7 @@
 			</td></tr>
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">住所１<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">住所１<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="userAddress" size="58" value="%{userAddress}" class="validate[required]"/>
 			</td></tr>
 
@@ -188,7 +188,7 @@
 
 
 			<tr class="userCreateTr">
-			<th class="userCreateTh">電話番号１<em class="userCreateEm">必須</em></th>
+			<th class="userCreateTh">電話番号１<em class="userCreateEm">※</em></th>
 						<td class="userCreateTd">　<s:textfield name="telNumber" value="%{telNumber}" class="validate[required]" />
 			</td></tr>
 

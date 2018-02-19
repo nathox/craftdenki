@@ -26,11 +26,9 @@
 				<s:submit value="購入履歴" class="myPageButton history"/>
 		</s:form>
 
-		<%--
 		<s:form action="FavoriteAction">
 				<s:submit value="お気に入りリスト" class="myPageButton favorite"/>
 		</s:form>
-		--%>
 
 		<s:form action="UserInfoChangeAction">
 				<s:submit value="ユーザー情報変更" class="myPageButton info"/>
