@@ -64,31 +64,35 @@
 					</a>
 				</s:iterator>
 		</ul>
-<s:if test="pageSelect < trueList.size() -1">
-		<form action="ProductListAction">
-			<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
-			<div class=button>
-					<s:submit value=" 次へ" />
-				</div>
-		</form>
-</s:if>
-
-		<span>
-			<s:iterator value="pageList" status="st">
-			<a href="<s:url action='ProductListAction'>
-			<s:param name='pageList' value=''/></s:url>">
-			<div>
-			<s:property />
-			</div>
-			</a>
-			</s:iterator>
-		</span>
 
 <s:if test="pageSelect > 0">
 		<form action="ProductListAction">
 			<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
 			<div class=button>
 					<s:submit value=" 前へ" />
+				</div>
+		</form>
+</s:if>
+
+<br>
+	<%-- 	<span>
+			<s:iterator value="pageList" status="st">
+			<a href="<s:url action='ProductListAction'>
+			<s:param name='pageSelect' value='{}'/></s:url>">
+			<div>
+			<s:property />
+			</div>
+			</a>
+			</s:iterator>
+		</span>
+ --%>
+
+
+<s:if test="pageSelect < trueList.size() -1">
+		<form action="ProductListAction">
+			<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
+			<div class=button>
+					<s:submit value=" 次へ" />
 				</div>
 		</form>
 </s:if>

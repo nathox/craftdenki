@@ -150,7 +150,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			6000, -- 販売価格
 			"./images/badominton.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"badominton.png", -- 画像ファイル名
 			"2010/02", -- 発売日
 			"amezoooon", -- 発売会社
 			now(), -- 登録日
@@ -166,7 +166,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			15000, -- 販売価格
 			"./images/ds.png", -- 画像ファイルパス
-			"monhan.jpg", -- 画像ファイル名
+			"ds.png", -- 画像ファイル名
 			"2018/01", -- 発売日
 			"capcum", -- 発売会社
 			now(), -- 登録日
@@ -182,7 +182,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			6000, -- 販売価格
 			"./images/tiisaireizouko.png", -- 画像ファイルパス
-			"reizouko.jpg", -- 画像ファイル名
+			"tiisaireizouko.png", -- 画像ファイル名
 			"2000/02", -- 発売日
 			"お宝倉庫", -- 発売会社
 			now(), -- 登録日
@@ -198,7 +198,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			60000, -- 販売価格
 			"./images/suihanki.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"suihanki.png", -- 画像ファイル名
 			"2017/08", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -214,7 +214,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			29800, -- 販売価格
 			"./images/famikon.png", -- 画像ファイルパス
-			"zukaikinnniku.jpg", -- 画像ファイル名
+			"famikon.png", -- 画像ファイル名
 			"2018/02", -- 発売日
 			"満天堂", -- 発売会社
 			now(), -- 登録日
@@ -230,7 +230,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			1400, -- 販売価格
 			"./images/hanabi.png", -- 画像ファイルパス
-			"ps4.jpg", -- 画像ファイル名
+			"hanabi.png", -- 画像ファイル名
 			"2015/12", -- 発売日
 			"sany", -- 発売会社
 			now(), -- 登録日
@@ -246,7 +246,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			4000, -- 販売価格
 			"./images/illustrain01-nuigurumi05.png", -- 画像ファイルパス
-			"javabook.jpg", -- 画像ファイル名
+			"illustrain01-nuigurumi05.png", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
 			now(), -- 登録日
@@ -262,7 +262,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/ayasiihon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"ayasiihon.png", -- 画像ファイル名
 			"2013/02", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -278,7 +278,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/eigonohon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"eigonohon.png", -- 画像ファイル名
 			"2013/02", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -294,7 +294,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/kowaihon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"kowaihon.png", -- 画像ファイル名
 			"2013/04", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -310,7 +310,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/mukasibanasibon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"mukasibanasibon.png", -- 画像ファイル名
 			"2013/04", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -322,11 +322,11 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			10000105, -- 商品ID
 			"猫の本", -- 商品名
 			"ねこのほん", -- 商品名かな
-			"猫の本です。", -- 商品詳細
+			"猫の本です。にゃー", -- 商品詳細
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/nekonohon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"nekonohon.png", -- 画像ファイル名
 			"2013/04", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -342,7 +342,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/ryouribon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"ryouribon.png", -- 画像ファイル名
 			"2013/04", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -358,7 +358,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			1, -- カテゴリID
 			500, -- 販売価格
 			"./images/suugakunohon.png", -- 画像ファイルパス
-			"blueook.jpg", -- 画像ファイル名
+			"suugakunohon.png", -- 画像ファイル名
 			"2013/04", -- 発売日
 			"bookstore", -- 発売会社
 			now(), -- 登録日
@@ -374,7 +374,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			10000, -- 販売価格
 			"./images/sinpurunasuihannki.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"sinpurunasuihannki.png", -- 画像ファイル名
 			"2017/04", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -390,7 +390,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			8000, -- 販売価格
 			"./images/dennsirennzi.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"dennsirennzi.png", -- 画像ファイル名
 			"2014/04", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -406,7 +406,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			10000, -- 販売価格
 			"./images/doraiya.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"doraiya.png", -- 画像ファイル名
 			"2007/04", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -422,7 +422,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			34000, -- 販売価格
 			"./images/ko-hi-me-ka-.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"ko-hi-me-ka-.png", -- 画像ファイル名
 			"2007/04", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -438,7 +438,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			2, -- カテゴリID
 			59800, -- 販売価格
 			"./images/terebi.png", -- 画像ファイルパス
-			"odoridaki.jpg", -- 画像ファイル名
+			"terebi.png", -- 画像ファイル名
 			"2013/09", -- 発売日
 			"sharq", -- 発売会社
 			now(), -- 登録日
@@ -454,7 +454,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			4000, -- 販売価格
 			"./images/illustrain04-nuigurumi10.png", -- 画像ファイルパス
-			"javabook.jpg", -- 画像ファイル名
+			"illustrain04-nuigurumi10.png", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
 			now(), -- 登録日
@@ -470,7 +470,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			2000, -- 販売価格
 			"./images/pingpong.png", -- 画像ファイルパス
-			"javabook.jpg", -- 画像ファイル名
+			"pingpong.png", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
 			now(), -- 登録日
@@ -486,7 +486,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			2800, -- 販売価格
 			"./images/illustrain04-wanage04.png", -- 画像ファイルパス
-			"javabook.jpg", -- 画像ファイル名
+			"illustrain04-wanage04.png", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
 			now(), -- 登録日
@@ -502,7 +502,7 @@ INSERT INTO product_info(-- ------商品情報テーブルへ--------------
 			3, -- カテゴリID
 			998000, -- 販売価格
 			"./images/robot.png", -- 画像ファイルパス
-			"javabook.jpg", -- 画像ファイル名
+			"robot.png", -- 画像ファイル名
 			"2010/10", -- 発売日
 			"craftdenki", -- 発売会社
 			now(), -- 登録日
