@@ -135,10 +135,10 @@ function nextField(i, n, m) {
 $(function() {
 	var array = [
 	"images/Paper01.jpg",
-	"images/housei.jpg",
-	"images/suihannki.jpg",
+	"images/ishi.jpg",
+	"images/tile.jpg",
 	"images/cork.jpg",
-	"images/javabook.jpg"
+	"images/renga.jpg"
 	];
 	var l = array.length;
 	var r = Math.floor(Math.random()*l);
