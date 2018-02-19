@@ -24,6 +24,7 @@ public class CartAction extends ActionSupport implements SessionAware {
 	private String cartDeleteFlg;
 	private String nothing;
 
+
 	public String getNothing() {
 		return nothing;
 	}
@@ -33,6 +34,7 @@ public class CartAction extends ActionSupport implements SessionAware {
 	}
 
 	private CartDAO cartDAO = new CartDAO();
+	private CartDTO cartDTO = new CartDTO();
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
 	public String execute() throws SQLException {
@@ -53,6 +55,8 @@ public class CartAction extends ActionSupport implements SessionAware {
 		// --------------------------------------------------------------------------------------------
 		if (cartDeleteFlg == null) {
 			cartList = cartDAO.getCartInfo(userId);
+			int finalPrice = cartDAO.finalPrice;
+			session.put("finalPrice", finalPrice);
 			session.put("cartList", cartList);
 			if (cartList.isEmpty()) {
 				nothing = null;

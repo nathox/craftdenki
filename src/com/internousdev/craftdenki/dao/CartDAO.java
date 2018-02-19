@@ -16,6 +16,7 @@ public class CartDAO {
 	private Connection connection = dbConnector.getConnection();
 	private DateUtil dateUtil = new DateUtil();
 	private int res;
+	public int finalPrice = 0;
 
 	// カート情報取得メソッド
 	public ArrayList<CartDTO> getCartInfo(String user_id) throws SQLException {
@@ -41,7 +42,12 @@ public class CartDAO {
 				dto.setReleaseCompany(resultSet.getString("release_company"));
 				dto.setReleaseDate(resultSet.getString("release_date"));
 				dto.setTotalPrice(resultSet.getInt("total_price"));
+
+				finalPrice += (resultSet.getInt("total_price"));
+				dto.setFinalPrice(finalPrice);
+
 				cartDTO.add(dto);
+
 			}
 
 		} catch (Exception e) {
