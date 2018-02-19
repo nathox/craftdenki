@@ -28,6 +28,7 @@
 
 }
 
+
 input[type="text"], input[type="password"] {
 	width: 250px;
 	padding: 5px;
