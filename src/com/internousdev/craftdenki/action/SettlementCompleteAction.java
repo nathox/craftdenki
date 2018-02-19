@@ -16,6 +16,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	public Map<String, Object> session;
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 
+
+
 	private SettlementCompleteDAO settlementCompleteDAO = new SettlementCompleteDAO();
 
 	private String userId;
@@ -24,6 +26,12 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	private int price;
 	private int atCost;
 	private String imageFilePath;
+
+
+
+
+
+
 
 	@SuppressWarnings("unchecked")
 	public String execute() throws SQLException {

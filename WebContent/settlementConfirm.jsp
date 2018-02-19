@@ -110,6 +110,8 @@
 
 		<div class="left6">
 			<s:form action="SettlementCompleteAction">
+
+				<s:token/>
 				<s:submit value="購入する" />
 			</s:form>
 		</div>
