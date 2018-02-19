@@ -19,9 +19,9 @@
 <style type="text/css">
 .form {
 	margin-top: 40px;
-	margin-left:37%;
-	width: 400px;
-	height: 290px;
+	margin-left:23%;
+	width: 450px;
+	height: 350px;
 	border: 1px solid black;
 	text-align: right;
 	padding-top: 10px;
@@ -39,12 +39,14 @@ input[type="text"], input[type="password"] {
 	border-bottom: 1px solid black;
 	text-align: left;
 	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 
 }
 
 .error {
 	color: red;
+	float:right;
+
 }
 
 .kageyama4{
@@ -52,7 +54,8 @@ input[type="text"], input[type="password"] {
 }
 
 .kageyama5{
-	padding-left:50px;
+	padding-top:10px;
+	padding-left:30px;
 }
 </style>
 
@@ -67,16 +70,24 @@ input[type="text"], input[type="password"] {
 
 
 		<div class="form">
-			<div class="error">
-				<s:property value="errorMessage" escape="false" />
-			</div>
+
 			<s:form id="form_1" action="ChangePasswordConfirmAction">
 				<table>
 					<tr>
-						<td><div class="q">
+						<td>
+							<div class="q">
 								秘密の質問
 								<s:property value="questionMessage" />
-							</div></td>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<div class="error">
+							<s:property value="errorMessage" escape="false" />
+							</div>
+						</td>
 					</tr>
 
 					<tr>

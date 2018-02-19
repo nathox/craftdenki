@@ -29,7 +29,7 @@
 
 
 		<div class="center">
-			<span>ログインPASS:</span>
+			<p>ログインPASS:</p>
 			<s:property value="password" escape="false" />
 			<input type="hidden" value="%{password}" /> <input type="hidden"
 				value="%{userId}" /> <input type="hidden" value="%{answer}" />

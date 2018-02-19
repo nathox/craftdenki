@@ -42,7 +42,7 @@
 
 
 		<h3>パスワード変更画面</h3>
-
+		<p>※パスワードを忘れた方はログインIDを入力してください</p>
 		<div class="kageyama">
 
 
@@ -80,7 +80,6 @@
 
 -->
 
-	</div>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
