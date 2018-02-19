@@ -74,7 +74,6 @@
 		</form>
 </s:if>
 
-<br>
 	<%-- 	<span>
 			<s:iterator value="pageList" status="st">
 			<a href="<s:url action='ProductListAction'>
@@ -86,6 +85,7 @@
 			</s:iterator>
 		</span>
  --%>
+ <div class="pageSelect">${pageSelect +1}</div>
 
 
 <s:if test="pageSelect < trueList.size() -1">
