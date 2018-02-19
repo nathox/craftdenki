@@ -58,7 +58,7 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">パスワード<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,minSize[1],maxSize[16]]" /></td>
+			<td class="userCreateTd">　<input type="password" name="loginPassword" class="validate[required,minSize[1],maxSize[16]]" /></td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
@@ -132,11 +132,11 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">答え<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="secretAnswer"value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"></td>
+			<td class="userCreateTd">　<input type="text" name="secretAnswer" value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"></td>
 	</tr>
 			<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
-						<td class="userCreateTd">〒<input type="text" name="yuubin1" size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');">
+						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');">
 			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>

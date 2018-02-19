@@ -14,7 +14,8 @@ public class UserCreateAction extends ActionSupport{
 	private String mail;
 	private String secretQuestion;
 	private String secretAnswer;
-	private String yuubin;
+	private String yuubin1;
+	private String yuubin4;
 	private String address;
 	private String tel;
 
@@ -84,12 +85,6 @@ public class UserCreateAction extends ActionSupport{
 	public void setSecretAnswer(String secretAnswer) {
 		this.secretAnswer=secretAnswer;
 	}
-	public String getYuubin() {
-		return yuubin;
-	}
-	public void setYuubin(String yuubin) {
-		this.yuubin=yuubin;
-	}
 	public String getAddress() {
 		return address;
 	}
@@ -102,6 +97,24 @@ public class UserCreateAction extends ActionSupport{
 	public void setTel(String tel) {
 		this.tel=tel;
 	}
+
+	public String getYuubin1() {
+		return yuubin1;
+	}
+
+	public void setYuubin1(String yuubin1) {
+		this.yuubin1 = yuubin1;
+	}
+
+	public String getYuubin4() {
+		return yuubin4;
+	}
+
+	public void setYuubin4(String yuubin4) {
+		this.yuubin4 = yuubin4;
+	}
+
+
 
 
 }

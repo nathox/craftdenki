@@ -13,28 +13,30 @@ public class ProductDTO {
 
 	private int id;
 	private int product_id;
+	private int category_id;
+	private int price;
+	private int item_stock;
+	private int current_cost;
 	private String product_name;
 	private String product_name_kana;
 	private String product_description;
-	private int category_id;
-	private int price;
 	private String image_file_path;
 	private String image_file_name;
 	private String release_date;
 	private String release_company;
 	private Date regist_date;
 	private Date update_date;
-	private int item_stock;
-	private int current_cost;
 	//仕入用フィールド
+	private String product_count;
 	private int supplyCount; //仕入数
 	private int supplyCost; //仕入原価
 	private int supplyCostTotal; //仕入計
 
-	private String product_count;
 
 	//カテゴリ名
 	private String categoryName;
+
+
 	public String getCategoryName() {
 		return categoryName;
 	}

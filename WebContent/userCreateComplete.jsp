@@ -24,8 +24,8 @@
 </ol>
 <br><br><br><br><br><br><br>
 <h1>ユーザーの登録が完了しました。
-5秒後にログイン画面に遷移します。
-ジャンプしない場合は、以下のURLをクリックしてください。
+3秒後にログイン画面に遷移します。
+ジャンプしない場合は、以下のリンクをクリックしてください。
 <a href='<s:url action="ProductListAction"/>'>移転先のページ</a></h1>
 </div>
 <jsp:include page="footer.jsp"/>

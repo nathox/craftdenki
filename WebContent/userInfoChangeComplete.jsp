@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="imagetoolbar" content="no" />
 
-	<meta http-equiv="refresh" content="5;URL=/craftdenki/myPage.jsp">
+	<meta http-equiv="refresh" content="3;URL=/craftdenki/myPage.jsp">
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -44,7 +44,7 @@
 
 
 
-	ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。<br>
+	ユーザー情報を変更しました。３秒後に自動的にマイページ画面に切り替わります。<br>
 
 	自動で切り替わらない場合は<a href="myPage.jsp">こちら</a>
 

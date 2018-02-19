@@ -20,7 +20,6 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String mail;
 	private String secretQuestion;
 	private String secretAnswer;
-	private String yuubin;
 	private String address;
 	private String tel;
 
@@ -54,7 +53,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 		/**ユーザー登録完了後ログイン状態にする為セッションにユーザーIDを格納**/
 
-		session.put("trueID", loginUserId);
+		session.put("trueID", session.get("loginUserId").toString());
 
 
 		return result;
@@ -120,12 +119,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	public void setSecretAnswer(String secretAnswer) {
 		this.secretAnswer=secretAnswer;
 	}
-	public String getYuubin() {
-		return yuubin;
-	}
-	public void setYuubin(String yuubin) {
-		this.yuubin=yuubin;
-	}
+
 	public String getAddress() {
 		return address;
 	}
