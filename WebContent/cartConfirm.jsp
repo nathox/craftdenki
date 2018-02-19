@@ -27,21 +27,19 @@
 
 	.cart-price{
 		float:right;
-		border-bottom:solid black 1px;
-		margin-right:200px;
-		font-size:18px;
 		font-weight:bold;
+		font-size:18px;
+		border-bottom:solid black 1px;
+		width:auto;
 	}
-
 	.ph:after{
+		clear:both;
 		content:"";
 		display:block;
-		clear:both;
 	}
 	.cart-button{
 		float:right;
-		margin-right:180px;
-		padding-top:10px;
+		margin-top:20px;
 	}
 
 </style>
@@ -69,10 +67,12 @@
 		<div class="ph">
 		<table>
 			<s:iterator value="cartList">
-			<div class="ph-box">
-				<div class="ph-check">
-					<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
-				</div>
+					<div class="ph-box">
+
+						<div class="ph-check">
+							<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
+						</div>
+
 						<p>&nbsp;</p>
 
 						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
