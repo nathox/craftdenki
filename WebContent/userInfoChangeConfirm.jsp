@@ -33,13 +33,15 @@ p.back {
            <div class="main">
            <div class="wideBox">
 
+           <h3>入力内容確認画面</h3>
+
 <ol class="stepBar">
 <li class="visited"><span>1</span><br>必要事項の入力</li>
 <li class="visited"><span>2</span><br>入力内容の確認</li>
 <li><span>3</span><br>変更完了</li>
 </ol>
 
-	<h3>入力内容確認画面</h3>
+
 
 	<p>下記内容でユーザー情報を変更します、よろしいですか？</p><br>
 

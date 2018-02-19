@@ -34,7 +34,7 @@
            <div class="main">
 			<div class="wideBox">
 
-
+	<h3>変更完了</h3>
 
 			<ol class="stepBar">
 				<li class="visited"><span>1</span><br>必要事項の入力</li>
@@ -42,7 +42,7 @@
 				<li class="visited"><span>3</span><br>変更完了</li>
 			</ol>
 
-	<h3>変更完了</h3>
+
 
 	ユーザー情報を変更しました。５秒後に自動的にマイページ画面に切り替わります。<br>
 
