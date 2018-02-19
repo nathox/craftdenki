@@ -77,48 +77,6 @@
 				left: 200px;
 			}
 
-		/* マイページ画面 */
-			input[type="submit"].myPageButton{
-				float:left;
-				width:280px;
-				height:280px;
-				margin:0 auto;
-				background:#ffffff;
-				color:#000000;
-				font-size:2.7em;
-				border:solid 5px #000000;
-				margin-top:20px;
-				margin-left:10px;
-				margin-right:10px;
-
-			}
-
-			input[type="submit"].myPageButton.history{
-
-				background-image:url("../images/history.png");
-				background-repeat:no-repeat;
-				background-size:270px 270px;
-
-			}
-
-			input[type="submit"].myPageButton.favorite{
-
-				background-image:url("../images/star.png");
-				background-repeat:no-repeat;
-				background-size:270px 270px;
-			}
-
-			input[type="submit"].myPageButton.info{
-
-				background-image:url("../images/infoChange.png");
-				background-repeat:no-repeat;
-				background-size:270px 270px;
-			}
-
-			.clear{
-				clear: both;
-			}
-
 
 /*==================================背景css===========================================*/
 	/*------------------共通部分-----------------*/
@@ -361,53 +319,7 @@
 				    -moz-border-radius: 5px;   /* Firefox用 */
 				}
 
-		/* ユーザー登録＆変更フォーム */
 
-				.wideBox{
-					width:900px;
-					background-color:#ffffff;
-					margin:0 auto;
-				}
-
-				table.userCreateTable{
-					width:600px;
-					border-collapse:collapse;
-					font-size:0.8em;
-					border:1px #cccccc solid;
-				}
-
-				th.userCreateTh{
-					position:relative;
-					border-left:6px solid #cccccc;
-					/*↑左側の色*/
-					background-color:#efefef;
-					width:150px;
-				}
-
-				tr.userCreateTr{
-					padding:10px;
-					border-top:1px solid #cccccc;
-					height:40px;
-				}
-
-				td.userCreateTd{
-					text-align:left;
-				}
-
-				em.userCreateEm{
-					color:#ff0000;
-					font-size:13px;
-					text-align:right;
-					position:absolute; top:10px; right:5px;
-				}
-
-
- 				input[type="button"].userCreateButton,input[type="submit"].userCreateButton{
-					width:200px;
-					margin:0 auto;
-					margin-left:550px;
-					margin-top:10px;
-				}
 
 
 /*==================================アイテム表示css===========================================*/
@@ -420,8 +332,8 @@
     margin-top: 3px;
     border-top: 2px dotted #b1b1b1;
     border-bottom: 2px dotted #b1b1b1;
-    width: 550px;
-    margin-left: 330px;
+    width: 907px;
+    margin-left: 51px;
     padding-left: 76px;
     padding-top: 33px;
 }
@@ -429,8 +341,8 @@
 .ph-check {
     float: left;
     left: 100px;
-    margin-top: 50px;
-    margin-left: -130px;
+    margin-top: 15px;
+    margin-left: -45px;
 }
 
 .itemlist23 {
@@ -451,8 +363,6 @@
     margin-left: 28px;
     float:right;
 }
-
-
 
 
 

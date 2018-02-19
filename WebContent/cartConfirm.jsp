@@ -28,10 +28,20 @@
 	.cart-price{
 		float:right;
 		border-bottom:solid black 1px;
-		width:auto;
-		margin-right:300px;
+		margin-right:200px;
 		font-size:18px;
 		font-weight:bold;
+	}
+
+	.ph:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	.cart-button{
+		float:right;
+		margin-right:180px;
+		padding-top:10px;
 	}
 
 </style>
@@ -56,7 +66,7 @@
 				<h4>カート情報は以下になります。</h4>
 
 				<br><br>
-
+		<div class="ph">
 		<table>
 			<s:iterator value="cartList">
 			<div class="ph-box">
@@ -115,20 +125,22 @@
 					</ul>
 -->
 			</s:iterator>
-
 		</table>
 
+
 				<div class="cart-price">カート合計:<s:property value="session.finalPrice" />円<br>
-				<s:hidden name="finalPrice" value="%{finalPrice}" /></div>
+				<s:hidden name="finalPrice" value="%{finalPrice}" />
+				</div>
+				</div>
 
 
-				<br>
-				<br>
-				<br>
-				<td><s:submit value="削除" onclick="CartAction();"
-						class="button" ><s:hidden name="cartDeleteFlg" value="1" /></s:submit></td>
-				<td><s:submit value="決済に進む" onclick="SettlementAction();"
-						class="button" /></td>
+
+				<div class="cart-button">
+				<s:submit value="削除" onclick="CartAction();"
+						class="button" ><s:hidden name="cartDeleteFlg" value="1" /></s:submit>
+				<s:submit value="決済に進む" onclick="SettlementAction();"
+						class="button" />
+				</div>
 			</s:form>
 			</s:else>
 			<s:if test="message != null">
