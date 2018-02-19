@@ -12,13 +12,17 @@
 </head>
 <body>
 <jsp:include page="home2.jsp"/>
-	<div class="main">
-	<ol class="stepBar">
+
+<div class="main">
+
+<h3>ユーザー登録完了</h3>
+
+<ol class="stepBar">
 <li class="visited"><span>1</span><br>必要事項の入力</li>
 <li class="visited"><span>2</span><br>入力内容の確認</li>
 <li class="visited"><span>3</span><br>登録完了</li>
 </ol>
-<h3>ユーザー登録完了</h3>
+
 ユーザーの登録が完了しました。
 5秒後にログイン画面に遷移します。
 ジャンプしない場合は、以下のURLをクリックしてください。

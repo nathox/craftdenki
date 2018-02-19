@@ -164,11 +164,11 @@ function nextField(i, n, m) {
         <div class="kara"></div>
     </nav>
     <div class="bar">
-    <s:if test="session.trueID != null">
-        <span><a href='<s:url action="LogoutAction" />'>ログアウト<i class="fas fa-sign-out-alt"></i></a></span>
+    <s:if test="session.trueID == null">
+        <span><a href='<s:url action="GoLoginAction" />'><i class="fas fa-sign-in-alt"></i>ログイン</a></span>
     </s:if>
     <s:else>
-        <span><a href='<s:url action="GoLoginAction" />'><i class="fas fa-sign-in-alt"></i>ログイン</a></span>
+        <span><a href='<s:url action="LogoutAction" />'>ログアウト<i class="fas fa-sign-out-alt"></i></a></span>
     </s:else>
         <span><a href='<s:url action="GoMyPageAction" />'><i class="fas fa-user"></i>マイページ</a></span>
         <span><a href='<s:url action="CartAction" />'><i class="fas fa-shopping-cart"></i>カート</a></span>

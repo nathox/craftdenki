@@ -54,7 +54,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 
 		/**ユーザー登録完了後ログイン状態にする為セッションにユーザーIDを格納**/
 
-		session.put("trueId", loginUserId);
+		session.put("trueID", loginUserId);
 
 
 		return result;
@@ -141,6 +141,9 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
 
-}
+	public Map<String, Object> getSession() {
+		return session;
+	}
 }

@@ -66,13 +66,25 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 
 /** パスワード先頭3文字以外暗号化 **/
+
+
+
+			if(loginPassword.length()>3){
 			StringBuilder sb = new StringBuilder();
 			for(int i = 0; i < loginPassword.length()-3; i++){
 				sb.append("*");
 			}
 
 			loginPassCon = loginPassword.substring(0, 3) + sb.toString();
+			}
 
+			else if(loginPassword.length()==1){
+				loginPassCon="*";
+			}
+			else if(loginPassword.length()==2){
+				loginPassCon="**";
+			}
+			else{loginPassCon="***";}
 		}
 
 		return result;

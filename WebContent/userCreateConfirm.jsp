@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/userInfoChange.css" rel="stylesheet">
 <link href="css/nakajima.css" rel="stylesheet">
 <link href="css/craftdenki.css" rel="stylesheet">
 
@@ -18,10 +19,10 @@
 </style>
 </head>
 <body>
-<jsp:include page="home.jsp"/>
+<jsp:include page="home2.jsp"/>
 <div class="main">
 
-<h1>ユーザー登録</h1>
+<h3>ユーザー登録</h3>
 <ol class="stepBar">
 <li class="visited"><span>1</span><br>必要事項の入力</li>
 <li class="visited"><span>2</span><br>入力内容の確認</li>
