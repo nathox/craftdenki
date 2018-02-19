@@ -132,20 +132,6 @@ function nextField(i, n, m) {
 		 }
 	}
 
-$(function() {
-	var array = [
-	"images/Paper01.jpg",
-	"images/ishi.jpg",
-	"images/tile.jpg",
-	"images/cork.jpg",
-	"images/urushi.jpg"
-	];
-	var l = array.length;
-	var r = Math.floor(Math.random()*l);
-	var bgimgurl = array[r];
-	$("header").css('background-image',('url("'+bgimgurl+'")'));
-	});
-
 </script>
 </head>
 <body class="home2">
