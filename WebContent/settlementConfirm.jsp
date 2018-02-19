@@ -46,50 +46,60 @@
 
 
 
+		<br> <br>
+
 
 		<h4>購入商品情報</h4>
 
 
-		<table border="1">
-			<tr>
-				<th>商品名</th>
-				<th>ふりがな</th>
-				<th>画像パス</th>
-				<th>値段</th>
-				<th>個数</th>
-				<th>発売会社</th>
-				<th>発売日</th>
-				<th>合計金額</th>
-			</tr>
 
+
+		<table>
 			<s:iterator value="cartList">
-				<tr>
-					<td><s:property value="productName" /></td>
+				<div class="ph-box">
+
+					<div class="iFP">
+						<img src="<s:property value='imageFilePath'/>" width="auto"
+							height="200px">
+					</div>
+					<s:hidden name="imageFilePath"
+						value='<s:property value="imageFilePath"/>' />
+
+					商品名:<span><s:property value="productName" /></span><br>
 					<s:hidden name="productName" value="%{productName}" />
-
-					<td><s:property value="productNameKana" /></td>
+					ふりがな:<span><s:property value="productNameKana" /></span><br>
 					<s:hidden name="productNameKana" value="%{productNameKana}" />
-
-					<td><s:property value="imageFilePath" /></td>
-					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
-
-					<td><s:property value="price" /><span>円</span></td>
+					金額:<span><s:property value="price" />円</span><br>
 					<s:hidden name="price" value="%{price}" />
-
-					<td><s:property value="productCount" /><span>個</span></td>
+					個数:<span><s:property value="productCount" />個</span><br>
 					<s:hidden name="productCount" value="%{productCount}" />
-
-					<td><s:property value="releaseCompany" /></td>
+					発売会社名:
+					<s:property value="releaseCompany" />
+					<br>
 					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-
-					<td><s:property value="releaseDate" /></td>
+					発売年月日:
+					<s:property value="releaseDate" />
+					<br>
 					<s:hidden name="releaseDate" value="%{releaseDate}" />
-
-					<td><s:property value="totalPrice" /><span>円</span></td>
+					合計金額:
+					<s:property value="totalPrice" />
+					<br>
 					<s:hidden name="totalPrice" value="%{totalPrice}" />
-				</tr>
+
+					<p>&nbsp;</p>
+
+				</div>
+
+
 			</s:iterator>
+
 		</table>
+
+
+
+
+
+
 
 
 		<p>合計:\ -</p>

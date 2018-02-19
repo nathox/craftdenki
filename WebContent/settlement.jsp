@@ -95,7 +95,7 @@
 
 			<br>
 			<div class="left6">
-				<s:submit value="けってい" />
+				<s:submit value="次へ" />
 			</div>
 		</s:form>
 

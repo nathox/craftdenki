@@ -11,7 +11,8 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta http-equiv="refresh" content="3;URL=<s:url action='StartAction' />">
+<meta http-equiv="refresh"
+	content="3;URL=<s:url action='StartAction' />">
 <title>決済完了画面</title>
 <link href="./css/sano.css" rel="stylesheet">
 <style>
@@ -23,6 +24,11 @@
 
 	<div class="main">
 
+
+
+
+
+		<h3>購入完了画面</h3>
 
 		<div class="center">
 
