@@ -138,7 +138,7 @@ $(function() {
 	"images/ishi.jpg",
 	"images/tile.jpg",
 	"images/cork.jpg",
-	"images/renga.jpg"
+	"images/urushi.jpg"
 	];
 	var l = array.length;
 	var r = Math.floor(Math.random()*l);
