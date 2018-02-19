@@ -18,7 +18,6 @@ public class FavoriteDAO {
 
 	public ArrayList<FavoriteDTO> getFavoriteInfo(String loginId) throws SQLException {
 		ArrayList<FavoriteDTO> favoriteDTO = new ArrayList<FavoriteDTO>();
-		// SQL文わからない
 		String sql = "SELECT "
 						+ "pi.id as id, "
 						+ "pi.product_id as product_id,"
@@ -32,18 +31,17 @@ public class FavoriteDAO {
 					+ "FROM "
 						+ "product_info as pi "
 					+ "JOIN favorite_info as fi "
-					+ "ON fi.product_id = pi.id "
+					+ "ON fi.product_id = pi.product_id "
 					+ "WHERE fi.user_id = ?";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, loginId);
 			ResultSet rs = ps.executeQuery();
-			System.out.println("ここまで");
 
 			while (rs.next()) {
 				FavoriteDTO dto = new FavoriteDTO();
-				dto.setId(rs.getString("id"));
+				dto.setProductId(rs.getString("id"));
 				dto.setProductId(rs.getString("product_id"));
 				dto.setProductName(rs.getString("product_name"));
 				dto.setProductNameKana(rs.getString("product_name_kana"));
@@ -53,7 +51,6 @@ public class FavoriteDAO {
 				dto.setReleaseCompany(rs.getString("release_company"));
 				dto.setReleaseDate(rs.getString("release_date"));
 				favoriteDTO.add(dto);
-				System.out.println("ここまできてる");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,7 +58,7 @@ public class FavoriteDAO {
 		return favoriteDTO;
 	}
 
-	public int deleteFavoriteInfo(String id, String userid) {
+	public int deleteFavoriteInfo(String product_id, String userid) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		int count = 0;
@@ -70,33 +67,32 @@ public class FavoriteDAO {
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userid);
-			ps.setString(2, id);
+			ps.setString(2, product_id);
 
 			count = ps.executeUpdate();
 			System.out.println(count);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 		return count;
 	}
 
 	// カートテーブルにInsertメソッド
-	public void insertFavorite(String user_id, String productId) throws SQLException {
+	public void insertFavorite(String user_id, String product_id) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		String insert = "INSERT INTO favorite_info (user_id,product_id,regist_date) VALUES(?,?,?)";
+		String insert = "INSERT INTO "
+						+ "favorite_info ("
+						+ "user_id,"
+						+ "product_id,"
+						+ "regist_date) "
+						+ "VALUES(?,?,?)";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(insert);
 			ps.setString(1, user_id);
-			ps.setString(2, productId);
+			ps.setString(2, product_id);
 			ps.setString(3, dateUtil.getDate());
 
 			ps.execute();
