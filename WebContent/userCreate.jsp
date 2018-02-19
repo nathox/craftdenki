@@ -30,13 +30,12 @@
 .errorMessage{
 		color:red;
 		font-size:10px;}
-.place{
-		}
 </style>
 </head>
 <body>
 <jsp:include page="home2.jsp"/>
 <div class="main">
+<div class="wideBox">
 <h3>ユーザー登録</h3>
 
 <ol class="stepBar">
@@ -136,9 +135,10 @@
 			<td class="userCreateTd">　<input type="text" name="secretAnswer"value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"></td>
 	</tr>
 	<tr class="userCreateTr">
-		<th class="userCreateTh">郵便番号</th>
-			<td class="userCreateTd">〒<input type="text" name="yuubin" value='<s:property value="yuubin"/>' size="4" maxlength="3" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">-<input type="text" name="yuubin4" size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','userAddress','userAddress');"></td>
-	</tr>
+			<th class="userCreateTh">郵便番号</th>
+						<td class="userCreateTd">〒<input type="text" name="yuubin" id="yuubin"
+			value='<s:property value="yuubin"/>' size="10" maxlength="8"onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" class="validate[required,minSize[10],maxSize[50]]"></td>
@@ -150,13 +150,14 @@
 
 </table>
 <div class="place">
-		<s:submit value="確認画面へ進む" />
+		<s:submit value="確認画面へ進む" class="userCreateButton" />
 </div>
 	</s:form>
 <div class="place">
 	<s:form action="GoLoginAction">
-		<s:submit value="戻る"/>
+		<s:submit value="戻る" class="userCreateButton"/>
 	</s:form>
+</div>
 </div>
 </div>
 <jsp:include page="footer.jsp"/>
