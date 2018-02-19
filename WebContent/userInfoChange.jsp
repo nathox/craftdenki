@@ -161,7 +161,7 @@
 
 			<tr class="userCreateTr">
 			<th class="userCreateTh">住所１<em class="userCreateEm">※</em></th>
-						<td class="userCreateTd">　<s:textfield name="userAddress" size="58" value="%{userAddress}" class="validate[required]"/>
+						<td class="userCreateTd">　<s:textfield name="userAddress" size="50" value="%{userAddress}" class="validate[required]"/>
 			</td></tr>
 
 			<tr class="userCreateTr">
@@ -171,7 +171,7 @@
 
 			<tr class="userCreateTr">
 			<th class="userCreateTh">住所２</th>
-						<td class="userCreateTd">　<s:textfield name="userAddress2" size="58" value="%{userAddress2}"/>
+						<td class="userCreateTd">　<s:textfield name="userAddress2" size="50" value="%{userAddress2}"/>
 			</td></tr>
 
 			<tr class="userCreateTr">
@@ -181,7 +181,7 @@
 
 			<tr class="userCreateTr">
 			<th class="userCreateTh">住所３</th>
-						<td class="userCreateTd">　<s:textfield name="userAddress3" size="58" value="%{userAddress3}"/>
+						<td class="userCreateTd">　<s:textfield name="userAddress3" size="50" value="%{userAddress3}"/>
 			</td></tr>
 
 
