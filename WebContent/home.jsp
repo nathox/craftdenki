@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>HOME画面</title>
 
-<link href="craftdenki.css" rel="stylesheet">
+<link href="css/craftdenki.css" rel="stylesheet">
 </head>
 
 
@@ -16,7 +16,7 @@
 	<div class="main">
 
 
-		<h1>WELCOM</h1>
+		<h1 class="">WELCOM</h1>
 
 
 	</div>
