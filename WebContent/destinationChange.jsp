@@ -167,7 +167,7 @@
 					</table>
 
 					<br>
-					<s:submit value="決済画面へ戻る" id="userInfoCheck" />
+					<s:submit value="決済画面へ戻る"/>
 
 
 				</s:iterator>

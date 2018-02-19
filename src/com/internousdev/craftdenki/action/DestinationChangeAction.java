@@ -28,6 +28,8 @@ public class DestinationChangeAction extends ActionSupport implements SessionAwa
 
 	public String execute() throws SQLException{
 
+		session.put("payment","");
+
 		userId = session.get("trueID").toString();
 
 

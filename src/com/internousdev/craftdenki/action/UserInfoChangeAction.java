@@ -41,7 +41,7 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 
 		if(session.get("payment") == ("payment")){  //settlement.jspから飛んできた場合、destinationChange.jspに飛ばす
 
-			session.put("payment","");
+
 			result = "destination";
 			return result;
 		}
