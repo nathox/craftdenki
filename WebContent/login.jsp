@@ -50,11 +50,21 @@ td {
 #a{
 clear:both;
 }
+
+h2{
+color:red;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="home2.jsp" />
 	<div class="main">
+
+				<br>
+				<br>
+				<s:if test="session.status == 'settlement'">
+				<h2>商品購入前にログインしてください。</h2>
+				</s:if>
 
 		<div class="Abox">
 
@@ -63,6 +73,8 @@ clear:both;
 				<div id="box">ξ　　　　ロ グ イ ン　　　　ξ</div>
 
 				<s:form action="LoginAction">
+
+
 					<table>
 
 						<tr>

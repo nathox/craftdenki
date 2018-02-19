@@ -61,7 +61,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (m2.find() == false) {
 			String Passerrormsg = "パスワードは半角英数字で入力してください";
 			this.Passerrormsg = Passerrormsg;
-
 		}
 
 		int length2 = loginPassword.getBytes().length;
@@ -137,8 +136,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 						}
 
 					}
-				} else if (dto.getLoginId().equals("0")) {
-					if (dto.getLoginPass().equals("0")) {
+				} else if (dto.getLoginId().equals("noID")) {
+					if (dto.getLoginPass().equals("noPASS")) {
 						session.put("unknown", "入力されたIDもしくはパスワードが異なります");
 						result = ERROR;
 						return result;
