@@ -50,6 +50,7 @@
 
 
 
+
 						商品名:<span><s:property value="productName" /></span><br>
 						<s:hidden name="productName" value="%{productName}" />
 						ふりがな:<span><s:property value="productNameKana" /></span><br>
