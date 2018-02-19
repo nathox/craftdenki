@@ -58,7 +58,7 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">パスワード<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="password" name="loginPassword" value='<s:property value="loginPassword"/>'class="validate[required,minSize[1],maxSize[16]]" /></td>
+			<td class="userCreateTd">　<input type="password" name="loginPassword" class="validate[required,minSize[1],maxSize[16]]" /></td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
