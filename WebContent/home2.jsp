@@ -75,7 +75,7 @@ input.area{
 
     }
 /*kensaku.jpgとフォームのずれ補正*/
-    input{
+    input.area,input.hosei{
         vertical-align:top;
     }
 /*selectboxとフォーム横並びにして隙間なくす*/
@@ -84,12 +84,6 @@ input.area{
   border-spacing: 0;
 
 }
-
-/*フッター*/
-/*#footer{
-    height: 100px;
-    background: #2c3e50;
-    }*/
 
 </style>
 <script src="js/jquery-1.8.2.min.js"></script>
@@ -120,6 +114,7 @@ $(function() {
   });
 });
 
+
 $(document).ready(function(){
     $("#select1").minimalect({theme: "bubble"});
 });
@@ -136,6 +131,21 @@ function nextField(i, n, m) {
 	 	  i.form.elements[n].focus();
 		 }
 	}
+
+$(function() {
+	var array = [
+	"images/Paper01.jpg",
+	"images/housei.jpg",
+	"images/suihannki.jpg",
+	"images/cork.jpg",
+	"images/javabook.jpg"
+	];
+	var l = array.length;
+	var r = Math.floor(Math.random()*l);
+	var bgimgurl = array[r];
+	$("header").css('background-image',('url("'+bgimgurl+'")'));
+	});
+
 </script>
 </head>
 <body class="home2">
@@ -154,7 +164,7 @@ function nextField(i, n, m) {
 	                        <option value="3">おもちゃ・げーむ</option>
                     	</select>
                     	 </td>
-                    	<td><input type="text" name="searchWord" maxlength="16" class="area" /><input type="image" src="images/kensaku.jpg" alt="検索"  value="検索"/>
+                    	<td><input type="text" name="searchWord" maxlength="16" class="area" /><input type="image" src="images/kensaku.jpg" alt="検索"  value="検索" class="hosei"/>
                 		</td>
             		</tr>
             								</s:form>
@@ -178,7 +188,5 @@ function nextField(i, n, m) {
 
 
 
-
-<!-- <div id="footer"></div>-->
 </body>
 </html>

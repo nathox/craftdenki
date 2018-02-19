@@ -34,19 +34,20 @@
 <table class="userCreateTable">
 
 		<tr class="userCreateTr">
-			<th class="userCreateTh">ログインID</th>
+			<th class="userCreateTh">ユーザーID</th>
 			<td><s:property value="loginUserId" /></td>
+		</tr>
 		<tr class="userCreateTr">
-			<th class="userCreateTh">ログインPASS</th>
+			<th class="userCreateTh">パスワード</th>
 			<td><s:property value="loginPassCon"/></td>
 		</tr>
 		<tr class="userCreateTr">
 			<th class="userCreateTh">お名前(かな)</th>
-			<td><s:property value="familyNameKana"/> <s:property value="firstNameKana"/></td>
+			<td><s:property value="familyNameKana"/>　<s:property value="firstNameKana"/></td>
 		</tr>
 		<tr class="userCreateTr">
 			<th class="userCreateTh">お名前</th>
-			<td><s:property value="familyName"/> <s:property value="firstName"/></td>
+			<td><s:property value="familyName"/>　<s:property value="firstName"/></td>
 		</tr>
 		<tr class="userCreateTr">
 			<th class="userCreateTh">性別</th>
