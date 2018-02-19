@@ -128,7 +128,7 @@ color:red;
 
 					<tr>
 
-						<td><span>パスワードを忘れてしもた方は<a
+						<td><span>パスワードを忘れてしまった方は<a
 								href='<s:url action="ChangePasswordAction"/>'>こちら</a>から
 						</span></td>
 
