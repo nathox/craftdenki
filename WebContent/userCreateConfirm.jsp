@@ -72,7 +72,7 @@
 		</tr>
 		<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
-			<td><s:property value="yuubin"/></td>
+			<td>〒<s:property value="yuubin1"/>-<s:property value="yuubin4"/></td>
 		</tr>
 		<tr class="userCreateTr">
 			<th class="userCreateTh">住所</th>
@@ -99,7 +99,8 @@
 <input type="hidden" name="mail" value="<s:property value="mail" />">
 <input type="hidden" name="secretQuestion" value="<s:property value="secretQuestion" />">
 <input type="hidden" name="secretAnswer" value="<s:property value="secretAnswer" />">
-<input type="hidden" name="yuubin" value="<s:property value="yuubin" />">
+<input type="hidden" name="yuubin1" value="<s:property value="yuubin1" />">
+<input type="hidden" name="yuubin4" value="<s:property value="yuubin4" />">
 <input type="hidden" name="address" value="<s:property value="address" />">
 <input type="hidden" name="tel" value="<s:property value="tel" />">
 <s:submit value="戻る" class="userCreateButton"/>
