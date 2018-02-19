@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/craftdenki.css" rel="stylesheet">
+<link href="css/favorite.css" rel="stylesheet">
 
 <title>Insert title here</title>
 
@@ -42,10 +43,18 @@
 <div class="main">
 
 	<h3>お気に入りリスト</h3>
+
+	<s:if test="favoriteList.size()==0">
+		<h4>お気に入りはありません。</h4>
+	</s:if>
+
+
+	<s:if test="favoriteList.size() > 0">
+		<h4>お気に入り情報は以下になります。</h4>
+		<p>&nbsp;&nbsp;</p>
+
 	<s:form id="form" name="form" action="FavoriteAction">
 		<table border="0" cellspacing="0">
-
-		<p>&nbsp;&nbsp;</p>
 
 			<s:iterator value="favoriteList">
 
@@ -95,10 +104,11 @@
 						<s:hidden name="deleteFlg" value="1" />
 					</div>
 
+
 		</table>
 	</s:form>
 
-
+</s:if>
 </div>
 
 

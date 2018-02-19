@@ -2,6 +2,7 @@ package com.internousdev.craftdenki.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,6 +11,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.craftdenki.dao.ItemSearchDAO;
 import com.internousdev.craftdenki.dto.ProductDTO;
+import com.internousdev.craftdenki.util.ProductListChange;
 import com.internousdev.craftdenki.util.ZenkakuKatakanaToZenkakuHiragana;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,8 +33,20 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 
 
+	//productListを9個ごとに格納したList
+		private ArrayList<ArrayList<ProductDTO>> trueList = new ArrayList<>();
+
+		private int pageSelect;
+
+		private int pageCount;
+
+		private List<Integer> pageList = new ArrayList<>();
+
+
+
 
 	public String execute() throws SQLException{
+
 
 
 
@@ -73,6 +87,32 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 			setSearchMessage("入力された文字が不正です。");
 		}
 
+
+
+
+		//productListを9個ごとに格納
+		ProductListChange change = new ProductListChange();
+		trueList = change.productListChange(productList);
+
+		for(int i = 0; i < trueList.size(); i++){
+			pageList.add(i + 1);
+		}
+
+		//ページ表示の確認
+		System.out.println();
+		for(ArrayList<ProductDTO> array: trueList){
+			for(ProductDTO dto: array){
+				System.out.println(dto.getId());
+			}
+			System.out.println("--------------------");
+		}
+
+		for(int i = 0; i < trueList.size(); i++){
+			if(i == pageSelect){
+				productList = trueList.get(i);
+				break;
+			}
+		}
 
 
 
@@ -141,6 +181,104 @@ public class ItemSearchAction extends ActionSupport implements SessionAware{
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+
+
+
+	public ArrayList<ProductDTO> getProductList() {
+		return productList;
+	}
+
+
+
+
+	public void setProductList(ArrayList<ProductDTO> productList) {
+		this.productList = productList;
+	}
+
+
+
+
+	public ItemSearchDAO getItemSearchDAO() {
+		return itemSearchDAO;
+	}
+
+
+
+
+	public void setItemSearchDAO(ItemSearchDAO itemSearchDAO) {
+		this.itemSearchDAO = itemSearchDAO;
+	}
+
+
+
+
+	public ZenkakuKatakanaToZenkakuHiragana getZenkakuKatakanaToZenkakuHiragana() {
+		return zenkakuKatakanaToZenkakuHiragana;
+	}
+
+
+
+
+	public void setZenkakuKatakanaToZenkakuHiragana(ZenkakuKatakanaToZenkakuHiragana zenkakuKatakanaToZenkakuHiragana) {
+		this.zenkakuKatakanaToZenkakuHiragana = zenkakuKatakanaToZenkakuHiragana;
+	}
+
+
+
+
+	public ArrayList<ArrayList<ProductDTO>> getTrueList() {
+		return trueList;
+	}
+
+
+
+
+	public void setTrueList(ArrayList<ArrayList<ProductDTO>> trueList) {
+		this.trueList = trueList;
+	}
+
+
+
+
+	public int getPageSelect() {
+		return pageSelect;
+	}
+
+
+
+
+	public void setPageSelect(int pageSelect) {
+		this.pageSelect = pageSelect;
+	}
+
+
+
+
+	public int getPageCount() {
+		return pageCount;
+	}
+
+
+
+
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+
+
+
+	public List<Integer> getPageList() {
+		return pageList;
+	}
+
+
+
+
+	public void setPageList(List<Integer> pageList) {
+		this.pageList = pageList;
 	}
 
 
