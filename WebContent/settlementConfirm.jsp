@@ -15,10 +15,20 @@
 <link href="./css/sano.css" rel="stylesheet">
 
 <style>
+.cart-price {
+	float: right;
+	border-bottom: solid black 1px;
+	width: auto;
+	margin-right: 300px;
+	font-size: 18px;
+	font-weight: bold;
+}
 </style>
 
 </head>
 <body>
+
+
 	<jsp:include page="home2.jsp" />
 	<div class="main">
 
@@ -102,16 +112,20 @@
 
 
 
-		<p>合計:\ -</p>
+		<div class="cart-price">
+			カート合計:
+			<s:property value="session.finalPrice" />
+			円<br>
+			<s:hidden name="finalPrice" value="%{finalPrice}" />
+		</div>
 
-
-		<br>
+		<br><br><br>
 
 
 		<div class="left6">
 			<s:form action="SettlementCompleteAction">
 
-				<s:token/>
+				<s:token />
 				<s:submit value="購入する" />
 			</s:form>
 		</div>
