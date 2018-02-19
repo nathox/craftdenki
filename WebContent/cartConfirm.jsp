@@ -23,6 +23,19 @@
 
 <title>cart画面</title>
 
+<style>
+
+	.cart-price{
+		float:right;
+		border-bottom:solid black 1px;
+		width:auto;
+		margin-right:300px;
+		font-size:18px;
+		font-weight:bold;
+	}
+
+</style>
+
 
 </head>
 <body>
@@ -50,6 +63,7 @@
 				<div class="ph-check">
 					<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
 				</div>
+						<p>&nbsp;</p>
 
 						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
 							<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
@@ -66,8 +80,8 @@
 						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
 						発売年月日:<s:property value="releaseDate" /><br>
 						<s:hidden name="releaseDate" value="%{releaseDate}" />
-						合計金額:<s:property value="totalPrice" /><br>
-						<s:hidden name="totalPrice" value="%{totalPrice}" />
+						合計金額:<s:property value="TotalPrice" /><br>
+						<s:hidden name="totalPrice" value="%{TotalPrice}" />
 
 						<p>&nbsp;</p>
 
@@ -103,6 +117,9 @@
 			</s:iterator>
 
 		</table>
+
+				<div class="cart-price">カート合計:<s:property value="session.finalPrice" />円<br>
+				<s:hidden name="finalPrice" value="%{finalPrice}" /></div>
 
 
 				<br>
