@@ -81,7 +81,7 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 					favoriteList = dao.getFavoriteInfo(userId);
 					result = SUCCESS;
 					System.out.println("---------------------6-------------------------");
-					return result;
+					System.out.println(deleteId);
 				}
 			}  //checkListがnullのとき
 			else {
