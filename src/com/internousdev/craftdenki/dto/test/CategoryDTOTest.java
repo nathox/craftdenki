@@ -4,10 +4,33 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.internousdev.craftdenki.dto.CategoryDTO;
+
 public class CategoryDTOTest {
 
 	@Test
-	public void testGetId() {
+	public void testGetId1() {
+		CategoryDTO dto = new CategoryDTO();
+		String expected = "0";
+
+		dto.setId(expected);
+
+		assertEquals(expected, dto.getId());
+	}
+
+
+	@Test
+	public void testGetId2() {
+		CategoryDTO dto = new CategoryDTO();
+		String expected = null;
+
+		dto.setId(expected);
+
+		assertEquals(expected, dto.getId());
+	}
+
+	@Test
+	public void testGetId3() {
 		fail("まだ実装されていません");
 	}
 
