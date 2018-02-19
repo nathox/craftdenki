@@ -11,7 +11,7 @@ import com.internousdev.craftdenki.dao.UserInfoChangeDAO;
 import com.internousdev.craftdenki.dto.UserInfoChangeDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserInfoChangeAction extends ActionSupport implements SessionAware {
+public class DestinationChange0Action extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> session;
 
@@ -37,7 +37,6 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 
 			list_user_info = null;
 		}
-
 
 
 

@@ -89,7 +89,7 @@
 
 			<div class="left2">
 				<span>宛先の住所を変更、追加するには<a
-					href='<s:url action="UserInfoChangeAction"/>'>こちら</a></span>
+					href='<s:url action="DestinationChange0Action"/>'>こちら</a></span>
 			</div>
 
 
