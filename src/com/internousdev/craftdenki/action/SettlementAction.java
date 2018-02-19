@@ -40,12 +40,10 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 
 	private Map<String, Object> session;
 
-
-
 	@SuppressWarnings("unchecked")
 	public String execute() {
 
-		session.put("payment", "payment");//((userInfoChangeから帰ってくるためのフラグ,))
+		session.put("payment", "payment");// ((userInfoChangeから帰ってくるためのフラグ,))
 
 		System.out.println(session.get("trueID"));
 
@@ -78,13 +76,10 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 			session.put("telNumber2", telNumber2);
 			session.put("telNumber3", telNumber3);
 
-
-
-
-			//購入する商品の情報を持ってくる
-			cartList = (ArrayList<CartDTO>)session.get("cartList");
+			// 購入する商品の情報を持ってくる
+			cartList = (ArrayList<CartDTO>) session.get("cartList");
 			int size = cartList.size();
-			for(int i=0; i<size; i++){
+			for (int i = 0; i < size; i++) {
 				finalPrice = finalPrice + cartList.get(i).getTotalPrice();
 			}
 
