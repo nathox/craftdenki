@@ -29,7 +29,10 @@
 }
 
 .kageyama3 {
-	padding-left: 45%;
+	padding-left: 50%;
+}
+.error{
+	color:red;
 }
 </style>
 
@@ -44,19 +47,22 @@
 		<h3>パスワード変更画面</h3>
 		<p>※パスワードを忘れた方はログインIDを入力してください</p>
 		<div class="kageyama">
-
-
-
 			<s:form action="CheckUserIdAction">
 				<table>
 					<tr>
 						<td><div class="kageyama2">ログインID</div></td>
 					</tr>
 					<tr>
+						<td><div class="error">
+						<s:property value="errorMessage" escape="false" /></div>
+						</td>
+					</tr>
+					<tr>
 						<td><div class="kageyama2">
-								<input type="text" name="userId" value="test" />
+								<input type="text" name="userId" />
 							</div></td>
 					</tr>
+
 				</table>
 
 				<div class="kageyama3">

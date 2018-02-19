@@ -17,6 +17,7 @@ public class CheckUserIdAction extends ActionSupport implements SessionAware{
 	private String userId;
 	public Map<String, Object> session;
 	private String questionMessage;
+	private String errorMessage;
 
 
 	public String execute() throws SQLException{
@@ -34,6 +35,11 @@ public class CheckUserIdAction extends ActionSupport implements SessionAware{
 			questionMessage ="好きな動物は？";
 		}
 
+		if(!(userId.equals(userInfoChangeDTO.getUserId()))){
+			errorMessage ="ユーザーIDが間違っています！";
+			result =ERROR;
+
+		}
 
 		if(userId.equals(userInfoChangeDTO.getUserId())){
 				result =SUCCESS;
@@ -66,5 +72,12 @@ public class CheckUserIdAction extends ActionSupport implements SessionAware{
 	}
 	public void setQuestionMessage(String questionMessage){
 		this.questionMessage = questionMessage;
+	}
+
+	public String getErrorMessage(){
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage){
+		this.errorMessage = errorMessage;
 	}
 }
