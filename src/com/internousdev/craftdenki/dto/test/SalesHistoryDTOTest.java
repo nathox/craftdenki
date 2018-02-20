@@ -2,9 +2,8 @@ package com.internousdev.craftdenki.dto.test;
 
 import static org.junit.Assert.*;
 
+import java.sql.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.junit.Test;
 
@@ -157,12 +156,12 @@ public class SalesHistoryDTOTest {
 	public void testGetPurchaseDate2() throws ParseException {
 
 		SalesHistoryDTO dto = new SalesHistoryDTO();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		 Date sqlDate= Date.valueOf("2017-03-02");
 
-		String dateStr = "2018/02/20 14:10:30";
-		Date formatDate = sdf.parse(dateStr);
+		 Date expected = sqlDate;
 
-		Date expected = formatDate;
+
+
 		dto.setPurchaseDate(expected);
 
 		assertEquals(expected, dto.getPurchaseDate());
