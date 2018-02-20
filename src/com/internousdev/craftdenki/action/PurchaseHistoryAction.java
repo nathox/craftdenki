@@ -50,7 +50,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 		if (deleteFlg == null) {
 			message=null;
-			session.put("trueID", "test");//ログイン完成しだい削除
+
 			String userId = session.get("trueID").toString();
 			purchaseHistoryList = dao.getPurchaseHistory(userId);
 //			if (purchaseHistoryList.equals("[]")) {
