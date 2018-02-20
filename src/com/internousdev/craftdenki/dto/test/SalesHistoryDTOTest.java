@@ -2,9 +2,9 @@ package com.internousdev.craftdenki.dto.test;
 
 import static org.junit.Assert.*;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Test;
 
