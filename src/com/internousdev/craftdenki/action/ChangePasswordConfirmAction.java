@@ -24,6 +24,7 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 	private String answer;
 
+
 	private String password;
 
 	private String checkPassword;
@@ -39,7 +40,7 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 
 
 
-		if(!(dao.checkAnswer2(answer))){
+		if(!(dao.checkAnswer2(answer,(String)(session.get("userId"))))){
 
 		result=ERROR;
 		errorMessage="答えが違います";

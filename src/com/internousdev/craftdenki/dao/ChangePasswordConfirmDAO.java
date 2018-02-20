@@ -22,14 +22,15 @@ public class ChangePasswordConfirmDAO {
 
 
 
-	public boolean checkAnswer2(String answer ){
+	public boolean checkAnswer2(String answer, String userId ){
 
 		boolean result=false;
 		try{
-			String sql2 ="select * from user_info where answer=?";
+			String sql2 ="select * from user_info where answer=? and user_id=?";
 			PreparedStatement ps2 = conn.prepareStatement(sql2);
 
 			ps2.setString(1, answer);
+			ps2.setString(2, userId);
 			ResultSet rs = ps2.executeQuery();
 
 			if (rs.next()) {
