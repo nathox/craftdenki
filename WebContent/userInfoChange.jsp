@@ -74,9 +74,9 @@
 
 
 
-	<link href="css/craftdenki.css" rel="stylesheet">
+<%-- 		<link href="css/craftdenki.css" rel="stylesheet"> --%>
 	<link href="css/nakajima.css" rel="stylesheet">
-<%-- 	<link href="css/userInfoChange.css" rel="stylesheet"> --%>
+	<link href="css/userInfoChange.css" rel="stylesheet">
 
 </head>
 <body>
@@ -141,7 +141,7 @@
 
 			<tr class="userCreateTr">
 			<th class="userCreateTh">メールアドレス<em class="userCreateEm">※</em></th>
-						<td class="userCreateTd">　<s:textfield name="email" value="%{email}" size="40" class="validate[required,minSize[14],maxSize[32]]" />
+						<td class="userCreateTd">　<s:textfield name="email" value="%{email}" size="40" class="validate[required,email,minSize[14],maxSize[32]]" />
 			</td></tr>
 
 			<tr class="userCreateTr">
