@@ -2,13 +2,18 @@ package com.internousdev.craftdenki.dto.test;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.Test;
 
 import com.internousdev.craftdenki.dto.Review2DTO;
+import com.internousdev.craftdenki.util.DateUtil;
 
 public class Review2DTOTest {
 
-
+	DateUtil util = new DateUtil();
 
 	@Test
 	public void testGetId1() {
@@ -40,9 +45,6 @@ public class Review2DTOTest {
 		assertEquals(expected, dto.getId());
 	}
 
-
-
-
 	@Test
 	public void testGetProduct_id1() {
 		Review2DTO dto = new Review2DTO();
@@ -73,7 +75,6 @@ public class Review2DTOTest {
 		assertEquals(expected, dto.getProduct_id());
 	}
 
-
 	@Test
 	public void testGetEvaluation_count1() {
 		Review2DTO dto = new Review2DTO();
@@ -103,9 +104,6 @@ public class Review2DTOTest {
 
 		assertEquals(expected, dto.getEvaluation_count());
 	}
-
-
-
 
 	public void testGetUser_id1() {
 		Review2DTO dto = new Review2DTO();
@@ -177,9 +175,6 @@ public class Review2DTOTest {
 		assertEquals(expected, dto.getUser_id());
 	}
 
-
-
-
 	public void testGetReview_id1() {
 		Review2DTO dto = new Review2DTO();
 		String expected = "0";
@@ -250,7 +245,6 @@ public class Review2DTOTest {
 		assertEquals(expected, dto.getReview_id());
 	}
 
-
 	@Test
 	public void testGetBuy_item_date1() {
 		Review2DTO dto = new Review2DTO();
@@ -262,17 +256,18 @@ public class Review2DTOTest {
 	}
 
 	@Test
-	public void testGetBuy_item_date2() {
-		Review2DTO dto = new Review2DTO();
-		Date expected = "2018/02/20 13:16:30";
+	public void testGetBuy_item_date2() throws ParseException {
 
+		Review2DTO dto = new Review2DTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
+		String dateStr = "2018/02/20 14:10:30";
+		Date formatDate = sdf.parse(dateStr);
+
+		Date expected = formatDate;
 		dto.setBuy_item_date(expected);
 
 		assertEquals(expected, dto.getBuy_item_date());
 	}
-
-
-
-
 
 }
