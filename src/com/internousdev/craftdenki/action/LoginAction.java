@@ -24,6 +24,21 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 
+
+//		firstname
+//		familyname
+//		familynamekana
+//		firstnamekana
+//		sex
+//		mail
+//		以上をsessionに入れて
+//		ログイン後のマイページで表示する
+//
+//
+//
+
+
+
 		session.put("unknown", "");
 		session.put("IDerror", "");
 		session.put("Passerror", "");
