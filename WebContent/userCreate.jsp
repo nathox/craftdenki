@@ -136,7 +136,7 @@
 	</tr>
 			<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
-						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');" class="validate[custom[number]]"data-prompt-position="centerRight:0,-50">
+						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)" class="validate[custom[number]">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');" class="validate[custom[number]]"data-prompt-position="centerRight:0,-50">
 			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
