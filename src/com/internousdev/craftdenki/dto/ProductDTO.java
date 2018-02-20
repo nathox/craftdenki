@@ -40,6 +40,9 @@ public class ProductDTO {
 	public String getCategoryName() {
 		return categoryName;
 	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
 	public void setCategoryName(Integer category_id) {
 		List<CategoryDTO> categoryList = new ArrayList<>();
 		CategoryDAO categoryDAO = new CategoryDAO();

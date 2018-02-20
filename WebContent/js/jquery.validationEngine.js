@@ -1221,6 +1221,12 @@
 				return rule.alertText + methods._dateToString(pdate);
 			}
 		},
+
+
+
+
+
+
 		/**
 		* Checks date is in the future
 		*

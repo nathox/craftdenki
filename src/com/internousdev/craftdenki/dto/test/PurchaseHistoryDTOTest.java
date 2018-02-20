@@ -661,16 +661,147 @@ public class PurchaseHistoryDTOTest {
 
 
 
+
+
 	@Test
 	public void testGetRegistDate() {
-		fail("まだ実装されていません");
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "0";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate2() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "null";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate3() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate4() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = " ";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate5() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "aaa";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate6() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "AAA";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	@Test
+	public void testGetRegistDate7() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "あああ";
+
+		dto.setRegistDate(expected);
+
+		assertEquals(expected, dto.getRegistDate());
 	}
 
 
 
 	@Test
 	public void testGetProductCount() {
-		fail("まだ実装されていません");
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "0";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
 	}
 
+	@Test
+	public void testGetProductCount2() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "null";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
+
+	@Test
+	public void testGetProductCount3() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
+
+	@Test
+	public void testGetProductCount4() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = " ";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
+
+	@Test
+	public void testGetProductCount5() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "aaa";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
+
+	@Test
+	public void testGetProductCount6() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "AAA";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
+
+	@Test
+	public void testGetProductCount7() {
+		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
+		String expected = "あああ";
+
+		dto.setProductCount(expected);
+
+		assertEquals(expected, dto.getProductCount());
+	}
 }
