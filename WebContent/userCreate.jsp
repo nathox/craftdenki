@@ -68,8 +68,8 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ふりがな<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]" />(せい)
-    			<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]"/>(めい)
+			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16]]" />(せい)
+    			<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16]]"/>(めい)
     		</td>
     </tr>
     <tr class="userCreateTr">
