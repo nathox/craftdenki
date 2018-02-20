@@ -84,13 +84,13 @@
 			購入個数
 	  		<s:select name="product_count" list="stockList" />			★
 
-	  			<s:hidden name="product_id" value="%{product_id}" />
-				<s:hidden name="price" value="%{price}" />
-				<s:hidden name="item_stock" value="%{item_stock}" />
-
 				<input type="hidden" name="insertFlg" value="1" />
 				<div class=button>
-					<s:submit value=" カートに入れる" onclick="goCartAction();" />
+					<s:submit value=" カートに入れる" onclick="goCartAction();" >
+					<s:hidden name="product_id" value="%{product_id}" />
+					<s:hidden name="price" value="%{price}" />
+					<s:hidden name="item_stock" value="%{item_stock}" />
+					</s:submit>
 				</div>
 
 			</s:if>

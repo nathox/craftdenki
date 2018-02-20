@@ -17,6 +17,8 @@ public class CartDAO {
 	private DateUtil dateUtil = new DateUtil();
 	private int res;
 	public int finalPrice = 0;
+	private int totalItem_stock;
+	private int totalItem_stock2;
 
 	// カート情報取得メソッド
 	public ArrayList<CartDTO> getCartInfo(String user_id) throws SQLException {
@@ -57,11 +59,16 @@ public class CartDAO {
 	}
 
 	// カート情報削除メソッド
-	public int deleteCart(String user_id, int id) throws SQLException {
+	public int deleteCart(String user_id, int id,int product_count,int product_id,int item_stock) throws SQLException {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
 		String sql = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
+		String update2 =  "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
+		totalItem_stock2 = item_stock + product_count;
+		System.out.println(totalItem_stock2);
+		System.out.println(item_stock);
+		System.out.println(product_count);
 
 		PreparedStatement ps;
 		try {
@@ -70,6 +77,12 @@ public class CartDAO {
 			ps.setString(1, user_id);
 			ps.setInt(2, id);
 			ps.executeUpdate();
+
+			PreparedStatement ps2 = connection.prepareStatement(update2);
+			ps2.setInt(1, totalItem_stock2);
+			ps2.setInt(2, product_id);
+			ps2.executeUpdate();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -77,11 +90,13 @@ public class CartDAO {
 	}
 
 	// カートテーブルにInsertメソッド
-	public void insertCart(String userId, int product_id, int product_count, int price) throws SQLException {
+	public void insertCart(String userId, int product_id, int product_count, int price,int item_stock) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		String insert = "INSERT INTO cart_info (user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?)";
 		int totalPrice = product_count * price;
+		totalItem_stock = item_stock - product_count;
+		String insert = "INSERT INTO cart_info (user_id,product_id,product_count,price,regist_date,update_date,total_price) VALUES(?,?,?,?,?,?,?)";
+		String update1 = "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(insert);
@@ -95,11 +110,19 @@ public class CartDAO {
 
 			ps.execute();
 
+
+			PreparedStatement ps2 = connection.prepareStatement(update1);
+			ps2.setInt(1, totalItem_stock);
+			ps2.setInt(2, product_id);
+			ps2.executeUpdate();
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			connection.close();
 		}
 	}
+
 
 }

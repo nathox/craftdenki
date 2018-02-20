@@ -24,24 +24,24 @@
 <title>cart画面</title>
 
 <style>
+.cart-price {
+	float: right;
+	font-weight: bold;
+	font-size: 18px;
+	border-bottom: solid black 1px;
+	width: auto;
+}
 
-	.cart-price{
-		float:right;
-		font-weight:bold;
-		font-size:18px;
-		border-bottom:solid black 1px;
-		width:auto;
-	}
-	.ph:after{
-		clear:both;
-		content:"";
-		display:block;
-	}
-	.cart-button{
-		float:right;
-		margin-top:20px;
-	}
+.ph:after {
+	clear: both;
+	content: "";
+	display: block;
+}
 
+.cart-button {
+	float: right;
+	margin-top: 20px;
+}
 </style>
 
 
@@ -63,41 +63,52 @@
 			<s:form id="form" name="form" action="SettlementAction">
 				<h4>カート情報は以下になります。</h4>
 
-				<br><br>
-		<div class="ph">
-		<table>
-			<s:iterator value="cartList">
-					<div class="ph-box">
+				<br>
+				<br>
+				<div class="ph">
+					<table>
+						<s:iterator value="cartList">
+							<div class="ph-box">
 
-						<div class="ph-check">
-							<s:checkbox name="delete" value="checked" fieldValue="%{id}" />
-						</div>
+								<div class="ph-check">
+									<s:checkbox name="deleteList" value="checked" fieldValue="%{id}" />
+								</div>
 
-						<p>&nbsp;</p>
+								<p>&nbsp;</p>
 
-						<div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div>
-							<s:hidden name="imageFilePath" value='<s:property value="imageFilePath"/>' />
+								<div class="iFP">
+									<img src="<s:property value='imageFilePath'/>" width="auto"
+										height="200px">
+								</div>
+								<s:hidden name="imageFilePath"
+									value='<s:property value="imageFilePath"/>' />
 
-						商品名:<span><s:property value="productName" /></span><br>
-						<s:hidden name="productName" value="%{productName}" />
-						ふりがな:<span><s:property value="productNameKana" /></span><br>
-						<s:hidden name="productNameKana" value="%{productNameKana}" />
-						金額:<span><s:property value="price" />円</span><br>
-						<s:hidden name="price" value="%{price}" />
-						個数:<span><s:property value="productCount" />個</span><br>
-						<s:hidden name="productCount" value="%{productCount}" />
-						発売会社名:<s:property value="releaseCompany" /><br>
-						<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-						発売年月日:<s:property value="releaseDate" /><br>
-						<s:hidden name="releaseDate" value="%{releaseDate}" />
-						合計金額:<s:property value="TotalPrice" /><br>
-						<s:hidden name="totalPrice" value="%{TotalPrice}" />
+								商品名:<span><s:property value="productName" /></span><br>
+								<s:hidden name="productName" value="%{productName}" />
+								ふりがな:<span><s:property value="productNameKana" /></span><br>
+								<s:hidden name="productNameKana" value="%{productNameKana}" />
+								金額:<span><s:property value="price" />円</span><br>
+								<s:hidden name="price" value="%{price}" />
+								個数:<span><s:property value="productCount" />個</span><br>
+								<s:hidden name="productCount" value="%{productCount}" />
+								発売会社名:
+								<s:property value="releaseCompany" />
+								<br>
+								<s:hidden name="releaseCompany" value="%{releaseCompany}" />
+								発売年月日:
+								<s:property value="releaseDate" />
+								<br>
+								<s:hidden name="releaseDate" value="%{releaseDate}" />
+								合計金額:
+								<s:property value="TotalPrice" />
+								<br>
+								<s:hidden name="totalPrice" value="%{TotalPrice}" />
 
-						<p>&nbsp;</p>
+								<p>&nbsp;</p>
 
-				</div>
+							</div>
 
-<!--
+							<!--
 					<ul class="box23">
 						<li class="itemlist23"><div class="iFP"><img src="<s:property value='imageFilePath'/>" width="auto" height="200px"></div></li>
 						<s:hidden name="imageFilePath" value="%{imageFilePath}" />
@@ -124,33 +135,36 @@
 						<s:hidden name="totalPrice" value="%{totalPrice}" />
 					</ul>
 -->
-			</s:iterator>
-		</table>
+						</s:iterator>
+					</table>
 
 
-				<div class="cart-price">カート合計:<s:property value="session.finalPrice" />円<br>
-				<s:hidden name="finalPrice" value="%{finalPrice}" />
+					<div class="cart-price">
+						カート合計:
+						<s:property value="session.finalPrice" />
+						円<br>
+						<s:hidden name="finalPrice" value="%{finalPrice}" />
+					</div>
 				</div>
-				</div>
-
+						<s:hidden name="cartDeleteFlg" value="1" />
+						<s:hidden name="product_count" value="%{product_count}" />
 
 
 				<div class="cart-button">
-				<s:submit value="削除" onclick="CartAction();"
-
-						class="button" ><s:hidden name="cartDeleteFlg" value="1" /></s:submit>
-				<s:submit value="決済に進む" onclick="SettlementAction();"
+					<s:submit value="決済に進む" onclick="SettlementAction();"
 						class="button" />
+					<s:submit value="削除" onclick="CartAction();" class="button"/>
+
 				</div>
 			</s:form>
-			</s:else>
-			<s:if test="message != null">
-				<h3>
-					<s:property value="message" />
-				</h3>
-			</s:if>
+		</s:else>
+		<s:if test="message != null">
+			<h3>
+				<s:property value="message" />
+			</h3>
+		</s:if>
 
-			<!-- <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p> -->
+		<!-- <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p> -->
 	</div>
 	<jsp:include page="footer.jsp" />
 </body>

@@ -20,9 +20,11 @@ public class CartAction extends ActionSupport implements SessionAware {
 	private String price;
 	private String userId;
 	private String insertFlg = "0";
-	private Collection<String> delete;
+	private Collection<String> deleteList;
 	private String cartDeleteFlg;
 	private String nothing;
+	private int item_stock;
+	private String id;
 
 
 	public String getNothing() {
@@ -48,8 +50,9 @@ public class CartAction extends ActionSupport implements SessionAware {
 		}
 
 		// --------------------------------------------------------------------------------------------
+
 		if (insertFlg.equals("1")) {
-			cartDAO.insertCart(userId, product_id, product_count, Integer.parseInt(price));
+			cartDAO.insertCart(userId, product_id, product_count, Integer.parseInt(price),item_stock);
 			nothing = "1";
 		}
 		// --------------------------------------------------------------------------------------------
@@ -65,9 +68,13 @@ public class CartAction extends ActionSupport implements SessionAware {
 			}
 
 		} else {
-			if (delete != null) {
-				for (String deleteId : delete) {
-					cartDAO.deleteCart(userId, Integer.parseInt(deleteId));
+			if (deleteList != null) {
+				for (String deleteId : deleteList) {
+					System.out.println(product_count+"a");
+					System.out.println(item_stock+"b");
+					System.out.println(deleteId+"c");
+
+					cartDAO.deleteCart(userId, Integer.parseInt(deleteId),product_count,product_id,item_stock);
 					if (true) {
 						cartList = cartDAO.getCartInfo(userId);
 						if (cartList.isEmpty()) {
@@ -150,11 +157,11 @@ public class CartAction extends ActionSupport implements SessionAware {
 	}
 
 	public Collection<String> getDelete() {
-		return delete;
+		return deleteList;
 	}
 
-	public void setDelete(Collection<String> delete) {
-		this.delete = delete;
+	public void setDelete(Collection<String> deleteList) {
+		this.deleteList = deleteList;
 	}
 
 	public int getFinalPrice() {
@@ -167,6 +174,30 @@ public class CartAction extends ActionSupport implements SessionAware {
 
 	public String getUserId() {
 		return userId;
+	}
+
+	public int getItem_stock() {
+		return item_stock;
+	}
+
+	public void setItem_stock(int item_stock) {
+		this.item_stock = item_stock;
+	}
+
+	public Collection<String> getDeleteList() {
+		return deleteList;
+	}
+
+	public void setDeleteList(Collection<String> deleteList) {
+		this.deleteList = deleteList;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
