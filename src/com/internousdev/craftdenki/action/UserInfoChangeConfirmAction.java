@@ -128,6 +128,26 @@ public class UserInfoChangeConfirmAction extends ActionSupport implements Sessio
 			result=ERROR;
 		}
 
+		///////////////////////////////////////////////////////////////////////
+		/*性別、秘密の質問でイレギュラーな数値を入れられた場合はじく*/
+
+		/*if(!(sex==0||sex==1)){
+			setErrorMe
+
+
+
+			現状、保留
+
+
+
+		}
+			result=ERROR;*/
+
+
+
+
+		////////////////////////////////////////////////////////////////////////
+
 		return result;
 	}
 
