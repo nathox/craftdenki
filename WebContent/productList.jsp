@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="./css/productList.css">
+<link rel="stylesheet" href="./css/craftdenki.css">
 
 
 <title>商品一覧画面</title>
@@ -25,12 +26,12 @@
 
 		<!-- 検索時のメッセージ(sano -->
 		<s:if test="searchMessage != ''">
-			<h1>
+			<h2>
 				<s:property value="searchMessage" escape="false" />
-			</h1>
+			</h2>
 		</s:if>
 
-		<div class="23">
+
 
 		<ul  class="thumbnail clearFix">
 		<!-- 表示件数1ページ目 -->
@@ -40,6 +41,8 @@
 					<a href="<s:url action="ProductDetailsAction">
 				 <s:param name="product_id" value="%{product_id}" />
 				 <s:param name="item_stock" value="%{item_stock}" /> </s:url>">
+
+
 	                    <li class="list1">
 						   <dl>
 						   		<dt>
@@ -107,7 +110,7 @@
 </s:if>
 
 	</div>
-	</div>
+
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>

@@ -390,7 +390,7 @@
 				tr.userCreateTr{
 					padding:10px;
 					border-top:1px solid #cccccc;
-					height:80px;
+					height:40px;
 				}
 
 				td.userCreateTd{
@@ -490,7 +490,4 @@ td {
 }
 
 
-h2{
-color:red;
-}
 

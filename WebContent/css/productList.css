@@ -101,12 +101,11 @@
 
 /* --- リストエリア --- */
 ul.thumbnail {
-width: 80%; /* リストエリアの幅 */
+width: 91%; /* リストエリアの幅 */
 margin: 0;
 padding: 30px 0 0; /* リストエリアのパディング（上、左右、下） */
 list-style-type: none;
-margin-left:auto;
-margin-right:auto;
+
 }
 
 /* --- リスト項目 --- */
@@ -160,7 +159,7 @@ min-height: 1px;
 .list1{
 border: 1px solid black;
 border-radius: 20% ;
-margin:0 0px 60px 65px;
+margin:0px 0px 60px 65px;
 box-shadow:1px 1px 5px #000;
 background-image: url("../images/mokume1.jpg");
 }
@@ -201,14 +200,13 @@ background-image: url("../images/mokume1.jpg");
 	white-space: nowrap;
 }
 
-.ProductList{
-	text-align:center;
-	width:100%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:30px;
+
+.ProductList {
+    width: 1283px;
+
 
 }
+
 
 .DetailsList{
 	text-align:center;
@@ -219,15 +217,12 @@ background-image: url("../images/mokume1.jpg");
 
 }
 
-#form{
-	margin:20px;
-}
+.button{
+	float:right;
+	margin-right:120px;
 
+}
 .pageSelect{
 	font-size:20px;
 	margin:10px;
-}
-
-.23{
-	float:left;
 }
