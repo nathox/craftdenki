@@ -132,6 +132,7 @@
                     "alertText": "* This user is already taken",
                     "alertTextLoad": "* Validating, please wait"
                 },
+
                 "ajaxNameCall": {
                     // remote json service location
                     "url": "ajaxValidateFieldName",
