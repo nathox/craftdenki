@@ -168,7 +168,7 @@ function nextField(i, n, m) {
     </s:else>
         <span><a href='<s:url action="GoMyPageAction" />'><i class="fas fa-user"></i>マイページ</a></span>
         <span><a href='<s:url action="CartAction" />'><i class="fas fa-shopping-cart"></i>カート</a></span>
-        <span><a href='<s:url action="ProductListAction" />'><i class="fas fa-book"></i>商品一覧</a></span>
+        <span><a href='<s:url action="ItemSearchAction" />'><i class="fas fa-book"></i>商品一覧</a></span>
     </div>
 </header>
 

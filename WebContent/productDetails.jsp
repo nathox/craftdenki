@@ -78,6 +78,7 @@
 
 
 		<s:form action="CartAction" id="form" name="form">
+		<%--在庫0のとき非表示（マイナス値は考えてません） --%>
 			<s:if test="item_stock != 0">
 
 			購入個数
@@ -96,6 +97,7 @@
 				<p>在庫がありません。</p>
 			</s:else>
 			<br>
+			<%--非ログイン時は非表示 --%>
 			<s:if test="#session.containsKey('trueID')">
 				<div class="button">
 					<s:submit value=" お気に入りリストに入れる" onclick="goFavoriteAction();">

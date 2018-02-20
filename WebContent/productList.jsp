@@ -66,7 +66,9 @@
 		</ul>
 
 <s:if test="pageSelect > 0">
-		<form action="ProductListAction">
+		<form action="ItemSearchAction">
+			<s:hidden name="searchWord" value="%{searchWord}" />
+			<s:hidden name="category" value="%{category}" />
 			<s:hidden name="pageSelect" value="%{pageSelect - 1}" />
 			<div class=button>
 					<s:submit value=" 前へ" />
@@ -89,7 +91,9 @@
 
 
 <s:if test="pageSelect < trueList.size() -1">
-		<form action="ProductListAction">
+		<form action="ItemSearchAction">
+			<s:hidden name="searchWord" value="%{searchWord}" />
+			<s:hidden name="category" value="%{category}" />
 			<s:hidden name="pageSelect" value="%{pageSelect + 1}" />
 			<div class=button>
 					<s:submit value=" 次へ" />
