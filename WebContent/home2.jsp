@@ -124,12 +124,7 @@ $(function() {
 	$.fn.autoKana('#firstName', '#firstNameKana');
 });
 $(function() {
-	jQuery("#form_1").validationEngine('attach', {
-	    promptPosition:"centerRight"
-	  }
-
-
-	);
+	jQuery("#form_1").validationEngine();
 });
 function nextField(i, n, m) {
 		if (i.value.length >= m) {
