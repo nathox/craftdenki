@@ -68,23 +68,23 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ふりがな<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16]]" data-prompt-position="centerRight:0,-50"/>(せい)
-    			<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"/>(めい)
+			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]" data-prompt-position="centerRight:0,-50"/>(せい)
+    			<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]"data-prompt-position="centerRight:0,-50"/>(めい)
     		</td>
     </tr>
     <tr class="userCreateTr">
     	<th class="userCreateTh">性別<em class="userCreateEm">※</em></th>
     		<td class="userCreateTd">　
 			<s:if test="sex==0">
-				<input type="radio" name="sex" value="0" checked class="validate[required]"data-prompt-position="centerRight:0,-50">男
+				<input type="radio" name="sex" value="0" checked class="validate[required,custom[sex]]"data-prompt-position="centerRight:0,-50">男
     			<input type="radio" name="sex" value="1">女<br>
 			</s:if>
 			<s:elseif test="sex==1">
-				<input type="radio" name="sex" value="0" class="validate[required]"data-prompt-position="centerRight:0,-50">男
+				<input type="radio" name="sex" value="0" class="validate[required,custom[sex]]"data-prompt-position="centerRight:0,-50">男
     	 	<input type="radio" name="sex" value="1" checked>女<br>
 			</s:elseif>
 			<s:else>
-				<input type="radio" name="sex" value="0" class="validate[required]" data-prompt-position="centerRight:0,-50">男
+				<input type="radio" name="sex" value="0" class="validate[required,custom[sex]]" data-prompt-position="centerRight:0,-50">男
     			<input type="radio" name="sex" value="1" >女<br>
 			</s:else>
 			</td>
@@ -97,7 +97,7 @@
 		<th class="userCreateTh">秘密の質問<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　
 			<s:if test="secretQuestion==1">
-				<select name="secretQuestion" id="secretQuestion" class="validate[required]"data-prompt-position="centerRight:0,-50" >
+				<select name="secretQuestion" id="secretQuestion" class="validate[required,custom[question]]"data-prompt-position="centerRight:0,-50" >
 					<option value="">選択してください</option>
 					<option value="1" selected>嫌いな食べ物は？</option>
 					<option value="2">母親の旧姓は？</option>
@@ -105,7 +105,7 @@
 				</select>
 			</s:if>
 			<s:elseif test="secretQuestion==2">
-				<select name="secretQuestion" id="secretQuestion" class="validate[required]"data-prompt-position="centerRight:0,-50">
+				<select name="secretQuestion" id="secretQuestion" class="validate[required,custom[question]]"data-prompt-position="centerRight:0,-50">
 					<option value="">選択してください</option>
 					<option value="1" >嫌いな食べ物は？</option>
 					<option value="2" selected>母親の旧姓は？</option>
@@ -113,7 +113,7 @@
 			</select>
 			</s:elseif>
 			<s:elseif test="secretQuestion==3">
-				<select name="secretQuestion" id="secretQuestion" class="validate[required]"data-prompt-position="centerRight:0,-50">
+				<select name="secretQuestion" id="secretQuestion" class="validate[required,custom[question]]"data-prompt-position="centerRight:0,-50">
 					<option value="">選択してください</option>
 					<option value="1">嫌いな食べ物は？</option>
 					<option value="2">母親の旧姓は？</option>
@@ -121,7 +121,7 @@
 				</select>
 			</s:elseif>
 			<s:else>
-				<select name="secretQuestion" id="secretQuestion" class="validate[required]"data-prompt-position="centerRight:0,-50">
+				<select name="secretQuestion" id="secretQuestion" class="validate[required,custom[question]]"data-prompt-position="centerRight:0,-50">
 						<option value="">選択してください</option>
 						<option value="1">嫌いな食べ物は？</option>
 						<option value="2">母親の旧姓は？</option>

@@ -132,6 +132,18 @@
                     "alertText": "* This user is already taken",
                     "alertTextLoad": "* Validating, please wait"
                 },
+                "furigana": {
+                    "regex": /^[ぁ-ん　\s]+/,
+                    "alertText": "* ふりがなは、「ひらがな」のみで入力して下さい"
+                },
+                "sex": {
+                    "regex": /^[1-2　\s]+/,
+                    "alertText": "* 数値が異常です"
+                },
+                "question": {
+                    "regex": /^[1-3　\s]+/,
+                    "alertText": "* 数値が異常です"
+                },
 
                 "ajaxNameCall": {
                     // remote json service location
