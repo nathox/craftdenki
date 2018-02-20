@@ -40,7 +40,7 @@ public class ChangePasswordDAO {
 		return userInfoChangeDTO;
 	}
 
-	//boolean型のupdate文
+
 
 
 	public Map<String, Object> getSession(){
