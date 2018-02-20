@@ -137,6 +137,7 @@
 
 				<div class="cart-button">
 				<s:submit value="削除" onclick="CartAction();"
+
 						class="button" ><s:hidden name="cartDeleteFlg" value="1" /></s:submit>
 				<s:submit value="決済に進む" onclick="SettlementAction();"
 						class="button" />
