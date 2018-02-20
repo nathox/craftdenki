@@ -203,9 +203,18 @@ h3{
 	white-space: nowrap;
 }
 
-.ProductList , .DetailsList{
+.ProductList{
 	text-align:center;
 	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+
+}
+
+.DetailsList{
+	text-align:center;
+	width:60%;
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:30px;
