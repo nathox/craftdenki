@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!-- <link href="css/craftdenki.css" rel="stylesheet">-->
-<link href="css/userInfoChange.css" rel="stylesheet">
+<link href="css/craftdenki.css" rel="stylesheet">
+<!--<link href="css/userInfoChange.css" rel="stylesheet">-->
 <link href="css/nakajima.css" rel="stylesheet">
 
 
@@ -69,7 +69,7 @@
 <table class="userCreateTable">
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ユーザーID<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required,minSize[1],maxSize[8],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/>
+			<td class="userCreateTd">　<input type="text" name="loginUserId"  maxlength="8" value='<s:property value="loginUserId"/>' class="validate[required,minSize[1],maxSize[8],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/>
 				<span class="errorMessage">
 				<s:if test="errorMessage!=hoge">
 					<s:property value="errorMessage" escape="false" />
@@ -79,18 +79,18 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">パスワード<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="password" name="loginPassword" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/></td>
+			<td class="userCreateTd">　<input type="password" name="loginPassword" maxlength="16" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/></td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" id="familyName" name="familyName" value='<s:property value="familyName"/>' class="validate[required,minSize[1],maxSize[16]]" data-prompt-position="centerRight:0,-50"/>(姓)　
+			<td class="userCreateTd">　<input type="text" id="familyName" name="familyName" maxlength="16" value='<s:property value="familyName"/>' class="validate[required,minSize[1],maxSize[16]]" data-prompt-position="centerRight:0,-50"/>(姓)　
 				<input type="text" id="firstName" name="firstName" value='<s:property value="firstName"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"/>(名)
 			</td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ふりがな<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]" data-prompt-position="centerRight:0,-50"/>(せい)
-    			<input type="text" id="firstNameKana" name="firstNameKana" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]"data-prompt-position="centerRight:0,-50"/>(めい)
+			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana"  maxlength="16" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]" data-prompt-position="centerRight:0,-50"/>(せい)
+    			<input type="text" id="firstNameKana" name="firstNameKana" maxlength="16" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]"data-prompt-position="centerRight:0,-50"/>(めい)
     		</td>
     </tr>
     <tr class="userCreateTr">
@@ -153,7 +153,7 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">答え<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="secretAnswer" value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="secretAnswer" maxlength="16" value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"></td>
 	</tr>
 			<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
@@ -161,14 +161,14 @@
 			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" class="validate[required,minSize[10],maxSize[50]]"data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" maxlength="50" class="validate[required,minSize[10],maxSize[50]]"data-prompt-position="centerRight:0,-50"></td>
 	</tr>
 
 
 
 	<tr class="userCreateTr">
 		<th class="userCreateTh">電話番号<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' class="validate[required,minSize[10],maxSize[13],custom[phone]]" data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' maxlength="13" class="validate[required,minSize[10],maxSize[13],custom[phone]]" data-prompt-position="centerRight:0,-50"></td>
 	</tr>
 
 </table>
