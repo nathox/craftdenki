@@ -94,10 +94,7 @@
                     "regex": /^[\-\+]?\d+$/,
                     "alertText": "* 整数を半角で入力してください"
                 },
-                "furigana": {
-                    "regex": /^[ぁ-ん　\s]+/,
-                    "alertText": "* ふりがなは、「ひらがな」のみで入力して下さい"
-                },
+
                 "number": {
                     // Number, including positive, negative, and floating decimal. credit: orefalo
                     "regex": /^[\-\+]?((([0-9]{1,3})([,][0-9]{3})*)|([0-9]+))?([\.]([0-9]+))?$/,
