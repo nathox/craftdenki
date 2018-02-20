@@ -30,6 +30,27 @@
 .errorMessage{
 		color:red;
 		font-size:10px;}
+
+				input[type="submit"], input[type="button"]{
+				border-radius: 5px;
+			    -webkit-border-radius: 5px;
+			    -moz-border-radius: 5px;
+			    font-weight: bold;
+				background: #3f3f3f;
+				color: #ffffff;
+				box-shadow: 0 2px black;
+				width:auto;
+				height:30px;
+				text-align:center;
+				margin-right:10px;
+			}
+		input[type="submit"]:hover,  input[type="button"]:hover{
+		        -ms-transform: translate3d;
+			    -webkit-transform: translate3d;
+			    transform: translate3d;
+			    border-bottom: none;
+			    box-shadow: none;
+			}
 </style>
 </head>
 <body>
@@ -91,7 +112,7 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">メールアドレス<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="mail"value='<s:property value="mail"/>' placeholder="info@example.com" class="validate[required,minSize[14],maxSize[32],custom[email]]"data-prompt-position="centerRight:0,-50"/></td>
+			<td class="userCreateTd">　<input type="email" name="mail"value='<s:property value="mail"/>' placeholder="info@example.com" class="validate[required,minSize[14],maxSize[32],custom[email]]"data-prompt-position="centerRight:0,-50"/></td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">秘密の質問<em class="userCreateEm">※</em></th>
