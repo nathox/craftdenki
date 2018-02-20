@@ -48,7 +48,7 @@
 <table class="userCreateTable">
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ユーザーID<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required,minSize[1],maxSize[8]]"/>
+			<td class="userCreateTd">　<input type="text" name="loginUserId" value='<s:property value="loginUserId"/>' class="validate[required,minSize[1],maxSize[8],custom[onlyLetterNumber]]"/>
 				<span class="errorMessage">
 				<s:if test="errorMessage!=hoge">
 					<s:property value="errorMessage" escape="false" />
@@ -58,7 +58,7 @@
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">パスワード<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="password" name="loginPassword" class="validate[required,minSize[1],maxSize[16]]" /></td>
+			<td class="userCreateTd">　<input type="password" name="loginPassword" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" /></td>
 	</tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
@@ -136,18 +136,18 @@
 	</tr>
 			<tr class="userCreateTr">
 			<th class="userCreateTh">郵便番号</th>
-						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');">
+						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');" class="validate[custom[integer]]">
 			</td></tr>
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" class="validate[required,minSize[10],maxSize[50]]"></td>
+			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" class="validate[required,minSize[10],maxSize[50],custom[onlyLetterNumber]]"></td>
 	</tr>
 
 
 
 	<tr class="userCreateTr">
 		<th class="userCreateTh">電話番号<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' class="validate[required,minSize[10],maxSize[13]]" ></td>
+			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' class="validate[required,minSize[10],maxSize[13],custom[phone]]" ></td>
 	</tr>
 
 </table>

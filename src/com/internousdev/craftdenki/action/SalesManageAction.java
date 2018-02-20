@@ -14,7 +14,9 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.craftdenki.dao.CategoryDAO;
 import com.internousdev.craftdenki.dao.SalesHistoryDAO;
 import com.internousdev.craftdenki.dto.CategoryDTO;
+import com.internousdev.craftdenki.dto.DataAggregationDTO;
 import com.internousdev.craftdenki.dto.SalesHistoryDTO;
+import com.internousdev.craftdenki.util.DataAggregation;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SalesManageAction  extends ActionSupport implements SessionAware{
@@ -62,65 +64,54 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 			 */
 			if(!searchFlg) {
 				//購入日絞り込み用の年リストを取得
-				yearList = createYearList();
+					yearList = createYearList();
 				//購入日絞り込み用の月日リストを取得
-				monthDayList = createMonthDayList();
+					monthDayList = createMonthDayList();
 				//カテゴリテーブルよりカテゴリリストを取得
-				CategoryDAO categoryDAO = new CategoryDAO();
-				categoryList = categoryDAO.getCategoryInfo();
-				//Listにid:"1",名:"すべてのカテゴリ"を追加
-				CategoryDTO all = new CategoryDTO();
-				all.setCategoryId("0");
-				all.setCategoryName("すべてのカテゴリ");
-				categoryList.add(0,all);
-				session.put("categoryList", categoryList);
+					CategoryDAO categoryDAO = new CategoryDAO();
+					categoryList = categoryDAO.getCategoryInfo();
+				//Listにid:"0",名:"すべてのカテゴリ"を追加
+					CategoryDTO all = new CategoryDTO();
+					all.setCategoryId("0");
+					all.setCategoryName("すべてのカテゴリ");
+					categoryList.add(0,all);
+					session.put("categoryList", categoryList);
 				//selectの初期値を設定
-				saleEndMD = "03/31";
+					saleEndMD = "03/31";
 
 				//売上一覧を取得
-				SalesHistoryDAO salesHistoryDAO = new SalesHistoryDAO();
-				salesHistoryList = salesHistoryDAO.salesAllList();
-				session.put("salesHistoryList", salesHistoryList);
+					SalesHistoryDAO salesHistoryDAO = new SalesHistoryDAO();
+					salesHistoryList = salesHistoryDAO.salesAllList();
+					session.put("salesHistoryList", salesHistoryList);
 
 				//集計
-				double allAvgPrice = 0; //全平均販売価格
-				double allAvgCost = 0; //全平均単価
-				double allTotalCount = 0; //全販売数合計
-				double allTotalSales = 0; //全売上合計
-				double allTotalCost = 0; //全原価合計
-				double allTotalProfit = 0; //全利益合計
-					for(SalesHistoryDTO dto: salesHistoryList) {
-						allTotalCount += dto.getProductCount();
-						allTotalSales += dto.getTotalSales();
-						allTotalCost += dto.getTotalCost();
-					}
-					allTotalProfit = allTotalSales - allTotalCost;
-					allAvgPrice = allTotalSales / allTotalCount;
-					allAvgCost = allTotalCost / allTotalCount;
-					//集計したdouble値を成型してフィールドに保存
-					this.allAvgPrice = String.format("%1$,3.2f", allAvgPrice);
-					this.allAvgCost = String.format("%1$,3.2f", allAvgCost);
-					this.allTotalCount = String.format("%,.0f", allTotalCount);
-					this.allTotalSales = String.format("%,.0f", allTotalSales);
-					this.allTotalCost = String.format("%,.0f", allTotalCost);
-					this.allTotalProfit = String.format("%,.0f", allTotalProfit);
+					DataAggregation da = new DataAggregation(salesHistoryList);
+					DataAggregationDTO dataDto = da.dataAggregation();
+
+					allAvgPrice = dataDto.getAllAvgPrice();
+					allAvgCost = dataDto.getAllTotalCost();
+					allTotalCount = dataDto.getAllTotalCount();
+					allTotalSales = dataDto.getAllTotalSales();
+					allTotalCost = dataDto.getAllTotalCost();
+					allTotalProfit = dataDto.getAllTotalProfit();
+
 
 					//カテゴリごとの売上・利益リスト用意
-					for(int i = 1; i <= categoryList.size(); i++) {
-						categorySalesList.add(0);
-						categoryProfitList.add(0);
-					}
-					//カテゴリごとの売上・利益集計
-					for(SalesHistoryDTO dto: salesHistoryList) {
 						for(int i = 1; i <= categoryList.size(); i++) {
-							if(dto.getCategoryId() == i) {
-								categorySalesList.set(i - 1, categorySalesList.get(i-1) + dto.getTotalSales());
-								categoryProfitList.set(i - 1, categoryProfitList.get(i-1) + dto.getProfit());
-								continue;
-							}
+							categorySalesList.add(0);
+							categoryProfitList.add(0);
 						}
+					//カテゴリごとの売上・利益集計
+						for(SalesHistoryDTO dto: salesHistoryList) {
+							for(int i = 1; i <= categoryList.size(); i++) {
+								if(dto.getCategoryId() == i) {
+									categorySalesList.set(i - 1, categorySalesList.get(i-1) + dto.getTotalSales());
+									categoryProfitList.set(i - 1, categoryProfitList.get(i-1) + dto.getProfit());
+									continue;
+								}
+							}
 
-					}
+						}
 
 			}else{
 			/**------------------------------
@@ -128,56 +119,44 @@ public class SalesManageAction  extends ActionSupport implements SessionAware{
 			 * ------------------------------
 			 */
 				//購入日絞り込み用の年リストを取得
-				yearList = createYearList();
+					yearList = createYearList();
 				//購入日絞り込み用の月日リストを取得
-				monthDayList = createMonthDayList();
+					monthDayList = createMonthDayList();
 				//カテゴリリストを取得
-				categoryList = (List<CategoryDTO>) session.get("categoryList");
+					categoryList = (List<CategoryDTO>) session.get("categoryList");
 				//売上一覧を取得
-				salesHistoryList = (List<SalesHistoryDTO>) session.get("salesHistoryList");
+					salesHistoryList = (List<SalesHistoryDTO>) session.get("salesHistoryList");
 				//購入日をDate型で作成
-				LocalDate str = string2LocalDate(saleStartY,saleStartMD);
-				LocalDate end = string2LocalDate(saleEndY, saleEndMD);
+					LocalDate str = string2LocalDate(saleStartY,saleStartMD);
+					LocalDate end = string2LocalDate(saleEndY, saleEndMD);
 
 
 				//絞り込み条件に合致するSalesHistoryDTOを格納するListを作成
-				List<SalesHistoryDTO> localSalesHistoryList = new ArrayList<>();
+					List<SalesHistoryDTO> localSalesHistoryList = new ArrayList<>();
 				//絞り込み開始
-				for(SalesHistoryDTO dto: salesHistoryList) {
+					for(SalesHistoryDTO dto: salesHistoryList) {
 					//DTOの購入日時をjava.sql.Date→LocalDateに変換
-					LocalDate target = sqlDate2LocalDate(dto.getPurchaseDate());
+						LocalDate target = sqlDate2LocalDate(dto.getPurchaseDate());
 					//DTOの購入日時が絞り込み期間内にあればtrue
-					if(target.compareTo(str) >= 0 && target.compareTo(end) <= 0) {
-						if(categoryId.equals("0") || dto.getCategoryId() == Integer.parseInt(categoryId)){
-							localSalesHistoryList.add(dto);
+						if(target.compareTo(str) >= 0 && target.compareTo(end) <= 0) {
+							if(categoryId.equals("0") || dto.getCategoryId() == Integer.parseInt(categoryId)){
+								localSalesHistoryList.add(dto);
+							}
 						}
 					}
-				}
 				//表示用のリストに絞り込み後のリストを代入
-				salesHistoryList = localSalesHistoryList;
+					salesHistoryList = localSalesHistoryList;
 
-				//集計
-				double allAvgPrice = 0; //全平均販売価格
-				double allAvgCost = 0; //全平均単価
-				double allTotalCount = 0; //全販売数合計
-				double allTotalSales = 0; //全売上合計
-				double allTotalCost = 0; //全原価合計
-				double allTotalProfit = 0; //全利益合計
-					for(SalesHistoryDTO dto: salesHistoryList) {
-						allTotalCount += dto.getProductCount();
-						allTotalSales += dto.getTotalSales();
-						allTotalCost += dto.getTotalCost();
-					}
-					allTotalProfit = allTotalSales - allTotalCost;
-					allAvgPrice = allTotalSales / allTotalCount;
-					allAvgCost = allTotalCost / allTotalCount;
-					//集計したdouble値を成型してフィールドに保存
-					this.allAvgPrice = String.format("%1$,3.2f", allAvgPrice);
-					this.allAvgCost = String.format("%1$,3.2f", allAvgCost);
-					this.allTotalCount = String.format("%,.0f", allTotalCount);
-					this.allTotalSales = String.format("%,.0f", allTotalSales);
-					this.allTotalCost = String.format("%,.0f", allTotalCost);
-					this.allTotalProfit = String.format("%,.0f", allTotalProfit);
+					//集計
+					DataAggregation da = new DataAggregation(salesHistoryList);
+					DataAggregationDTO dataDto = da.dataAggregation();
+
+					allAvgPrice = dataDto.getAllAvgPrice();
+					allAvgCost = dataDto.getAllTotalCost();
+					allTotalCount = dataDto.getAllTotalCount();
+					allTotalSales = dataDto.getAllTotalSales();
+					allTotalCost = dataDto.getAllTotalCost();
+					allTotalProfit = dataDto.getAllTotalProfit();
 
 
 					if(categoryId.equals("0")) {
