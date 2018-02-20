@@ -126,7 +126,10 @@ $(function() {
 $(function() {
 	jQuery("#form_1").validationEngine('attach', {
 	    promptPosition:"centerRight"
-	  });
+	  }
+
+
+	);
 });
 function nextField(i, n, m) {
 		if (i.value.length >= m) {

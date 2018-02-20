@@ -1225,22 +1225,8 @@
 
 
 
-		/**
-		* @param {jqObject} the field where the validation applies
-		* @param {Array[String]} validation rules for this field
-		* @param {int} rule index
-		* @param {Map} form options
-		* @return an error string if validation failed
-		*/
 
-		_furigana: function(field, rules, i, options){
-			if ( !field.val().match( /^[ぁ-ん]+$/ ) ) {
-				// un match
-				return "* 全角カタカナで入力してください";
-			} else {
-				return "OK!";
-			}
-		},
+
 		/**
 		* Checks date is in the future
 		*
