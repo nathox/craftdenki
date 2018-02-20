@@ -17,13 +17,13 @@
                     "alertTextCheckboxMultiple": "* 選択してください",
                     "alertTextCheckboxe": "* チェックボックスをチェックしてください"
                 },
-                
+
                 "checkFileType": {
 "regex": "none",
-"alertText": "* 画像形式が違います。" 
+"alertText": "* 画像形式が違います。"
 },
-                
-                "requiredInFunction": { 
+
+                "requiredInFunction": {
                     "func": function(field, rules, i, options){
                         return (field.val() == "test") ? true : false;
                     },
@@ -62,7 +62,7 @@
                     "regex": "none",
                     "alertText": "* ",
                     "alertText2": " より最近の日付にしてください"
-                },	
+                },
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* チェックしすぎです"
@@ -93,6 +93,10 @@
                 "integer": {
                     "regex": /^[\-\+]?\d+$/,
                     "alertText": "* 整数を半角で入力してください"
+                },
+                "furigana": {
+                    "regex": /^[ぁ-ん　\s]+/,
+                    "alertText": "* ふりがなは、「ひらがな」のみで入力して下さい"
                 },
                 "number": {
                     // Number, including positive, negative, and floating decimal. credit: orefalo
@@ -145,11 +149,11 @@
                     "alertText": "* 『HELLO』と入力してください"
                 }
             };
-            
+
         }
     };
     $.validationEngineLanguage.newLang();
 })(jQuery);
 
 
-    
+
