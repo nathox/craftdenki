@@ -12,48 +12,12 @@
 <meta name="keywords" content="" />
 <link href="css/craftdenki.css" rel="stylesheet">
 
+
 <title>Insert title here</title>
 
 
 <style>
-.Abox {
-	width: auto;
-}
 
-.Bbox {
-	width: 550px;
-	height: 330px;
-	border: 1px solid black;
-	float: left;
-}
-
-#sbox {
-	float: left;
-	width: 170px;
-	border: 2px solid white;
-}
-
-#box {
-	text-decoration: underline;
-	position: center;
-	font-size: 22px;
-	text-align: center;
-}
-#message{
-text-align:center;
-}
-
-td {
-	text-align: left;
-}
-
-#a{
-clear:both;
-}
-
-h2{
-color:red;
-}
 </style>
 </head>
 <body>
@@ -167,7 +131,9 @@ color:red;
 			</div>
 		</div>
 
-	</div>
+</div>
+
+
 <div id="a"></div>
 	<jsp:include page="footer.jsp" />
 

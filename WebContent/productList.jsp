@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -28,6 +30,8 @@
 				<s:property value="searchMessage" escape="false" />
 			</h1>
 		</s:if>
+
+		<div class="23">
 
 		<ul  class="thumbnail clearFix">
 		<!-- 表示件数1ページ目 -->
@@ -64,6 +68,8 @@
 					</a>
 				</s:iterator>
 		</ul>
+
+		</div>
 
 <s:if test="pageSelect > 0">
 		<form action="ItemSearchAction">

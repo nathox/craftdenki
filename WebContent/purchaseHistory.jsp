@@ -39,6 +39,8 @@
 
 		<s:form id="form" name="form" action="PurchaseHistoryAction">
 			<s:iterator value="purchaseHistoryList">
+
+
 			<div class="ph-box">
 
 				<div class="ph-check">
