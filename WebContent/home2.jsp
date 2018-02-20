@@ -11,6 +11,7 @@
 
 .home2{
 	padding-top:200px;
+
 }
   /* 下にスクロールでヘッダー非表示・上にスクロールでヘッダー表示*/
 header {
@@ -58,6 +59,7 @@ nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
+    min-width:885px;
     }
 /*minimalectにフォームの形を合わせる*/
 input.area{
@@ -124,7 +126,10 @@ $(function() {
 	$.fn.autoKana('#firstName', '#firstNameKana');
 });
 $(function() {
-	jQuery("#form_1").validationEngine();
+	jQuery("#form_1").validationEngine({
+		scrollOffset: 170
+
+	});
 });
 function nextField(i, n, m) {
 		if (i.value.length >= m) {
@@ -144,7 +149,7 @@ function nextField(i, n, m) {
             		<tr>
 						<td>
                     	<select name="category" id="select1">
-	                        <option value="0" selected="selected">すべてのカテゴリー</option>
+	                        <option value="0" selected="selected">すべて</option>
 	                        <option value="1">本</option>
 	                        <option value="2">家電・パソコン</option>
 	                        <option value="3">おもちゃ・げーむ</option>
