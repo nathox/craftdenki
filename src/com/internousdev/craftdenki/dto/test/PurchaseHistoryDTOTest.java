@@ -9,7 +9,7 @@ import com.internousdev.craftdenki.dto.PurchaseHistoryDTO;
 public class PurchaseHistoryDTOTest {
 
 	@Test
-	public void testGetProductName() {
+	public void testGetProductName1() {
 		PurchaseHistoryDTO dto = new PurchaseHistoryDTO();
 		String expected = "0";
 
