@@ -10,49 +10,54 @@ public class LoginDTO {
 	private String firstNamekana;
 	private String sex;
 	private String mail;
-
 	public String getLoginId() {
 		return LoginId;
 	}
-
-	public void setLoginId(String LoginId) {
-		this.LoginId = LoginId;
+	public void setLoginId(String loginId) {
+		LoginId = loginId;
 	}
-
 	public String getLoginPass() {
 		return LoginPass;
 	}
-
-	public void setLoginPass(String LoginPass) {
-		this.LoginPass = LoginPass;
+	public void setLoginPass(String loginPass) {
+		LoginPass = loginPass;
 	}
-
-	public void setFirstName(String firstName) {
+	public String getFirstName() {
 		return firstName;
 	}
-
-	public void setFamilyName(String familyName) {
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getFamilyName() {
 		return familyName;
 	}
-
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
+	public String getFamilyNamekana() {
+		return familyNamekana;
+	}
 	public void setFamilyNamekana(String familyNamekana) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		this.familyNamekana = familyNamekana;
 	}
-
+	public String getFirstNamekana() {
+		return firstNamekana;
+	}
 	public void setFirstNamekana(String firstNamekana) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		this.firstNamekana = firstNamekana;
 	}
-
+	public String getSex() {
+		return sex;
+	}
 	public void setSex(String sex) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		this.sex = sex;
 	}
-
+	public String getMail() {
+		return mail;
+	}
 	public void setMail(String mail) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		this.mail = mail;
 	}
+
 
 }
