@@ -62,12 +62,11 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 		}
 
 		//ページ表示の確認
-		System.out.println();
+
 		for(ArrayList<ProductDTO> array: trueList){
 			for(ProductDTO dto: array){
 				System.out.println(dto.getId());
 			}
-			System.out.println("--------------------");
 		}
 
 		for(int i = 0; i < trueList.size(); i++){

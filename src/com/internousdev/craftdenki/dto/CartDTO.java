@@ -13,6 +13,7 @@ public class CartDTO {
 	private int id;
 	private int productId;
 	private int finalPrice;
+	private int item_stock;
 
 
 	public int getProductId() {
@@ -81,6 +82,13 @@ public class CartDTO {
 	public void setFinalPrice(int finalPrice) {
 		this.finalPrice = finalPrice;
 	}
+	public int getItem_stock() {
+		return item_stock;
+	}
+	public void setItem_stock(int item_stock) {
+		this.item_stock = item_stock;
+	}
+
 
 
 }

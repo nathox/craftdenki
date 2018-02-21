@@ -24,7 +24,7 @@ public class CartDAO {
 	public ArrayList<CartDTO> getCartInfo(String user_id) throws SQLException {
 		ArrayList<CartDTO> cartDTO = new ArrayList<CartDTO>();
 
-		String sql = "SELECT ci.id as id,ci.product_id as product_id, pi.product_name as product_name, pi.product_name_kana as product_name_kana, pi.image_file_path as image_file_path, pi.price as price, ci.product_count as product_count, pi.release_company as release_company, pi.release_date as release_date, ci.total_price as total_price FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
+		String sql = "SELECT pi.item_stock as item_stock, ci.id as id,ci.product_id as product_id, pi.product_name as product_name, pi.product_name_kana as product_name_kana, pi.image_file_path as image_file_path, pi.price as price, ci.product_count as product_count, pi.release_company as release_company, pi.release_date as release_date, ci.total_price as total_price FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -34,6 +34,7 @@ public class CartDAO {
 
 			while (resultSet.next()) {
 				CartDTO dto = new CartDTO();
+				dto.setItem_stock(resultSet.getInt("item_stock"));
 				dto.setId(resultSet.getInt("id"));
 				dto.setProductId(resultSet.getInt("product_id"));
 				dto.setProductName(resultSet.getString("product_name"));
@@ -59,16 +60,12 @@ public class CartDAO {
 	}
 
 	// カート情報削除メソッド
-	public int deleteCart(String user_id, int id,int product_count,int product_id,int item_stock) throws SQLException {
+	public int deleteCart(String user_id, int id) throws SQLException {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
 		String sql = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
-		String update2 =  "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
-		totalItem_stock2 = item_stock + product_count;
-		System.out.println(totalItem_stock2);
-		System.out.println(item_stock);
-		System.out.println(product_count);
+
 
 		PreparedStatement ps;
 		try {
@@ -78,9 +75,60 @@ public class CartDAO {
 			ps.setInt(2, id);
 			ps.executeUpdate();
 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+
+
+	//カート情報削除時の在庫数と商品数を取得
+	public ArrayList<CartDTO> deleteSelectCart(int id)throws SQLException{
+		ArrayList<CartDTO> cartDeleteDTO = new ArrayList<CartDTO>();
+		String sql = "SELECT pi.item_stock as item_stock,ci.product_count as product_count FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.product_id = ?";
+
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				CartDTO dto = new CartDTO();
+				dto.setItem_stock(resultSet.getInt("item_stock"));
+				dto.setProductCount(resultSet.getInt("product_count"));
+
+				cartDeleteDTO.add(dto);
+
+			}
+
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cartDeleteDTO;
+	}
+
+
+	//カート情報削除時に在庫数を元に戻す
+	public int deleteUpdateCart(int id, int item_stock, int product_count) throws SQLException {
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		String update2 =  "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
+		totalItem_stock2 = item_stock + product_count;
+		System.out.println(totalItem_stock2);
+		System.out.println(item_stock);
+		System.out.println(product_count);
+
+
+		try {
+			res = 0;
+
 			PreparedStatement ps2 = connection.prepareStatement(update2);
 			ps2.setInt(1, totalItem_stock2);
-			ps2.setInt(2, product_id);
+			ps2.setInt(2, id);
 			ps2.executeUpdate();
 
 		} catch (SQLException e) {
@@ -88,6 +136,9 @@ public class CartDAO {
 		}
 		return res;
 	}
+
+
+
 
 	// カートテーブルにInsertメソッド
 	public void insertCart(String userId, int product_id, int product_count, int price,int item_stock) throws SQLException {

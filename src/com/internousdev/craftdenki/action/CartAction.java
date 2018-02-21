@@ -70,13 +70,15 @@ public class CartAction extends ActionSupport implements SessionAware {
 		} else {
 			if (deleteList != null) {
 				for (String deleteId : deleteList) {
-					System.out.println(product_count+"a");
-					System.out.println(item_stock+"b");
-					System.out.println(deleteId+"c");
 
-					cartDAO.deleteCart(userId, Integer.parseInt(deleteId),product_count,product_id,item_stock);
+					cartDAO.deleteSelectCart(Integer.parseInt(deleteId));
+
+					cartDAO.deleteCart(userId, Integer.parseInt(deleteId));
+
 					if (true) {
 						cartList = cartDAO.getCartInfo(userId);
+
+
 						if (cartList.isEmpty()) {
 							nothing = null;
 						} else {
