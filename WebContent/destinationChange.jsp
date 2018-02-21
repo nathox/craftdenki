@@ -35,7 +35,7 @@
 }
 
 .left6 {
-	margin-left:65%;
+	margin-left: 65%;
 }
 </style>
 
@@ -98,64 +98,70 @@
 
 
 
-				<table class="userCreateTable">
+				<s:iterator value="list_user_info">
+
+					<table class="userCreateTable">
 
 
 
-					<tr class="userCreateTr">
-						<th class="userCreateTh">住所１<em class="userCreateEm">必須</em></th>
-						<td><s:textfield name="userAddress" size="60"
-								value="%{userAddress}" class="validate[required]" /></td>
-					</tr>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所１<em class="userCreateEm">必須</em></th>
+							<td><s:textfield name="userAddress" size="60"
+									value="%{userAddress}" class="validate[required]" /></td>
+						</tr>
 
-					<tr class="userCreateTr">
-						<th class="userCreateTh">電話番号１<em class="userCreateEm">必須</em></th>
-						<td><s:textfield name="telNumber" value="%{telNumber}"
-								class="validate[required]" /></td>
-					</tr>
-
-
-
-
-					<tr class="userCreateTr">
-						<th class="userCreateTh">住所２</th>
-						<td><s:textfield name="userAddress2" size="60"
-								value="%{userAddress2}" /></td>
-					</tr>
-
-					<tr class="userCreateTr">
-						<th class="userCreateTh">電話番号２</th>
-						<td><s:textfield name="telNumber2" value="%{telNumber2}" />
-						</td>
-					</tr>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号１<em class="userCreateEm">必須</em></th>
+							<td><s:textfield name="telNumber" value="%{telNumber}"
+									class="validate[required]" /></td>
+						</tr>
 
 
 
 
-					<tr class="userCreateTr">
-						<th class="userCreateTh">住所３</th>
-						<td><s:textfield name="userAddress3" size="60"
-								value="%{userAddress3}" /></td>
-					</tr>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所２</th>
+							<td><s:textfield name="userAddress2" size="60"
+									value="%{userAddress2}" /></td>
+						</tr>
 
-					<tr class="userCreateTr">
-						<th class="userCreateTh">電話番号３</th>
-						<td><s:textfield name="telNumber3" value="%{telNumber3}" />
-						</td>
-					</tr>
-
-
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号２</th>
+							<td><s:textfield name="telNumber2" value="%{telNumber2}" />
+							</td>
+						</tr>
 
 
 
 
-				</table>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">住所３</th>
+							<td><s:textfield name="userAddress3" size="60"
+									value="%{userAddress3}" /></td>
+						</tr>
 
-				<br>
+						<tr class="userCreateTr">
+							<th class="userCreateTh">電話番号３</th>
+							<td><s:textfield name="telNumber3" value="%{telNumber3}" />
+							</td>
+						</tr>
 
-				<div class="left6">
-					<s:submit value="変更" />
-				</div>
+
+
+
+
+
+					</table>
+
+					<br>
+
+					<div class="left6">
+						<s:submit value="変更" />
+					</div>
+
+
+				</s:iterator>
+
 
 			</s:form>
 
