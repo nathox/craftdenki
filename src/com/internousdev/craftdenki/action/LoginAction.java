@@ -117,12 +117,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					if (dto.getLoginPass().equals(loginPassword)) {
 						session.put("loginId", dto.getLoginId()); // 使ってないかも
 						session.put("loginPass", dto.getLoginPass());
-
 						session.put("trueID", loginId);
 
-						System.out.println(dto.getLoginId());
-						System.out.println(session.get("temp_user_id").toString() + "1a");
-						System.out.println(dto.getLoginId() + "2b");
+
 						dao.cartInfo(session.get("temp_user_id").toString(), loginId);
 
 						if (session.get("status") == ("settlement")) {

@@ -29,6 +29,12 @@ public class LoginDAO {
 			if (rs.next()) {
 				dto.setLoginId(rs.getString("user_id"));
 				dto.setLoginPass(rs.getString("password"));
+				dto.setFirstName(rs.getString("first_name"));
+				dto.setFamilyName(rs.getString("family_name"));
+				dto.setFamilyNamekana(rs.getString("familynamekana"));
+				dto.setFirstNamekana(rs.getString("firstnamekana"));
+				dto.setSex(rs.getString("sex"));
+				dto.setMail(rs.getString("email"));
 			} else {
 				dto.setLoginId("noID");
 				dto.setLoginPass("noPASS");
