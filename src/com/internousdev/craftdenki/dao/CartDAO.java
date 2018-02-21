@@ -83,10 +83,10 @@ public class CartDAO {
 
 
 	//カート情報削除時の在庫数と商品数を取得
-	public ArrayList<CartDTO> deleteSelectCart(int id)throws SQLException{
-		ArrayList<CartDTO> cartDeleteDTO = new ArrayList<CartDTO>();
-		String sql = "SELECT pi.item_stock as item_stock,ci.product_count as product_count FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.product_id = ?";
+	public CartDTO deleteSelectCart(int id)throws SQLException{
+		String sql = "SELECT pi.product_id as product_id,pi.item_stock as item_stock,ci.product_count as product_count FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.id = ?";
 
+		CartDTO dto = new CartDTO();
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -94,33 +94,33 @@ public class CartDAO {
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			while (resultSet.next()) {
-				CartDTO dto = new CartDTO();
+			if (resultSet.next()) {
 				dto.setItem_stock(resultSet.getInt("item_stock"));
 				dto.setProductCount(resultSet.getInt("product_count"));
-
-				cartDeleteDTO.add(dto);
+				dto.setProductId(resultSet.getInt("product_id"));
+				System.out.println(resultSet.getInt("item_stock"));
+				System.out.println(resultSet.getInt("product_count"));
 
 			}
 
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return cartDeleteDTO;
+		System.out.println(dto+"dkjafm;ncvn");
+		return dto;
 	}
 
 
 	//カート情報削除時に在庫数を元に戻す
-	public int deleteUpdateCart(int id, int item_stock, int product_count) throws SQLException {
+	public void deleteUpdateCart(int id, int item_stock, int product_count) throws SQLException {
 
 		String update2 =  "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
 		totalItem_stock2 = item_stock + product_count;
-		System.out.println(totalItem_stock2);
 		System.out.println(item_stock);
 		System.out.println(product_count);
+		System.out.println(totalItem_stock2);
 
 		try {
-			res = 0;
 
 			PreparedStatement ps2 = connection.prepareStatement(update2);
 			ps2.setInt(1, totalItem_stock2);
@@ -130,7 +130,6 @@ public class CartDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return res;
 	}
 
 
