@@ -16,7 +16,7 @@
 	<div class="main">
 
 
-		<h1 class="">WELCOM</h1>
+		<h1 class="">WELCOME</h1>
 
 
 	</div>
