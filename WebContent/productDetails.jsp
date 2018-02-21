@@ -86,11 +86,13 @@
 
 				<input type="hidden" name="insertFlg" value="1" />
 				<div class=button>
+
 					<s:submit value=" カートに入れる" onclick="goCartAction();" >
 					<s:hidden name="product_id" value="%{product_id}" />
 					<s:hidden name="price" value="%{price}" />
 					<s:hidden name="item_stock" value="%{item_stock}" />
 					</s:submit>
+					<s:token />
 				</div>
 
 			</s:if>

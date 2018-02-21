@@ -21,14 +21,7 @@
 		<action name="ProductDetailsAction"
 			class="com.internousdev.craftdenki.action.ProductDetailsAction"
 			method="execute">
-			<!-- token使って2重送信を阻止したい -->
-			<!-- デフォルトinterceptor -->
-			<interceptor-ref name="defaultStack" />
-			<!-- tokenのinterceptor -->
-			<interceptor-ref name="token" />
-			<result name="invalid.token">refresh.jsp</result>
 			<result name="success">productDetails.jsp</result>
-
 		</action>
 		<!-- 土門 END -->
 
@@ -418,6 +411,12 @@
 		<!-- CartAction -->
 		<action name="CartAction" class="com.internousdev.craftdenki.action.CartAction"
 			method="execute">
+			<!-- token使って2重送信を阻止したい -->
+			<!-- デフォルトinterceptor -->
+			<interceptor-ref name="defaultStack" />
+			<!-- tokenのinterceptor -->
+			<interceptor-ref name="token" />
+			<result name="invalid.token">refresh.jsp</result>
 			<result name="success">cartConfirm.jsp</result>
 		</action>
 
