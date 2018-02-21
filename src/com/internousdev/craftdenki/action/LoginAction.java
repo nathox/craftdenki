@@ -100,7 +100,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (!(session.containsKey("temp_user_id"))) {
 			Random rnd = new Random();
 			session.put("temp_user_id", rnd);
-			System.out.println("ここまで１");
+
 		}
 
 		if (IDerrormsg == null) {
@@ -115,9 +115,15 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					}
 				} else if (dto.getLoginId().equals(loginId)) {
 					if (dto.getLoginPass().equals(loginPassword)) {
+						session.put("trueID", loginId);
 						session.put("loginId", dto.getLoginId()); // 使ってないかも
 						session.put("loginPass", dto.getLoginPass());
-						session.put("trueID", loginId);
+						session.put("firstName", dto.getFirstName());
+						session.put("familyName", dto.getFamilyName());
+						session.put("familyNameKana", dto.getFamilyNamekana());
+						session.put("firstNameKana", dto.getFirstNamekana());
+						session.put("sex", dto.getSex());
+						session.put("mail", dto.getMail());
 
 
 						dao.cartInfo(session.get("temp_user_id").toString(), loginId);

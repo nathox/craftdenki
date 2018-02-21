@@ -31,8 +31,8 @@ public class LoginDAO {
 				dto.setLoginPass(rs.getString("password"));
 				dto.setFirstName(rs.getString("first_name"));
 				dto.setFamilyName(rs.getString("family_name"));
-				dto.setFamilyNamekana(rs.getString("familynamekana"));
-				dto.setFirstNamekana(rs.getString("firstnamekana"));
+				dto.setFamilyNamekana(rs.getString("family_name_kana"));
+				dto.setFirstNamekana(rs.getString("first_name_kana"));
 				dto.setSex(rs.getString("sex"));
 				dto.setMail(rs.getString("email"));
 			} else {
