@@ -61,8 +61,7 @@ public class CartDAO {
 
 	// カート情報削除メソッド
 	public int deleteCart(String user_id, int id) throws SQLException {
-		DBConnector db = new DBConnector();
-		Connection con = db.getConnection();
+
 
 		String sql = "DELETE FROM cart_info WHERE user_id = ? AND id = ?";
 
@@ -113,15 +112,12 @@ public class CartDAO {
 
 	//カート情報削除時に在庫数を元に戻す
 	public int deleteUpdateCart(int id, int item_stock, int product_count) throws SQLException {
-		DBConnector db = new DBConnector();
-		Connection con = db.getConnection();
 
 		String update2 =  "UPDATE product_info SET item_stock = ? WHERE product_id = ?";
 		totalItem_stock2 = item_stock + product_count;
 		System.out.println(totalItem_stock2);
 		System.out.println(item_stock);
 		System.out.println(product_count);
-
 
 		try {
 			res = 0;

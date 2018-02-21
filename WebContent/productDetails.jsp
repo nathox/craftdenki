@@ -78,8 +78,8 @@
 
 
 		<s:form action="CartAction" id="form" name="form">
-		<%--在庫0のとき非表示（マイナス値は考えてません） --%>
-			<s:if test="item_stock >= 0">
+
+			<s:if test="item_stock > 0">
 
 			購入個数
 	  		<s:select name="product_count" list="stockList" />			★

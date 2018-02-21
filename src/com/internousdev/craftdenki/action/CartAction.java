@@ -38,6 +38,7 @@ public class CartAction extends ActionSupport implements SessionAware {
 	private CartDAO cartDAO = new CartDAO();
 	private CartDTO cartDTO = new CartDTO();
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
+	private ArrayList<CartDTO> stockList = new ArrayList<CartDTO>();
 
 	public String execute() throws SQLException {
 
@@ -69,9 +70,14 @@ public class CartAction extends ActionSupport implements SessionAware {
 
 		} else {
 			if (deleteList != null) {
+
+
+
 				for (String deleteId : deleteList) {
 
-					cartDAO.deleteSelectCart(Integer.parseInt(deleteId));
+					stockList = cartDAO.deleteSelectCart(Integer.parseInt(deleteId));
+
+					cartDAO.deleteUpdateCart(Integer.parseInt(deleteId), item_stock, product_count);
 
 					cartDAO.deleteCart(userId, Integer.parseInt(deleteId));
 
@@ -200,6 +206,14 @@ public class CartAction extends ActionSupport implements SessionAware {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public ArrayList<CartDTO> getStockList() {
+		return stockList;
+	}
+
+	public void setStockList(ArrayList<CartDTO> stockList) {
+		this.stockList = stockList;
 	}
 
 }
