@@ -27,30 +27,14 @@
 <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>-->
 <title>新規登録</title>
 <style>
-.errorMessage{
-		color:red;
-		font-size:10px;}
+.aka{
+	color:red;
+	}
 
-				input[type="submit"], input[type="button"]{
-				border-radius: 5px;
-			    -webkit-border-radius: 5px;
-			    -moz-border-radius: 5px;
-			    font-weight: bold;
-				background: #3f3f3f;
-				color: #ffffff;
-				box-shadow: 0 2px black;
-				width:auto;
-				height:30px;
-				text-align:center;
-				margin-right:10px;
-			}
-		input[type="submit"]:hover,  input[type="button"]:hover{
-		        -ms-transform: translate3d;
-			    -webkit-transform: translate3d;
-			    transform: translate3d;
-			    border-bottom: none;
-			    box-shadow: none;
-			}
+.hissuaka{
+	color:red;
+	text-align:center;
+	}
 </style>
 </head>
 <body>
@@ -64,56 +48,82 @@
 <li><span>2</span><br>入力内容の確認</li>
 <li><span>3</span><br>登録完了</li>
 </ol>
-
+				<s:iterator value="errMsgList">
+					<div class="hissuaka"><s:property /></div>
+				</s:iterator>
 <s:form id="form_1" action="UserCreateConfirmAction">
 <table class="userCreateTable">
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ユーザーID<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" name="loginUserId"  maxlength="8" value='<s:property value="loginUserId"/>' class="validate[required,minSize[1],maxSize[8],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/>
-				<span class="errorMessage">
-				<s:if test="errorMessage!=hoge">
-					<s:property value="errorMessage" escape="false" />
-				</s:if>
-				</span>
+
+				<s:iterator value="errMsgListId">
+
+					<div class="aka"><s:property /></div>
+
+				</s:iterator>
 			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">パスワード<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="password" name="loginPassword" maxlength="16" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/></td>
+			<td class="userCreateTd">　<input type="password" name="loginPassword" maxlength="16" class="validate[required,minSize[1],maxSize[16],custom[onlyLetterNumber]]" data-prompt-position="centerRight:0,-50"/>
+				<s:iterator value="errMsgListPass">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
+			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">お名前<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" id="familyName" name="familyName" maxlength="16" value='<s:property value="familyName"/>' class="validate[required,minSize[1],maxSize[16]]" data-prompt-position="centerRight:0,-50"/>(姓)　
 				<input type="text" id="firstName" name="firstName" value='<s:property value="firstName"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"/>(名)
+
+				<s:iterator value="errMsgListName">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
 			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">ふりがな<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　<input type="text" id="familyNameKana" name="familyNameKana"  maxlength="16" value='<s:property value="familyNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]" data-prompt-position="centerRight:0,-50"/>(せい)
     			<input type="text" id="firstNameKana" name="firstNameKana" maxlength="16" value='<s:property value="firstNameKana"/>' class="validate[required,minSize[1],maxSize[16],custom[furigana]]"data-prompt-position="centerRight:0,-50"/>(めい)
+
+    			<s:iterator value="errMsgListKana">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
     		</td>
     </tr>
+
     <tr class="userCreateTr">
     	<th class="userCreateTh">性別<em class="userCreateEm">※</em></th>
     		<td class="userCreateTd">　
 			<s:if test="sex==0">
 				<input type="radio" name="sex" value="0" checked class="validate[required,custom[sex]]"data-prompt-position="centerRight:0,-50">男
-    			<input type="radio" name="sex" value="1">女<br>
+    			<input type="radio" name="sex" value="1">女
 			</s:if>
 			<s:elseif test="sex==1">
 				<input type="radio" name="sex" value="0" class="validate[required,custom[sex]]"data-prompt-position="centerRight:0,-50">男
-    	 	<input type="radio" name="sex" value="1" checked>女<br>
+    	 	<input type="radio" name="sex" value="1" checked>女
 			</s:elseif>
 			<s:else>
 				<input type="radio" name="sex" value="0" class="validate[required,custom[sex]]" data-prompt-position="centerRight:0,-50">男
-    			<input type="radio" name="sex" value="1" >女<br>
+    			<input type="radio" name="sex" value="1" >女
 			</s:else>
+			<s:iterator value="errMsgListSex"><div class="aka"><s:property /></div></s:iterator>
 			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">メールアドレス<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="email" name="mail"value='<s:property value="mail"/>' placeholder="info@example.com" class="validate[required,minSize[14],maxSize[32],custom[email]]"data-prompt-position="centerRight:0,-50"/></td>
+			<td class="userCreateTd">　<input type="email" name="mail" value='<s:property value="mail"/>' maxlength="32" class="validate[required,minSize[14],maxSize[32],custom[email]]"data-prompt-position="centerRight:0,-50"/>
+				<s:iterator value="errMsgListMail">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
+			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">秘密の質問<em class="userCreateEm">※</em></th>
 			<td class="userCreateTd">　
@@ -149,26 +159,43 @@
 						<option value="3">好きな動物は？</option>
 				</select>
 			</s:else>
+			<s:iterator value="errMsgListQuestion">
+				<div class="aka"><s:property /></div>
+			</s:iterator>
 			</td>
 	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">答え<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="secretAnswer" maxlength="16" value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="secretAnswer" maxlength="16" value='<s:property value="secretAnswer"/>' class="validate[required,minSize[1],maxSize[16]]"data-prompt-position="centerRight:0,-50">
+				<s:iterator value="errMsgListAnswer">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
+			</td>
 	</tr>
-			<tr class="userCreateTr">
-			<th class="userCreateTh">郵便番号</th>
-						<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)" class="validate[custom[number]">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');" class="validate[custom[number]]"data-prompt-position="centerRight:0,-50">
-			</td></tr>
+
+	<tr class="userCreateTr">
+		<th class="userCreateTh">郵便番号(任意)</th>
+			<td class="userCreateTd">〒<input type="text" name="yuubin1" value='<s:property value="yuubin1"/>' size="4" maxlength="3" onkeyup="nextField(this, 'yuubin4', 3)" class="validate[custom[number]">-<input type="text" name="yuubin4" value='<s:property value="yuubin4"/>' size="4" maxlength="4" onKeyUp="AjaxZip3.zip2addr('yuubin1','yuubin4','address','address');" class="validate[custom[number]]"data-prompt-position="centerRight:0,-50">
+			</td>
+	</tr>
+
 	<tr class="userCreateTr">
 		<th class="userCreateTh">住所<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" maxlength="50" class="validate[required,minSize[10],maxSize[50]]"data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="address" value='<s:property value="address"/>' size="50" maxlength="50" class="validate[required,minSize[10],maxSize[50]]"data-prompt-position="centerRight:0,-50">
+				<s:iterator value="errMsgListAddress">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
+			</td>
 	</tr>
-
-
 
 	<tr class="userCreateTr">
 		<th class="userCreateTh">電話番号<em class="userCreateEm">※</em></th>
-			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' maxlength="13" class="validate[required,minSize[10],maxSize[13],custom[phone]]" data-prompt-position="centerRight:0,-50"></td>
+			<td class="userCreateTd">　<input type="text" name="tel" value='<s:property value="tel" />' maxlength="13" class="validate[required,minSize[10],maxSize[13],custom[phone]]" data-prompt-position="centerRight:0,-50">
+				<s:iterator value="errMsgListTel">
+					<div class="aka"><s:property /></div>
+				</s:iterator>
+			</td>
 	</tr>
 
 </table>

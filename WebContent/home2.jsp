@@ -93,8 +93,8 @@ input.area{
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/validationEngine.jquery.css">
 <script src="js/jquery.minimalect.js"></script>
-<script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
+<script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 
