@@ -78,11 +78,17 @@ public class SettlementAction extends ActionSupport implements SessionAware {
 
 			// 購入する商品の情報を持ってくる
 			cartList = (ArrayList<CartDTO>) session.get("cartList");
-			int size = cartList.size();
-			for (int i = 0; i < size; i++) {
-				finalPrice = finalPrice + cartList.get(i).getTotalPrice();
-			}
 
+			if (cartList.isEmpty()) {
+
+				return ERROR;
+
+			} else {
+
+				for (int i = 0; i < cartList.size(); i++) {
+					finalPrice = finalPrice + cartList.get(i).getTotalPrice();
+				}
+			}
 			return SUCCESS;
 
 		} else { // ログインされていない場合決済の画面から飛ばしたというマーキングしてlogin画面に飛ばす

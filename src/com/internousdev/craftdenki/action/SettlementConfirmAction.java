@@ -8,15 +8,12 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.craftdenki.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
+public class SettlementConfirmAction extends ActionSupport implements SessionAware {
 
-public class SettlementConfirmAction extends ActionSupport implements SessionAware{
-
-
-	private Map<String,Object>session;
+	private Map<String, Object> session;
 	private String destination;
 	private String choseAddress;
 	private String choseNumber;
-
 
 	private ArrayList<CartDTO> cartList = new ArrayList<CartDTO>();
 	private String productName;
@@ -28,43 +25,40 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	private String totalPrice;
 	private int finalPrice;
 
-
-
 	@SuppressWarnings("unchecked")
-	public String execute(){
+	public String execute() {
 
-		session.put("payment",""); //ユーザー変更画面へのフラグを消している
-		System.out.println(destination);
+		session.put("payment", ""); // ユーザー変更画面へのフラグを消している
+		
+		if (destination != null) {
+			session.put("destination", destination);
+		}
+		destination = (session.get("destination")).toString();
 
-
-		if(destination.equals("1")){
+		if (destination.equals("1")) {
 
 			choseAddress = session.get("userAddress").toString();
 			choseNumber = session.get("telNumber").toString();
 			System.out.println(choseAddress);
 			System.out.println(choseNumber);
-		}else if(destination.equals("2")){
+		} else if (session.get("destination").toString().equals("2")) {
 			choseAddress = session.get("userAddress2").toString();
 			choseNumber = session.get("telNumber2").toString();
 			System.out.println(choseAddress);
 			System.out.println(choseNumber);
-		}else if(destination.equals("3")){
+		} else if (session.get("destination").toString().equals("3")) {
 			choseAddress = session.get("userAddress3").toString();
 			choseNumber = session.get("telNumber3").toString();
 			System.out.println(choseAddress);
 			System.out.println(choseNumber);
 		}
 
-		//購入する商品の情報を持ってくる
-		cartList = (ArrayList<CartDTO>)session.get("cartList");
+		// 購入する商品の情報を持ってくる
+		cartList = (ArrayList<CartDTO>) session.get("cartList");
 		int size = cartList.size();
-		for(int i=0; i<size; i++){
+		for (int i = 0; i < size; i++) {
 			finalPrice = finalPrice + cartList.get(i).getTotalPrice();
 		}
-
-
-
-
 
 		return SUCCESS;
 	}
@@ -172,6 +166,5 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-
 
 }
