@@ -1,8 +1,12 @@
 package com.internousdev.craftdenki.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserCreateAction extends ActionSupport{
+public class UserCreateAction extends ActionSupport implements SessionAware{
 
 	private String loginUserId;
 	private String loginPassword;
@@ -18,6 +22,8 @@ public class UserCreateAction extends ActionSupport{
 	private String yuubin4;
 	private String address;
 	private String tel;
+
+	private Map<String, Object> session;
 
 
 
@@ -112,6 +118,14 @@ public class UserCreateAction extends ActionSupport{
 
 	public void setYuubin4(String yuubin4) {
 		this.yuubin4 = yuubin4;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 
 
